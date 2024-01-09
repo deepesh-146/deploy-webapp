@@ -47,7 +47,7 @@ function AddbankemployeeComponent_mat_error_26_mat_error_1_Template(rf, ctx) { i
 } }
 function AddbankemployeeComponent_mat_error_26_mat_error_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " IFSC required MAHB0001115 format! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " IFSC required only alphanumeric format! ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } }
 function AddbankemployeeComponent_mat_error_26_Template(rf, ctx) { if (rf & 1) {
@@ -192,7 +192,7 @@ class AddbankemployeeComponent {
     }
     ngOnInit() {
         this.bankForm = this.formBuilder.group({
-            IFSC: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern('^[A-Za-z]{4}0[0-9]{6}$')]],
+            IFSC: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern(/^[a-zA-Z0-9]*$/)]],
             AccountHolderName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
             BankName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
             AccountNumber: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern("^[0-9]*$"), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.minLength(9), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.maxLength(19)]],
@@ -224,7 +224,7 @@ class AddbankemployeeComponent {
         //       if (res) {
         //         this.toastService.openSnackBar("Bank Record Added Successfully!!!");
         //         this.router.navigate(["/pages/Bank-page"]);
-        //         this.bankService.notifyPartyAdded();   
+        //         this.bankService.notifyPartyAdded();
         //         this.dialogRef.close();
         //       }
         //     }, (err) => {
@@ -261,9 +261,17 @@ class AddbankemployeeComponent {
                     'BankName': res.data.bankName,
                     'Branch': this.titleCasePipe.transform(res.data.branchCode)
                 });
-                this.toastService.openSnackBar("IFSC Code Validated Successfully!!!");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "IFSC Code Validated Successfully!!!",
+                });
+                // this.toastService.openSnackBar("IFSC Code Validated Successfully!!!");
             }, (err) => {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message))
             });
         }
     }

@@ -2896,10 +2896,11 @@ function OrganizationalStructureComponent_div_4_Template(rf, ctx) { if (rf & 1) 
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("model", ctx_r0.model)("clearFlag", ctx_r0.clearFlag);
 } }
 class OrganizationalStructureComponent {
-    constructor(toasterService, organizationService, commonService) {
+    constructor(toasterService, organizationService, commonService, toastService) {
         this.toasterService = toasterService;
         this.organizationService = organizationService;
         this.commonService = commonService;
+        this.toastService = toastService;
         this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
         this.selectedNode = null;
         this.clearFlag = false;
@@ -2917,7 +2918,11 @@ class OrganizationalStructureComponent {
         }
         if (!messageDisplayed) {
             // The message hasn't been displayed before, so show it as an alert
-            this.toasterService.openSnackBar('Double click in the canvas to add a new node.');
+            this.toastService.toastMsg({
+                title: "Success",
+                content: "Double Click In The Canvas To Add A New Node.",
+            });
+            // this.toasterService.openSnackBar('Double click in the canvas to add a new node.')
             // this.toasterService.openSnackBar('Double click in the canvas to add a new node.\nDrag the arrow from one node to another to create a child-parent relationship between them.')
             // Set a flag in localStorage to indicate that the message has been displayed
             localStorage.setItem('addNodeMessageDisplayed', 'true');
@@ -2978,7 +2983,7 @@ class OrganizationalStructureComponent {
         this.selectedNode = node;
     }
 }
-OrganizationalStructureComponent.ɵfac = function OrganizationalStructureComponent_Factory(t) { return new (t || OrganizationalStructureComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_1__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_organization_structure_service__WEBPACK_IMPORTED_MODULE_2__.OrganizationStructureService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_3__.CommonService)); };
+OrganizationalStructureComponent.ɵfac = function OrganizationalStructureComponent_Factory(t) { return new (t || OrganizationalStructureComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_1__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_organization_structure_service__WEBPACK_IMPORTED_MODULE_2__.OrganizationStructureService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_3__.CommonService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_1__.ToastNotificationService)); };
 OrganizationalStructureComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: OrganizationalStructureComponent, selectors: [["app-organizational-structure"]], decls: 5, vars: 3, consts: [[1, "container-fluid", "bg-white"], [1, "row", "flex-container"], [1, "col-3", "flex-item", "inspector"], [3, "selectedNode", "model"], ["class", "col-9 flex-item diagram", 4, "ngIf"], [1, "col-9", "flex-item", "diagram"], [3, "model", "clearFlag", "nodeClicked"]], template: function OrganizationalStructureComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);

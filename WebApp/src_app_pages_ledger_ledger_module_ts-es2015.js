@@ -232,7 +232,11 @@ class CreateLedgerComponent {
                 // if (err.error.status == 404) {
                 //   this.toastService.openErrorSnackBar(err.error.message);
                 // } else {
-                this.toastService.openErrorSnackBar(err);
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: err,
+                });
+                // this.toastService.openErrorSnackBar(err);
                 // }
             }
             finally {
@@ -371,7 +375,11 @@ class CreateLedgerComponent {
             });
         }
         else {
-            this.toastService.openErrorSnackBar("There is not selected any ledger. Please select a ledger.");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "There Is Not Selected Any Ledger. Please Select A Ledger.",
+            });
+            // this.toastService.openErrorSnackBar("There is not selected any ledger. Please select a ledger.")
         }
     }
     openAddLedgerModal(glNumber, glName) {
@@ -714,7 +722,11 @@ class CustomizeLedgerComponent {
                 this.ngZone.run(() => {
                     this.isLoading = false;
                     this.cdr.markForCheck();
-                    this.toastService.openErrorSnackBar("An error occurred");
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "An Error Occurred",
+                    });
+                    // this.toastService.openErrorSnackBar("An error occurred");
                 });
             })
                 .finally(() => {
@@ -1870,10 +1882,18 @@ class MyLedgerComponent {
             }
             catch (err) {
                 if (err.error.status == 404) {
-                    this.toastService.openErrorSnackBar(err.error.message);
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "err.error.message",
+                    });
+                    // this.toastService.openErrorSnackBar(err.error.message);
                 }
                 else {
-                    this.toastService.openErrorSnackBar(err.error.message);
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "err.error.message",
+                    });
+                    // this.toastService.openErrorSnackBar(err.error.message);
                 }
             }
             finally {
@@ -2015,7 +2035,11 @@ class MyLedgerComponent {
             });
         }
         else {
-            this.toastService.openErrorSnackBar("There is not selected any ledger. Please select a ledger.");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "There Is Not Selected Any Ledger. Please Select A Ledger.",
+            });
+            // this.toastService.openErrorSnackBar("There is not selected any ledger. Please select a ledger.")
         }
     }
     filterData() {

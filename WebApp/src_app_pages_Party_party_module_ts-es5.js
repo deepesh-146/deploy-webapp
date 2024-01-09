@@ -676,9 +676,17 @@
               }
             }, function (err) {
               if (err.error.expose) {
-                _this2.toastService.openErrorSnackBar(_this2.titleCasePipe.transform(err.error.error_message));
+                _this2.toastService.toastMsg({
+                  title: "Error",
+                  content: _this2.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this2.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this2.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -693,14 +701,26 @@
             var _this3 = this;
 
             this.partyGroupservice.deleteGroup({}, this.groupId).then(function (res) {
-              _this3.toastService.openSnackBar("Group Deleted Successfully!!!");
+              _this3.toastService.toastMsg({
+                title: "Success",
+                content: "Group Deleted Successfully!!!"
+              }); // this.toastService.openSnackBar("Group Deleted Successfully!!!");
+
 
               _this3.getGroupDetails();
             }, function (err) {
               if (err.error.expose) {
-                _this3.toastService.openErrorSnackBar(_this3.titleCasePipe.transform(err.error.error_message));
+                _this3.toastService.toastMsg({
+                  title: "Error",
+                  content: _this3.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this3.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this3.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -746,10 +766,18 @@
                 });
 
                 if (_this4.partyGroupData.length === 0) {
-                  _this4.toastService.openErrorSnackBar(searchKey + " is not found");
+                  _this4.toastService.toastMsg({
+                    title: "Error",
+                    content: searchKey + " Is Not Found"
+                  }); // this.toastService.openErrorSnackBar(searchKey + " is not found");
+
                 }
               })["catch"](function (error) {
-                _this4.toastService.openErrorSnackBar(error);
+                _this4.toastService.toastMsg({
+                  title: "Error",
+                  content: "error"
+                }); // this.toastService.openErrorSnackBar(error);
+
 
                 console.log('Error:', error);
               });
@@ -785,17 +813,33 @@
               var formdata = new FormData();
               formdata.set("file", this.excelFileUpload);
               this.partyservice.postBulkParty(formdata, this.currentUser.id).then(function (res) {
-                _this5.toastService.openSnackBar("Excel Uploaded Successfully"); // this.getAllParties();
+                // this.toastService.openSnackBar("Excel Uploaded Successfully")
+                _this5.toastService.toastMsg({
+                  title: "Success",
+                  content: "Excel Uploaded Successfully!!!"
+                }); // this.getAllParties();
 
 
                 _this5.getGroupDetails();
               }, function (err) {
                 if (err.error.expose) {
-                  _this5.toastService.openErrorSnackBar(_this5.titleCasePipe.transform(err.error.error_message));
+                  _this5.toastService.toastMsg({
+                    title: "Error",
+                    content: "err.error.error_message)"
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else if (err.error.status == "409" && err.error.expose == false) {
-                  _this5.toastService.openErrorSnackBar("List Of Parties Already Exists");
+                  _this5.toastService.toastMsg({
+                    title: "Error",
+                    content: "List Of Parties Already Exists"
+                  }); // this.toastService.openErrorSnackBar("List Of Parties Already Exists");
+
                 } else {
-                  _this5.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this5.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -916,7 +960,11 @@
               "deleteGroups": this.groupId
             };
             this.partyGroupservice.multipleGroupDelete(request, this.currentUser.id).then(function (res) {
-              _this7.toastService.openSnackBar("Group Deleted Successfully!!!");
+              // this.toastService.openSnackBar("Group Deleted Successfully!!!");
+              _this7.toastService.toastMsg({
+                title: "Success",
+                content: "Group Deleted Successfully!!!"
+              });
 
               _this7.checkSelectsingle = false;
               _this7.upiCheckedId = [];
@@ -928,9 +976,17 @@
               _this7.getGroupDetails();
             }, function (err) {
               if (err.error.expose) {
-                _this7.toastService.openErrorSnackBar(_this7.titleCasePipe.transform(err.error.error_message));
+                _this7.toastService.toastMsg({
+                  title: "Error",
+                  content: _this7.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this7.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this7.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -951,7 +1007,7 @@
         },
         decls: 59,
         vars: 12,
-        consts: [["class", "loader-container", 4, "ngIf"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Group Name/Description", 1, "form-control", "pe-5", "my-2", 3, "input"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["id", "saleButtonPrint1", "type", "button", 1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus", "me-2"], [1, "table-container", "overflow-visible"], [1, "table-div", 2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "table-bordered"], [1, "text-nowrap", 2, "vertical-align", "middle", "width", "8%"], ["type", "checkbox", 1, "mt-2", 3, "value", "checked", "ngModel", "change", "ngModelChange"], [4, "ngIf"], [1, "text-nowrap", 2, "vertical-align", "middle"], ["style", "color: #676398!important;", 4, "ngFor", "ngForOf"], ["sticky", "", "class", "float-right mt-2", "showFirstLastButtons", "", "aria-label", "Select page", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page", 4, "ngIf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "500", "font-family", "Poppins"], [1, "text-center", 2, "font-family", "Poppins"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], ["id", "errorDeleteSelect-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["class", "text-center ", "style", "font-family: 'Poppins';", 4, "ngIf"], ["class", "btn btn-outline-danger", "data-bs-dismiss", "modal", "style", "font-family: 'Poppins';", 3, "click", 4, "ngIf"], [1, "loader-container"], [1, "loader"], ["role", "status", 1, "spinner-border"], [1, "visually-hidden"], ["class", "btn pt-2", "data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 4, "ngIf"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 1, "btn", "pt-2"], ["class", "bi-trash icon-color fs-1 text-red", "data-bs-toggle", "tooltip", "style", "color : red;", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 3, "click", 4, "ngIf"], ["data-bs-toggle", "tooltip", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "fs-1", "text-red", 2, "color", "red", 3, "click"], [2, "color", "#676398!important"], ["type", "checkbox", 1, "form-check-input", 3, "checked", "value", "change"], [1, "text-nowrap", "description", 2, "vertical-align", "middle"], [2, "vertical-align", "middle", "width", "20%!important", "white-space", "nowrap", "text-align", "end"], [1, "btn", "me-2"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View", 1, "bi", "bi-eye", "icon-color", "iconFontSize", 3, "click"], ["routerLinkActive", "active", 1, "btn", "me-2", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn", "me-2"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", 2, "color", "red", 3, "click"], [1, "text-center"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"], ["sticky", "", "showFirstLastButtons", "", "aria-label", "Select page", 1, "float-right", "mt-2", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page"], ["paginator", ""], ["mat-icon-button", "", "mat-paginator-navigation", "", "aria-label", "Previous page", 3, "disabled", "ngClass", "click"], ["mat-icon-button", "", "mat-paginator-navigation", "", "aria-label", "Next page", 3, "disabled", "ngClass", "click"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 2, "font-family", "Poppins", 3, "click"]],
+        consts: [["class", "loader-container", 4, "ngIf"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Group Name/Description", 1, "form-control", "pe-5", "my-2", 3, "input"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["id", "saleButtonPrint1", "type", "button", 1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus", "me-2"], [1, "table-container", "overflow-visible"], [1, "table-div", 2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "table-bordered"], [1, "text-nowrap", 2, "vertical-align", "middle", "display", "flex", "align-items", "center"], ["type", "checkbox", 1, "form-check-input", "mb-2", 3, "value", "checked", "ngModel", "change", "ngModelChange"], [4, "ngIf"], [1, "text-nowrap", 2, "vertical-align", "middle"], ["style", "color: #676398!important;", 4, "ngFor", "ngForOf"], ["sticky", "", "class", "float-right mt-2", "showFirstLastButtons", "", "aria-label", "Select page", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page", 4, "ngIf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "500", "font-family", "Poppins"], [1, "text-center", 2, "font-family", "Poppins"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], ["id", "errorDeleteSelect-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["class", "text-center ", "style", "font-family: 'Poppins';", 4, "ngIf"], ["class", "btn btn-outline-danger", "data-bs-dismiss", "modal", "style", "font-family: 'Poppins';", 3, "click", 4, "ngIf"], [1, "loader-container"], [1, "loader"], ["role", "status", 1, "spinner-border"], [1, "visually-hidden"], ["style", "padding: 0px!important;", "class", "btn pt-2", "data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 4, "ngIf"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 1, "btn", "pt-2", 2, "padding", "0px!important"], ["class", "bi-trash icon-color fs-1 text-red m-3", "data-bs-toggle", "tooltip", "style", "color : red;", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 3, "click", 4, "ngIf"], ["data-bs-toggle", "tooltip", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "fs-1", "text-red", "m-3", 2, "color", "red", 3, "click"], [2, "color", "#676398!important"], ["type", "checkbox", 1, "form-check-input", 3, "checked", "value", "change"], [1, "wrap-text-cell", 2, "vertical-align", "middle"], [2, "vertical-align", "middle", "width", "20%!important", "white-space", "nowrap", "text-align", "end"], [1, "btn", "me-2"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View", 1, "bi", "bi-eye", "icon-color", "iconFontSize", 3, "click"], ["routerLinkActive", "active", 1, "btn", "me-2", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn", "me-2"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", 2, "color", "red", 3, "click"], [1, "text-center"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"], ["sticky", "", "showFirstLastButtons", "", "aria-label", "Select page", 1, "float-right", "mt-2", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page"], ["paginator", ""], ["mat-icon-button", "", "mat-paginator-navigation", "", "aria-label", "Previous page", 3, "disabled", "ngClass", "click"], ["mat-icon-button", "", "mat-paginator-navigation", "", "aria-label", "Next page", 3, "disabled", "ngClass", "click"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 2, "font-family", "Poppins", 3, "click"]],
         template: function PartyGroupListComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, PartyGroupListComponent_div_0_Template, 5, 0, "div", 0);
@@ -1204,7 +1260,7 @@
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_12__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterLinkActive, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_15__.MatPaginator, _angular_material_button__WEBPACK_IMPORTED_MODULE_16__.MatButton, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgClass, _angular_material_icon__WEBPACK_IMPORTED_MODULE_17__.MatIcon],
-        styles: [".headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  padding: 0;\n}\n\n.searchBar[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 148px;\n}\n\n@media screen and (max-width: 600px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n\n.navOption-btns[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  padding-right: 0px !important;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 95%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n.navOptions[_ngcontent-%COMP%] {\n  color: black;\n}\n\n.searchBox[_ngcontent-%COMP%] {\n  display: flex;\n}\n\n.search-btn[_ngcontent-%COMP%] {\n  margin-left: -40px;\n  z-index: 1;\n}\n\n@media (min-width: 1200px) {\n  .custom-dialog-Party-class[_ngcontent-%COMP%] {\n    margin-left: 50%;\n  }\n}\n\n@media (max-width: 992px) {\n  .custom-dialog-Party-class[_ngcontent-%COMP%] {\n    margin-left: 18%;\n  }\n}\n\n@media (max-width: 1200px) and (min-width: 575px) {\n  .custom-dialog-Party-class[_ngcontent-%COMP%] {\n    margin-left: 28%;\n  }\n}\n\n@media (min-width: 1200px) {\n  .custom-dialog-PartyGrp-class[_ngcontent-%COMP%] {\n    margin-left: 58%;\n    margin-top: -16%;\n  }\n}\n\n@media (max-width: 1200px) and (min-width: 575px) {\n  .custom-dialog-PartyGrp-class[_ngcontent-%COMP%] {\n    margin-left: 35%;\n    margin-top: -16%;\n  }\n}\n\n  .custom-dialog-edit-PartyGrp {\n  margin-left: 50%;\n}\n\n  .custom-dialog-PartyGrp-class {\n  margin-left: 55%;\n  margin-top: -20%;\n}\n\n  .custom-dialog-view-partyGrp {\n  margin-left: 50%;\n}\n\n.hidden-input[_ngcontent-%COMP%] {\n  display: none;\n}\n\n.search-input[_ngcontent-%COMP%] {\n  padding-right: 30px;\n  \n}\n\n.input-group-addon[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  padding: 0 10px;\n  background-color: transparent;\n  border: none;\n}\n\ntbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:nth-child(odd) {\n  background-color: #F8F8F8;\n}\n\n.table-responsive[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #000;\n}\n\n.table-responsive[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n  height: auto !important;\n}\n\n.table-responsive[_ngcontent-%COMP%]   th[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-style: none !important;\n}\n\n.page-link[_ngcontent-%COMP%]:hover {\n  background: #FC7643;\n  border-color: #FC7643;\n}\n\n.custom-bg-color[_ngcontent-%COMP%] {\n  background-color: #FC7643;\n}\n\n.description[_ngcontent-%COMP%] {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 300px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhcnR5LWdyb3VwLWxpc3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbUNBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7QUFsQ0Y7O0FBcUNBO0VBRUUsVUFBQTtBQW5DRjs7QUFxQ0E7RUFDRSxpQkFBQTtBQWxDRjs7QUFzQ0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQW5DRjs7QUF1Q0E7RUFDRTtJQUNFLHVCQUFBO0VBcENGO0FBQ0Y7O0FBd0NBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7QUF0Q0Y7O0FBMkNBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBRUEsb0JBQUE7RUFDQSw2QkFBQTtBQXpDRjs7QUE0Q0E7RUFDRSxXQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSw4QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBekNGOztBQTRDQTtFQUVFLHVCQUFBO0VBQ0EsU0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSxXQUFBO0VBS0EsMEJBQUE7RUFDRiw0QkFBQTtFQUNBLHFYQUFBO0VBQ0EsOEJBQUE7RUFDQSx3Q0FBQTtFQUEwQywrQkFBQTtBQTdDMUM7O0FBaURBO0VBQ0UsV0FBQTtBQTlDRjs7QUE2Q0E7RUFDRSxXQUFBO0FBOUNGOztBQWtEQTtFQUNFLFlBQUE7QUEvQ0Y7O0FBa0RBO0VBQ0UsYUFBQTtBQS9DRjs7QUFrREE7RUFDRSxrQkFBQTtFQUNBLFVBQUE7QUEvQ0Y7O0FBbURBO0VBQ0U7SUFDSSxnQkFBQTtFQWhESjtBQUNGOztBQW1EQTtFQUNFO0lBQ0ksZ0JBQUE7RUFqREo7QUFDRjs7QUFvREE7RUFDRTtJQUNJLGdCQUFBO0VBbERKO0FBQ0Y7O0FBcURBO0VBQ0U7SUFDSSxnQkFBQTtJQUNBLGdCQUFBO0VBbkRKO0FBQ0Y7O0FBc0RBO0VBQ0U7SUFDSSxnQkFBQTtJQUNBLGdCQUFBO0VBcERKO0FBQ0Y7O0FBdURBO0VBQ0UsZ0JBQUE7QUFyREY7O0FBd0RBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtBQXJERjs7QUF3REE7RUFDRSxnQkFBQTtBQXJERjs7QUF3REE7RUFDRSxhQUFBO0FBckRGOztBQXdEQTtFQUNFLG1CQUFBO0VBQXFCLCtDQUFBO0FBcER2Qjs7QUF1REE7RUFFRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FBckRGOztBQXdERTtFQUNFLHlCQUFBO0FBckRKOztBQXdERTtFQUNFLFdBQUE7QUFyREo7O0FBd0RFO0VBQ0UsK0JBQUE7RUFBQSw0QkFBQTtFQUFBLHVCQUFBO0VBQ0EsdUJBQUE7QUFyREo7O0FBd0RFO0VBQ0UsNkJBQUE7QUFyREo7O0FBNkRFO0VBQ0UsbUJBQUE7RUFDQSxxQkFBQTtBQTFESjs7QUE2REU7RUFDRSx5QkFBQTtBQTFESjs7QUE2REU7RUFDRSxnQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBQTFESiIsImZpbGUiOiJwYXJ0eS1ncm91cC1saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gLmljb24tY29sb3Ige1xyXG4vLyAgICAgY29sb3I6ICMyYzdiZTU7XHJcbi8vICAgfVxyXG5cclxuLy8gICA6Om5nLWRlZXAgLmhpZGUtYXJyb3cgLnNvcnQtaGVhZGVyLWFycm93IHtcclxuLy8gICAgIGNvbG9yOiByZ2IoMTg1LCA2MSwgNjEpO1xyXG4vLyAgIH1cclxuXHJcbi8vICAgLmljb24tY29sb3Ige1xyXG4vLyAgICAgY29sb3I6ICNiOGJhYmQ7XHJcbi8vICAgfVxyXG5cclxuLy8gICAuaWNvbi1jb2xvcjpob3ZlciB7XHJcbi8vICAgICBjb2xvcjogIzJjN2JlNTtcclxuLy8gICB9XHJcblxyXG4vLyAgIDo6bmctZGVlcCAuc29ydCAuc29ydC1oZWFkZXItYXJyb3cge1xyXG4vLyAgICAgY29sb3I6IHJnYigxODUsIDYxLCA2MSkgIWltcG9ydGFudDtcclxuLy8gICB9XHJcblxyXG4vLyAgIC5idG5wIHtcclxuLy8gICAgIHBhZGRpbmc6IDBweCAhaW1wb3J0YW50O1xyXG4vLyAgICAgbGluZS1oZWlnaHQ6IDIwcHggIWltcG9ydGFudDtcclxuLy8gICB9XHJcblxyXG4vLyAgIGlucHV0IHtcclxuLy8gICAgIGRpc3BsYXk6IG5vbmU7XHJcbi8vICAgfVxyXG4vLyAgIC5tYXJnaW5MZWZ0UmlnaHR7XHJcbi8vICAgICBtYXJnaW4tcmlnaHQ6NHB4IWltcG9ydGFudDtcclxuLy8gICAgIG1hcmdpbi1sZWZ0OiA0cHghaW1wb3J0YW50O1xyXG4vLyAgIH1cclxuXHJcbi8vIFJlc3BvbnNpdmUgQnV0dG9uc1xyXG5cclxuLmhlYWRlckJ1dHRvbnMge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgZmxleC13cmFwOiB3cmFwO1xyXG59XHJcblxyXG4uZmxleC1pdGVtIHtcclxuICAvL2ZsZXgtYmFzaXM6IDI0MHB4O1xyXG4gIHBhZGRpbmc6IDA7XHJcbn1cclxuLnNlYXJjaEJhcntcclxuICBmbGV4LWJhc2lzOiAyNDBweDtcclxuXHJcbn1cclxuXHJcbi5mb3JtQnV0dG9ucyB7XHJcbiAgZGlzcGxheTpmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOnJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtZXZlbmx5O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxuICBmbGV4LWJhc2lzOiAxNDhweDtcclxufVxyXG5cclxuLy8gTWVkaWEgcXVlcnkgZm9yIGJ1dHRvbnMgYW5kIHNlYXJjaCBiYXIuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDYwMHB4KSB7XHJcbiAgLmhlYWRlckJ1dHRvbnMge1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgfVxyXG59XHJcblxyXG5cclxuLm5hdk9wdGlvbi1idG5ze1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcclxuICAvLyBoZWlnaHQ6IDQwcHggIWltcG9ydGFudDtcclxufVxyXG5cclxuXHJcbi5jb250YWluZXJTZWFyY2hCYXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAvLyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuICBwYWRkaW5nLXJpZ2h0OiAwcHggIWltcG9ydGFudDtcclxufVxyXG5cclxuLmZvcm0tY29udHJvbCB7XHJcbiAgY29sb3I6ICM1NTU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBwYWRkaW5nOiAycHg7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgY3VycmVudENvbG9yO1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBtYXJnaW46IDAgMCAzMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5pbnB1dFt0eXBlPVwic2VhcmNoXCJdIHtcclxuICAvLyBib3JkZXI6IG5vbmUgIWltcG9ydGFudDtcclxuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuICBtYXJnaW46IDA7XHJcbiAgcGFkZGluZzogN3B4IDhweDtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbiAgb3V0bGluZTogbm9uZTtcclxuICBoZWlnaHQ6IDk1JTtcclxuICAvLyBtYXJnaW4tdG9wOiAtN3B4O1xyXG4gIC8vY29sb3I6IGluaGVyaXQ7XHJcbiAgLy8gYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgLy9ib3JkZXItcmFkaXVzOiBpbmhlcml0O1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb246IHJpZ2h0O1xyXG5iYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG5iYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2JyBoZWlnaHQ9JzE2JyBjbGFzcz0nYmkgYmktc2VhcmNoJyB2aWV3Qm94PScwIDAgMTYgMTYnJTNFJTNDcGF0aCBkPSdNMTEuNzQyIDEwLjM0NGE2LjUgNi41IDAgMSAwLTEuMzk3IDEuMzk4aC0uMDAxYy4wMy4wNC4wNjIuMDc4LjA5OC4xMTVsMy44NSAzLjg1YTEgMSAwIDAgMCAxLjQxNS0xLjQxNGwtMy44NS0zLjg1YTEuMDA3IDEuMDA3IDAgMCAwLS4xMTUtLjF6TTEyIDYuNWE1LjUgNS41IDAgMSAxLTExIDAgNS41IDUuNSAwIDAgMSAxMSAweiclM0UlM0MvcGF0aCUzRSUzQy9zdmclM0VcIik7XHJcbmJhY2tncm91bmQtb3JpZ2luOiBjb250ZW50LWJveDtcclxuYmFja2dyb3VuZC1wb3NpdGlvbi14OiBjYWxjKDEwMCUgKyAyMHB4KTsgLyogQWRqdXN0IHRoZSB2YWx1ZSBhcyBuZWVkZWQgKi9cclxuXHJcbn1cclxuXHJcbmlucHV0W3R5cGU9XCJzZWFyY2hcIl06OnBsYWNlaG9sZGVyIHtcclxuICBjb2xvcjogI2JiYjtcclxufVxyXG5cclxuXHJcbi5uYXZPcHRpb25zIHtcclxuICBjb2xvcjogYmxhY2s7XHJcbn1cclxuXHJcbi5zZWFyY2hCb3gge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbn1cclxuXHJcbi5zZWFyY2gtYnRuIHtcclxuICBtYXJnaW4tbGVmdDogLTQwcHg7XHJcbiAgei1pbmRleDogMTtcclxufVxyXG5cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiAxMjAwcHgpIHtcclxuICAuY3VzdG9tLWRpYWxvZy1QYXJ0eS1jbGFzcyB7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiA1MCU7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogOTkycHgpIHtcclxuICAuY3VzdG9tLWRpYWxvZy1QYXJ0eS1jbGFzcyB7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiAxOCU7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogMTIwMHB4KSBhbmQgKG1pbi13aWR0aDogNTc1cHgpIHtcclxuICAuY3VzdG9tLWRpYWxvZy1QYXJ0eS1jbGFzcyB7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiAyOCU7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTIwMHB4KSB7XHJcbiAgLmN1c3RvbS1kaWFsb2ctUGFydHlHcnAtY2xhc3N7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiA1OCU7XHJcbiAgICAgIG1hcmdpbi10b3A6IC0xNiU7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogMTIwMHB4KSBhbmQgKG1pbi13aWR0aDogNTc1cHgpIHtcclxuICAuY3VzdG9tLWRpYWxvZy1QYXJ0eUdycC1jbGFzc3tcclxuICAgICAgbWFyZ2luLWxlZnQ6IDM1JTtcclxuICAgICAgbWFyZ2luLXRvcDogLTE2JTtcclxuICB9XHJcbn1cclxuXHJcbjo6bmctZGVlcCAuY3VzdG9tLWRpYWxvZy1lZGl0LVBhcnR5R3Jwe1xyXG4gIG1hcmdpbi1sZWZ0OiA1MCU7XHJcbn1cclxuXHJcbjo6bmctZGVlcCAuY3VzdG9tLWRpYWxvZy1QYXJ0eUdycC1jbGFzc3tcclxuICBtYXJnaW4tbGVmdDogNTUlO1xyXG4gIG1hcmdpbi10b3A6IC0yMCU7XHJcbn1cclxuXHJcbjo6bmctZGVlcCAuY3VzdG9tLWRpYWxvZy12aWV3LXBhcnR5R3Jwe1xyXG4gIG1hcmdpbi1sZWZ0OiA1MCU7XHJcbn1cclxuXHJcbi5oaWRkZW4taW5wdXQge1xyXG4gIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5zZWFyY2gtaW5wdXQge1xyXG4gIHBhZGRpbmctcmlnaHQ6IDMwcHg7IC8qIEFkanVzdCB0aGUgdmFsdWUgYmFzZWQgb24gdGhlIGljb24ncyB3aWR0aCAqL1xyXG59XHJcblxyXG4uaW5wdXQtZ3JvdXAtYWRkb24ge1xyXG4gIC8vIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgcGFkZGluZzogMCAxMHB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gIGJvcmRlcjogbm9uZTtcclxufVxyXG5cclxuICB0Ym9keSB0cjpudGgtY2hpbGQob2RkKSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjhGOEY4O1xyXG4gIH1cclxuXHJcbiAgLnRhYmxlLXJlc3BvbnNpdmUgdGhlYWQgdGgge1xyXG4gICAgY29sb3I6ICMwMDA7XHJcbiAgfVxyXG5cclxuICAudGFibGUtcmVzcG9uc2l2ZSB0Ym9keSB0ciwgdGQge1xyXG4gICAgbWluLWhlaWdodDogZml0LWNvbnRlbnQ7XHJcbiAgICBoZWlnaHQ6IGF1dG8gIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4gIC50YWJsZS1yZXNwb25zaXZlIHRoLCB0ZCwgdHIge1xyXG4gICAgYm9yZGVyLXN0eWxlOiBub25lIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4vLyAudGFibGUtcmVzcG9uc2l2ZXtcclxuLy8gICBtaW4td2lkdGg6IDcwMHB4O1xyXG4vLyAgIG1pbi1oZWlnaHQ6IDM5MHB4O1xyXG4vLyB9XHJcblxyXG4gIC5wYWdlLWxpbms6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZDogI0ZDNzY0MztcclxuICAgIGJvcmRlci1jb2xvcjogI0ZDNzY0MztcclxuICB9XHJcblxyXG4gIC5jdXN0b20tYmctY29sb3Ige1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI0ZDNzY0MztcclxuICB9XHJcblxyXG4gIC5kZXNjcmlwdGlvbiB7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgbWF4LXdpZHRoOiAzMDBweDtcclxuICB9XHJcbiJdfQ== */"]
+        styles: [".headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  padding: 0;\n}\n\n.searchBar[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 148px;\n}\n\n@media screen and (max-width: 600px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n\n.navOption-btns[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  padding-right: 0px !important;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 95%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n.navOptions[_ngcontent-%COMP%] {\n  color: black;\n}\n\n.searchBox[_ngcontent-%COMP%] {\n  display: flex;\n}\n\n.search-btn[_ngcontent-%COMP%] {\n  margin-left: -40px;\n  z-index: 1;\n}\n\n@media (min-width: 1200px) {\n  .custom-dialog-Party-class[_ngcontent-%COMP%] {\n    margin-left: 50%;\n  }\n}\n\n@media (max-width: 992px) {\n  .custom-dialog-Party-class[_ngcontent-%COMP%] {\n    margin-left: 18%;\n  }\n}\n\n@media (max-width: 1200px) and (min-width: 575px) {\n  .custom-dialog-Party-class[_ngcontent-%COMP%] {\n    margin-left: 28%;\n  }\n}\n\n@media (min-width: 1200px) {\n  .custom-dialog-PartyGrp-class[_ngcontent-%COMP%] {\n    margin-left: 58%;\n    margin-top: -16%;\n  }\n}\n\n@media (max-width: 1200px) and (min-width: 575px) {\n  .custom-dialog-PartyGrp-class[_ngcontent-%COMP%] {\n    margin-left: 35%;\n    margin-top: -16%;\n  }\n}\n\n  .custom-dialog-edit-PartyGrp {\n  margin-left: 50%;\n}\n\n  .custom-dialog-PartyGrp-class {\n  margin-left: 55%;\n  margin-top: -20%;\n}\n\n  .custom-dialog-view-partyGrp {\n  margin-left: 50%;\n}\n\n.hidden-input[_ngcontent-%COMP%] {\n  display: none;\n}\n\n.search-input[_ngcontent-%COMP%] {\n  padding-right: 30px;\n  \n}\n\n.input-group-addon[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  padding: 0 10px;\n  background-color: transparent;\n  border: none;\n}\n\ntbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:nth-child(odd) {\n  background-color: #F8F8F8;\n}\n\n.table-responsive[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #000;\n}\n\n.table-responsive[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n  height: auto !important;\n}\n\n.table-responsive[_ngcontent-%COMP%]   th[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-style: none !important;\n}\n\n.page-link[_ngcontent-%COMP%]:hover {\n  background: #FC7643;\n  border-color: #FC7643;\n}\n\n.custom-bg-color[_ngcontent-%COMP%] {\n  background-color: #FC7643;\n}\n\n.description[_ngcontent-%COMP%] {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 300px;\n}\n\n.wrap-text-cell[_ngcontent-%COMP%] {\n  white-space: normal;\n  \n  word-wrap: break-word;\n  \n  overflow-wrap: break-word;\n  \n  max-width: 110px;\n  \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhcnR5LWdyb3VwLWxpc3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbUNBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7QUFsQ0Y7O0FBcUNBO0VBRUUsVUFBQTtBQW5DRjs7QUFxQ0E7RUFDRSxpQkFBQTtBQWxDRjs7QUFzQ0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQW5DRjs7QUF1Q0E7RUFDRTtJQUNFLHVCQUFBO0VBcENGO0FBQ0Y7O0FBd0NBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7QUF0Q0Y7O0FBMkNBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBRUEsb0JBQUE7RUFDQSw2QkFBQTtBQXpDRjs7QUE0Q0E7RUFDRSxXQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSw4QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBekNGOztBQTRDQTtFQUVFLHVCQUFBO0VBQ0EsU0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSxXQUFBO0VBS0EsMEJBQUE7RUFDRiw0QkFBQTtFQUNBLHFYQUFBO0VBQ0EsOEJBQUE7RUFDQSx3Q0FBQTtFQUEwQywrQkFBQTtBQTdDMUM7O0FBaURBO0VBQ0UsV0FBQTtBQTlDRjs7QUE2Q0E7RUFDRSxXQUFBO0FBOUNGOztBQWtEQTtFQUNFLFlBQUE7QUEvQ0Y7O0FBa0RBO0VBQ0UsYUFBQTtBQS9DRjs7QUFrREE7RUFDRSxrQkFBQTtFQUNBLFVBQUE7QUEvQ0Y7O0FBbURBO0VBQ0U7SUFDSSxnQkFBQTtFQWhESjtBQUNGOztBQW1EQTtFQUNFO0lBQ0ksZ0JBQUE7RUFqREo7QUFDRjs7QUFvREE7RUFDRTtJQUNJLGdCQUFBO0VBbERKO0FBQ0Y7O0FBcURBO0VBQ0U7SUFDSSxnQkFBQTtJQUNBLGdCQUFBO0VBbkRKO0FBQ0Y7O0FBc0RBO0VBQ0U7SUFDSSxnQkFBQTtJQUNBLGdCQUFBO0VBcERKO0FBQ0Y7O0FBdURBO0VBQ0UsZ0JBQUE7QUFyREY7O0FBd0RBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtBQXJERjs7QUF3REE7RUFDRSxnQkFBQTtBQXJERjs7QUF3REE7RUFDRSxhQUFBO0FBckRGOztBQXdEQTtFQUNFLG1CQUFBO0VBQXFCLCtDQUFBO0FBcER2Qjs7QUF1REE7RUFFRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FBckRGOztBQXdERTtFQUNFLHlCQUFBO0FBckRKOztBQXdERTtFQUNFLFdBQUE7QUFyREo7O0FBd0RFO0VBQ0UsK0JBQUE7RUFBQSw0QkFBQTtFQUFBLHVCQUFBO0VBQ0EsdUJBQUE7QUFyREo7O0FBd0RFO0VBQ0UsNkJBQUE7QUFyREo7O0FBNkRFO0VBQ0UsbUJBQUE7RUFDQSxxQkFBQTtBQTFESjs7QUE2REU7RUFDRSx5QkFBQTtBQTFESjs7QUE2REU7RUFDRSxnQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBQTFESjs7QUE0REU7RUFDRSxtQkFBQTtFQUFxQixzREFBQTtFQUNyQixxQkFBQTtFQUF1QiwwREFBQTtFQUN2Qix5QkFBQTtFQUEyQiwrREFBQTtFQUMzQixnQkFBQTtFQUFrQiwrREFBQTtBQXJEdEIiLCJmaWxlIjoicGFydHktZ3JvdXAtbGlzdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIC5pY29uLWNvbG9yIHtcclxuLy8gICAgIGNvbG9yOiAjMmM3YmU1O1xyXG4vLyAgIH1cclxuXHJcbi8vICAgOjpuZy1kZWVwIC5oaWRlLWFycm93IC5zb3J0LWhlYWRlci1hcnJvdyB7XHJcbi8vICAgICBjb2xvcjogcmdiKDE4NSwgNjEsIDYxKTtcclxuLy8gICB9XHJcblxyXG4vLyAgIC5pY29uLWNvbG9yIHtcclxuLy8gICAgIGNvbG9yOiAjYjhiYWJkO1xyXG4vLyAgIH1cclxuXHJcbi8vICAgLmljb24tY29sb3I6aG92ZXIge1xyXG4vLyAgICAgY29sb3I6ICMyYzdiZTU7XHJcbi8vICAgfVxyXG5cclxuLy8gICA6Om5nLWRlZXAgLnNvcnQgLnNvcnQtaGVhZGVyLWFycm93IHtcclxuLy8gICAgIGNvbG9yOiByZ2IoMTg1LCA2MSwgNjEpICFpbXBvcnRhbnQ7XHJcbi8vICAgfVxyXG5cclxuLy8gICAuYnRucCB7XHJcbi8vICAgICBwYWRkaW5nOiAwcHggIWltcG9ydGFudDtcclxuLy8gICAgIGxpbmUtaGVpZ2h0OiAyMHB4ICFpbXBvcnRhbnQ7XHJcbi8vICAgfVxyXG5cclxuLy8gICBpbnB1dCB7XHJcbi8vICAgICBkaXNwbGF5OiBub25lO1xyXG4vLyAgIH1cclxuLy8gICAubWFyZ2luTGVmdFJpZ2h0e1xyXG4vLyAgICAgbWFyZ2luLXJpZ2h0OjRweCFpbXBvcnRhbnQ7XHJcbi8vICAgICBtYXJnaW4tbGVmdDogNHB4IWltcG9ydGFudDtcclxuLy8gICB9XHJcblxyXG4vLyBSZXNwb25zaXZlIEJ1dHRvbnNcclxuXHJcbi5oZWFkZXJCdXR0b25zIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmZsZXgtaXRlbSB7XHJcbiAgLy9mbGV4LWJhc2lzOiAyNDBweDtcclxuICBwYWRkaW5nOiAwO1xyXG59XHJcbi5zZWFyY2hCYXJ7XHJcbiAgZmxleC1iYXNpczogMjQwcHg7XHJcblxyXG59XHJcblxyXG4uZm9ybUJ1dHRvbnMge1xyXG4gIGRpc3BsYXk6ZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjpyb3c7XHJcbiAganVzdGlmeS1jb250ZW50OnNwYWNlLWV2ZW5seTtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgZmxleC1iYXNpczogMTQ4cHg7XHJcbn1cclxuXHJcbi8vIE1lZGlhIHF1ZXJ5IGZvciBidXR0b25zIGFuZCBzZWFyY2ggYmFyLlxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xyXG4gIC5oZWFkZXJCdXR0b25zIHtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIH1cclxufVxyXG5cclxuXHJcbi5uYXZPcHRpb24tYnRuc3tcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XHJcbiAgLy8gaGVpZ2h0OiA0MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcblxyXG4uY29udGFpbmVyU2VhcmNoQmFyIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgLy8ganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYWxpZ24taXRlbXM6IHN0cmV0Y2g7XHJcbiAgcGFkZGluZy1yaWdodDogMHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5mb3JtLWNvbnRyb2wge1xyXG4gIGNvbG9yOiAjNTU1O1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgcGFkZGluZzogMnB4O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkIGN1cnJlbnRDb2xvcjtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgbWFyZ2luOiAwIDAgMzBweDtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuaW5wdXRbdHlwZT1cInNlYXJjaFwiXSB7XHJcbiAgLy8gYm9yZGVyOiBub25lICFpbXBvcnRhbnQ7XHJcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgbWFyZ2luOiAwO1xyXG4gIHBhZGRpbmc6IDdweCA4cHg7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgaGVpZ2h0OiA5NSU7XHJcbiAgLy8gbWFyZ2luLXRvcDogLTdweDtcclxuICAvL2NvbG9yOiBpbmhlcml0O1xyXG4gIC8vIGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xyXG4gIC8vYm9yZGVyLXJhZGl1czogaW5oZXJpdDtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodDtcclxuYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNicgaGVpZ2h0PScxNicgY2xhc3M9J2JpIGJpLXNlYXJjaCcgdmlld0JveD0nMCAwIDE2IDE2JyUzRSUzQ3BhdGggZD0nTTExLjc0MiAxMC4zNDRhNi41IDYuNSAwIDEgMC0xLjM5NyAxLjM5OGgtLjAwMWMuMDMuMDQuMDYyLjA3OC4wOTguMTE1bDMuODUgMy44NWExIDEgMCAwIDAgMS40MTUtMS40MTRsLTMuODUtMy44NWExLjAwNyAxLjAwNyAwIDAgMC0uMTE1LS4xek0xMiA2LjVhNS41IDUuNSAwIDEgMS0xMSAwIDUuNSA1LjUgMCAwIDEgMTEgMHonJTNFJTNDL3BhdGglM0UlM0Mvc3ZnJTNFXCIpO1xyXG5iYWNrZ3JvdW5kLW9yaWdpbjogY29udGVudC1ib3g7XHJcbmJhY2tncm91bmQtcG9zaXRpb24teDogY2FsYygxMDAlICsgMjBweCk7IC8qIEFkanVzdCB0aGUgdmFsdWUgYXMgbmVlZGVkICovXHJcblxyXG59XHJcblxyXG5pbnB1dFt0eXBlPVwic2VhcmNoXCJdOjpwbGFjZWhvbGRlciB7XHJcbiAgY29sb3I6ICNiYmI7XHJcbn1cclxuXHJcblxyXG4ubmF2T3B0aW9ucyB7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcblxyXG4uc2VhcmNoQm94IHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4uc2VhcmNoLWJ0biB7XHJcbiAgbWFyZ2luLWxlZnQ6IC00MHB4O1xyXG4gIHotaW5kZXg6IDE7XHJcbn1cclxuXHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTIwMHB4KSB7XHJcbiAgLmN1c3RvbS1kaWFsb2ctUGFydHktY2xhc3Mge1xyXG4gICAgICBtYXJnaW4tbGVmdDogNTAlO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChtYXgtd2lkdGg6IDk5MnB4KSB7XHJcbiAgLmN1c3RvbS1kaWFsb2ctUGFydHktY2xhc3Mge1xyXG4gICAgICBtYXJnaW4tbGVmdDogMTglO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChtYXgtd2lkdGg6IDEyMDBweCkgYW5kIChtaW4td2lkdGg6IDU3NXB4KSB7XHJcbiAgLmN1c3RvbS1kaWFsb2ctUGFydHktY2xhc3Mge1xyXG4gICAgICBtYXJnaW4tbGVmdDogMjglO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDEyMDBweCkge1xyXG4gIC5jdXN0b20tZGlhbG9nLVBhcnR5R3JwLWNsYXNze1xyXG4gICAgICBtYXJnaW4tbGVmdDogNTglO1xyXG4gICAgICBtYXJnaW4tdG9wOiAtMTYlO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChtYXgtd2lkdGg6IDEyMDBweCkgYW5kIChtaW4td2lkdGg6IDU3NXB4KSB7XHJcbiAgLmN1c3RvbS1kaWFsb2ctUGFydHlHcnAtY2xhc3N7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiAzNSU7XHJcbiAgICAgIG1hcmdpbi10b3A6IC0xNiU7XHJcbiAgfVxyXG59XHJcblxyXG46Om5nLWRlZXAgLmN1c3RvbS1kaWFsb2ctZWRpdC1QYXJ0eUdycHtcclxuICBtYXJnaW4tbGVmdDogNTAlO1xyXG59XHJcblxyXG46Om5nLWRlZXAgLmN1c3RvbS1kaWFsb2ctUGFydHlHcnAtY2xhc3N7XHJcbiAgbWFyZ2luLWxlZnQ6IDU1JTtcclxuICBtYXJnaW4tdG9wOiAtMjAlO1xyXG59XHJcblxyXG46Om5nLWRlZXAgLmN1c3RvbS1kaWFsb2ctdmlldy1wYXJ0eUdycHtcclxuICBtYXJnaW4tbGVmdDogNTAlO1xyXG59XHJcblxyXG4uaGlkZGVuLWlucHV0IHtcclxuICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG4uc2VhcmNoLWlucHV0IHtcclxuICBwYWRkaW5nLXJpZ2h0OiAzMHB4OyAvKiBBZGp1c3QgdGhlIHZhbHVlIGJhc2VkIG9uIHRoZSBpY29uJ3Mgd2lkdGggKi9cclxufVxyXG5cclxuLmlucHV0LWdyb3VwLWFkZG9uIHtcclxuICAvLyBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIHBhZGRpbmc6IDAgMTBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICBib3JkZXI6IG5vbmU7XHJcbn1cclxuXHJcbiAgdGJvZHkgdHI6bnRoLWNoaWxkKG9kZCkge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI0Y4RjhGODtcclxuICB9XHJcblxyXG4gIC50YWJsZS1yZXNwb25zaXZlIHRoZWFkIHRoIHtcclxuICAgIGNvbG9yOiAjMDAwO1xyXG4gIH1cclxuXHJcbiAgLnRhYmxlLXJlc3BvbnNpdmUgdGJvZHkgdHIsIHRkIHtcclxuICAgIG1pbi1oZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gICAgaGVpZ2h0OiBhdXRvICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG5cclxuICAudGFibGUtcmVzcG9uc2l2ZSB0aCwgdGQsIHRyIHtcclxuICAgIGJvcmRlci1zdHlsZTogbm9uZSFpbXBvcnRhbnQ7XHJcbiAgfVxyXG5cclxuLy8gLnRhYmxlLXJlc3BvbnNpdmV7XHJcbi8vICAgbWluLXdpZHRoOiA3MDBweDtcclxuLy8gICBtaW4taGVpZ2h0OiAzOTBweDtcclxuLy8gfVxyXG5cclxuICAucGFnZS1saW5rOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQ6ICNGQzc2NDM7XHJcbiAgICBib3JkZXItY29sb3I6ICNGQzc2NDM7XHJcbiAgfVxyXG5cclxuICAuY3VzdG9tLWJnLWNvbG9yIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNGQzc2NDM7XHJcbiAgfVxyXG5cclxuICAuZGVzY3JpcHRpb24ge1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgIG1heC13aWR0aDogMzAwcHg7XHJcbiAgfVxyXG4gIC53cmFwLXRleHQtY2VsbCB7XHJcbiAgICB3aGl0ZS1zcGFjZTogbm9ybWFsOyAvKiBUaGlzIHByb3BlcnR5IGFsbG93cyB0ZXh0IHRvIHdyYXAgd2l0aGluIHRoZSBjZWxsICovXHJcbiAgICB3b3JkLXdyYXA6IGJyZWFrLXdvcmQ7IC8qIFRoaXMgcHJvcGVydHkgZW5zdXJlcyBsb25nIHdvcmRzIHdyYXAgd2l0aGluIHRoZSBjZWxsICovXHJcbiAgICBvdmVyZmxvdy13cmFwOiBicmVhay13b3JkOyAvKiBUaGlzIHByb3BlcnR5IGhhbmRsZXMgd29yZCB3cmFwcGluZyBmb3Igbm9uLWJyZWFraW5nIHdvcmRzICovXHJcbiAgICBtYXgtd2lkdGg6IDExMHB4OyAvKiBBZGp1c3QgdGhlIG1heC13aWR0aCBhcyBuZWVkZWQgdG8gY29udHJvbCB0aGUgY2VsbCdzIHdpZHRoICovXHJcbiAgfVxyXG4gICJdfQ== */"]
       });
       /***/
     },
@@ -2700,16 +2756,32 @@
 
                 if (_this10.totalrow === 0 && !(searchKey === "")) {
                   if (_this10.flag == 0) {
-                    _this10.toastService.openErrorSnackBar("Vendor Not Found!!!");
+                    _this10.toastService.toastMsg({
+                      title: "Error",
+                      content: "Vendor Not Found!!!"
+                    }); // this.toastService.openErrorSnackBar("Vendor Not Found!!!");
+
                   } else {
-                    _this10.toastService.openErrorSnackBar("Customer Not Found!!!");
+                    _this10.toastService.toastMsg({
+                      title: "Error",
+                      content: "Customer Not Found!!!"
+                    }); // this.toastService.openErrorSnackBar("Customer Not Found!!!");
+
                   }
                 }
               }, function (err) {
                 if (err.error.expose) {
-                  _this10.toastService.openErrorSnackBar(_this10.titleCasePipe.transform(err.error.error_message));
+                  _this10.toastService.toastMsg({
+                    title: "Error",
+                    content: _this10.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this10.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this10.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
 
@@ -2748,14 +2820,22 @@
 
             if (this.isdeletedParty) {
               this.partyService.UnarchivedParty({}, this.partyId).then(function (res) {
-                _this11.toastService.openSnackBar("Vender Unarchived Successfully!!!");
+                _this11.toastService.toastMsg({
+                  title: "Success",
+                  content: "Vendor Unarchived Successfully!!!"
+                }); // this.toastService.openSnackBar("Vender Unarchived Successfully!!!");
+
 
                 _this11.getAllParties();
               });
             } else {
               this.partyService.deletePartyById({}, this.partyId).then(function (res) {
                 // this.toastService.openSnackBar("Party Deleted Successfully!!!");
-                _this11.toastService.openSnackBar("Vender Archived Successfully!!!");
+                _this11.toastService.toastMsg({
+                  title: "Success",
+                  content: "Vendor Archived Successfully!!!"
+                }); // this.toastService.openSnackBar("Vender Archived Successfully!!!");
+
 
                 _this11.getAllParties();
               });
@@ -2839,7 +2919,11 @@
             var pattern = /\.(xlsx|xls)$/i; // Pattern to match ".xlsx" or ".xls" extension
 
             if (!pattern.test(this.excelFileUpload.name)) {
-              this.toastService.openErrorSnackBar("Invalid format. Please select an Excel file.");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Invalid Format. Please Select An Excel File."
+              }); // this.toastService.openErrorSnackBar("Invalid format. Please select an Excel file.");
+
               return;
             }
 
@@ -2847,7 +2931,11 @@
               var formdata = new FormData();
               formdata.set("file", this.excelFileUpload);
               this.partyService.postBulkParty(formdata, this.currentUser.id).then(function (res) {
-                _this12.toastService.openSnackBar("Excel Uploaded Successfully");
+                // this.toastService.openSnackBar("Excel Uploaded Successfully")
+                _this12.toastService.toastMsg({
+                  title: "Success",
+                  content: "Excel Uploaded Successfully!!!"
+                });
 
                 _this12.getAllParties(); // window.location.reload() 
 
@@ -2856,11 +2944,23 @@
                 _this12.uploadFileInput.nativeElement.value = '';
 
                 if (err.error.status === "409") {
-                  _this12.toastService.openErrorSnackBar("List Of Contact Already Exists");
+                  _this12.toastService.toastMsg({
+                    title: "Error",
+                    content: "List Of Contact Already Exists"
+                  }); // this.toastService.openErrorSnackBar("List Of Contact Already Exists");
+
                 } else if (err.error.expose) {
-                  _this12.toastService.openErrorSnackBar(_this12.titleCasePipe.transform(err.error.error_message));
+                  _this12.toastService.toastMsg({
+                    title: "Error",
+                    content: _this12.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this12.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this12.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -3130,7 +3230,11 @@
             this.partyService.multiplePartyDel(requestBody, this.currentUser.id).then(function (result) {
               _this15.getAllParties();
 
-              _this15.toastService.openSnackBar("Vendors Archived Successfully!!!");
+              _this15.toastService.toastMsg({
+                title: "Success",
+                content: "Vendors Archived Successfully!!!"
+              }); // this.toastService.openSnackBar("Vendors Archived Successfully!!!");
+
 
               _this15.showDeleteButton = false;
               _this15.showUnarchiveButton = false;
@@ -3139,9 +3243,17 @@
               _this15.checkSelect = false; // Reset the checkbox state in the header
             }, function (err) {
               if (err.error.expose) {
-                _this15.toastService.openErrorSnackBar(_this15.titleCasePipe.transform(err.error.error_message));
+                _this15.toastService.toastMsg({
+                  title: "Error",
+                  content: _this15.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this15.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this15.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -3162,7 +3274,11 @@
             this.partyService.unArchiveMultipleParties(requestBody, this.currentUser.id).then(function (result) {
               _this16.getAllParties();
 
-              _this16.toastService.openSnackBar("Vendors Unarchived Successfully!!!");
+              _this16.toastService.toastMsg({
+                title: "Success",
+                content: "Vendors Unarchived Successfully!!!"
+              }); // this.toastService.openSnackBar("Vendors Unarchived Successfully!!!");
+
 
               _this16.showDeleteButton = false;
               _this16.showUnarchiveButton = false;
@@ -3171,9 +3287,17 @@
               _this16.checkSelect = false; // Reset the checkbox state in the header
             }, function (err) {
               if (err.error.expose) {
-                _this16.toastService.openErrorSnackBar(_this16.titleCasePipe.transform(err.error.error_message));
+                _this16.toastService.toastMsg({
+                  title: "Error",
+                  content: _this16.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this16.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this16.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           } // showUnarchiveButton(): boolean {
@@ -4033,9 +4157,17 @@
               });
             }, function (err) {
               if (err.error.expose) {
-                _this17.toastService.openErrorSnackBar(_this17.titleCasePipe.transform(err.error.error_message));
+                _this17.toastService.toastMsg({
+                  title: "Error",
+                  content: _this17.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this17.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this17.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -4420,6 +4552,8 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](5);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](6, "number");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -4430,7 +4564,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r8.openingBalance);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind2"](6, 1, ctx_r8.openingBalance, "1.2-2"), "");
         }
       }
 
@@ -4578,7 +4712,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "div", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](19, ViewPartyComponent_div_8_div_19_Template, 6, 1, "div", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](19, ViewPartyComponent_div_8_div_19_Template, 7, 4, "div", 10);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -5238,7 +5372,7 @@
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.DatePipe],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.DecimalPipe, _angular_common__WEBPACK_IMPORTED_MODULE_5__.DatePipe],
         styles: [".btn-cancel[_ngcontent-%COMP%] {\n  color: #000;\n  background: #fff;\n  border: 1px solid #265AE8;\n  border-radius: 8px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpZXctcGFydHkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0FBQ0oiLCJmaWxlIjoidmlldy1wYXJ0eS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idG4tY2FuY2Vse1xyXG4gICAgY29sb3IgOiAjMDAwO1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICMyNjVBRTg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgfSJdfQ== */"]
       });
       /***/

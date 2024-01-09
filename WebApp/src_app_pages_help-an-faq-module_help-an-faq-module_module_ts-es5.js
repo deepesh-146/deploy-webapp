@@ -914,7 +914,11 @@
             if (this.conactForm.valid) {
               this.ContactUsServiceService.contactUspost(body, this.currentUser.id).then(function (res) {
                 if (res) {
-                  _this.toastService.openSnackBar("Ticket Raised Successfully !!!");
+                  _this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Ticket Raised Successfully!!!"
+                  }); // this.toastService.openSnackBar("Ticket Raised Successfully !!!");
+
 
                   _this.router.navigate(["/pages/contactlist-page"]);
 
@@ -922,9 +926,17 @@
                 }
               }, function (err) {
                 if (err.error.expose) {
-                  _this.toastService.openErrorSnackBar(_this.titleCasePipe.transform(err.error.error_message));
+                  _this.toastService.toastMsg({
+                    title: "Error",
+                    content: _this.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }

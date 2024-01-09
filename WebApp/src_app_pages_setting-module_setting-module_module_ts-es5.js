@@ -991,8 +991,8 @@
             console.log(this.reciptform.controls.companytextsize.value, "", this.reciptform.controls.printextsize.value, "", this.reciptform.controls.termsandcondition.value, "", this.selectedColor);
 
             if (this.reciptform.invalid) {
-              console.log(this.reciptform);
-              this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+              console.log(this.reciptform); // this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+
               return false;
             } else {
               var body = {
@@ -1011,12 +1011,20 @@
                 console.log("res", res);
 
                 if (res) {
-                  _this2.toastService.openSnackBar("Invoice Profile data Added Successfully");
+                  _this2.toastService.toastMsg({
+                    title: "Success",
+                    content: "Invoice Profile Data Added Successfully!!!"
+                  }); // this.toastService.openSnackBar("Invoice Profile data Added Successfully");
+
 
                   _this2.getInvoicesetting();
                 }
               }, function (err) {
-                _this2.toastService.openErrorSnackBar("Please Try Again Later!!!");
+                _this2.toastService.toastMsg({
+                  title: "Error",
+                  content: "Please Try Again Later!!!"
+                }); // this.toastService.openErrorSnackBar("Please Try Again Later!!!")
+
               });
             }
           }
@@ -1029,7 +1037,11 @@
 
             if (this.reciptform.invalid) {
               console.log(this.reciptform);
-              this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+
               return false;
             } else {
               var updatebody = {
@@ -1048,12 +1060,20 @@
                 console.log("res", res);
 
                 if (res) {
-                  _this3.toastService.openSnackBar("Invoice Profile data Updated Successfully");
+                  _this3.toastService.toastMsg({
+                    title: "Success",
+                    content: "Invoice Profile Data Updated Successfully!!!"
+                  }); // this.toastService.openSnackBar("Invoice Profile data Updated Successfully");
+
 
                   _this3.getInvoicesetting();
                 }
               }, function (err) {
-                _this3.toastService.openErrorSnackBar("Please Try Again Later!!!");
+                _this3.toastService.toastMsg({
+                  title: "Error",
+                  content: "Please Try Again Later!!!"
+                }); // this.toastService.openErrorSnackBar("Please Try Again Later!!!")
+
               });
             }
           }
@@ -1138,12 +1158,20 @@
             };
             this.saleInvoiceService.postInvoiceNumber(data).then(function (res) {
               if (res) {
-                _this4.toastService.openSnackBar("Invoice Number Added Successfully");
+                _this4.toastService.toastMsg({
+                  title: "Success",
+                  content: "Invoice Number Added Successfully!!!"
+                }); // this.toastService.openSnackBar("Invoice Number Added Successfully")
+
 
                 _this4.getInvoiceNumber();
               }
             }, function (err) {
-              _this4.toastService.openErrorSnackBar("Please Try Again Later!!!");
+              _this4.toastService.toastMsg({
+                title: "Error",
+                content: "Please Try Again Later!!!"
+              }); // this.toastService.openErrorSnackBar("Please Try Again Later!!!")
+
             });
           }
           /**
@@ -1172,12 +1200,20 @@
             };
             this.saleInvoiceService.updateInvoiceNumber(data, this.FormatId).then(function (res) {
               if (res) {
-                _this5.toastService.openSnackBar("Invoice Number Updated Succesfully");
+                _this5.toastService.toastMsg({
+                  title: "Success",
+                  content: "Invoice Number Updated Successfully!!!"
+                }); // this.toastService.openSnackBar("Invoice Number Updated Succesfully")
+
 
                 _this5.getInvoiceNumber();
               }
             }, function (err) {
-              _this5.toastService.openErrorSnackBar("Please Try Again Later!!!");
+              _this5.toastService.toastMsg({
+                title: "Error",
+                content: "Please Try Again Later!!!"
+              }); // this.toastService.openErrorSnackBar("Please Try Again Later!!!")
+
             });
           }
           /**
@@ -1375,7 +1411,11 @@
 
             if (this.eamilSetupForm.invalid) {
               console.log(this.reciptform);
-              this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+
               return false;
             } else {
               var body = {
@@ -1386,12 +1426,24 @@
                 "userId": this.currentUser.id
               };
               this.emailService.postEmailSetup(body).then(function (res) {
-                _this8.toastService.openSnackBar("Eamil Setup Added Successfully");
+                _this8.toastService.toastMsg({
+                  title: "Success",
+                  content: "Email Setup Added Successfully!!!"
+                }); // this.toastService.openSnackBar("Eamil Setup Added Successfully")
+
               }, function (err) {
                 if (err.error.expose) {
-                  _this8.toastService.openErrorSnackBar(_this8.titleCasePipe.transform(err.error.error_message));
+                  _this8.toastService.toastMsg({
+                    title: "Error",
+                    content: _this8.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this8.toastService.openErrorSnackBar("Something Went To Wrong");
+                  _this8.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went To Wrong"
+                  }); // this.toastService.openErrorSnackBar("Something Went To Wrong");
+
                 }
               });
             }
@@ -2081,7 +2133,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](180, "h5", 78);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](181, "Select Type of Calander");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](181, "Select Type of Calender");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -2111,7 +2163,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](189, "mat-option", 83);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](190, "Calander");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](190, "Calender");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 

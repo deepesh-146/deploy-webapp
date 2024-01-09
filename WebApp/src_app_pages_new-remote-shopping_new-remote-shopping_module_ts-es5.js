@@ -387,9 +387,17 @@
               _this3.orderDataItemsDetails = res.data.sales_products;
             }, function (err) {
               if (err.error.expose) {
-                _this3.toastService.openErrorSnackBar(_this3.titleCasePipe.transform(err.error.error_message));
+                _this3.toastService.toastMsg({
+                  title: "Error",
+                  content: _this3.titleCasePipe.transform(err.error.error_message)
+                }); //  this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this3.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this3.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong"
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -1184,7 +1192,11 @@
             console.log(this.searchKey);
 
             if (this.searchKey == "") {
-              this.toastService.openErrorSnackBar("Please enter Party name!!!");
+              // this.toastService.openErrorSnackBar("Please enter Party name!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Please Enter Party Name!!!"
+              });
               this.remoteShopService.getRemoteOrdersearch({}, this.currentUser.id, 0, searchkey).then(function (res) {
                 console.log(res);
                 _this6.orderData = res.data;
@@ -1197,13 +1209,27 @@
                 if (_this6.orderData1.length > 0) {
                   _this6.orderData = res.data; // this.toastService.openSnackBar("Record Found Successfully!!!");
                 } else {
-                  _this6.toastService.openErrorSnackBar("Record Not Found!!!");
+                  _this6.toastService.toastMsg({
+                    title: "Error",
+                    content: "Record Not Found!!!"
+                  }); // this.toastService.openErrorSnackBar("Record Not Found!!!");
+
                 }
               }, function (err) {
                 if (err.error.expose) {
-                  _this6.toastService.openErrorSnackBar(_this6.titleCasePipe.transform(err.error.error_message));
+                  _this6.toastService.toastMsg({
+                    title: "Error",
+                    content: err.error.error_message
+                  }); // this.toastService.openErrorSnackBar(
+                  //   this.titleCasePipe.transform(err.error.error_message)
+                  // );
+
                 } else {
-                  _this6.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this6.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -1257,7 +1283,7 @@
         selectors: [["app-remote-order"]],
         decls: 38,
         vars: 9,
-        consts: [[1, "container-fluid"], ["id", "showoptionHide", 1, "row", "headerButtons"], [1, "flex-item", "searchBar", "mb-3"], ["appearance", "outline", 1, "example-full-width", 2, "height", "35px"], ["type", "text", "matInput", "", "placeholder", "Party Name", 3, "ngModel", "ngModelChange", "change"], [1, "iconcalender", "p-1"], [1, "flex-item", "dateRange", "mb-3"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "14px", "height", "35px"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "Receipt Date.", "id", "datePicker", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "maxDate", "ngModel", "bsConfig", "ngModelOptions", "ngModelChange", "click"], [1, "row", 2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "table-bordered", "fs--1", "mb-0"], [1, "text-900", "text-center"], [1, "btn-reveal-trigger"], [1, "text-nowrap"], [1, "text-center"], ["style", "color: #676398 !important", 3, "ngStyle", 4, "ngFor", "ngForOf"], [4, "ngIf"], [2, "color", "#676398 !important", 3, "ngStyle"], [2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-center", 2, "vertical-align", "middle"], [2, "cursor", "pointer", 3, "click"], [1, "fas", "fa-receipt"], ["colspan", "12"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
+        consts: [[1, "container-fluid"], ["id", "showoptionHide", 1, "row", "headerButtons"], [1, "flex-item", "searchBar", "mb-3"], ["appearance", "outline", 1, "example-full-width", 2, "height", "35px"], ["type", "text", "matInput", "", "placeholder", "Vendor Name", 3, "ngModel", "ngModelChange", "change"], [1, "iconcalender", "p-1"], [1, "flex-item", "dateRange", "mb-3"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "14px", "height", "35px"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "Receipt Date.", "id", "datePicker", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "maxDate", "ngModel", "bsConfig", "ngModelOptions", "ngModelChange", "click"], [1, "row", 2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "table-bordered", "fs--1", "mb-0"], [1, "text-900", "text-center"], [1, "btn-reveal-trigger"], [1, "text-nowrap"], [1, "text-center"], ["style", "color: #676398 !important", 3, "ngStyle", 4, "ngFor", "ngForOf"], [4, "ngIf"], [2, "color", "#676398 !important", 3, "ngStyle"], [2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-center", 2, "vertical-align", "middle"], [2, "cursor", "pointer", 3, "click"], [1, "fas", "fa-receipt"], ["colspan", "12"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
         template: function RemoteOrderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
@@ -3215,7 +3241,15 @@
             gstIn: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.pattern("^[0-9]{2}[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}[1-9A-Za-z]{1}[Zz][0-9A-Za-z]{1}$"), _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.minLength(15), _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.maxLength(15)]],
             partyName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
             mobile: [, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.minLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.maxLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.pattern("^[0-9]*$"), _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
-            email: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"), _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.email, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            // email: [
+            //   null,
+            //   [
+            //     Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"),
+            //     Validators.email,
+            //     Validators.required,
+            //   ],
+            // ],
+            email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.email, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")]],
             billingAddress: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
             shippingAddress: [],
             balanceStatus: ["1"],
@@ -3574,13 +3608,23 @@
             this.submitted = true;
 
             if (this.todaysDate == "") {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               console.log("Sssssss", this.SaleInvoiceForm.controls.shippedFrom.value);
 
               if (this.productData.length < 1) {
-                this.toastService.openErrorSnackBar("Please Add At Least One Product To Proceed!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Please Add At Least One Product To Proceed!!!"
+                }); // this.toastService.openErrorSnackBar(
+                //   "Please Add At Least One Product To Proceed!!!"
+                // );
+
                 return false;
               }
 
@@ -3619,7 +3663,11 @@
                 if (res) {
                   _this13.sendArray = [];
 
-                  _this13.toastService.openSnackBar("Sale Invoice Added Successfully");
+                  _this13.toastService.toastMsg({
+                    title: "Success",
+                    content: "Invoice Number Updated Successfully!!!"
+                  }); // this.toastService.openSnackBar("Sale Invoice Added Successfully");
+
                 }
 
                 _this13.router.navigate(["/pages/sale-invoice-list"]);
@@ -3627,9 +3675,19 @@
                 _this13.sendArray = [];
 
                 if (err.error.expose) {
-                  _this13.toastService.openErrorSnackBar(_this13.titleCasePipe.transform(err.error.error_message));
+                  // this.toastService.openErrorSnackBar(
+                  //   this.titleCasePipe.transform(err.error.error_message)
+                  // );
+                  _this13.toastService.toastMsg({
+                    title: "Error",
+                    content: err.error.error_message
+                  });
                 } else {
-                  _this13.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this13.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -3699,16 +3757,28 @@
 
             if (this.isShowGstFields) {
               if (this.PartyForm.controls.billingAddress.value == "" || this.PartyForm.controls.partyName.value == "" || this.PartyForm.controls.mobile.value == "" || this.PartyForm.controls.email.value == "") {
-                this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Fill All Required Fields."
+                });
                 return false;
               } else if (this.PartyForm.controls.billingAddress.value == "" && this.PartyForm.controls.partyName.value == "" && this.PartyForm.controls.mobile.value == "" && this.PartyForm.controls.email.value == "") {
-                this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Fill All Required Fields."
+                });
               } else {
                 this.addPartyObject();
               }
             } else {
               if (this.PartyForm.controls.billingAddress.value == "" || this.PartyForm.controls.partyName.value == "" || this.PartyForm.controls.mobile.value == "" || this.PartyForm.controls.email.value == "" || this.PartyForm.controls.gstType.value == "" || this.PartyForm.controls.gstIn.value == "") {
-                this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Fill All Required Fields."
+                });
                 return false;
               } else {
                 this.addPartyObject();
@@ -3748,7 +3818,11 @@
               _this16.paramID = res.data.id;
 
               if (res) {
-                _this16.toastService.openSnackBar("Party Added Successfully");
+                _this16.toastService.toastMsg({
+                  title: "Success",
+                  content: "Party Added Successfully!!!"
+                }); // this.toastService.openSnackBar("Party Added Successfully")
+
 
                 _this16.PartyForm.reset();
 
@@ -3760,9 +3834,17 @@
               }
             }, function (err) {
               if (err.error.expose) {
-                _this16.toastService.openErrorSnackBar(_this16.titleCasePipe.transform(err.error.error_message));
+                _this16.toastService.toastMsg({
+                  title: "Error",
+                  content: _this16.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this16.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this16.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -3822,13 +3904,25 @@
               if (res) {
                 _this18.showPrintBtn = true;
 
-                _this18.toastService.openSnackBar("Receipt Generated!!!");
+                _this18.toastService.toastMsg({
+                  title: "Success",
+                  content: "Receipt Generated!!!"
+                }); // this.toastService.openSnackBar("Receipt Generated!!!");
+
               }
             }, function (err) {
               if (err.error.status == 406) {
-                _this18.toastService.openErrorSnackBar(err.error.error_message);
+                _this18.toastService.toastMsg({
+                  title: "Error",
+                  content: err.error.error_message
+                }); // this.toastService.openErrorSnackBar(err.error.error_message);
+
               } else {
-                _this18.toastService.openErrorSnackBar("Internal Server Error");
+                _this18.toastService.toastMsg({
+                  title: "Error",
+                  content: "Internal Server Error"
+                }); // this.toastService.openErrorSnackBar("Internal Server Error");
+
               }
             });
           }

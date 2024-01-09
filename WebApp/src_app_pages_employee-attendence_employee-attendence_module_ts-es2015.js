@@ -242,7 +242,11 @@ class EmployeeAttendenceFromComponent {
     postAttendence() {
         this.submitted = true;
         if (this.AttendanceForm.invalid) {
-            this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields.",
+            });
+            // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
             return false;
         }
         else {
@@ -258,21 +262,37 @@ class EmployeeAttendenceFromComponent {
                 this.EmployeeAttendenceService.addAttendenceDetails(Body).then((res) => {
                     if (res.success) {
                         this.commonService.notifyDataAdded();
-                        this.toastService.openSnackBar("Employee Attendence Added Successfully");
+                        this.toastService.toastMsg({
+                            title: "Success",
+                            content: "Employee Attendence Added Successfully!!!",
+                        });
+                        // this.toastService.openSnackBar("Employee Attendence Added Successfully");
                         this.AttendanceForm.reset();
                         this.submitted = false;
                     }
                 }, (err) => {
                     if (err.error.expose) {
-                        this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                        this.toastService.toastMsg({
+                            title: "Error",
+                            content: this.titleCasePipe.transform(err.error.error_message),
+                        });
+                        // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
                     }
                     else {
-                        this.toastService.openErrorSnackBar("Something Went Wrong.");
+                        this.toastService.toastMsg({
+                            title: "Error",
+                            content: "Something Went Wrong.",
+                        });
+                        // this.toastService.openErrorSnackBar("Something Went Wrong.");
                     }
                 });
             }
             else {
-                this.toastService.openErrorSnackBar("In time must be less than Out time!!!");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "In Time Must Be Less Than Out Time!!!",
+                });
+                // this.toastService.openErrorSnackBar("In time must be less than Out time!!!");
             }
         }
     }
@@ -282,10 +302,18 @@ class EmployeeAttendenceFromComponent {
             this.userId = res.data.parentId;
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
@@ -317,10 +345,18 @@ class EmployeeAttendenceFromComponent {
             });
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }

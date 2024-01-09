@@ -462,16 +462,28 @@ class QuestionFormComponent {
         if (this.conactForm.valid) {
             this.ContactUsServiceService.contactUspost(body, this.currentUser.id).then((res) => {
                 if (res) {
-                    this.toastService.openSnackBar("Ticket Raised Successfully !!!");
+                    this.toastService.toastMsg({
+                        title: "Success",
+                        content: "Ticket Raised Successfully!!!",
+                    });
+                    // this.toastService.openSnackBar("Ticket Raised Successfully !!!");
                     this.router.navigate(["/pages/contactlist-page"]);
                     this.dialogRef.close();
                 }
             }, (err) => {
                 if (err.error.expose) {
-                    this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: this.titleCasePipe.transform(err.error.error_message),
+                    });
+                    // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
                 }
                 else {
-                    this.toastService.openErrorSnackBar("Something Went Wrong.");
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "Something Went Wrong.",
+                    });
+                    // this.toastService.openErrorSnackBar("Something Went Wrong.");
                 }
             });
         }

@@ -49822,7 +49822,11 @@
             var _this374 = this;
 
             if (this.noteForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -49832,14 +49836,26 @@
               this.crmService.postNote(Body, this.leadId).then(function (res) {
                 _this374.commonService.notifyDataAdded();
 
-                _this374.toastService.openSnackBar("Note Added Successfully!!!");
+                _this374.toastService.toastMsg({
+                  title: "Success",
+                  content: "Note Added Successfully!!!"
+                }); // this.toastService.openSnackBar("Note Added Successfully!!!");
+
 
                 _this374.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this374.toastService.openErrorSnackBar(_this374.titleCasePipe.transform(err.error.error_message));
+                  _this374.toastService.toastMsg({
+                    title: "Error",
+                    content: _this374.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this374.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this374.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong"
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -50181,7 +50197,11 @@
             var _this376 = this;
 
             if (this.AddTaskForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -50199,14 +50219,26 @@
               this.crmService.postTask(Body, this.leadId).then(function (res) {
                 _this376.commonService.notifyDataAdded();
 
-                _this376.toastService.openSnackBar("Task Added Successfully!!!");
+                _this376.toastService.toastMsg({
+                  title: "Success",
+                  content: "Task Added Successfully!!!"
+                }); // this.toastService.openSnackBar("Task Added Successfully!!!");
+
 
                 _this376.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this376.toastService.openErrorSnackBar(_this376.titleCasePipe.transform(err.error.error_message));
+                  _this376.toastService.toastMsg({
+                    title: "Error",
+                    content: _this376.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this376.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this376.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -50747,7 +50779,11 @@
             var _this377 = this;
 
             if (this.emailForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -50759,14 +50795,26 @@
               this.crmService.sendEmail(Body).then(function (res) {
                 _this377.commonService.notifyDataAdded();
 
-                _this377.toastService.openSnackBar("Log Mail Added Successfully!!!");
+                _this377.toastService.toastMsg({
+                  title: "Success",
+                  content: "Log Mail Added Successfully!!!"
+                }); // this.toastService.openSnackBar("Log Mail Added Successfully!!!");
+
 
                 _this377.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this377.toastService.openErrorSnackBar(_this377.titleCasePipe.transform(err.error.error_message));
+                  _this377.toastService.toastMsg({
+                    title: "Error",
+                    content: _this377.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this377.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this377.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong"
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -51750,7 +51798,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Email is required! ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Enter a valid email address. ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         }
@@ -51760,7 +51808,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Email must be a valid email address. ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Enter a valid email address. ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         }
@@ -51937,7 +51985,7 @@
             console.log("this.editleadId", this.editleadId);
             this.editLeadForm = this.formBuilder.group({
               firstName: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-              email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.email]],
+              email: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.email]],
               mobile: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.minLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.maxLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
               address: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               pincode: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
@@ -52033,7 +52081,11 @@
 
             if (this.editLeadForm.invalid) {
               console.log("this.LeadForm", this.editLeadForm);
-              this.toastService.openErrorSnackBar("Fill all required fields.");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Fill all required fields.")
+
               return false;
             } else {
               var data = {
@@ -52078,7 +52130,11 @@
               if (this.coverImageChange == true) {
                 this.crmservice.updateLead(data, this.editleadId).then(function (res) {
                   if (res) {
-                    _this381.toastService.openSnackBar("Update Lead Successfully");
+                    _this381.toastService.toastMsg({
+                      title: "Success",
+                      content: "Update Lead Successfully!!!"
+                    }); // this.toastService.openSnackBar("Update Lead Successfully");
+
 
                     _this381.router.navigate(["/pages/crm/lead-list"]);
 
@@ -52088,15 +52144,27 @@
                   }
                 }, function (err) {
                   if (err.error.expose) {
-                    _this381.toastService.openErrorSnackBar(_this381.titleCasePipe.transform(err.error.error_message));
+                    _this381.toastService.toastMsg({
+                      title: "Error",
+                      content: _this381.titleCasePipe.transform(err.error.error_message)
+                    }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                   } else {
-                    _this381.toastService.openErrorSnackBar("Something Went To Wrong");
+                    _this381.toastService.toastMsg({
+                      title: "Error",
+                      content: "Something Went To Wrong"
+                    }); // this.toastService.openErrorSnackBar("Something Went To Wrong");
+
                   }
                 });
               } else {
                 this.crmservice.updateLead(nodata, this.editleadId).then(function (res) {
                   if (res) {
-                    _this381.toastService.openSnackBar("Update Lead Successfully");
+                    _this381.toastService.toastMsg({
+                      title: "Success",
+                      content: "Update Lead Successfully!!!"
+                    }); // this.toastService.openSnackBar("Update Lead Successfully");
+
 
                     _this381.router.navigate(["/pages/crm/lead-list"]);
 
@@ -52106,9 +52174,17 @@
                   }
                 }, function (err) {
                   if (err.error.expose) {
-                    _this381.toastService.openErrorSnackBar(_this381.titleCasePipe.transform(err.error.error_message));
+                    _this381.toastService.toastMsg({
+                      title: "Error",
+                      content: _this381.titleCasePipe.transform(err.error.error_message)
+                    }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                   } else {
-                    _this381.toastService.openErrorSnackBar("Something Went To Wrong");
+                    _this381.toastService.toastMsg({
+                      title: "Error",
+                      content: "Something Went Wrong."
+                    }); // this.toastService.openErrorSnackBar("Something Went To Wrong");
+
                   }
                 });
               }
@@ -52125,7 +52201,11 @@
             this.crmservice.deleteleadProfileImg({}, this.editleadId).then(function (res) {
               console.log(res);
 
-              _this382.toastService.openSnackBar("Image deleted successfully"); // this.getRoleList();
+              _this382.toastService.toastMsg({
+                title: "Success",
+                content: "Image Deleted Successfully!!!"
+              }); // this.toastService.openSnackBar("Image deleted successfully");
+              // this.getRoleList();
 
 
               _this382.profilePic = '';
@@ -52180,7 +52260,11 @@
                         break;
                       }
 
-                      this.toastService.openErrorSnackBar("Invalid format. Please select an image file.");
+                      this.toastService.toastMsg({
+                        title: "Error",
+                        content: "Invalid format. Please select an image file."
+                      }); // this.toastService.openErrorSnackBar("Invalid format. Please select an image file.");
+
                       return _context46.abrupt("return");
 
                     case 8:
@@ -52205,14 +52289,22 @@
                         };
 
                         if (file == null) {
-                          this.toastService.openErrorSnackBar("Please Select Image To Upload.");
+                          this.toastService.toastMsg({
+                            title: "Error",
+                            content: "Please Select Image To Upload"
+                          }); // this.toastService.openErrorSnackBar("Please Select Image To Upload.");
                         } else {
                           formdata.set("upload", file);
+                          e.srcElement.value = "";
                           this.rolesPermissionsService.uploadImage(formdata).then(function (res) {
                             _this383.profilePicUrl = res.data.location;
                             _this383.isProfilePicSelects = true;
 
-                            _this383.toastService.openSnackBar("Image Uploaded Successfully");
+                            _this383.toastService.toastMsg({
+                              title: "Success",
+                              content: "Image Uploaded Successfully!!!"
+                            }); // this.toastService.openSnackBar("Image Uploaded Successfully");
+
                           });
                           this.loaded = true;
                         }
@@ -52781,11 +52873,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.f.email.touched) && (ctx.f.email.errors == null ? null : ctx.f.email.errors.required));
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.f.email.touched) && (ctx.f.email.errors == null ? null : ctx.f.email.errors.pattern) && (ctx.f.email.errors == null ? null : ctx.f.email.errors.pattern));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.f.email.touched) && (ctx.f.email.errors == null ? null : ctx.f.email.errors.pattern));
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.f.email.touched) && (ctx.f.email.errors == null ? null : ctx.f.email.errors.required));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](7);
 
@@ -53249,7 +53341,11 @@
             console.log("****", this.searchKey);
 
             if (this.searchKey == "") {
-              this.toastService.openErrorSnackBar("Please Enter Valid search Name, Email, Mobile Number!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Please Enter Valid Search Name, Email, Mobile Number!!!"
+              }); // this.toastService.openErrorSnackBar("Please Enter Valid search Name, Email, Mobile Number!!!");
+
               this.crmservice.getsearchAllLeadList({}, this.currentUser.id, this.partyPageSize, this.currentPageNo + 1, this.searchKey).then(function (res) {
                 console.log("lead list data search", res);
                 _this386.leadlistData = res.data.pageData;
@@ -53260,9 +53356,17 @@
                 _this386.leadlistData = res.data.pageData; // this.toastService.openSnackBar("Product Found Successfully!!!");
               }, function (err) {
                 if (err.error.expose) {
-                  _this386.toastService.openErrorSnackBar(_this386.titleCasePipe.transform(err.error.error_message));
+                  _this386.toastService.toastMsg({
+                    title: "Error",
+                    content: _this386.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this386.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this386.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -53318,7 +53422,11 @@
             var _this387 = this;
 
             this.crmservice.deleteleadById({}, this.deleletLeadId).then(function (res) {
-              _this387.toastService.openSnackBar("Lead Deleted Successfully!!!");
+              // this.toastService.openSnackBar("Lead Deleted Successfully!!!");
+              _this387.toastService.toastMsg({
+                title: "Success",
+                content: "Lead Deleted Successfully!!!"
+              });
 
               _this387.getLeadList();
             });
@@ -53334,18 +53442,34 @@
               var formdata = new FormData();
               formdata.set("file", this.excelFileUpload);
               this.crmservice.postBulklead(formdata, this.currentUser.id).then(function (res) {
-                _this388.toastService.openSnackBar("Excel Uploaded Successfully");
+                _this388.toastService.toastMsg({
+                  title: "Success",
+                  content: "Excel Uploaded Successfully!!!"
+                }); // this.toastService.openSnackBar("Excel Uploaded Successfully")
+
 
                 _this388.getLeadList();
 
                 window.location.reload();
               }, function (err) {
                 if (err.error.expose) {
-                  _this388.toastService.openErrorSnackBar(_this388.titleCasePipe.transform(err.error.error_message));
+                  _this388.toastService.toastMsg({
+                    title: "Error",
+                    content: _this388.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else if (err.error.status == "409" && err.error.expose == false) {
-                  _this388.toastService.openErrorSnackBar("List of Product Already Exists");
+                  _this388.toastService.toastMsg({
+                    title: "Error",
+                    content: "List Of Product Already Exists"
+                  }); // this.toastService.openErrorSnackBar("List of Product Already Exists");
+
                 } else {
-                  _this388.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this388.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -53446,7 +53570,11 @@
             this.crmservice.deletemultileadById(request, this.currentUser.id).then(function (res) {
               if (res) {
                 // this.goodsData = res.data.pageData;
-                _this390.toastService.openSnackBar("Lead Deleted Successfully!!!");
+                _this390.toastService.toastMsg({
+                  title: "Success",
+                  content: "Lead Deleted Successfully!!!"
+                }); // this.toastService.openSnackBar("Lead Deleted Successfully!!!");
+
 
                 _this390.archiveIconfalse = false;
                 _this390.allSelect = false;
@@ -53459,9 +53587,17 @@
               }
             }, function (err) {
               if (err.error.expose) {
-                _this390.toastService.openErrorSnackBar(_this390.titleCasePipe.transform(err.error.error_message));
+                _this390.toastService.toastMsg({
+                  title: "Error",
+                  content: _this390.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this390.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this390.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -53981,7 +54117,11 @@
 
             if (this.AddEmailForm.invalid) {
               console.log("eee", this.AddEmailForm);
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -53995,16 +54135,28 @@
                 "images": []
               };
               this.crmService.postEmail(Body, this.leadId).then(function (res) {
-                _this391.commonService.notifyDataAdded();
+                _this391.commonService.notifyDataAdded(); // this.toastService.openSnackBar("Log Mail Added Successfully!!!");
 
-                _this391.toastService.openSnackBar("Log Mail Added Successfully!!!");
+
+                _this391.toastService.toastMsg({
+                  title: "Success",
+                  content: "Log Mail Added Successfully!!!"
+                });
 
                 _this391.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this391.toastService.openErrorSnackBar(_this391.titleCasePipe.transform(err.error.error_message));
+                  _this391.toastService.toastMsg({
+                    title: "Error",
+                    content: _this391.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this391.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this391.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -54542,7 +54694,11 @@
             var _this393 = this;
 
             if (this.AddlogMeetingForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -54557,14 +54713,27 @@
               this.crmService.PostMeetingLogAdd(Body, this.leadId).then(function (res) {
                 _this393.commonService.notifyDataAdded();
 
-                _this393.toastService.openSnackBar("Meeting Log Added Successfully!!!");
+                _this393.toastService.toastMsg({
+                  title: "Success",
+                  content: "Meeting Log Added Successfully!!!"
+                }); // 
+                // this.toastService.openSnackBar("Meeting Log Added Successfully!!!");
+
 
                 _this393.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this393.toastService.openErrorSnackBar(_this393.titleCasePipe.transform(err.error.error_message));
+                  _this393.toastService.toastMsg({
+                    title: "Error",
+                    content: _this393.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this393.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this393.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -56716,7 +56885,11 @@
             var _this410 = this;
 
             if (this.AddTaskForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -56734,14 +56907,26 @@
               this.crmService.updateEmail(Body, this.taskId).then(function (res) {
                 _this410.commonService.notifyDataAdded();
 
-                _this410.toastService.openSnackBar("Email Updated Successfully!!!");
+                _this410.toastService.toastMsg({
+                  title: "Success",
+                  content: "Email Updated Successfully!!!"
+                }); // this.toastService.openSnackBar("Email Updated Successfully!!!");
+
 
                 _this410.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this410.toastService.openErrorSnackBar(_this410.titleCasePipe.transform(err.error.error_message));
+                  _this410.toastService.toastMsg({
+                    title: "Error",
+                    content: _this410.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this410.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this410.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -57203,7 +57388,11 @@
             var _this412 = this;
 
             if (this.noteForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -57213,14 +57402,26 @@
               this.crmService.updateNote(Body, this.noteId).then(function (res) {
                 _this412.commonService.notifyDataAdded();
 
-                _this412.toastService.openSnackBar("Note updated Successfully!!!");
+                _this412.toastService.toastMsg({
+                  title: "Success",
+                  content: "Note Updated Successfully!!!"
+                }); // this.toastService.openSnackBar("Note updated Successfully!!!");
+
 
                 _this412.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this412.toastService.openErrorSnackBar(_this412.titleCasePipe.transform(err.error.error_message));
+                  _this412.toastService.toastMsg({
+                    title: "Error",
+                    content: _this412.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this412.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this412.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -57591,7 +57792,11 @@
             var _this415 = this;
 
             if (this.AddTaskForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              });
               return false;
             } else {
               var Body = {
@@ -57609,14 +57814,26 @@
               this.crmService.updateTask(Body, this.taskId).then(function (res) {
                 _this415.commonService.notifyDataAdded();
 
-                _this415.toastService.openSnackBar("Task Updated Successfully!!!");
+                _this415.toastService.toastMsg({
+                  title: "Success",
+                  content: "Task Updated Successfully!!!"
+                }); // this.toastService.openSnackBar("Task Updated Successfully!!!");
+
 
                 _this415.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this415.toastService.openErrorSnackBar(_this415.titleCasePipe.transform(err.error.error_message));
+                  _this415.toastService.toastMsg({
+                    title: "Error",
+                    content: _this415.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this415.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this415.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }

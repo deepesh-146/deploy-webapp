@@ -461,7 +461,7 @@ class InvoiceReceiptUIComponent {
         console.log(this.reciptform.controls.companytextsize.value, "", this.reciptform.controls.printextsize.value, "", this.reciptform.controls.termsandcondition.value, "", this.selectedColor);
         if (this.reciptform.invalid) {
             console.log(this.reciptform);
-            this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+            // this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
             return false;
         }
         else {
@@ -480,11 +480,19 @@ class InvoiceReceiptUIComponent {
             this.saleInvoiceService.postreciptprofiledata(body).then((res) => {
                 console.log("res", res);
                 if (res) {
-                    this.toastService.openSnackBar("Invoice Profile data Added Successfully");
+                    this.toastService.toastMsg({
+                        title: "Success",
+                        content: "Invoice Profile Data Added Successfully!!!",
+                    });
+                    // this.toastService.openSnackBar("Invoice Profile data Added Successfully");
                     this.getInvoicesetting();
                 }
             }, (err) => {
-                this.toastService.openErrorSnackBar("Please Try Again Later!!!");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Please Try Again Later!!!",
+                });
+                // this.toastService.openErrorSnackBar("Please Try Again Later!!!")
             });
         }
     }
@@ -492,7 +500,11 @@ class InvoiceReceiptUIComponent {
         console.log(this.reciptform.controls.companytextsize.value, "", this.reciptform.controls.printextsize.value, "", this.reciptform.controls.termsandcondition.value, "", this.selectedColor);
         if (this.reciptform.invalid) {
             console.log(this.reciptform);
-            this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields.",
+            });
+            // this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
             return false;
         }
         else {
@@ -511,11 +523,19 @@ class InvoiceReceiptUIComponent {
             this.saleInvoiceService.updateInvoicesetting(updatebody, this.currentUser.id).then((res) => {
                 console.log("res", res);
                 if (res) {
-                    this.toastService.openSnackBar("Invoice Profile data Updated Successfully");
+                    this.toastService.toastMsg({
+                        title: "Success",
+                        content: "Invoice Profile Data Updated Successfully!!!",
+                    });
+                    // this.toastService.openSnackBar("Invoice Profile data Updated Successfully");
                     this.getInvoicesetting();
                 }
             }, (err) => {
-                this.toastService.openErrorSnackBar("Please Try Again Later!!!");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Please Try Again Later!!!",
+                });
+                // this.toastService.openErrorSnackBar("Please Try Again Later!!!")
             });
         }
     }
@@ -585,11 +605,19 @@ class InvoiceReceiptUIComponent {
         };
         this.saleInvoiceService.postInvoiceNumber(data).then((res) => {
             if (res) {
-                this.toastService.openSnackBar("Invoice Number Added Successfully");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Invoice Number Added Successfully!!!",
+                });
+                // this.toastService.openSnackBar("Invoice Number Added Successfully")
                 this.getInvoiceNumber();
             }
         }, (err) => {
-            this.toastService.openErrorSnackBar("Please Try Again Later!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Please Try Again Later!!!",
+            });
+            // this.toastService.openErrorSnackBar("Please Try Again Later!!!")
         });
     }
     /**
@@ -613,11 +641,19 @@ class InvoiceReceiptUIComponent {
         };
         this.saleInvoiceService.updateInvoiceNumber(data, this.FormatId).then((res) => {
             if (res) {
-                this.toastService.openSnackBar("Invoice Number Updated Succesfully");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Invoice Number Updated Successfully!!!",
+                });
+                // this.toastService.openSnackBar("Invoice Number Updated Succesfully")
                 this.getInvoiceNumber();
             }
         }, (err) => {
-            this.toastService.openErrorSnackBar("Please Try Again Later!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Please Try Again Later!!!",
+            });
+            // this.toastService.openErrorSnackBar("Please Try Again Later!!!")
         });
     }
     /**
@@ -794,7 +830,11 @@ class InvoiceReceiptUIComponent {
         this.submitted = true;
         if (this.eamilSetupForm.invalid) {
             console.log(this.reciptform);
-            this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields.",
+            });
+            // this.toastService.openErrorSnackBar("Please fill mandatory fields!!!");
             return false;
         }
         else {
@@ -806,13 +846,25 @@ class InvoiceReceiptUIComponent {
                 "userId": this.currentUser.id,
             };
             this.emailService.postEmailSetup(body).then((res) => {
-                this.toastService.openSnackBar("Eamil Setup Added Successfully");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Email Setup Added Successfully!!!",
+                });
+                // this.toastService.openSnackBar("Eamil Setup Added Successfully")
             }, (err) => {
                 if (err.error.expose) {
-                    this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: this.titleCasePipe.transform(err.error.error_message),
+                    });
+                    // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
                 }
                 else {
-                    this.toastService.openErrorSnackBar("Something Went To Wrong");
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "Something Went To Wrong",
+                    });
+                    // this.toastService.openErrorSnackBar("Something Went To Wrong");
                 }
             });
         }
@@ -1143,7 +1195,7 @@ InvoiceReceiptUIComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](179, "hr");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](180, "h5", 78);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](181, "Select Type of Calander");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](181, "Select Type of Calender");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](182, "div", 79);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](183, "label", 80);
@@ -1156,7 +1208,7 @@ InvoiceReceiptUIComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](188, "Financial");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](189, "mat-option", 83);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](190, "Calander");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](190, "Calender");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();

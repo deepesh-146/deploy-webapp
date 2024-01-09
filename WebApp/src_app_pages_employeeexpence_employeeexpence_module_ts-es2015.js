@@ -100,7 +100,11 @@ class AddExpencemployeeComponent {
     postExpense() {
         this.submitted = true;
         if (this.addexpenseForm.invalid) {
-            this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+            });
+            // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
             return false;
         }
         else {
@@ -114,15 +118,27 @@ class AddExpencemployeeComponent {
                 "employeeId": this.currentEmployee.id
             };
             this.expenseservice.addExpenseDetails(Body, this.userId).then(res => {
-                this.toastService.openSnackBar(" Expense Added Successfully");
+                // this.toastService.openSnackBar(" Expense Added Successfully");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Expense Added Successfully!!!",
+                });
                 this.expenseservice.notifyExpenseAdded();
                 this.dialogRef.close();
             }, (err) => {
                 if (err.error.expose) {
-                    this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: this.titleCasePipe.transform(err.error.error_message),
+                    });
+                    // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
                 }
                 else {
-                    this.toastService.openErrorSnackBar("Something Went Wrong.");
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "Something Went Wrong"
+                    });
+                    // this.toastService.openErrorSnackBar("Something Went Wrong.");
                 }
             });
         }
@@ -149,7 +165,13 @@ class AddExpencemployeeComponent {
         if (e.target.files && e.target.files[0]) {
             reader.readAsDataURL(file);
             if (file == null) {
-                this.toastService.openErrorSnackBar("Please Select Image To Upload.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Please Select Image To Upload."
+                });
+                // this.toastService.openErrorSnackBar(
+                //   "Please Select Image To Upload.",
+                // );
             }
             else {
                 formdata.set("upload", file);
@@ -432,7 +454,11 @@ class EditExpencemployeeComponent {
     UpdateEducation() {
         this.submitted = true;
         if (this.editexpenseForm.invalid) {
-            this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+            });
+            // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
             return false;
         }
         else {
@@ -446,15 +472,27 @@ class EditExpencemployeeComponent {
                 "employeeId": this.currentEmployee.id
             };
             this.expenseservice.ExpenseUpdateByEmployeeId(Body, this.expenseId).then((res) => {
-                this.toastService.openSnackBar(" Expense Updated Successfully");
+                // this.toastService.openSnackBar(" Expense Updated Successfully");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Expense Updated Successfully!!!",
+                });
                 this.expenseservice.notifyExpenseAdded();
                 this.dialogRef.close();
             }, (err) => {
                 if (err.error.expose) {
-                    this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: this.titleCasePipe.transform(err.error.error_message),
+                    });
+                    // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
                 }
                 else {
-                    this.toastService.openErrorSnackBar("Something Went Wrong.");
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "Something Went Wrong.",
+                    });
+                    // this.toastService.openErrorSnackBar("Something Went Wrong.");      
                 }
             });
         }
@@ -481,7 +519,13 @@ class EditExpencemployeeComponent {
         if (e.target.files && e.target.files[0]) {
             reader.readAsDataURL(file);
             if (file == null) {
-                this.toastService.openErrorSnackBar("Please Select Image To Upload.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Please Select Image To Upload.",
+                });
+                // this.toastService.openErrorSnackBar(
+                //   "Please Select Image To Upload.",
+                // );
             }
             else {
                 formdata.set("upload", file);
@@ -818,10 +862,18 @@ class EmpExpenceComponent {
             this.userId = res.data.parentId;
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");      
             }
         });
     }
@@ -831,10 +883,18 @@ class EmpExpenceComponent {
             this.expenseAllData = res.data;
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");      
             }
         });
     }
@@ -871,14 +931,26 @@ class EmpExpenceComponent {
     }
     deletExpenseById() {
         this.expenseservice.deleteExpense({}, this.expenseId).then(res => {
-            this.toastService.openSnackBar(" Expense Deleted Successfully");
+            // this.toastService.openSnackBar(" Expense Deleted Successfully")
+            this.toastService.toastMsg({
+                title: "Success",
+                content: "Expense Deleted Successfully!!!",
+            });
             this.getexpenseDetails();
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");      
             }
         });
     }

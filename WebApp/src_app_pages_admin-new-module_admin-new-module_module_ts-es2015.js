@@ -188,16 +188,28 @@ class AdminEditRoleFormComponent {
                 setTimeout(() => {
                     this.isShowMessage = false;
                 }, 3000);
-                this.toast.openSnackBar("Role List Updated Successfully!!!");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Role List Updated Successfully!!!"
+                });
+                // this.toast.openSnackBar("Role List Updated Successfully!!!");
                 this.dialogRef.close();
                 this.rolesForm.reset();
             }
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");        
             }
         });
     }
@@ -593,23 +605,43 @@ class AdminRolesListComponent {
             this.roleId = data.data.id;
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
     deleteRole() {
         this.rolePermissionservice.deleteRoleById({}, this.Id).then(data => {
-            this.toastService.openSnackBar("Role Deleted Successfully!!!");
+            // this.toastService.openSnackBar("Role Deleted Successfully!!!");
+            this.toastService.toastMsg({
+                title: "Success",
+                content: "Role Deleted Successfully!!!",
+            });
             this.getRole();
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }

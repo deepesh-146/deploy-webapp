@@ -460,9 +460,17 @@
               console.log(_this8.compensatoryleavedata);
             }, function (err) {
               if (err.error.expose) {
-                _this8.toastService.openErrorSnackBar(_this8.titleCasePipe.transform(err.error.error_message));
+                _this8.toastService.toastMsg({
+                  title: "Error",
+                  content: _this8.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this8.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this8.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -510,7 +518,11 @@
             this.submitted = true;
 
             if (this.addleaveForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -525,16 +537,28 @@
                 "employeeId": this.currentEmployee.id
               };
               this.leaveservice.addLeaveDetails(Body).then(function (res) {
-                _this9.toastService.openSnackBar(" Leave Added Successfully");
+                _this9.toastService.toastMsg({
+                  title: "Success",
+                  content: "Leave Added Successfully!!!"
+                }); // this.toastService.openSnackBar(" Leave Added Successfully");
+
 
                 _this9.leaveservice.notifyLeaveAdded();
 
                 _this9.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this9.toastService.openErrorSnackBar(_this9.titleCasePipe.transform(err.error.error_message));
+                  _this9.toastService.toastMsg({
+                    title: "Error",
+                    content: _this9.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this9.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this9.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -574,7 +598,16 @@
               reader.readAsDataURL(file);
 
               if (file == null) {
-                this.toastService.openErrorSnackBar("Please Select Image To Upload.");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Please Select Image To Upload."
+                }); // this.toastService.toastMsg({
+                //   title: "Error",
+                //   content: "Please Select Image To Upload."
+                // });
+                // this.toastService.openErrorSnackBar(
+                //   "Please Select Image To Upload.",
+                // );
               } else {
                 formdata.set("upload", file);
                 this.productService.PostImagePdf(formdata).then(function (res) {
@@ -1255,9 +1288,17 @@
               console.log(_this12.compensatoryleavedata);
             }, function (err) {
               if (err.error.expose) {
-                _this12.toastService.openErrorSnackBar(_this12.titleCasePipe.transform(err.error.error_message));
+                _this12.toastService.toastMsg({
+                  title: "Error",
+                  content: _this12.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this12.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this12.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -1292,7 +1333,11 @@
             this.submitted = true;
 
             if (this.editleaveForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var Body = {
@@ -1307,16 +1352,28 @@
 
               };
               this.leaveservice.LeaveUpdateByEmployeeId(Body, this.leaveId).then(function (res) {
-                _this14.toastService.openSnackBar(" Leave Updated Successfully");
+                // this.toastService.openSnackBar(" Leave Updated Successfully");
+                _this14.toastService.toastMsg({
+                  title: "Success",
+                  content: "Leave Updated Successfully!!!"
+                });
 
                 _this14.leaveservice.notifyLeaveAdded();
 
                 _this14.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this14.toastService.openErrorSnackBar(_this14.titleCasePipe.transform(err.error.error_message));
+                  _this14.toastService.toastMsg({
+                    title: "Error",
+                    content: _this14.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this14.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this14.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -1356,7 +1413,12 @@
               reader.readAsDataURL(file);
 
               if (file == null) {
-                this.toastService.openErrorSnackBar("Please Select Image To Upload.");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Please Select Image To Upload."
+                }); // this.toastService.openErrorSnackBar(
+                //   "Please Select Image To Upload.",
+                // );
               } else {
                 formdata.set("upload", file);
                 this.productService.PostImagePdf(formdata).then(function (res) {
@@ -2188,9 +2250,17 @@
               _this17.userId = res.data.parentId;
             }, function (err) {
               if (err.error.expose) {
-                _this17.toastService.openErrorSnackBar(_this17.titleCasePipe.transform(err.error.error_message));
+                _this17.toastService.toastMsg({
+                  title: "Error",
+                  content: _this17.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this17.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this17.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -2204,9 +2274,17 @@
               _this18.leaveAllData = res.data;
             }, function (err) {
               if (err.error.expose) {
-                _this18.toastService.openErrorSnackBar(_this18.titleCasePipe.transform(err.error.error_message));
+                _this18.toastService.toastMsg({
+                  title: "Error",
+                  content: _this18.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this18.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this18.toastService.toastMsg({
+                  title: "Error",
+                  content: _this18.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -2228,9 +2306,17 @@
               _this19.thismonth = res.data.monthlyHoliday[0].count == null ? 0 : res.data.monthlyHoliday[0].count;
             }, function (err) {
               if (err.error.expose) {
-                _this19.toastService.openErrorSnackBar(_this19.titleCasePipe.transform(err.error.error_message));
+                _this19.toastService.toastMsg({
+                  title: "Error",
+                  content: _this19.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this19.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this19.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -2280,14 +2366,26 @@
             var _this20 = this;
 
             this.leaveservice.deleteLeave({}, this.leaveId).then(function (res) {
-              _this20.toastService.openSnackBar(" Leave Deleted Successfully");
+              // this.toastService.openSnackBar(" Leave Deleted Successfully")
+              _this20.toastService.toastMsg({
+                title: "Success",
+                content: "Leave Deleted Successfully!!!"
+              });
 
               _this20.getleaveDetails();
             }, function (err) {
               if (err.error.expose) {
-                _this20.toastService.openErrorSnackBar(_this20.titleCasePipe.transform(err.error.error_message));
+                _this20.toastService.toastMsg({
+                  title: "Error",
+                  content: _this20.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this20.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this20.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }

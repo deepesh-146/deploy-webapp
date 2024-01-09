@@ -524,7 +524,11 @@
                       // if (err.error.status == 404) {
                       //   this.toastService.openErrorSnackBar(err.error.message);
                       // } else {
-                      this.toastService.openErrorSnackBar(_context.t0); // }
+                      this.toastService.toastMsg({
+                        title: "Error",
+                        content: _context.t0
+                      }); // this.toastService.openErrorSnackBar(err);
+                      // }
 
                     case 11:
                       _context.prev = 11;
@@ -752,7 +756,10 @@
                 console.log("Dialog result: ".concat(result));
               });
             } else {
-              this.toastService.openErrorSnackBar("There is not selected any ledger. Please select a ledger.");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "There Is Not Selected Any Ledger. Please Select A Ledger."
+              }); // this.toastService.openErrorSnackBar("There is not selected any ledger. Please select a ledger.")
             }
           }
         }, {
@@ -1446,7 +1453,11 @@
 
                   _this6.cdr.markForCheck();
 
-                  _this6.toastService.openErrorSnackBar("An error occurred");
+                  _this6.toastService.toastMsg({
+                    title: "Error",
+                    content: "An Error Occurred"
+                  }); // this.toastService.openErrorSnackBar("An error occurred");
+
                 });
               })["finally"](function () {
                 _this6.isLoading = false;
@@ -3705,9 +3716,15 @@
                       _context4.t0 = _context4["catch"](1);
 
                       if (_context4.t0.error.status == 404) {
-                        this.toastService.openErrorSnackBar(_context4.t0.error.message);
+                        this.toastService.toastMsg({
+                          title: "Error",
+                          content: "err.error.message"
+                        }); // this.toastService.openErrorSnackBar(err.error.message);
                       } else {
-                        this.toastService.openErrorSnackBar(_context4.t0.error.message);
+                        this.toastService.toastMsg({
+                          title: "Error",
+                          content: "err.error.message"
+                        }); // this.toastService.openErrorSnackBar(err.error.message);
                       }
 
                     case 11:
@@ -3939,7 +3956,10 @@
                 console.log("Dialog result: ".concat(result));
               });
             } else {
-              this.toastService.openErrorSnackBar("There is not selected any ledger. Please select a ledger.");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "There Is Not Selected Any Ledger. Please Select A Ledger."
+              }); // this.toastService.openErrorSnackBar("There is not selected any ledger. Please select a ledger.")
             }
           }
         }, {

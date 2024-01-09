@@ -508,7 +508,11 @@
             this.submitted = true;
 
             if (this.AttendanceForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               console.log(this.AttendanceForm.controls.start_time.value, this.AttendanceForm.controls.end_time.value);
@@ -525,7 +529,11 @@
                   if (res.success) {
                     _this4.commonService.notifyDataAdded();
 
-                    _this4.toastService.openSnackBar("Employee Attendence Added Successfully");
+                    _this4.toastService.toastMsg({
+                      title: "Success",
+                      content: "Employee Attendence Added Successfully!!!"
+                    }); // this.toastService.openSnackBar("Employee Attendence Added Successfully");
+
 
                     _this4.AttendanceForm.reset();
 
@@ -533,13 +541,24 @@
                   }
                 }, function (err) {
                   if (err.error.expose) {
-                    _this4.toastService.openErrorSnackBar(_this4.titleCasePipe.transform(err.error.error_message));
+                    _this4.toastService.toastMsg({
+                      title: "Error",
+                      content: _this4.titleCasePipe.transform(err.error.error_message)
+                    }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                   } else {
-                    _this4.toastService.openErrorSnackBar("Something Went Wrong.");
+                    _this4.toastService.toastMsg({
+                      title: "Error",
+                      content: "Something Went Wrong."
+                    }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                   }
                 });
               } else {
-                this.toastService.openErrorSnackBar("In time must be less than Out time!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "In Time Must Be Less Than Out Time!!!"
+                }); // this.toastService.openErrorSnackBar("In time must be less than Out time!!!");
               }
             }
           }
@@ -553,9 +572,17 @@
               _this5.userId = res.data.parentId;
             }, function (err) {
               if (err.error.expose) {
-                _this5.toastService.openErrorSnackBar(_this5.titleCasePipe.transform(err.error.error_message));
+                _this5.toastService.toastMsg({
+                  title: "Error",
+                  content: _this5.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this5.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this5.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -592,9 +619,17 @@
               });
             }, function (err) {
               if (err.error.expose) {
-                _this6.toastService.openErrorSnackBar(_this6.titleCasePipe.transform(err.error.error_message));
+                _this6.toastService.toastMsg({
+                  title: "Error",
+                  content: _this6.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this6.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this6.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }

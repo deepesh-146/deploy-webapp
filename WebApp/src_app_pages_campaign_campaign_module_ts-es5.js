@@ -514,7 +514,10 @@
               }); // });
 
               if (this.campList.length === 0) {
-                this.toastService.openErrorSnackBar(this.searchTerm + " is not found");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: this.searchTerm + " Is Not Found"
+                }); // this.toastService.openErrorSnackBar(this.searchTerm + " is not found");
               }
             }
           }
@@ -534,7 +537,11 @@
               if (res.success) {
                 _this4.getAllCampaigns();
 
-                _this4.toastService.openSnackBar('Campaign deleted successfully');
+                _this4.toastService.toastMsg({
+                  title: "Success",
+                  content: "Campaign Deleted Successfully!!!"
+                }); // this.toastService.openSnackBar('Campaign deleted successfully');
+
               }
             }, function (err) {
               if (err.error.status == 404) {
@@ -662,7 +669,11 @@
             }, this.currentUser.id).then(function (res) {
               _this5.getAllCampaigns();
 
-              _this5.toastService.openSnackBar("Campaigns deleted successfully!!!");
+              _this5.toastService.toastMsg({
+                title: "Success",
+                content: "Campaign Deleted Successfully!!!"
+              }); // this.toastService.openSnackBar("Campaigns deleted successfully!!!");
+
 
               _this5.checkSelect = false;
               _this5.archiveIconfalse = false;
@@ -673,9 +684,17 @@
               _this5.checkSingleArray = [];
             }, function (err) {
               if (err.error.expose) {
-                _this5.toastService.openErrorSnackBar(_this5.titleCasePipe.transform(err.error.error_message));
+                _this5.toastService.toastMsg({
+                  title: "Error",
+                  content: _this5.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this5.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this5.toastService.toastMsg({
+                  title: "Error",
+                  content: _this5.searchTerm + " Is Not Found"
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -707,11 +726,19 @@
             this.campService.updateCampaign(requestData, campaignId).then(function (res) {
               if (res.success) {
                 if (isActive) {
-                  _this6.toastService.openSnackBar("Campaign status changed to active");
+                  _this6.toastService.toastMsg({
+                    title: "Success",
+                    content: "Campaign Status Changed To Active"
+                  }); //  this.toastService.openSnackBar("Campaign status changed to active")
+
 
                   _this6.getAllCampaigns();
                 } else {
-                  _this6.toastService.openSnackBar("Campaign status changed to inactive");
+                  _this6.toastService.toastMsg({
+                    title: "Success",
+                    content: "Campaign Status Changed To InActive"
+                  }); //  this.toastService.openSnackBar("Campaign status changed to inactive")
+
 
                   _this6.getAllCampaigns();
                 }
@@ -860,7 +887,7 @@
         selectors: [["app-active-page"]],
         decls: 61,
         vars: 11,
-        consts: [[1, "container-fluid", "bg-white", "p-0"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Name", 1, "form-control", "pe-5", 3, "ngModel", "ngModelChange"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], [1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus"], [1, "table-container", "overflow-auto"], [1, "table-div", 2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive"], [1, "row"], [1, "text-nowrap", "col-1", 2, "vertical-align", "middle"], ["type", "checkbox", 1, "mt-2", 3, "value", "checked", "ngModel", "change", "ngModelChange"], [4, "ngIf"], [1, "col-2", "text-nowrap", "d-flex", "align-items-center"], [1, "col-1", "text-nowrap", "d-flex", "align-items-center"], ["class", "row", 4, "ngFor", "ngForOf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], ["id", "mutipleDelete_modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal"], [1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], ["class", "text-center ", 4, "ngIf"], ["class", "btn btn-outline-danger", "data-bs-dismiss", "modal", 3, "click", 4, "ngIf"], ["style", "padding: 0px!important;", "class", "btn ms-3", "data-bs-toggle", "modal", "data-bs-target", "#mutipleDelete_modal", 4, "ngIf"], ["data-bs-toggle", "modal", "data-bs-target", "#mutipleDelete_modal", 1, "btn", "ms-3", 2, "padding", "0px!important"], ["class", "bi-trash icon-color fs-1", "style", "color: red;", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Archive", 3, "click", 4, "ngIf"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Archive", 1, "bi-trash", "icon-color", "fs-1", 2, "color", "red", 3, "click"], [1, "col-1", "d-flex", "align-items-center"], ["type", "checkbox", 1, "form-check-input", 3, "checked", "value", "change"], [1, "col-2", "d-flex", "align-items-center"], [1, "toggle-button", 3, "ngClass", "click"], [1, "toggle-slider"], [1, "col-1", "text-nowrap", 2, "text-align", "center !important", "vertical-align", "middle"], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View", 1, "bi", "bi-eye", "icon-color", "iconFontSize", "ps-2"], [1, "btn", "mt-2", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Clone", 1, "material-icons", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", "ps-2", 2, "color", "red"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
+        consts: [[1, "container-fluid", "bg-white", "p-0"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Name", 1, "form-control", "pe-5", 3, "ngModel", "ngModelChange"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], [1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus"], [1, "table-container", "overflow-auto"], [1, "table-div", 2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive"], [1, "row"], [1, "text-nowrap", "col-1", 2, "vertical-align", "middle", "display", "flex", "align-items", "center"], ["type", "checkbox", 1, "form-check-input", "mb-2", 3, "value", "checked", "ngModel", "change", "ngModelChange"], [4, "ngIf"], [1, "col-2", "text-nowrap", "d-flex", "align-items-center"], [1, "col-1", "text-nowrap", "d-flex", "align-items-center"], ["class", "row", 4, "ngFor", "ngForOf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], ["id", "mutipleDelete_modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal"], [1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], ["class", "text-center ", 4, "ngIf"], ["class", "btn btn-outline-danger", "data-bs-dismiss", "modal", 3, "click", 4, "ngIf"], ["style", "padding: 0px!important;", "class", "btn ms-3", "data-bs-toggle", "modal", "data-bs-target", "#mutipleDelete_modal", 4, "ngIf"], ["data-bs-toggle", "modal", "data-bs-target", "#mutipleDelete_modal", 1, "btn", "ms-3", 2, "padding", "0px!important"], ["class", "bi-trash icon-color fs-1", "style", "color: red;", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Archive", 3, "click", 4, "ngIf"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Archive", 1, "bi-trash", "icon-color", "fs-1", 2, "color", "red", 3, "click"], [1, "col-1", "d-flex", "align-items-center"], ["type", "checkbox", 1, "form-check-input", 3, "checked", "value", "change"], [1, "col-2", "d-flex", "align-items-center"], [1, "toggle-button", 3, "ngClass", "click"], [1, "toggle-slider"], [1, "col-1", "text-nowrap", 2, "text-align", "center !important", "vertical-align", "middle"], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View", 1, "bi", "bi-eye", "icon-color", "iconFontSize", "ps-2"], [1, "btn", "mt-2", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Clone", 1, "material-icons", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", "ps-2", 2, "color", "red"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
         template: function ActivePageComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0);
@@ -2046,11 +2073,19 @@
             console.log(this.campForm);
 
             if (this.campForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               if ((this.campForm.value.sendEmail || this.campForm.value.sendSMS || this.campForm.value.sendNotification || this.campForm.value.sendWhatsappMsg) === false) {
-                this.toastService.openErrorSnackBar("Please Select at List One!!!");
+                // this.toastService.openErrorSnackBar("Please Select at List One!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Please Select At List One!!!"
+                });
                 return false;
               }
 
@@ -2080,15 +2115,29 @@
                 if (res.success) {
                   _this10.dialogRef.close();
 
-                  _this10.commonService.notifyDataAdded();
+                  _this10.commonService.notifyDataAdded(); // this.toastService.openSnackBar(
+                  //   "You have successfully cloned the campaign"
+                  // );
 
-                  _this10.toastService.openSnackBar("You have successfully cloned the campaign");
+
+                  _this10.toastService.toastMsg({
+                    title: "Success",
+                    content: "You Have Successfully Cloned The Campaign"
+                  });
                 }
               }, function (err) {
                 if (err.error.expose) {
-                  _this10.toastService.openErrorSnackBar(_this10.titleCasePipe.transform(err.error.error_message));
+                  _this10.toastService.toastMsg({
+                    title: "Error",
+                    content: _this10.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this10.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this10.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -2927,7 +2976,10 @@
               }); // });
 
               if (this.campList.length === 0) {
-                this.toastService.openErrorSnackBar(this.searchTerm + " is not found");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: this.searchTerm + " Is Not Found"
+                }); // this.toastService.openErrorSnackBar(this.searchTerm + " is not found");
               }
             }
           }
@@ -2947,7 +2999,11 @@
               if (res.success) {
                 _this14.getAllCampaigns();
 
-                _this14.toastService.openSnackBar('Campaign deleted successfully');
+                _this14.toastService.toastMsg({
+                  title: "Success",
+                  content: "Campaign Deleted Successfully!!!"
+                }); // this.toastService.openSnackBar('Campaign deleted successfully');
+
               }
             }, function (err) {
               if (err.error.status == 404) {
@@ -3091,7 +3147,11 @@
             }, this.currentUser.id).then(function (res) {
               _this16.getAllCampaigns();
 
-              _this16.toastService.openSnackBar("Campaigns deleted successfully!!!");
+              _this16.toastService.toastMsg({
+                title: "Success",
+                content: "Campaign Deleted Successfully!!!"
+              }); // this.toastService.openSnackBar("Campaigns deleted successfully!!!");
+
 
               _this16.checkSelectsingle = false;
               _this16.upiCheckedId = [];
@@ -3101,9 +3161,17 @@
               _this16.checkSingleArray = [];
             }, function (err) {
               if (err.error.expose) {
-                _this16.toastService.openErrorSnackBar(_this16.titleCasePipe.transform(err.error.error_message));
+                _this16.toastService.toastMsg({
+                  title: "Error",
+                  content: _this16.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this16.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this16.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -3142,11 +3210,19 @@
             this.campService.updateCampaign(requestData, campaignId).then(function (res) {
               if (res.success) {
                 if (isActive) {
-                  _this17.toastService.openSnackBar("Campaign status changed to active");
+                  _this17.toastService.toastMsg({
+                    title: "Success",
+                    content: "Campaign Status Changed To Active"
+                  }); // this.toastService.openSnackBar("Campaign status changed to active")
+
 
                   _this17.getAllCampaigns();
                 } else {
-                  _this17.toastService.openSnackBar("Campaign status changed to inactive");
+                  _this17.toastService.toastMsg({
+                    title: "Success",
+                    content: "Campaign Status Changed To Active"
+                  }); // this.toastService.openSnackBar("Campaign status changed to InActive")
+
 
                   _this17.getAllCampaigns();
                 }
@@ -3825,7 +3901,10 @@
               }); // });
 
               if (this.campList.length === 0) {
-                this.toastService.openErrorSnackBar(this.searchTerm + " is not found");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: this.searchTerm + " Is Not Found"
+                }); // this.toastService.openErrorSnackBar(this.searchTerm + " is not found");
               }
             }
           }
@@ -3845,7 +3924,11 @@
               if (res.success) {
                 _this21.getAllCampaigns();
 
-                _this21.toastService.openSnackBar('Campaign deleted successfully');
+                _this21.toastService.toastMsg({
+                  title: "Success",
+                  content: "Campaign Deleted Successfully!!!"
+                }); // this.toastService.openSnackBar('Campaign deleted successfully');
+
               }
             }, function (err) {
               if (err.error.status == 404) {
@@ -3989,7 +4072,11 @@
             }, this.currentUser.id).then(function (res) {
               _this23.getAllCampaigns();
 
-              _this23.toastService.openSnackBar("Campaigns deleted successfully!!!");
+              _this23.toastService.toastMsg({
+                title: "Success",
+                content: "Campaign Deleted Successfully!!!"
+              }); // this.toastService.openSnackBar("Campaigns deleted successfully!!!");
+
 
               _this23.checkSelectsingle = false;
               _this23.upiCheckedId = [];
@@ -3999,9 +4086,22 @@
               _this23.checkSingleArray = [];
             }, function (err) {
               if (err.error.expose) {
-                _this23.toastService.openErrorSnackBar(_this23.titleCasePipe.transform(err.error.error_message));
+                _this23.toastService.toastMsg({
+                  title: "Error",
+                  content: _this23.searchTerm + " Is Not Found"
+                });
+
+                _this23.toastService.toastMsg({
+                  title: "Error",
+                  content: _this23.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this23.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this23.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -4019,7 +4119,7 @@
         selectors: [["app-ended-page"]],
         decls: 60,
         vars: 11,
-        consts: [[1, "container-fluid", "bg-white", "p-0"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Name", 1, "form-control", "pe-5", 3, "ngModel", "ngModelChange"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], [1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus"], [1, "table-container", "overflow-auto"], [1, "table-div", 2, "overflow-x", "auto"], [1, "table", "table-responsive"], [1, "row"], [1, "col-1", "d-flex", "align-items-center"], [1, "container", "px-0"], ["type", "checkbox", 1, "mt-3", 3, "value", "checked", "ngModel", "change", "ngModelChange"], [4, "ngIf"], [1, "col-2", "text-nowrap", "d-flex", "align-items-center"], [1, "col-1", "text-nowrap", "d-flex", "align-items-center"], [1, "col-3", "text-nowrap", "d-flex", "align-items-center"], ["class", "row", 4, "ngFor", "ngForOf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], ["id", "errorDeleteSelect-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["class", "text-center ", 4, "ngIf"], ["class", "btn btn-outline-danger", "data-bs-dismiss", "modal", 3, "click", 4, "ngIf"], ["class", "btn", "data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 4, "ngIf"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 1, "btn"], ["class", "bi-trash icon-color fs-1 iconFontSize", "data-bs-toggle", "tooltip", "style", "color : red", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 3, "click", 4, "ngIf"], ["data-bs-toggle", "tooltip", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "fs-1", "iconFontSize", 2, "color", "red", 3, "click"], ["type", "checkbox", 1, "form-check-input", "mt-3", 3, "checked", "value", "change"], [1, "col-2", "d-flex", "align-items-center"], [1, "col-3", "d-flex", "align-items-center"], ["type", "button", "data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn", "ps-1", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "iconFontSize", 2, "color", "red"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
+        consts: [[1, "container-fluid", "bg-white", "p-0"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Name", 1, "form-control", "pe-5", 3, "ngModel", "ngModelChange"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], [1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus"], [1, "table-container", "overflow-auto"], [1, "table-div", 2, "overflow-x", "auto"], [1, "table", "table-responsive"], [1, "row"], [1, "col-1", "d-flex", "align-items-center"], [1, "container", "px-0"], ["type", "checkbox", 1, "form-check-input", "mt-3", 3, "value", "checked", "ngModel", "change", "ngModelChange"], [4, "ngIf"], [1, "col-2", "text-nowrap", "d-flex", "align-items-center"], [1, "col-1", "text-nowrap", "d-flex", "align-items-center"], [1, "col-3", "text-nowrap", "d-flex", "align-items-center"], ["class", "row", 4, "ngFor", "ngForOf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], ["id", "errorDeleteSelect-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["class", "text-center ", 4, "ngIf"], ["class", "btn btn-outline-danger", "data-bs-dismiss", "modal", 3, "click", 4, "ngIf"], ["class", "btn", "data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 4, "ngIf"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 1, "btn"], ["class", "bi-trash icon-color fs-1 iconFontSize", "data-bs-toggle", "tooltip", "style", "color : red", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 3, "click", 4, "ngIf"], ["data-bs-toggle", "tooltip", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "fs-1", "iconFontSize", 2, "color", "red", 3, "click"], ["type", "checkbox", 1, "form-check-input", "mt-3", 3, "checked", "value", "change"], [1, "col-2", "d-flex", "align-items-center"], [1, "col-3", "d-flex", "align-items-center"], ["type", "button", "data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn", "ps-1", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "iconFontSize", 2, "color", "red"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
         template: function EndedPageComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -4819,11 +4919,19 @@
             console.log(this.campForm);
 
             if (this.campForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               if ((this.campForm.value.sendEmail || this.campForm.value.sendSMS || this.campForm.value.sendNotification || this.campForm.value.sendWhatsappMsg) === false) {
-                this.toastService.openErrorSnackBar("Please Select at List One!!!");
+                // this.toastService.openErrorSnackBar("Please Select at List One!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Please Select At List One!!!"
+                });
                 return false;
               }
 
@@ -4855,15 +4963,29 @@
                 if (res.success) {
                   _this26.dialogRef.close();
 
-                  _this26.commonService.notifyDataAdded();
+                  _this26.commonService.notifyDataAdded(); // this.toastService.openSnackBar(
+                  //   "You have successfully update the campaign"
+                  // );
 
-                  _this26.toastService.openSnackBar("You have successfully update the campaign");
+
+                  _this26.toastService.toastMsg({
+                    title: "Success",
+                    content: "You Have Successfully Update The Campaign"
+                  });
                 }
               }, function (err) {
                 if (err.error.expose) {
-                  _this26.toastService.openErrorSnackBar(_this26.titleCasePipe.transform(err.error.error_message));
+                  _this26.toastService.toastMsg({
+                    title: "Error",
+                    content: _this26.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this26.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this26.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }

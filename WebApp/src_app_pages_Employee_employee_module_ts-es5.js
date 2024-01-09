@@ -88,11 +88,11 @@
         if (rf & 1) {
           var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "td", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "input", 27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "input", 25);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("blur", function EmployeeApprovalsComponent_tr_28_td_17_Template_input_blur_2_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r12);
@@ -112,7 +112,7 @@
 
       function EmployeeApprovalsComponent_tr_28_td_18_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "td", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "td", 8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
 
@@ -132,9 +132,9 @@
 
       function EmployeeApprovalsComponent_tr_28_span_21_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 26);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "a", 29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "a", 27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "APPROVED");
 
@@ -148,7 +148,7 @@
         if (rf & 1) {
           var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-icon", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-icon", 28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function EmployeeApprovalsComponent_tr_28_mat_icon_23_Template_mat_icon_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r16);
@@ -170,7 +170,7 @@
         if (rf & 1) {
           var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-icon", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-icon", 29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function EmployeeApprovalsComponent_tr_28_mat_icon_25_Template_mat_icon_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r19);
@@ -192,9 +192,9 @@
         if (rf & 1) {
           var _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "a", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "a", 30);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function EmployeeApprovalsComponent_tr_28_span_26_Template_a_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r22);
@@ -218,7 +218,7 @@
         if (rf & 1) {
           var _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 31);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function EmployeeApprovalsComponent_tr_28_button_28_Template_button_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r25);
@@ -230,7 +230,7 @@
             return ctx_r23.GotoImageOrPDF(item_r2.receiptImage);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "i", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "i", 32);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         }
@@ -244,39 +244,39 @@
 
       function EmployeeApprovalsComponent_tr_28_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "input", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "td", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "td", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "td", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "td", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](10);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "td", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](12);
 
@@ -284,7 +284,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "td", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "td", 8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15);
 
@@ -292,37 +292,37 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](17, EmployeeApprovalsComponent_tr_28_td_17_Template, 3, 0, "td", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](17, EmployeeApprovalsComponent_tr_28_td_17_Template, 3, 0, "td", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](18, EmployeeApprovalsComponent_tr_28_td_18_Template, 3, 4, "td", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](18, EmployeeApprovalsComponent_tr_28_td_18_Template, 3, 4, "td", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](19, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](19, "td", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "div", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "div", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](21, EmployeeApprovalsComponent_tr_28_span_21_Template, 3, 0, "span", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](21, EmployeeApprovalsComponent_tr_28_span_21_Template, 3, 0, "span", 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "span", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "span", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](23, EmployeeApprovalsComponent_tr_28_mat_icon_23_Template, 2, 0, "mat-icon", 21);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "span", 20);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](25, EmployeeApprovalsComponent_tr_28_mat_icon_25_Template, 2, 0, "mat-icon", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](23, EmployeeApprovalsComponent_tr_28_mat_icon_23_Template, 2, 0, "mat-icon", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](26, EmployeeApprovalsComponent_tr_28_span_26_Template, 3, 0, "span", 23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "span", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](25, EmployeeApprovalsComponent_tr_28_mat_icon_25_Template, 2, 0, "mat-icon", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](26, EmployeeApprovalsComponent_tr_28_span_26_Template, 3, 0, "span", 21);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "td", 24);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "td", 22);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, EmployeeApprovalsComponent_tr_28_button_28_Template, 2, 0, "button", 25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, EmployeeApprovalsComponent_tr_28_button_28_Template, 2, 0, "button", 23);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -335,9 +335,13 @@
 
           var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](20, _c0, i_r3 % 2 === 0 ? "#f2f2f2" : "#fff"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](21, _c0, i_r3 % 2 === 0 ? "#f2f2f2" : "#fff"));
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](i_r3 + 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](item_r2.user.firstName);
 
@@ -355,11 +359,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](13, 14, item_r2.date, "EEEE, MMM d yyyy"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](13, 15, item_r2.date, "EEEE, MMM d yyyy"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](16, 17, item_r2.enterAmount, "1.2-2"), "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](16, 18, item_r2.enterAmount, "1.2-2"), "");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
@@ -395,11 +399,11 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tbody");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "tr", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "tr", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "td", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "td", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "img", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "img", 35);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -444,7 +448,11 @@
             var _this2 = this;
 
             if (this.searchKey == "") {
-              this.toastService.openErrorSnackBar("Please Enter Valid Employee Name!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Please Enter Valid Employee Name!!!"
+              }); // this.toastService.openErrorSnackBar("Please Enter Valid Employee Name!!!");
+
               this.rolesPermissionsService.getExpenseApprovalsearch({}, this.currentUser.id, searchKey).then(function (res) {
                 if (res) {
                   _this2.approvalslist = res.data;
@@ -457,9 +465,17 @@
                 }
               }, function (err) {
                 if (err.error.expose) {
-                  _this2.toastService.openErrorSnackBar(_this2.titleCasePipe.transform(err.error.error_message));
+                  _this2.toastService.toastMsg({
+                    title: "Error",
+                    content: _this2.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this2.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this2.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -473,7 +489,10 @@
             } else {
               this.searchValueAmount = event.target.value;
               console.log("empty search value", this.searchValueAmount);
-              this.toastService.openErrorSnackBar("Add Employee Expense Approval Amount !!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Add Employee Expense Approval Amount!!!"
+              }); // this.toastService.openErrorSnackBar("Add Employee Expense Approval Amount !!!");
             }
           }
         }, {
@@ -490,7 +509,10 @@
             // this.denied = false;
 
             if (this.searchValueAmount == '') {
-              this.toastService.openErrorSnackBar("Add Employee Expense Approval Amount !!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Add Employee Expense Approval Amount!!!"
+              }); // this.toastService.openErrorSnackBar("Add Employee Expense Approval Amount !!!");
             } else {
               this.leavid = leavid;
               var body = {
@@ -499,7 +521,11 @@
               };
               this.rolesPermissionsService.approvalstatusById(body, this.currentUser.id, this.leavid).then(function (res) {
                 if (res.success === true) {
-                  _this3.toastService.openSnackBar("Employee Expense Approval Successfully!!!");
+                  // this.toastService.openSnackBar("Employee Expense Approval Successfully!!!");
+                  _this3.toastService.toastMsg({
+                    title: "Error",
+                    content: "Employee Expense Approval Successfully!!!"
+                  });
 
                   _this3.getUsersList();
 
@@ -509,9 +535,17 @@
                 }
               }, function (err) {
                 if (err.error.expose) {
-                  _this3.toastService.openErrorSnackBar(_this3.titleCasePipe.transform(err.error.error_message));
+                  _this3.toastService.toastMsg({
+                    title: "Error",
+                    content: _this3.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this3.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this3.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -542,7 +576,11 @@
             };
             this.rolesPermissionsService.approvalstatusById(body1, this.currentUser.id, this.leavid1).then(function (res) {
               if (res) {
-                _this4.toastService.openSnackBar("Employee Expense Approval Denied Successfully!!!");
+                _this4.toastService.toastMsg({
+                  title: "Success",
+                  content: "Employee Expense Approval Denied Successfully!!!"
+                }); // this.toastService.openSnackBar("Employee Expense Approval Denied Successfully!!!");
+
 
                 _this4.getUsersList();
 
@@ -552,9 +590,17 @@
               }
             }, function (err) {
               if (err.error.expose) {
-                _this4.toastService.openErrorSnackBar(_this4.titleCasePipe.transform(err.error.error_message));
+                _this4.toastService.toastMsg({
+                  title: "Error",
+                  content: _this4.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this4.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this4.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             }); // }
           }
@@ -564,14 +610,26 @@
             var _this5 = this;
 
             this.expenseservice.deleteExpense({}, this.expenseId).then(function (res) {
-              _this5.toastService.openSnackBar("Employee Expense Approval Deleted Successfully");
+              _this5.toastService.toastMsg({
+                title: "Success",
+                content: "Employee Expense Approval Deleted Successfully!!!"
+              }); // this.toastService.openSnackBar("Employee Expense Approval Deleted Successfully")
+
 
               _this5.getUsersList();
             }, function (err) {
               if (err.error.expose) {
-                _this5.toastService.openErrorSnackBar(_this5.titleCasePipe.transform(err.error.error_message));
+                _this5.toastService.toastMsg({
+                  title: "Error",
+                  content: _this5.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this5.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this5.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -596,7 +654,7 @@
         selectors: [["app-employee-approvals"]],
         decls: 30,
         vars: 3,
-        consts: [[1, "container-fluid", "bg-white", "p-0"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar", "me-4"], ["type", "search", "id", "searchInput", "placeholder", "Employee Name", 1, "form-control", "pe-5", "my-2", 3, "ngModel", "ngModelChange", "change"], [2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "fs--1", "mb-0"], [1, "text-600"], [1, "text-nowrap", 2, "vertical-align", "middle", "width", "40px"], ["type", "checkbox", 1, "form-check-input"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right"], [1, "text-nowrap", "ps-5", 2, "vertical-align", "middle", "text-align", "center"], [1, "text-nowrap", 2, "vertical-align", "middle", "width", "15%"], ["style", "color: #676398", 3, "ngStyle", 4, "ngFor", "ngForOf"], [4, "ngIf"], [2, "color", "#676398", 3, "ngStyle"], ["class", "text-nowrap", "style", "vertical-align:middle;", 4, "ngIf"], ["class", "text-nowrap", "style", "vertical-align:middle;text-align: right;", 4, "ngIf"], [2, "display", "flex", "justify-content", "space-between", "align-items", "center"], ["class", "pe-4", 4, "ngIf"], [1, ""], ["style", "color: green;font-weight: 600;", 3, "click", 4, "ngIf"], ["style", "color: red;font-weight: 600;", 3, "click", 4, "ngIf"], ["class", "", 4, "ngIf"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "center"], ["class", "btn btnp", 3, "click", 4, "ngIf"], ["id", "saleSearchPrint"], ["type", "search", "id", "searchInput", 1, "form-control", "pe-1", 3, "blur"], [1, "pe-4"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], [2, "color", "green", "font-weight", "600", 3, "click"], [2, "color", "red", "font-weight", "600", 3, "click"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], [1, "btn", "btnp", 3, "click"], [1, "fas", "fa-receipt", "icon-color", "iconFontSize"], [1, "text-center"], ["colspan", "12"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
+        consts: [[1, "container-fluid", "bg-white", "p-0"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar", "me-4"], ["type", "search", "id", "searchInput", "placeholder", "Employee Name", 1, "form-control", "pe-5", "my-2", 3, "ngModel", "ngModelChange", "change"], [2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "fs--1", "mb-0"], [1, "text-600"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right"], [1, "text-nowrap", "ps-5", 2, "vertical-align", "middle", "text-align", "center"], [1, "text-nowrap", 2, "vertical-align", "middle", "width", "15%"], ["style", "color: #676398", 3, "ngStyle", 4, "ngFor", "ngForOf"], [4, "ngIf"], [2, "color", "#676398", 3, "ngStyle"], ["class", "text-nowrap", "style", "vertical-align:middle;", 4, "ngIf"], ["class", "text-nowrap", "style", "vertical-align:middle;text-align: right;", 4, "ngIf"], [2, "display", "flex", "justify-content", "space-between", "align-items", "center"], ["class", "pe-4", 4, "ngIf"], [1, ""], ["style", "color: green;font-weight: 600;", 3, "click", 4, "ngIf"], ["style", "color: red;font-weight: 600;", 3, "click", 4, "ngIf"], ["class", "", 4, "ngIf"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "center"], ["class", "btn btnp", 3, "click", 4, "ngIf"], ["id", "saleSearchPrint"], ["type", "search", "id", "searchInput", 1, "form-control", "pe-1", 3, "blur"], [1, "pe-4"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], [2, "color", "green", "font-weight", "600", 3, "click"], [2, "color", "red", "font-weight", "600", 3, "click"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], [1, "btn", "btnp", 3, "click"], [1, "fas", "fa-receipt", "icon-color", "iconFontSize"], [1, "text-center"], ["colspan", "12"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
         template: function EmployeeApprovalsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -629,59 +687,59 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "th", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](9, "input", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Sr No");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "th", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "th", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11, "Employee");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "th", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "th", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](13, "Department");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "th", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "th", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Designation");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "th", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "th", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](17, "Category");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "th", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "th", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](19, "Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "th", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "th", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](21, "Submitted Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "th", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "th", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](23, "Approved Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "th", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "th", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](25, "Status");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](26, "th", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](26, "th", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -689,11 +747,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, EmployeeApprovalsComponent_tr_28_Template, 29, 22, "tr", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](28, EmployeeApprovalsComponent_tr_28_Template, 29, 23, "tr", 11);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](29, EmployeeApprovalsComponent_tbody_29_Template, 4, 0, "tbody", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](29, EmployeeApprovalsComponent_tbody_29_Template, 4, 0, "tbody", 12);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 

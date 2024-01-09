@@ -365,9 +365,17 @@
                 });
               }, function (err) {
                 if (err.error.expose) {
-                  _this5.toastService.openErrorSnackBar(_this5.titleCasePipe.transform(err.error.error_message));
+                  _this5.toastService.toastMsg({
+                    title: "Error",
+                    content: _this5.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this5.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this5.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -383,9 +391,17 @@
               _this6.structureName = res.data.rows;
             }, function (err) {
               if (err.error.expose) {
-                _this6.toastService.openErrorSnackBar(_this6.titleCasePipe.transform(err.error.error_message));
+                _this6.toastService.toastMsg({
+                  title: "Error",
+                  content: _this6.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this6.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this6.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           } // To save the assign structure form
@@ -398,7 +414,11 @@
             this.submitted = true;
 
             if (this.structureId === undefined || this.structureId === null) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var body = {
@@ -409,7 +429,11 @@
               this.payrollService.assignStructure(body).then(function (res) {
                 console.log(res);
 
-                _this7.toastService.openSnackBar("Payroll Assigned Successfully!!!");
+                _this7.toastService.toastMsg({
+                  title: "Success",
+                  content: "Payroll Assigned Successfully!!!"
+                }); // this.toastService.openSnackBar("Payroll Assigned Successfully!!!");
+
 
                 _this7.commonService.notifyDataAdded();
 
@@ -418,15 +442,27 @@
                 _this7.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this7.toastService.openErrorSnackBar(_this7.titleCasePipe.transform(err.error.error_message));
+                  _this7.toastService.toastMsg({
+                    title: "Error",
+                    content: _this7.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this7.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this7.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
               this.payrollService.retailerPayrollPut(bodypayrollPut, this.currentUser.id).then(function (res) {
                 console.log(res);
 
-                _this7.toastService.openSnackBar("Payroll Data Updated  Successfully!!!");
+                _this7.toastService.toastMsg({
+                  title: "Success",
+                  content: "Payroll Data Updated Successfully!!!"
+                }); // this.toastService.openSnackBar("Payroll Data Updated  Successfully!!!");
+
 
                 _this7.commonService.notifyDataAdded();
 
@@ -435,9 +471,17 @@
                 _this7.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this7.toastService.openErrorSnackBar(_this7.titleCasePipe.transform(err.error.error_message));
+                  _this7.toastService.toastMsg({
+                    title: "Error",
+                    content: _this7.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this7.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this7.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -904,9 +948,19 @@
               _this10.structureName = res.data.rows;
             }, function (err) {
               if (err.error.expose) {
-                _this10.toastService.openErrorSnackBar(_this10.titleCasePipe.transform(err.error.error_message));
+                _this10.toastService.toastMsg({
+                  title: "Error",
+                  content: _this10.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(
+                //   this.titleCasePipe.transform(err.error.error_message)
+                // );
+
               } else {
-                _this10.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this10.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           } // Select Structure
@@ -956,7 +1010,11 @@
             this.submitted = true;
 
             if (this.CreateStructureForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               console.log(this.CreateStructureForm);
               return false;
             } else {
@@ -972,16 +1030,32 @@
               };
               console.log(body);
               this.payrollService.payrollSettingSave(body, this.StructureId).then(function (res) {
-                _this12.toastService.openSnackBar("Payroll Setting Data Added Successfully!!!");
+                _this12.toastService.toastMsg({
+                  title: "Success",
+                  content: "Payroll Setting Data Added Successfully!!!"
+                }); // this.toastService.openSnackBar(
+                //   "Payroll Setting Data Added Successfully!!!"
+                // );
+
 
                 _this12.CreateStructureForm.reset();
 
                 _this12.submitted = false;
               }, function (err) {
                 if (err.error.expose) {
-                  _this12.toastService.openErrorSnackBar(_this12.titleCasePipe.transform(err.error.error_message));
+                  // this.toastService.openErrorSnackBar(
+                  //   this.titleCasePipe.transform(err.error.error_message)
+                  // );
+                  _this12.toastService.toastMsg({
+                    title: "Error",
+                    content: _this12.titleCasePipe.transform(err.error.error_message)
+                  });
                 } else {
-                  _this12.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this12.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -1711,9 +1785,17 @@
               });
             }, function (err) {
               if (err.error.expose) {
-                _this13.toastService.openErrorSnackBar(_this13.titleCasePipe.transform(err.error.error_message));
+                _this13.toastService.toastMsg({
+                  title: "Error",
+                  content: _this13.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this13.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this13.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           } // To update the ctc of the employee.
@@ -1724,7 +1806,11 @@
             var _this14 = this;
 
             if (this.EditPayrollForm.invalid) {
-              this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields."
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               var body = {
@@ -1734,16 +1820,28 @@
                 "userId": this.employeeId
               };
               this.payrollService.addSalary(body).then(function (res) {
-                _this14.toastService.openSnackBar("Payroll Updated Successfully!!!");
+                _this14.toastService.toastMsg({
+                  title: "Success",
+                  content: "Payroll Updated Successfully!!!"
+                }); // this.toastService.openSnackBar("Payroll Updated Successfully!!!");
+
 
                 _this14.commonService.notifyDataAdded();
 
                 _this14.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this14.toastService.openErrorSnackBar(_this14.titleCasePipe.transform(err.error.error_message));
+                  _this14.toastService.toastMsg({
+                    title: "Error",
+                    content: _this14.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this14.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this14.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -2314,9 +2412,19 @@
               _this16.getPayrollList();
             }, function (err) {
               if (err.error.expose) {
-                _this16.toastService.openErrorSnackBar(_this16.titleCasePipe.transform(err.error.error_message));
+                // this.toastService.openErrorSnackBar(
+                //   this.titleCasePipe.transform(err.error.error_message)
+                // );
+                _this16.toastService.toastMsg({
+                  title: "Error",
+                  content: _this16.titleCasePipe.transform(err.error.error_message)
+                });
               } else {
-                _this16.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this16.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           } // Code for Multiple selection if necessary.
@@ -2401,9 +2509,17 @@
               console.log("Basicsalary    hraSalary  pfsalary--->", _this17.basicSalary, _this17.hraSalary, _this17.pfSalary);
             }, function (err) {
               if (err.error.expose) {
-                _this17.toastService.openErrorSnackBar(_this17.titleCasePipe.transform(err.error.error_message));
+                _this17.toastService.toastMsg({
+                  title: "Error",
+                  content: _this17.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this17.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this17.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           } // Search bar functionality
@@ -2418,13 +2534,25 @@
 
               if (_this18.payrollList.length > 0) {//   this.toastService.openSnackBar("Record Found Successfully!!!")
               } else {
-                _this18.toastService.openErrorSnackBar("Record Not Found Successfully!!!");
+                _this18.toastService.toastMsg({
+                  title: "Error",
+                  content: "Record Not Found!!!"
+                }); // this.toastService.openErrorSnackBar("Record Not Found Successfully!!!");
+
               }
             }, function (err) {
               if (err.error.expose) {
-                _this18.toastService.openErrorSnackBar(_this18.titleCasePipe.transform(err.error.error_message));
+                _this18.toastService.toastMsg({
+                  title: "Error",
+                  content: _this18.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this18.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this18.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           } // To open dialig box of Assign Payroll form.
@@ -2433,7 +2561,10 @@
           key: "assignPayroll",
           value: function assignPayroll(payrollList) {
             if (this.upiCheckedId.length == 0) {
-              this.toastService.openErrorSnackBar("Please select the employee you want to assign.");
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "Please Select The Employee You Want To Assign."
+              }); // this.toastService.openErrorSnackBar("Please select the employee you want to assign.");
             } else {
               var dialogRef = this.dialog.open(_assign_payroll_assign_payroll_component__WEBPACK_IMPORTED_MODULE_0__.AssignPayrollComponent, {
                 width: '50%',
@@ -3196,9 +3327,19 @@
               console.log("Salary Details", _this20.salaryData);
             }, function (err) {
               if (err.error.expose) {
-                _this20.toastService.openErrorSnackBar(_this20.titleCasePipe.transform(err.error.error_message));
+                // this.toastService.openErrorSnackBar(
+                //   this.titleCasePipe.transform(err.error.error_message)
+                // );
+                _this20.toastService.toastMsg({
+                  title: "Error",
+                  content: _this20.titleCasePipe.transform(err.error.error_message)
+                });
               } else {
-                _this20.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this20.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -3235,7 +3376,7 @@
         selectors: [["app-saalry-release-list"]],
         decls: 70,
         vars: 11,
-        consts: [["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Name/Type/Payment", 1, "form-control", "pe-5"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["type", "button", 1, "btn", "text-nowrap", "my-2"], [1, "fas", "fa-plus", "me-1"], [1, "my-0", "py-0"], [1, "row", "m-1", "bg-light", "mb-3"], [1, "col-lg-2", "col-xl-2", "col-sm-12", "col-md-2", "bg-light"], [1, "col-lg-6", "col-xl-6", "col-sm-12", "col-md-6", "card", "bg-light", "m-3", 2, "float", "right !important", "background-color", "#EEEEF6 !important"], [1, "row", "text-center"], [1, "col-lg-12", "col-xl-12", "col-md-12", "col-sm-12"], [1, "text-black", 2, "font-size", "16px!important", "font-weight", "500!important", "font-family", "Poppins"], [1, "btn", "btnp", "me-4"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize"], [1, "col-lg-6", "col-xl-6", "col-md-12", "col-sm-12"], [1, "text-black", 2, "font-weight", "500!important", "font-family", "Poppins"], [2, "color", "gray", "font-family", "Poppins"], [1, "col-lg-2", "col-xl-2", "col-sm-12", "col-md-2", "card", "m-3", "bg-white"], [1, "text-center", 2, "color", "gray", "font-family", "Poppins"], [1, "text-center", "fw-bold", "text-black", 2, "font-family", "Poppins", "font-weight", "500 !important"], [1, "text-center", "text-black", 2, "font-family", "Poppins"], [1, "table-container", "overflow-visible"], [1, "table-div", 2, "overflow-x", "auto"], [1, "table", "table-responsive", "mb-0", "bg-white"], [1, "text-nowrap", 2, "vertical-align", "middle", "padding-left", "15px", "padding-top", "15px"], ["type", "checkbox"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right"], ["colspan", "9", 2, "padding", "0px !important", "height", "1px!important"], [1, "col-12", 2, "margin-top", "0px", "margin-bottom", "0px"], ["class", "btn-reveal-trigger text-left ", "style", "color: #676398!important;", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn-reveal-trigger", "text-left", 2, "color", "#676398!important"], [1, "text-nowrap", 2, "vertical-align", "middle", "margin-left", "100px !important"], [2, "vertical-align", "middle"], [1, "row", 2, "display", "flex", "flex-direction", "row", "justify-content", "flex-start", "align-items", "center", "flex-wrap", "nowrap", "padding-right", "8px"], [1, "flex-item", 2, "flex-basis", "55px"], ["alt", "Profile", "onerror", "this.src='assets/img/dashboard-party-profiles/party-profile-1.png'", "alt", "Profile", "width", "50", "height", "50", 1, "rounded-circle", 3, "src"], [1, "flex-item", "party-name", 2, "display", "flex", "flex-direction", "column", "align-items", "center", "flex-basis", "70px"], [2, "vertical-align", "middle", "text-align", "right"], [2, "vertical-align", "middle", "text-align", "center"], ["type", "button", 1, "btn", "btnp", "me-4", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View", 1, "bi", "bi-eye", "icon-color", "iconFontSize"], [1, "text-center"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
+        consts: [["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Name/Type/Payment", 1, "form-control", "pe-5"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["type", "button", 1, "btn", "text-nowrap", "my-2"], [1, "fas", "fa-plus", "me-1"], [1, "my-0", "py-0"], [1, "row", "m-1", "bg-light", "mb-3"], [1, "col-lg-2", "col-xl-2", "col-sm-12", "col-md-2", "bg-light"], [1, "col-lg-6", "col-xl-6", "col-sm-12", "col-md-6", "card", "bg-light", "m-3", 2, "float", "right !important", "background-color", "#EEEEF6 !important"], [1, "row", "text-center"], [1, "col-lg-12", "col-xl-12", "col-md-12", "col-sm-12"], [1, "text-black", 2, "font-size", "16px!important", "font-weight", "500!important", "font-family", "Poppins"], [1, "btn", "btnp", "me-4"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize"], [1, "col-lg-6", "col-xl-6", "col-md-12", "col-sm-12"], [1, "text-black", 2, "font-weight", "500!important", "font-family", "Poppins"], [2, "color", "gray", "font-family", "Poppins"], [1, "col-lg-2", "col-xl-2", "col-sm-12", "col-md-2", "card", "m-3", "bg-white"], [1, "text-center", 2, "color", "gray", "font-family", "Poppins"], [1, "text-center", "fw-bold", "text-black", 2, "font-family", "Poppins", "font-weight", "500 !important"], [1, "text-center", "text-black", 2, "font-family", "Poppins"], [1, "table-container", "overflow-visible"], [1, "table-div", 2, "overflow-x", "auto"], [1, "table", "table-responsive", "mb-0", "bg-white"], [1, "text-nowrap", 2, "vertical-align", "middle", "padding-left", "15px", "padding-top", "15px"], ["type", "checkbox", 1, "form-check-input"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right"], ["colspan", "9", 2, "padding", "0px !important", "height", "1px!important"], [1, "col-12", 2, "margin-top", "0px", "margin-bottom", "0px"], ["class", "btn-reveal-trigger text-left ", "style", "color: #676398!important;", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn-reveal-trigger", "text-left", 2, "color", "#676398!important"], [1, "text-nowrap", 2, "vertical-align", "middle", "margin-left", "100px !important"], [2, "vertical-align", "middle"], [1, "row", 2, "display", "flex", "flex-direction", "row", "justify-content", "flex-start", "align-items", "center", "flex-wrap", "nowrap", "padding-right", "8px"], [1, "flex-item", 2, "flex-basis", "55px"], ["alt", "Profile", "onerror", "this.src='assets/img/dashboard-party-profiles/party-profile-1.png'", "alt", "Profile", "width", "50", "height", "50", 1, "rounded-circle", 3, "src"], [1, "flex-item", "party-name", 2, "display", "flex", "flex-direction", "column", "align-items", "center", "flex-basis", "70px"], [2, "vertical-align", "middle", "text-align", "right"], [2, "vertical-align", "middle", "text-align", "center"], ["type", "button", 1, "btn", "btnp", "me-4", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View", 1, "bi", "bi-eye", "icon-color", "iconFontSize"], [1, "text-center"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
         template: function SaalryReleaseListComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -3556,7 +3697,7 @@
       /*! src/app/core/services/roles-permissions.service */
       30438);
 
-      function SaalryReleaseViewComponent_tr_43_Template(rf, ctx) {
+      function SaalryReleaseViewComponent_tr_46_Template(rf, ctx) {
         if (rf & 1) {
           var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
@@ -3572,7 +3713,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "input", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("keydown.enter", function SaalryReleaseViewComponent_tr_43_Template_input_keydown_enter_4_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("keydown.enter", function SaalryReleaseViewComponent_tr_46_Template_input_keydown_enter_4_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r3);
 
             var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
@@ -3588,7 +3729,7 @@
         }
       }
 
-      function SaalryReleaseViewComponent_tr_72_Template(rf, ctx) {
+      function SaalryReleaseViewComponent_tr_77_Template(rf, ctx) {
         if (rf & 1) {
           var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
@@ -3604,7 +3745,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "input", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("keydown.enter", function SaalryReleaseViewComponent_tr_72_Template_input_keydown_enter_4_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("keydown.enter", function SaalryReleaseViewComponent_tr_77_Template_input_keydown_enter_4_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r5);
 
             var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
@@ -3674,9 +3815,19 @@
               _this21.totalEarning = res.data.grossEarning;
             }, function (err) {
               if (err.error.expose) {
-                _this21.toastService.openErrorSnackBar(_this21.titleCasePipe.transform(err.error.error_message));
+                // this.toastService.openErrorSnackBar(
+                //   this.titleCasePipe.transform(err.error.error_message)
+                // );
+                _this21.toastService.toastMsg({
+                  title: "Error",
+                  content: _this21.titleCasePipe.transform(err.error.error_message)
+                });
               } else {
-                _this21.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this21.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -3689,9 +3840,17 @@
               console.log("Payroll employee by id", res);
             }, function (err) {
               if (err.error.expose) {
-                _this22.toastService.openErrorSnackBar(_this22.titleCasePipe.transform(err.error.error_message));
+                _this22.toastService.toastMsg({
+                  title: "Error",
+                  content: _this22.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this22.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this22.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -3732,7 +3891,11 @@
               "employeeId": this.employeeId
             };
             this.saalryReleaseServiceService.PostEarningDeduct(body, this.currentUser.id).then(function (res) {
-              _this23.toastService.openSnackBar("Earning Details Added Successfully!!!");
+              // this.toastService.openSnackBar("Earning Details Added Successfully!!!");
+              _this23.toastService.toastMsg({
+                title: "Success",
+                content: "Earning Details Added Successfully!!!"
+              });
 
               _this23.saalryReleaseServiceService.notifyPartyAdded();
 
@@ -3741,9 +3904,17 @@
               _this23.dialogRef.close();
             }, function (err) {
               if (err.error.expose) {
-                _this23.toastService.openErrorSnackBar(_this23.titleCasePipe.transform(err.error.error_message));
+                _this23.toastService.toastMsg({
+                  title: "Error",
+                  content: _this23.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this23.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this23.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -3761,7 +3932,11 @@
               "employeeId": this.employeeId
             };
             this.saalryReleaseServiceService.PostEarningDeduct(body, this.currentUser.id).then(function (res) {
-              _this24.toastService.openSnackBar("Deduction  Details Added Successfully!!!");
+              _this24.toastService.toastMsg({
+                title: "Success",
+                content: "Deduction Details Added Successfully!!!"
+              }); // this.toastService.openSnackBar("Deduction  Details Added Successfully!!!");
+
 
               _this24.saalryReleaseServiceService.notifyPartyAdded();
 
@@ -3770,9 +3945,17 @@
               _this24.dialogRef.close();
             }, function (err) {
               if (err.error.expose) {
-                _this24.toastService.openErrorSnackBar(_this24.titleCasePipe.transform(err.error.error_message));
+                _this24.toastService.toastMsg({
+                  title: "Error",
+                  content: _this24.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this24.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this24.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -3788,8 +3971,8 @@
       _SaalryReleaseViewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
         type: _SaalryReleaseViewComponent,
         selectors: [["app-saalry-release-view"]],
-        decls: 93,
-        vars: 13,
+        decls: 102,
+        vars: 40,
         consts: [[1, "modal-header", "flex", "d-flex", "flex-row", "pt-0", 2, "justify-content", "center", "align-items", "center"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "flex", "d-flex", 2, "margin-left", "auto"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "row", "mb-3"], [1, "col-lg-6", "col-xl-6", "col-md-6", "col-sm-12", 2, "margin-left", "20px !important"], [1, "text-black", "fw-bold"], [1, "col-lg-6", "col-xl-6", "col-md-6", "col-sm-12"], [1, "container"], [1, "table", "table-responsive", "table-bordered", "fs--1", "mb-2"], [1, "text-success", "fw-bold", 2, "vertical-align", "middle"], [1, "text-black", "fw-bold", 2, "text-align", "right !important"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "text-align", "right !important"], [4, "ngIf"], [1, "text-nowrap", "fw-bold", 2, "vertical-align", "middle", "color", "#6090EE !important", 3, "click"], [1, "text-black", "fw-bold", 2, "vertical-align", "middle"], [1, "text-danger", "fw-bold", 2, "vertical-align", "middle"], [1, "bg-light"], [1, "row"], [1, "col-lg-12", "col-xl-12", "col-md-12", "col-sm-12"], [1, "text-black", "fw-bold", "text-center"], [3, "keydown.enter"]],
         template: function SaalryReleaseViewComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -3897,119 +4080,113 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](33, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](34, "td", 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](35, "HRA");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](36, "td", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](37);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](33, "number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](38, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](34, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](39, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](35, "td", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](40, "Special Allowance");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](41, "td", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](42);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](36, "HRA");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "td", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](38);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](39, "number");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](43, SaalryReleaseViewComponent_tr_43_Template, 5, 0, "tr", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](44, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](40, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](45, "td", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](41, "td", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_td_click_45_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](42, "Special Allowance");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](43, "td", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](44);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](45, "number");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](46, SaalryReleaseViewComponent_tr_46_Template, 5, 0, "tr", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](47, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](48, "td", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_td_click_48_listener() {
               return ctx.AddEarning();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](46, "+ Add Earning");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](49, "+ Add Earning");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](47, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](50, "td", 14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](48, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](51, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](49, "td", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](52, "td", 18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](50, "Gross Earning");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](51, "td", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](52);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](53, "Gross Earning");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](54, "td", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](53, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](55);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](54, "td", 19);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](55, "(-) Deduction");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](56, "td", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](57, "Amount");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](56, "number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](58, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](57, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](59, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](58, "td", 19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](60, "PF");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](61, "td", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](62);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](59, "(-) Deduction");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](60, "td", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](63, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](64, "td", 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](65, "Profession Tax");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](61, "Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](66, "td", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](67, "\u20B9\xA0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](62, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](63, "td", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](64, "PF");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](65, "td", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](66);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](67, "number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -4019,25 +4196,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](69, "td", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](70, "Paid leave Taken(2)");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](70, "Profession Tax");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](71, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](71, "td", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](72, "\u20B9\xA0");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](72, SaalryReleaseViewComponent_tr_72_Template, 5, 0, "tr", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](73, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](74, "td", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](74, "td", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_td_click_74_listener() {
-              return ctx.AddDeduct();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](75, " + Add Deduction ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](75, "Paid leave Taken(2)");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -4045,34 +4220,56 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](77, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](77, SaalryReleaseViewComponent_tr_77_Template, 5, 0, "tr", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](78, "td", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](78, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](79, " Total Deduction");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](79, "td", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_td_click_79_listener() {
+              return ctx.AddDeduct();
+            });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](80, "td", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](81);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](80, " + Add Deduction ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](82, "tr", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](81, "td", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](82, "tr");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](83, "td", 18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](84, " Total Net Payable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](84, " Total Deduction");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](85, "td", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](85, "td", 13);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](86);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](87, "number");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](88, "tr", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](89, "td", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](90, " Total Net Payable");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](91, "td", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](92);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](93, "number");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -4083,19 +4280,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](87, "div", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](94, "div", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](88, "div", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](95, "div", 22);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](89, "p", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](96, "p", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](90);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](97);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](98, "number");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](99, "number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](91, "p", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](100, "p", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](92, "Total Net Payable =(Gross Earning - Total Deductions)");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](101, "Total Net Payable =(Gross Earning - Total Deductions)");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -4117,46 +4318,47 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", ctx.salaryData.employeePayroll ? ctx.salaryData.employeePayroll.basic : 0, "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](33, 13, ctx.salaryData.employeePayroll ? ctx.salaryData.employeePayroll.basic : 0, "1.2-2"), "");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", ctx.salaryData.employeePayroll ? ctx.salaryData.employeePayroll.hra : 0, "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](39, 16, ctx.salaryData.employeePayroll ? ctx.salaryData.employeePayroll.hra : 0, "1.2-2"), "");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", ctx.salaryData.employeePayroll ? ctx.salaryData.employeePayroll.specialAllowance : 0, "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](45, 19, ctx.salaryData.employeePayroll ? ctx.salaryData.employeePayroll.specialAllowance : 0, "1.2-2"), "");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.addErningFlag);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", ctx.totalEarning, "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](56, 22, ctx.totalEarning, "1.2-2"), "");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", ctx.salaryData.employeePayroll ? ctx.salaryData.employeePayroll.pf : 0, "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](67, 25, ctx.salaryData.employeePayroll ? ctx.salaryData.employeePayroll.pf : 0, "1.2-2"), "");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.adddeductFlag);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", ctx.totalDeduct, "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](87, 28, ctx.totalDeduct, "1.2-2"), "");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" \u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](93, 31, ctx.totaltotalNetPayable, "1.2-2"), "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" \u20B9\xA0", ctx.totaltotalNetPayable, "");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate2"](" Total Net Payable \u20B9\xA0", ctx.totaltotalNetPayable, " (", ctx.finalAmount, ") ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate2"](" Total Net Payable \u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](98, 34, ctx.totaltotalNetPayable, "1.2-2"), " (", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](99, 37, ctx.finalAmount, "1.2-2"), ") ");
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.DecimalPipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzYWFscnktcmVsZWFzZS12aWV3LmNvbXBvbmVudC5zY3NzIn0= */"]
       });
       /***/

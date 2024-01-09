@@ -219,10 +219,18 @@ class AddLeaveemployeeComponent {
             console.log(this.compensatoryleavedata);
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
@@ -260,7 +268,11 @@ class AddLeaveemployeeComponent {
     postLeave() {
         this.submitted = true;
         if (this.addleaveForm.invalid) {
-            this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields.",
+            });
+            // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
             return false;
         }
         else {
@@ -276,15 +288,27 @@ class AddLeaveemployeeComponent {
                 "employeeId": this.currentEmployee.id
             };
             this.leaveservice.addLeaveDetails(Body).then(res => {
-                this.toastService.openSnackBar(" Leave Added Successfully");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Leave Added Successfully!!!",
+                });
+                // this.toastService.openSnackBar(" Leave Added Successfully");
                 this.leaveservice.notifyLeaveAdded();
                 this.dialogRef.close();
             }, (err) => {
                 if (err.error.expose) {
-                    this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: this.titleCasePipe.transform(err.error.error_message),
+                    });
+                    // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
                 }
                 else {
-                    this.toastService.openErrorSnackBar("Something Went Wrong.");
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "Something Went Wrong."
+                    });
+                    // this.toastService.openErrorSnackBar("Something Went Wrong.");
                 }
             });
         }
@@ -312,7 +336,17 @@ class AddLeaveemployeeComponent {
         if (e.target.files && e.target.files[0]) {
             reader.readAsDataURL(file);
             if (file == null) {
-                this.toastService.openErrorSnackBar("Please Select Image To Upload.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Please Select Image To Upload."
+                });
+                // this.toastService.toastMsg({
+                //   title: "Error",
+                //   content: "Please Select Image To Upload."
+                // });
+                // this.toastService.openErrorSnackBar(
+                //   "Please Select Image To Upload.",
+                // );
             }
             else {
                 formdata.set("upload", file);
@@ -666,10 +700,18 @@ class EditLeaveemployeeComponent {
             console.log(this.compensatoryleavedata);
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
@@ -692,7 +734,11 @@ class EditLeaveemployeeComponent {
     UpdateLeave() {
         this.submitted = true;
         if (this.editleaveForm.invalid) {
-            this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields.",
+            });
+            // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
             return false;
         }
         else {
@@ -708,15 +754,27 @@ class EditLeaveemployeeComponent {
                 //"status": "REJECTED"
             };
             this.leaveservice.LeaveUpdateByEmployeeId(Body, this.leaveId).then((res) => {
-                this.toastService.openSnackBar(" Leave Updated Successfully");
+                // this.toastService.openSnackBar(" Leave Updated Successfully");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Leave Updated Successfully!!!",
+                });
                 this.leaveservice.notifyLeaveAdded();
                 this.dialogRef.close();
             }, (err) => {
                 if (err.error.expose) {
-                    this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: this.titleCasePipe.transform(err.error.error_message),
+                    });
+                    // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
                 }
                 else {
-                    this.toastService.openErrorSnackBar("Something Went Wrong.");
+                    this.toastService.toastMsg({
+                        title: "Error",
+                        content: "Something Went Wrong.",
+                    });
+                    // this.toastService.openErrorSnackBar("Something Went Wrong.");
                 }
             });
         }
@@ -744,7 +802,13 @@ class EditLeaveemployeeComponent {
         if (e.target.files && e.target.files[0]) {
             reader.readAsDataURL(file);
             if (file == null) {
-                this.toastService.openErrorSnackBar("Please Select Image To Upload.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Please Select Image To Upload.",
+                });
+                // this.toastService.openErrorSnackBar(
+                //   "Please Select Image To Upload.",
+                // );
             }
             else {
                 formdata.set("upload", file);
@@ -1156,10 +1220,18 @@ class LeaveEmployeeComponent {
             this.userId = res.data.parentId;
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
@@ -1169,10 +1241,18 @@ class LeaveEmployeeComponent {
             this.leaveAllData = res.data;
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message)
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message)
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
@@ -1190,10 +1270,18 @@ class LeaveEmployeeComponent {
             this.thismonth = res.data.monthlyHoliday[0].count == null ? 0 : res.data.monthlyHoliday[0].count;
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message)
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
@@ -1230,14 +1318,26 @@ class LeaveEmployeeComponent {
     }
     deletleaveById() {
         this.leaveservice.deleteLeave({}, this.leaveId).then(res => {
-            this.toastService.openSnackBar(" Leave Deleted Successfully");
+            // this.toastService.openSnackBar(" Leave Deleted Successfully")
+            this.toastService.toastMsg({
+                title: "Success",
+                content: "Leave Deleted Successfully!!!",
+            });
             this.getleaveDetails();
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }

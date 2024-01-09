@@ -297,7 +297,11 @@ class NewAddBidClientComponent {
     postClientQuotePrice() {
         this.submitted = true;
         if (this.quotePriceForm.invalid) {
-            this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+            // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+            this.toastService.toastMsg({
+                title: "Error",
+                content: "Fill All Required Fields.",
+            });
             return false;
         }
         else {
@@ -312,12 +316,20 @@ class NewAddBidClientComponent {
                 "deliveryCharge": this.quotePriceForm.controls.deleveryCharge.value,
             };
             this.biddingService.postClientQuotePrice(data).then((res) => {
-                this.toastService.openSnackBar("Price Quoted Successfully!!!");
+                this.toastService.toastMsg({
+                    title: "Success",
+                    content: "Price Quoted Successfully!!!"
+                });
+                // this.toastService.openSnackBar("Price Quoted Successfully!!!");
                 this.quotePriceForm.reset();
                 this.searchedProduct = [];
                 this.dialogRef.close();
             }, (err) => {
-                this.toastService.openErrorSnackBar("Please Try Again Later!!!");
+                // this.toastService.openErrorSnackBar("Please Try Again Later!!!");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Please Try Again Later!!!",
+                });
             });
         }
     }
@@ -368,7 +380,11 @@ class NewAddBidClientComponent {
                 this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
@@ -594,24 +610,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function NewBidClientComponent_div_1_div_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h5", 22);
+function NewBidClientComponent_div_1_div_6_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h4", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "EXPIRED");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+} }
+function NewBidClientComponent_div_1_div_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "button", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h5", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Days : Hours : Mins : Secs");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "h4", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "h4", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
+    const item_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r4.showTimeInterval);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r3.showTimeInterval);
 } }
 function NewBidClientComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 5);
@@ -620,36 +645,37 @@ function NewBidClientComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "div", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "div", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](7, NewBidClientComponent_div_1_div_7_Template, 6, 1, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](8, "img", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, NewBidClientComponent_div_1_div_6_Template, 4, 0, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](8, NewBidClientComponent_div_1_div_8_Template, 6, 1, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](9, "img", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](14);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "div", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](16, "uppercase");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](17, "date");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](17, "uppercase");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](18, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](18, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](20);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](20, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](22);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](22, "div", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](23, "button", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function NewBidClientComponent_div_1_Template_button_click_23_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r6); const item_r3 = restoredCtx.$implicit; const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return ctx_r5.AddOpenDialog(item_r3.wishlistId); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](24, "Accept");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](23, "div", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "button", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function NewBidClientComponent_div_1_Template_button_click_24_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r8); const item_r3 = restoredCtx.$implicit; const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return ctx_r7.AddOpenDialog(item_r3.wishlistId); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](25, "Accept");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "button", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](26, "Reject");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](26, "button", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](27, "Reject");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -657,11 +683,12 @@ function NewBidClientComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const item_r3 = ctx.$implicit;
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](item_r3.itemName);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r0.showTimeInterval != "EXPIRED");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", item_r3.difference < 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", item_r3.difference > 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("src", item_r3.coverPic, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsanitizeUrl"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
@@ -669,22 +696,22 @@ function NewBidClientComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"]("City : ", item_r3.location, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"]("Expected Delivery : ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](16, 11, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](17, 13, item_r3.approxCompletedDate, "dd MMM YYYY")), "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"]("Expected Delivery : ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](17, 12, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](18, 14, item_r3.approxCompletedDate, "dd MMM YYYY")), "");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"]("Expected Range : (\u20B9", item_r3.budgetMin, " - \u20B9", item_r3.budgetMax, ")");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"]("\u20B9", item_r3.price, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r0.showTimeInterval == "EXPIRED");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", item_r3.difference < 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r0.showTimeInterval == "EXPIRED");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", item_r3.difference < 0);
 } }
 function NewBidClientComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "h5", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "h5", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5, "No Data Found.");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -693,9 +720,9 @@ function NewBidClientComponent_div_2_Template(rf, ctx) { if (rf & 1) {
 } }
 const _c0 = function () { return [5, 10, 20, 30]; };
 function NewBidClientComponent_mat_paginator_3_Template(rf, ctx) { if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-paginator", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("page", function NewBidClientComponent_mat_paginator_3_Template_mat_paginator_page_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return ctx_r7.handlePage($event); });
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-paginator", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("page", function NewBidClientComponent_mat_paginator_3_Template_mat_paginator_page_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r10); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return ctx_r9.handlePage($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
@@ -795,12 +822,14 @@ class NewBidClientComponent {
                 let lastDate = new Date(moment__WEBPACK_IMPORTED_MODULE_0__(createDate).add(7, 'days').format("YYYY-MM-DD HH:mm:ss")).getTime();
                 let todaysDate = new Date().getTime();
                 this.difference = lastDate - todaysDate;
+                console.log("this.difference", this.difference);
                 // Time calculations for days, hours, minutes, and seconds
                 var days = Math.floor(this.difference / (1000 * 60 * 60 * 24));
                 var hours = Math.floor((this.difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((this.difference % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((this.difference % (1000 * 60)) / 1000);
                 this.showTimeInterval = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                console.log("this.showTimeInterval", this.showTimeInterval);
                 if (element.product) {
                     console.log("element.product", i, element.product);
                     let data = {
@@ -815,6 +844,7 @@ class NewBidClientComponent {
                         approxCompletedDate: element.approxCompletedDate ? element.approxCompletedDate : "-",
                         price: element.product ? element.product.salePrice : "-",
                         showTimeInterval: this.showTimeInterval ? this.showTimeInterval : "",
+                        difference: this.difference,
                         biddings: element.biddings ? element.biddings : "-",
                         createdAt: element.createdAt ? element.createdAt : "",
                         wishlistId: element.id,
@@ -825,15 +855,23 @@ class NewBidClientComponent {
                 // If the countdown is over, write some text 
                 if (this.difference < 0) {
                     clearInterval(this.interval);
-                    this.showTimeInterval = "EXPIRED";
+                    //this.showTimeInterval = "EXPIRED";
                 }
             }
         }, (err) => {
             if (err.error.expose) {
-                this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: this.titleCasePipe.transform(err.error.error_message),
+                });
+                // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
-                this.toastService.openErrorSnackBar("Something Went Wrong.");
+                this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong.",
+                });
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
             }
         });
     }
@@ -891,9 +929,9 @@ class NewBidClientComponent {
     }
 }
 NewBidClientComponent.ɵfac = function NewBidClientComponent_Factory(t) { return new (t || NewBidClientComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_bidding_service__WEBPACK_IMPORTED_MODULE_2__.BiddingService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_3__.CommonService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_product_service__WEBPACK_IMPORTED_MODULE_4__.ProductService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_5__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_8__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_9__.MatDialog)); };
-NewBidClientComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: NewBidClientComponent, selectors: [["app-new-bid-client"]], decls: 4, vars: 3, consts: [[1, "container-fluid"], [4, "ngFor", "ngForOf"], ["class", "card-body p-0 overflow-hidden m-2 p-2", 4, "ngIf"], ["class", "float-right mt-2", "showFirstLastButtons", "", "aria-label", "Select page", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page", 4, "ngIf"], [1, "card"], [1, "card-head"], [1, "itemName"], [1, "card-body"], [1, "card-image"], ["class", "intervalbutton", 4, "ngIf"], ["height", "150", "width", "200", "onerror", "this.src='../../../assets/img/products/2.jpg';", "alt", "Image", 1, "coverImage", 3, "src"], [1, "bid-content"], [1, "p-1", "content1"], [1, "p-1", "content2"], [1, "p-1", "content3"], [1, "p-1", "content4"], [1, "p-1", "content5", "text-warning"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-save", 2, "margin-right", "10px !important", 3, "disabled", "click"], ["type", "button", 1, "btn", "btn-cancel", 3, "disabled"], [1, "intervalbutton"], [1, "btn", "btn-warning"], [1, "timeInterval"], [1, "card-body", "p-0", "overflow-hidden", "m-2", "p-2"], [1, "text-center"], ["colspan", "10"], ["src", "assets/img/icons/spot-illustrations/GST No Transaction.png", "width", "124", "height", "142", "alt", "", 1, "image-responsive"], [1, "text-nowrap", "pt-2", 2, "font-weight", "600", "color", "#000000"], ["showFirstLastButtons", "", "aria-label", "Select page", 1, "float-right", "mt-2", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page"]], template: function NewBidClientComponent_Template(rf, ctx) { if (rf & 1) {
+NewBidClientComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: NewBidClientComponent, selectors: [["app-new-bid-client"]], decls: 4, vars: 3, consts: [[1, "container-fluid"], [4, "ngFor", "ngForOf"], ["class", "card-body p-0 overflow-hidden m-2 p-2", 4, "ngIf"], ["class", "float-right mt-2", "showFirstLastButtons", "", "aria-label", "Select page", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page", 4, "ngIf"], [1, "card"], [1, "card-head"], [1, "itemName"], [1, "card-body"], ["class", "d-grid", "style", "position: absolute; transform: rotate(-45deg);margin:10px ", 4, "ngIf"], [1, "card-image"], ["class", "intervalbutton", 4, "ngIf"], ["height", "150", "width", "200", "onerror", "this.src='../../../assets/img/products/2.jpg';", "alt", "Image", 1, "coverImage", 3, "src"], [1, "bid-content"], [1, "p-1", "content1"], [1, "p-1", "content2"], [1, "p-1", "content3"], [1, "p-1", "content4"], [1, "p-1", "content5", "text-warning"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-save", 2, "margin-right", "10px !important", 3, "disabled", "click"], ["type", "button", 1, "btn", "btn-cancel", 3, "disabled"], [1, "d-grid", 2, "position", "absolute", "transform", "rotate(-45deg)", "margin", "10px"], [1, "btn", "btn-warning", "rounded-0", "diagonal-button"], [1, "text-white", "text-bold", "mb-0"], [1, "intervalbutton"], [1, "btn", "btn-warning"], [1, "timeInterval"], [1, "card-body", "p-0", "overflow-hidden", "m-2", "p-2"], [1, "text-center"], ["colspan", "10"], ["src", "assets/img/icons/spot-illustrations/GST No Transaction.png", "width", "124", "height", "142", "alt", "", 1, "image-responsive"], [1, "text-nowrap", "pt-2", 2, "font-weight", "600", "color", "#000000"], ["showFirstLastButtons", "", "aria-label", "Select page", 1, "float-right", "mt-2", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page"]], template: function NewBidClientComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, NewBidClientComponent_div_1_Template, 27, 16, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, NewBidClientComponent_div_1_Template, 28, 17, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, NewBidClientComponent_div_2_Template, 6, 0, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](3, NewBidClientComponent_mat_paginator_3_Template, 1, 5, "mat-paginator", 3);

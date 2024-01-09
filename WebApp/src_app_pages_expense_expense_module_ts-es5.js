@@ -656,12 +656,22 @@
 
             if (this.expenseListType === 'COGS') {
               if (this.expenseForm.invalid) {
-                this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Fill All Required Fields."
+                }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
                 this.apiCallInProgress = false;
                 return false;
               } else {
                 if (this.formArrayData.length < 1) {
-                  this.toastService.openErrorSnackBar("Please Add At Least One Expense Item To Proceed!!!");
+                  this.toastService.toastMsg({
+                    title: "Error",
+                    content: "Please Add At Least One Expense Item To Proceed!!!"
+                  }); // this.toastService.openErrorSnackBar(
+                  //   "Please Add At Least One Expense Item To Proceed!!!"
+                  // );
+
                   this.apiCallInProgress = false;
                   return false;
                 }
@@ -680,7 +690,11 @@
                   "expenseDelete": this.deleteArray
                 };
                 this.expenseservice.ExpneseUpdate(body, this.expenseId).then(function (res) {
-                  _this6.toastService.openSnackBar("Expense Updated Successfully!!!");
+                  // this.toastService.openSnackBar("Expense Updated Successfully!!!");
+                  _this6.toastService.toastMsg({
+                    title: "Success",
+                    content: "Expense Updated Successfully!!!"
+                  });
 
                   _this6.router.navigate(["/pages/expense_page"]);
 
@@ -691,15 +705,27 @@
                   _this6.apiCallInProgress = false;
 
                   if (err.error.expose) {
-                    _this6.toastService.openErrorSnackBar(_this6.titleCasePipe.transform(err.error.error_message));
+                    _this6.toastService.toastMsg({
+                      title: "Error",
+                      content: _this6.titleCasePipe.transform(err.error.error_message)
+                    }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                   } else {
-                    _this6.toastService.openErrorSnackBar("Something Went Wrong.");
+                    _this6.toastService.toastMsg({
+                      title: "Error",
+                      content: "Something Went Wrong."
+                    }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                   }
                 });
               }
             } else {
               if (this.expenseForm.controls.expenseDate.value == "" || this.expenseForm.controls.expenseCategory.value == "" || this.expenseForm.controls.expenseType.value == "" || this.expenseForm.controls.paymentMode.value == "") {
-                this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+                this.toastService.toastMsg({
+                  title: "Error",
+                  content: "Fill All Required Fields."
+                });
                 this.apiCallInProgress = false;
                 return false;
               }
@@ -718,7 +744,11 @@
                 "expenseDelete": []
               };
               this.expenseservice.ExpneseUpdate(_body, this.expenseId).then(function (res) {
-                _this6.toastService.openSnackBar("Expense Updated Successfully!!!");
+                // this.toastService.openSnackBar("Expense Updated Successfully!!!");
+                _this6.toastService.toastMsg({
+                  title: "Success",
+                  content: "Expense Updated Successfully!!!"
+                });
 
                 _this6.router.navigate(["/pages/expense_page"]);
 
@@ -729,9 +759,17 @@
                 _this6.apiCallInProgress = false;
 
                 if (err.error.expose) {
-                  _this6.toastService.openErrorSnackBar(_this6.titleCasePipe.transform(err.error.error_message));
+                  _this6.toastService.toastMsg({
+                    title: "Error",
+                    content: _this6.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this6.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this6.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -1231,14 +1269,14 @@
         if (rf & 1) {
           var _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "span", 43);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "span", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_span_24_button_1_span_1_Template_span_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_span_24_button_1_span_1_Template_span_click_0_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r11);
 
             var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](3);
 
-            return ctx_r10.upiCheckedId.length > 0 ? ctx_r10.getUPIcheckId(ctx_r10.upiCheckedId) : ctx_r10.getSingleCheckedId(ctx_r10.checkSingleArray);
+            return ctx_r10.upiCheckedId.length > 0 ? ctx_r10.getUPIcheckId($event, ctx_r10.upiCheckedId) : ctx_r10.getSingleCheckedId($event, ctx_r10.checkSingleArray);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
@@ -1247,9 +1285,9 @@
 
       function ExpenseListComponent_span_24_button_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "button", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "button", 42);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, ExpenseListComponent_span_24_button_1_span_1_Template, 1, 0, "span", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, ExpenseListComponent_span_24_button_1_span_1_Template, 1, 0, "span", 43);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
         }
@@ -1259,7 +1297,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r8.checkSingleArray.length > 0 || ctx_r8.isChecked);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r8.checkSingleArray.length > 0 || ctx_r8.upiCheckedId.length > 0);
         }
       }
 
@@ -1267,7 +1305,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, ExpenseListComponent_span_24_button_1_Template, 2, 1, "button", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, ExpenseListComponent_span_24_button_1_Template, 2, 1, "button", 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
         }
@@ -1277,7 +1315,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r0.checkSingleArray.length > 0 || ctx_r0.isChecked);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r0.checkSingleArray.length > 0 || ctx_r0.upiCheckedId.length > 0);
         }
       }
 
@@ -1285,25 +1323,27 @@
         if (rf & 1) {
           var _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "tr", 44);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "tr", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "td", 45);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "td", 46);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "input", 46);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "input", 47);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("change", function ExpenseListComponent_tr_37_Template_input_change_2_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r14);
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r14);
+
+            var item_r12 = restoredCtx.$implicit;
 
             var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
 
-            return ctx_r13.onChekedsingleCheck($event);
+            return ctx_r13.onChekedsingleCheck($event, item_r12.id);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "td", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "td", 48);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](4);
 
@@ -1313,7 +1353,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](7, "td", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](7, "td", 49);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](8);
 
@@ -1321,19 +1361,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](10, "td", 49);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](10, "td", 50);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](11);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](12, "td", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](12, "td", 51);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](14, "th", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](14, "th", 52);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](15);
 
@@ -1341,11 +1381,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](17, "td", 52);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](17, "td", 53);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](18, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](18, "div", 54);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](19, "button", 54);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](19, "button", 55);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_tr_37_Template_button_click_19_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r14);
@@ -1357,11 +1397,11 @@
             return ctx_r15.openViewModal(item_r12.id);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](20, "span", 55);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](20, "span", 56);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](21, "button", 54);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](21, "button", 55);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_tr_37_Template_button_click_21_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r14);
@@ -1373,13 +1413,13 @@
             return ctx_r16.openEditModel(item_r12.id);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](22, "span", 56);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](22, "span", 57);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "button", 57);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "button", 58);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](24, "span", 58);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](24, "span", 59);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_tr_37_Template_span_click_24_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r14);
@@ -1409,7 +1449,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("checked", ctx_r1.checkSelectsingle)("value", item_r12.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("checked", ctx_r1.upiCheckedId.includes(item_r12.id))("value", item_r12.id);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
@@ -1437,11 +1477,11 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "tbody");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "tr", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "tr", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "td", 59);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "td", 60);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](3, "img", 60);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](3, "img", 61);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
@@ -1459,7 +1499,7 @@
         if (rf & 1) {
           var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "mat-paginator", 61);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "mat-paginator", 62);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("page", function ExpenseListComponent_mat_paginator_39_Template_mat_paginator_page_0_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r19);
@@ -1481,7 +1521,7 @@
 
       function ExpenseListComponent_h4_81_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "h4", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "h4", 34);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, "Are You Sure To Delete All Expense?");
 
@@ -1491,7 +1531,7 @@
 
       function ExpenseListComponent_h4_82_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "h4", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "h4", 34);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, "Are You Sure To Delete Selected Expense?");
 
@@ -1503,7 +1543,7 @@
         if (rf & 1) {
           var _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "a", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "a", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_a_86_Template_a_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r21);
@@ -1523,7 +1563,7 @@
         if (rf & 1) {
           var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "a", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "a", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_a_87_Template_a_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r23);
@@ -1567,6 +1607,8 @@
           this.p = 1;
           this.pagesize = 1;
           this.searchKey = "";
+          this.archiveIconfalse = false;
+          this.checkSelectsinglefalse = false;
           this.checkSingleArray = [];
           this.isChecked = false;
           this.upiCheckedId = [];
@@ -1624,9 +1666,17 @@
               _this8.toatlPages = res.data.totalPages;
             }, function (err) {
               if (err.error.expose) {
-                _this8.toastService.openErrorSnackBar(_this8.titleCasePipe.transform(err.error.error_message));
+                _this8.toastService.toastMsg({
+                  title: "Error",
+                  content: _this8.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this8.toastService.openErrorSnackBar("Something Went Wrong.");
+                // this.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this8.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                });
               }
             });
           }
@@ -1655,7 +1705,11 @@
               "deleteArray": this.expenseId
             };
             this.expenseservice.deleteEpenseSingle(request, this.currentUser.id).then(function (res) {
-              _this9.toastService.openSnackBar("Expnese Deleted Successfully!!!");
+              // this.toastService.openSnackBar("Expnese Deleted Successfully!!!");
+              _this9.toastService.toastMsg({
+                title: "Success",
+                content: "Expense Deleted Successfully!!!"
+              });
 
               _this9.getAllExpense();
 
@@ -1663,11 +1717,25 @@
               _this9.upiCheckedId = [];
               _this9.checkSelect = false;
               _this9.allSelect = false;
+              _this9.checkSingleArray = [];
+              _this9.archiveIconfalse = false;
+              _this9.allSelect = false;
+              _this9.checkSelectsinglefalse = false;
+              _this9.isChecked = false;
+              _this9.checkSingleArray = [];
             }, function (err) {
               if (err.error.expose) {
-                _this9.toastService.openErrorSnackBar(_this9.titleCasePipe.transform(err.error.error_message));
+                _this9.toastService.toastMsg({
+                  title: "Error",
+                  content: _this9.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this9.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this9.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -1684,9 +1752,17 @@
                 _this10.toatlPages = res.data.totalPages;
               }, function (err) {
                 if (err.error.expose) {
-                  _this10.toastService.openErrorSnackBar(_this10.titleCasePipe.transform(err.error.error_message));
+                  _this10.toastService.toastMsg({
+                    title: "Error",
+                    content: _this10.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this10.toastService.openErrorSnackBar("Something Went Wrong.");
+                  _this10.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -1732,11 +1808,29 @@
               disableClose: true
             });
             dialogRef.afterClosed().subscribe(function (result) {});
-          }
+          } // onChekedsingleCheck(e,expenseId) {
+          //   const checkArray: FormArray = this.form.get('checkArray') as FormArray;
+          //   if (e.target.checked) {
+          //     this.checkSingleArray.push(e.target.value);
+          //   }
+          //   else {
+          //     this.checkSingleArray = [];
+          //   }
+          // }
+
         }, {
           key: "onChekedsingleCheck",
-          value: function onChekedsingleCheck(e) {
-            var checkArray = this.form.get('checkArray');
+          value: function onChekedsingleCheck(e, expenseId) {
+            if (e.target.checked) {
+              this.upiCheckedId.push(expenseId);
+            } else {
+              var index = this.upiCheckedId.indexOf(expenseId);
+
+              if (index !== -1) {
+                this.upiCheckedId.splice(index, 1);
+              }
+            } // const checkArray: FormArray = this.form.get('checkArray') as FormArray;
+
 
             if (e.target.checked) {
               this.checkSingleArray.push(e.target.value);
@@ -1746,7 +1840,7 @@
           }
         }, {
           key: "getSingleCheckedId",
-          value: function getSingleCheckedId(expenseId) {
+          value: function getSingleCheckedId(e, expenseId) {
             this.expenseId = expenseId;
           }
         }, {
@@ -1759,9 +1853,13 @@
             this.upiCheckedId = this.expenseList.map(function (item) {
               if (id == -1) {
                 if (_this11.isChecked == true) {
+                  _this11.archiveIconfalse = true;
+                  _this11.checkSelectsinglefalse = true;
                   _this11.checkSelectsingle = true;
                   return item.id;
                 } else {
+                  _this11.archiveIconfalse = false;
+                  _this11.checkSelectsinglefalse = false;
                   _this11.checkSelectsingle = false;
                   _this11.upiCheckedId = [];
                 }
@@ -1769,8 +1867,13 @@
             });
           }
         }, {
+          key: "showDeleteButton",
+          value: function showDeleteButton() {
+            return this.upiCheckedId.length > 0;
+          }
+        }, {
           key: "getUPIcheckId",
-          value: function getUPIcheckId(expenseId) {
+          value: function getUPIcheckId(e, expenseId) {
             this.expenseId = expenseId;
           }
         }, {
@@ -1790,9 +1893,17 @@
               _this12.toatlPages = res.data.totalPagess;
             }, function (err) {
               if (err.error.expose) {
-                _this12.toastService.openErrorSnackBar(_this12.titleCasePipe.transform(err.error.error_message));
+                _this12.toastService.toastMsg({
+                  title: "Error",
+                  content: _this12.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this12.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this12.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -1840,7 +1951,7 @@
         selectors: [["app-expense-list"]],
         decls: 88,
         vars: 17,
-        consts: [[1, "container-fluid"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "expenseOptions"], [1, "expenseDate"], ["for", "Date Range", 1, "form-label"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "placeholder", "Date", "id", "Date Range", "type", "text", "autocomplete", "off", "ngModel", "", "bsDaterangepicker", "", 2, "text-transform", "uppercase!important", 3, "outsideClick", "maxDate", "ngModel", "bsConfig", "ngModelChange"], [1, "iconcalender", "p-1"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["type", "button", 1, "btn", "my-2", 3, "click"], [1, "fas", "fa-plus"], [1, "btn", "my-2", 3, "click"], [1, "fas", "fa-download"], [2, "width", "100%", "overflow-x", "auto"], ["id", "excel-table", 1, "table", "table-responsive", "table-bordered", "fs--1", "mb-0"], [1, "text-600"], [1, "text-nowrap", "col-1", 2, "vertical-align", "middle", "width", "5%"], ["type", "checkbox", 1, "mt-2", 3, "value", "checked", "ngModel", "change", "ngModelChange"], [4, "ngIf"], [1, "text-nowrap", 2, "vertical-align", "middle", "width", "200px"], [1, "text-nowrap", 2, "vertical-align", "middle", "width", "120px"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right", "width", "150px"], [1, "text-nowrap", 2, "vertical-align", "middle"], ["class", "btn-reveal-trigger text-left ", "style", "color: #676398!important;", 4, "ngFor", "ngForOf"], ["class", "float-right mt-2", "showFirstLastButtons", "", "aria-label", "Select page", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page", 4, "ngIf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], ["id", "errorDeleteSelect-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["class", "text-center ", 4, "ngIf"], ["class", "btn btn-outline-danger", "data-bs-dismiss", "modal", 3, "click", 4, "ngIf"], ["style", "padding: 0px!important;", "class", "btn ms-3", "data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 4, "ngIf"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 1, "btn", "ms-3", 2, "padding", "0px!important"], ["class", "bi-trash icon-color fs-1 text-red", "style", "color: red;", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 3, "click", 4, "ngIf"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "fs-1", "text-red", 2, "color", "red", 3, "click"], [1, "btn-reveal-trigger", "text-left", 2, "color", "#676398!important"], [1, "checkbox", 2, "vertical-align", "middle"], ["type", "checkbox", 1, "form-check-input", 3, "checked", "value", "change"], [1, "text-nowrap", "date", 2, "vertical-align", "middle"], [1, "text-nowrap", "category", 2, "vertical-align", "middle"], [1, "expense", "mode", 2, "vertical-align", "middle"], [1, "paymentMode", 2, "vertical-align", "middle"], [1, "text-nowrap", "totalAmount", 2, "vertical-align", "middle", "text-align", "right"], [1, "text-nowrap", 2, "text-align", "right !important", "vertical-align", "middle"], [1, "flex"], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View", 1, "bi", "bi-eye", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", "ps-2", 2, "color", "red", 3, "click"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"], ["showFirstLastButtons", "", "aria-label", "Select page", 1, "float-right", "mt-2", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page"]],
+        consts: [[1, "container-fluid"], ["id", "showoptionHide", 1, "row", "headerButtons", "mb-3"], [1, "flex-item", "expenseOptions"], [1, "expenseDate"], ["for", "Date Range", 1, "form-label"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "placeholder", "Date", "id", "Date Range", "type", "text", "autocomplete", "off", "ngModel", "", "bsDaterangepicker", "", 2, "text-transform", "uppercase!important", 3, "outsideClick", "maxDate", "ngModel", "bsConfig", "ngModelChange"], [1, "iconcalender", "p-1"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["type", "button", 1, "btn", "my-2", 3, "click"], [1, "fas", "fa-plus"], [1, "btn", "my-2", 3, "click"], [1, "fas", "fa-download"], [2, "width", "100%", "overflow-x", "auto"], ["id", "excel-table", 1, "table", "table-responsive", "table-bordered", "fs--1", "mb-0"], [1, "text-600"], [1, "text-nowrap", 2, "vertical-align", "middle", "display", "flex", "align-items", "center"], [2, "display", "flex", "align-items", "center", "flex-wrap", "nowrap"], ["type", "checkbox", 1, "form-check-input", "mb-2", 3, "value", "checked", "ngModel", "change", "ngModelChange"], [4, "ngIf"], [1, "text-nowrap", 2, "vertical-align", "middle", "width", "200px"], [1, "text-nowrap", 2, "vertical-align", "middle", "width", "120px"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right", "width", "150px"], [1, "text-nowrap", 2, "vertical-align", "middle"], ["class", "btn-reveal-trigger text-left ", "style", "color: #676398!important;", 4, "ngFor", "ngForOf"], ["class", "float-right mt-2", "showFirstLastButtons", "", "aria-label", "Select page", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page", 4, "ngIf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], ["id", "errorDeleteSelect-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["class", "text-center ", 4, "ngIf"], ["class", "btn btn-outline-danger", "data-bs-dismiss", "modal", 3, "click", 4, "ngIf"], ["style", "padding: 0px!important;", "class", "btn ms-3", "data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 4, "ngIf"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDeleteSelect-modal", 1, "btn", "ms-3", 2, "padding", "0px!important"], ["class", "bi-trash icon-color fs-1", "style", "color: red;", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 3, "click", 4, "ngIf"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "fs-1", 2, "color", "red", 3, "click"], [1, "btn-reveal-trigger", "text-left", 2, "color", "#676398!important"], [1, "checkbox", 2, "vertical-align", "middle"], ["type", "checkbox", 1, "form-check-input", 3, "checked", "value", "change"], [1, "text-nowrap", "date", 2, "vertical-align", "middle"], [1, "text-nowrap", "category", 2, "vertical-align", "middle"], [1, "expense", "mode", 2, "vertical-align", "middle"], [1, "paymentMode", 2, "vertical-align", "middle"], [1, "text-nowrap", "totalAmount", 2, "vertical-align", "middle", "text-align", "right"], [1, "text-nowrap", 2, "text-align", "right !important", "vertical-align", "middle"], [1, "flex"], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View", 1, "bi", "bi-eye", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", "ps-2", 2, "color", "red", 3, "click"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"], ["showFirstLastButtons", "", "aria-label", "Select page", 1, "float-right", "mt-2", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page"]],
         template: function ExpenseListComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0);
@@ -1923,9 +2034,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](21, "th", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](22, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](22, "div", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "input", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "input", 18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("change", function ExpenseListComponent_Template_input_change_23_listener($event) {
               return ctx.onChekMultiple($event);
@@ -1935,43 +2046,43 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](24, ExpenseListComponent_span_24_Template, 2, 1, "span", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](24, ExpenseListComponent_span_24_Template, 2, 1, "span", 19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](25, "th", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](25, "th", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](26, "Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](27, "th", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](27, "th", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](28, "Category");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](29, "th", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](29, "th", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](30, "Expense Type");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](31, "th", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](31, "th", 21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](32, "Payment Mode");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](33, "th", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](33, "th", 22);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](34, "Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](35, "th", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](35, "th", 23);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
@@ -1979,37 +2090,37 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](36, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](37, ExpenseListComponent_tr_37_Template, 25, 17, "tr", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](37, ExpenseListComponent_tr_37_Template, 25, 17, "tr", 24);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](38, ExpenseListComponent_tbody_38_Template, 4, 0, "tbody", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](38, ExpenseListComponent_tbody_38_Template, 4, 0, "tbody", 19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](39, ExpenseListComponent_mat_paginator_39_Template, 1, 5, "mat-paginator", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](39, ExpenseListComponent_mat_paginator_39_Template, 1, 5, "mat-paginator", 25);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](40, "div", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](40, "div", 26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](41, "div", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](41, "div", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](42, "div", 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](42, "div", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](43, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](43, "div", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](44, "a", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](44, "a", 30);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](45, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](45, "div", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](46, "div", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](46, "div", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](47, "h2", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](47, "h2", 33);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](48, " Delete Expense? ");
 
@@ -2017,7 +2128,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](49, "h4", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](49, "h4", 34);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](50, "Are You Sure To Delete Expense?");
 
@@ -2025,15 +2136,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](51, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](51, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](52, "a", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](52, "a", 36);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](53, "Close");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](54, "a", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](54, "a", 37);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_Template_a_click_54_listener() {
               return ctx.deletExpenseById();
@@ -2051,23 +2162,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](56, "div", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](56, "div", 26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](57, "div", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](57, "div", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](58, "div", 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](58, "div", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](59, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](59, "div", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](60, "a", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](60, "a", 30);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](61, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](61, "div", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](62, "div", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](62, "div", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](63, "h2", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](63, "h2", 33);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](64, " Delete Expense? ");
 
@@ -2075,7 +2186,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](65, "h4", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](65, "h4", 34);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](66, "Are You Sure To Delete Expense?");
 
@@ -2083,15 +2194,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](67, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](67, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](68, "a", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](68, "a", 36);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](69, "Close");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](70, "a", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](70, "a", 37);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ExpenseListComponent_Template_a_click_70_listener() {
               return ctx.deletExpenseById();
@@ -2109,23 +2220,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](72, "div", 37);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](72, "div", 38);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](73, "div", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](73, "div", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](74, "div", 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](74, "div", 28);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](75, "div", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](75, "div", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](76, "a", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](76, "a", 30);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](77, "div", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](77, "div", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](78, "div", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](78, "div", 32);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](79, "h2", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](79, "h2", 33);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](80, " Delete Expense? ");
 
@@ -2133,23 +2244,23 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](81, ExpenseListComponent_h4_81_Template, 2, 0, "h4", 38);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](81, ExpenseListComponent_h4_81_Template, 2, 0, "h4", 39);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](82, ExpenseListComponent_h4_82_Template, 2, 0, "h4", 38);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](82, ExpenseListComponent_h4_82_Template, 2, 0, "h4", 39);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](83, "div", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](83, "div", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](84, "a", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](84, "a", 36);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](85, "Close");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](86, ExpenseListComponent_a_86_Template, 2, 0, "a", 39);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](86, ExpenseListComponent_a_86_Template, 2, 0, "a", 40);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](87, ExpenseListComponent_a_87_Template, 2, 0, "a", 39);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](87, ExpenseListComponent_a_87_Template, 2, 0, "a", 40);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
@@ -2167,11 +2278,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", -1)("checked", ctx.checkSelect)("ngModel", ctx.allSelect);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", -1)("checked", ctx.upiCheckedId.length === ctx.expenseList.length)("ngModel", ctx.allSelect);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.checkSingleArray.length > 0 || ctx.isChecked);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.showDeleteButton());
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](13);
 
@@ -2527,6 +2638,8 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](3, "number");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -2537,7 +2650,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r2.totalamount);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](3, 1, ctx_r2.totalamount, "1.2-2"), "");
         }
       }
 
@@ -2555,6 +2668,8 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](5, "number");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -2565,7 +2680,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r3.totalamount);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](5, 1, ctx_r3.totalamount, "1.2-2"), "");
         }
       }
 
@@ -2736,9 +2851,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](36, ExpenseViewComponent_div_36_Template, 3, 0, "div", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](37, ExpenseViewComponent_div_37_Template, 3, 1, "div", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](37, ExpenseViewComponent_div_37_Template, 4, 4, "div", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](38, ExpenseViewComponent_div_38_Template, 5, 1, "div", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](38, ExpenseViewComponent_div_38_Template, 6, 4, "div", 15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -2806,7 +2921,7 @@
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.UpperCasePipe, _angular_common__WEBPACK_IMPORTED_MODULE_3__.DatePipe],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.UpperCasePipe, _angular_common__WEBPACK_IMPORTED_MODULE_3__.DatePipe, _angular_common__WEBPACK_IMPORTED_MODULE_3__.DecimalPipe],
         styles: [".btn-cancel[_ngcontent-%COMP%] {\n  color: #000;\n  background: #fff;\n  border: 1px solid #265AE8;\n  border-radius: 8px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGVuc2Utdmlldy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxnQkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUFDSiIsImZpbGUiOiJleHBlbnNlLXZpZXcuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnRuLWNhbmNlbHtcclxuICAgIGNvbG9yIDogIzAwMDtcclxuICAgIGJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjMjY1QUU4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIH0iXX0= */"]
       });
       /***/

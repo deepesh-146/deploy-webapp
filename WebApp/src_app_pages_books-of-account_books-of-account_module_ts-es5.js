@@ -1286,9 +1286,17 @@
               console.log("RES JOURNAL DATA", res);
             }, function (err) {
               if (err.error.expose) {
-                _this3.toastService.openErrorSnackBar(_this3.titleCasePipe.transform(err.error.error_message));
+                _this3.toastService.toastMsg({
+                  title: "Error",
+                  content: _this3.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this3.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this3.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }
@@ -2723,9 +2731,17 @@
               console.log("RES TRIAL DATA", res);
             }, function (err) {
               if (err.error.expose) {
-                _this4.toastService.openErrorSnackBar(_this4.titleCasePipe.transform(err.error.error_message));
+                _this4.toastService.toastMsg({
+                  title: "Error",
+                  content: _this4.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
               } else {
-                _this4.toastService.openErrorSnackBar("Something Went Wrong.");
+                _this4.toastService.toastMsg({
+                  title: "Error",
+                  content: "Something Went Wrong."
+                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
               }
             });
           }

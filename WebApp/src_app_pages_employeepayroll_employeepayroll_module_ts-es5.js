@@ -130,7 +130,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " IFSC required MAHB0001115 format! ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " IFSC required only alphanumeric format! ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         }
@@ -414,7 +414,7 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             this.bankForm = this.formBuilder.group({
-              IFSC: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern('^[A-Za-z]{4}0[0-9]{6}$')]],
+              IFSC: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern(/^[a-zA-Z0-9]*$/)]],
               AccountHolderName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
               BankName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
               AccountNumber: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern("^[0-9]*$"), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.minLength(9), _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.maxLength(19)]],
@@ -447,7 +447,7 @@
             //       if (res) {
             //         this.toastService.openSnackBar("Bank Record Added Successfully!!!");
             //         this.router.navigate(["/pages/Bank-page"]);
-            //         this.bankService.notifyPartyAdded();   
+            //         this.bankService.notifyPartyAdded();
             //         this.dialogRef.close();
             //       }
             //     }, (err) => {
@@ -498,9 +498,17 @@
                   'Branch': _this.titleCasePipe.transform(res.data.branchCode)
                 });
 
-                _this.toastService.openSnackBar("IFSC Code Validated Successfully!!!");
+                _this.toastService.toastMsg({
+                  title: "Success",
+                  content: "IFSC Code Validated Successfully!!!"
+                }); // this.toastService.openSnackBar("IFSC Code Validated Successfully!!!");
+
               }, function (err) {
-                _this.toastService.openErrorSnackBar(_this.titleCasePipe.transform(err.error.error_message));
+                _this.toastService.toastMsg({
+                  title: "Error",
+                  content: _this.titleCasePipe.transform(err.error.error_message)
+                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message))
+
               });
             }
           }
