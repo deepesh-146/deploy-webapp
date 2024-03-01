@@ -512,17 +512,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function AdminRolesListComponent_tr_20_button_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "span", 34);
+function AdminRolesListComponent_tr_21_button_11_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "span", 35);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 } }
-function AdminRolesListComponent_tr_20_button_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "span", 36);
+function AdminRolesListComponent_tr_21_button_12_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "span", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 } }
-function AdminRolesListComponent_tr_20_Template(rf, ctx) { if (rf & 1) {
+function AdminRolesListComponent_tr_21_Template(rf, ctx) { if (rf & 1) {
     const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td");
@@ -539,18 +539,18 @@ function AdminRolesListComponent_tr_20_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "td", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, AdminRolesListComponent_tr_20_button_11_Template, 2, 0, "button", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](12, AdminRolesListComponent_tr_20_button_12_Template, 2, 0, "button", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, AdminRolesListComponent_tr_21_button_11_Template, 2, 0, "button", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](12, AdminRolesListComponent_tr_21_button_12_Template, 2, 0, "button", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "div", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "button", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminRolesListComponent_tr_20_Template_button_click_15_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7); const item_r2 = restoredCtx.$implicit; const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r6.OpenEditRole(item_r2.id); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminRolesListComponent_tr_21_Template_button_click_15_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7); const item_r2 = restoredCtx.$implicit; const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r6.OpenEditRole(item_r2.id); });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "Edit");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "div", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "button", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminRolesListComponent_tr_20_Template_button_click_18_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7); const item_r2 = restoredCtx.$implicit; const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r8.getRoleID(item_r2.id); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "div", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "button", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminRolesListComponent_tr_21_Template_button_click_18_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r7); const item_r2 = restoredCtx.$implicit; const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return ctx_r8.getRoleID(item_r2.id); });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](19, "Delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -574,11 +574,11 @@ function AdminRolesListComponent_tr_20_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !item_r2.isRoot);
 } }
-function AdminRolesListComponent_tbody_21_Template(rf, ctx) { if (rf & 1) {
+function AdminRolesListComponent_tbody_22_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tbody");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "tr", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "td", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "img", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "td", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "img", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -680,7 +680,7 @@ class AdminRolesListComponent {
     }
 }
 AdminRolesListComponent.ɵfac = function AdminRolesListComponent_Factory(t) { return new (t || AdminRolesListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_2__.RolesPermissionsService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_5__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_3__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__.MatDialog)); };
-AdminRolesListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: AdminRolesListComponent, selectors: [["app-admin-roles-list"]], decls: 40, vars: 2, consts: [[1, "row", "card-header", "bg-white"], [1, "col-lg-12", "navOption-btns", 2, "float", "right !important"], ["type", "button", 1, "btn", "m-1", "navOption-btns", 2, "float", "right !important", 3, "click"], [1, "fas", "fa-plus", "me-2"], [1, "card-body", "bg-white", "container-fluid", "mb-2"], [2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "table-striped", "mb-0"], [1, "btn-reveal-trigger"], [1, "text-nowrap", 2, "vertical-align", "middle"], [2, "text-align", "center"], ["class", "btn-reveal-trigger", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["id", "error-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-3", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-cancel"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-save", 3, "click"], [1, "center-align"], [1, ""], [1, "dropdown", "font-sans-serif", "position-static"], ["class", "btn btn-link text-600 btn-sm btnp", "style", "cursor: not-allowed;", "title", "not allowed", 4, "ngIf"], ["class", "btn btn-link text-600 btn-sm dropdown-toggle btn-reveal", "type", "submit", "data-bs-toggle", "dropdown", "data-boundary", "window", "aria-haspopup", "true", "aria-expanded", "true", "style", "cursor: pointer;", 4, "ngIf"], [1, "dropdown-menu", "dropdown-menu-end"], [1, "bg-white", "py-0"], ["title", "Edit Role", 1, "btn", "btn-light", "btn-sm", "btn2", 3, "click"], ["aria-hidden", "true", "title", "Delete Role", "data-bs-toggle", "modal", "data-bs-target", "#error-modal", 1, "btn", "btn-light", "btn-sm", "btn2", 3, "click"], ["title", "not allowed", 1, "btn", "btn-link", "text-600", "btn-sm", "btnp", 2, "cursor", "not-allowed"], ["disabled", "", 1, "fas", "fa-ellipsis-h", "fs--1"], ["type", "submit", "data-bs-toggle", "dropdown", "data-boundary", "window", "aria-haspopup", "true", "aria-expanded", "true", 1, "btn", "btn-link", "text-600", "btn-sm", "dropdown-toggle", "btn-reveal", 2, "cursor", "pointer"], [1, "fas", "fa-ellipsis-h", "fs--1"], ["colspan", "5"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]], template: function AdminRolesListComponent_Template(rf, ctx) { if (rf & 1) {
+AdminRolesListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: AdminRolesListComponent, selectors: [["app-admin-roles-list"]], decls: 41, vars: 2, consts: [[1, "row", "card-header", "bg-white"], [1, "col-lg-12", "navOption-btns", 2, "float", "right !important"], ["type", "button", 1, "btn", "m-1", "navOption-btns", 2, "float", "right !important", 3, "click"], [1, "fas", "fa-plus", "me-2"], [1, "card-body", "bg-white", "container-fluid", "mb-2"], [2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "table-striped", "mb-0"], [1, "btn-reveal-trigger"], [1, "text-nowrap", 2, "vertical-align", "middle"], [2, "text-align", "center"], ["class", "btn-reveal-trigger", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["id", "error-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-3", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-cancel"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-save", 3, "click"], [1, "center-align"], [1, ""], [1, "dropdown", "font-sans-serif", "position-static"], ["class", "btn btn-link text-600 btn-sm btnp", "style", "cursor: not-allowed;", "title", "not allowed", 4, "ngIf"], ["class", "btn btn-link text-600 btn-sm dropdown-toggle btn-reveal", "type", "submit", "data-bs-toggle", "dropdown", "data-boundary", "window", "aria-haspopup", "true", "aria-expanded", "true", "style", "cursor: pointer;", 4, "ngIf"], [1, "dropdown-menu", "dropdown-menu-end"], [1, "bg-light", "py-2", "px-3", "mb-2"], ["title", "Edit Role", 1, "btn", "btn-light", "btn-sm", "btn2", 3, "click"], [1, "bg-light", "py-2", "px-3"], ["aria-hidden", "true", "title", "Delete Role", "data-bs-toggle", "modal", "data-bs-target", "#error-modal", 1, "btn", "btn-light", "btn-sm", "btn2", 3, "click"], ["title", "not allowed", 1, "btn", "btn-link", "text-600", "btn-sm", "btnp", 2, "cursor", "not-allowed"], ["disabled", "", 1, "fas", "fa-ellipsis-h", "fs--1"], ["type", "submit", "data-bs-toggle", "dropdown", "data-boundary", "window", "aria-haspopup", "true", "aria-expanded", "true", 1, "btn", "btn-link", "text-600", "btn-sm", "dropdown-toggle", "btn-reveal", 2, "cursor", "pointer"], [1, "fas", "fa-ellipsis-h", "fs--1"], ["colspan", "5"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]], template: function AdminRolesListComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "button", 2);
@@ -693,63 +693,65 @@ AdminRolesListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "table", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "tr", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "th", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](10, "#");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "thead");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "tr", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "th", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11, "#");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "th", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](12, "Role Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "th", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](13, "Role Name");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "th", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, "Description");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "th", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Description");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "th", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "No.of Users");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "th", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](17, "No.of Users");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "th", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "Actions");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](19, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](20, AdminRolesListComponent_tr_20_Template, 20, 6, "tr", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](21, AdminRolesListComponent_tbody_21_Template, 4, 0, "tbody", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "th", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](19, "Actions");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "div", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "div", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "div", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](26, "a", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](21, AdminRolesListComponent_tr_21_Template, 20, 6, "tr", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "div", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](28, "div", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](29, "h2", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](30, " Delete Role? ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](22, AdminRolesListComponent_tbody_22_Template, 4, 0, "tbody", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](31, "h4", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](32, "Are you sure to delete this role?");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](33, "h4", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](34, "User already have assign to this role!!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](26, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](27, "a", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](28, "div", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](29, "div", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](30, "h2", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](31, " Delete Role? ");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](35, "div", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](36, "button", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](37, "Close");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](32, "h4", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](33, "Are you sure to delete this role?");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](38, "button", 23);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminRolesListComponent_Template_button_click_38_listener() { return ctx.deleteRole(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](39, "Delete ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](34, "h4", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](35, "User already have assign to this role!!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](36, "div", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "button", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](38, "Close");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](39, "button", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function AdminRolesListComponent_Template_button_click_39_listener() { return ctx.deleteRole(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](40, "Delete ");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](21);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.roleData);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.roleData == 0);

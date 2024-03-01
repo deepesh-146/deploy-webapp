@@ -137,5 +137,38 @@
 // $('[data-toggle="tooltip"]').tooltip();
 // $('button').tooltip();
 </script>
+<script>!(function () {
+  let e = document.createElement("script"),
+    t = document.head || document.getElementsByTagName("head")[0];
+  (e.src =
+    "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js"),
+<!--    // Replace 1.x.x with the version that you want-->
+    (e.async = !0),
+    (e.onload = () => {
+      window.WebChat.default(
+        {
+          customData: { language: "en" },
+          socketUrl: "http://43.204.103.73:5005/",
+          title: 'iCeipts',
+          subtitle:'Say Hi, And Start the Conversation',
+          openLauncherImage: "./assets/icons/botlogo2.png",
+          profileAvatar:"./assets/icons/botlogo.png",
+          closeImage: "./assets/icons/botlogo.png",
+          showMessageDate: true,
+          inputTextFieldHint: "Wanna know about your sales? just ask me!",
+        },
+        null
+      );
+    }),
+    t.insertBefore(e, t.firstChild);
+})();
 
+
+</script>
+<style>
+  .rw-conversation-container .rw-header{background-color:#f99576;}
+  .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: #fa7070;}
+  .rw-launcher{background-color: #f99576;}
+  .rw-conversation-container .rw-reply{background-color: #fa7070; border: 1px solid #f99576;}
+</style>
 </html>

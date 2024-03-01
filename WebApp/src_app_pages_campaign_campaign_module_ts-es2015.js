@@ -2725,7 +2725,7 @@ class UpdateCampaignComponent {
                 // this.toastService.openErrorSnackBar("Please Select at List One!!!");
                 this.toastService.toastMsg({
                     title: "Error",
-                    content: "Please Select At List One!!!",
+                    content: "Please select atleast option.",
                 });
                 return false;
             }

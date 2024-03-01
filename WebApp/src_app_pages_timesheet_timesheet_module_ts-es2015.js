@@ -1100,8 +1100,8 @@ class EditTimeComponent {
         });
     }
     getUsersList() {
-        this.rolesPermissionsService.getUsers({}, this.currentUser.id).then((res) => {
-            this.employeeList = res.data.map((item) => { return item.firstName; });
+        this.rolesPermissionsService.getUsers({}, this.currentUser.id, 1000, 1).then((res) => {
+            this.employeeList = res.data.pageData.map((item) => { return item.firstName; });
             console.log("employee", this.employeeList);
         });
     }

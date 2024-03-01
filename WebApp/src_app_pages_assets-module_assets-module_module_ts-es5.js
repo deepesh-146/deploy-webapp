@@ -187,6 +187,32 @@
               });
             });
           }
+        }, {
+          key: "getNONCurrentAssetsDataFilter",
+          value: function getNONCurrentAssetsDataFilter(data, userId, size, page, search) {
+            var _this10 = this;
+
+            return new Promise(function (resolve, reject) {
+              _this10.httpClient.inventory(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.nonCurrentAsset + userId + "?size=" + size + "&page=" + page + "&search=" + search, 'GET').subscribe(function (res) {
+                return resolve(res);
+              }, function (err) {
+                return reject(err);
+              });
+            });
+          }
+        }, {
+          key: "getCurrentAssetsDataFilter",
+          value: function getCurrentAssetsDataFilter(data, userId, search, size, page) {
+            var _this11 = this;
+
+            return new Promise(function (resolve, reject) {
+              _this11.httpClient.inventory(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.getCurrentAssetData + userId + "?search=" + search + "&size=" + size + "&page=" + page, 'GET').subscribe(function (res) {
+                return resolve(res);
+              }, function (err) {
+                return reject(err);
+              });
+            });
+          }
         }]);
 
         return _AssetsServiceService;
@@ -383,11 +409,11 @@
         }, {
           key: "getASSETData",
           value: function getASSETData() {
-            var _this10 = this;
+            var _this12 = this;
 
             this.assetsServiceService.getAsseTListByledger({}, this.currentUser.id).then(function (res) {
               console.log("AssetsByLedegr", res);
-              _this10.GLData = res.data.map(function (item) {
+              _this12.GLData = res.data.map(function (item) {
                 return item.glNumber;
               });
             });
@@ -395,7 +421,7 @@
         }, {
           key: "postAssetsDetails",
           value: function postAssetsDetails() {
-            var _this11 = this;
+            var _this13 = this;
 
             var Body = {
               "update": {
@@ -424,23 +450,23 @@
 
             this.assetsServiceService.updateNonCurrentAssets(Body, this.assetId).then(function (res) {
               // this.toastService.openSnackBar("Current Assets Added Successfully!!!");
-              _this11.toastService.toastMsg({
+              _this13.toastService.toastMsg({
                 title: "Success",
                 content: 'Current Assets Updated Successfully!!!'
               });
 
-              _this11.assetsServiceService.notifyassetsAdded();
+              _this13.assetsServiceService.notifyassetsAdded();
 
-              _this11.dialogRef.close();
+              _this13.dialogRef.close();
             }, function (err) {
               if (err.error.expose) {
-                _this11.toastService.toastMsg({
+                _this13.toastService.toastMsg({
                   title: "Error",
-                  content: _this11.titleCasePipe.transform(err.error.error_message)
+                  content: _this13.titleCasePipe.transform(err.error.error_message)
                 }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
               } else {
-                _this11.toastService.toastMsg({
+                _this13.toastService.toastMsg({
                   title: "Error",
                   content: "Something Went Wrong."
                 });
@@ -482,10 +508,10 @@
         }, {
           key: "getASSETById",
           value: function getASSETById() {
-            var _this12 = this;
+            var _this14 = this;
 
             this.assetsServiceService.getNONCurrentAssetsDataBYId({}, this.assetId).then(function (res) {
-              _this12.assetsEditForm.patchValue({
+              _this14.assetsEditForm.patchValue({
                 assetDate: res.data.date ? moment__WEBPACK_IMPORTED_MODULE_0__(res.data.date).format("DD-MMM-YYYY") : moment__WEBPACK_IMPORTED_MODULE_0__(res.data.date).format("DD-MMM-YYYY"),
                 assetName: res.data.assetName ? res.data.assetName : null,
                 toatalAmount: res.data.valueOfAsset ? res.data.valueOfAsset : 0
@@ -833,11 +859,11 @@
         }, {
           key: "getASSETData",
           value: function getASSETData() {
-            var _this13 = this;
+            var _this15 = this;
 
             this.assetsServiceService.getAsseTListByledger({}, this.currentUser.id).then(function (res) {
               console.log("AssetsByLedegr", res);
-              _this13.GLData = res.data.map(function (item) {
+              _this15.GLData = res.data.map(function (item) {
                 return item.glNumber;
               });
             });
@@ -860,7 +886,7 @@
         }, {
           key: "postAssetsDetails",
           value: function postAssetsDetails() {
-            var _this14 = this;
+            var _this16 = this;
 
             this.submitted = true;
 
@@ -881,24 +907,24 @@
                 "valueOfAsset": this.assetsForm.controls.toatalAmount.value
               };
               this.assetsServiceService.addAssets(Body).then(function (res) {
-                _this14.toastService.toastMsg({
+                _this16.toastService.toastMsg({
                   title: "Success",
                   content: "Current Assets Added Successfully!!!"
                 }); // this.toastService.openSnackBar("Current Assets Added Successfully!!!");
 
 
-                _this14.assetsServiceService.notifyassetsAdded();
+                _this16.assetsServiceService.notifyassetsAdded();
 
-                _this14.dialogRef.close();
+                _this16.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this14.toastService.toastMsg({
+                  _this16.toastService.toastMsg({
                     title: "Error",
-                    content: _this14.titleCasePipe.transform(err.error.error_message)
+                    content: _this16.titleCasePipe.transform(err.error.error_message)
                   }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
                 } else {
-                  _this14.toastService.toastMsg({
+                  _this16.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -916,9 +942,9 @@
           key: "openDatepicker",
           value: function openDatepicker() {
             // Check if the current value of taskdate is an "Invalid Date"
-            var selectedDate = this.assetsForm.get('assetDate').value;
+            var selectedDate = this.assetsForm.get('assetDate').value; // Check if selectedDate is not null or undefined and is a valid Date object
 
-            if (isNaN(selectedDate.getTime())) {
+            if (selectedDate instanceof Date && !isNaN(selectedDate.getTime())) {} else {
               // Set a default date or any valid date here
               this.assetsForm.get('assetDate').setValue(new Date());
             }
@@ -1224,17 +1250,23 @@
       /* harmony import */
 
 
-      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/forms */
+      1707);
+      /* harmony import */
+
+
+      var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/paginator */
       38021);
 
-      function AssetListcompoennetComponent_tr_24_Template(rf, ctx) {
+      function AssetListcompoennetComponent_tr_21_Template(rf, ctx) {
         if (rf & 1) {
           var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr", 29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tr", 27);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "td", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "td", 28);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2);
 
@@ -1244,13 +1276,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "td", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "td", 29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "td", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "td", 30);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](8);
 
@@ -1258,13 +1290,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "td", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "td", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "div", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "button", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "button", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AssetListcompoennetComponent_tr_24_Template_button_click_12_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AssetListcompoennetComponent_tr_21_Template_button_click_12_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r5);
 
             var item_r3 = restoredCtx.$implicit;
@@ -1274,15 +1306,15 @@
             return ctx_r4.openEditModel(item_r3.id);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](13, "span", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](13, "span", 34);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "button", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "button", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "span", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "span", 36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AssetListcompoennetComponent_tr_24_Template_span_click_15_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AssetListcompoennetComponent_tr_21_Template_span_click_15_listener() {
             var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r5);
 
             var item_r3 = restoredCtx.$implicit;
@@ -1320,15 +1352,15 @@
         }
       }
 
-      function AssetListcompoennetComponent_tbody_25_Template(rf, ctx) {
+      function AssetListcompoennetComponent_tbody_22_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "tbody");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "tr", 25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "tr", 23);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "td", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "td", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "img", 38);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1342,13 +1374,13 @@
         return [5, 10, 20, 30];
       };
 
-      function AssetListcompoennetComponent_mat_paginator_26_Template(rf, ctx) {
+      function AssetListcompoennetComponent_mat_paginator_23_Template(rf, ctx) {
         if (rf & 1) {
           var _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-paginator", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-paginator", 39);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("page", function AssetListcompoennetComponent_mat_paginator_26_Template_mat_paginator_page_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("page", function AssetListcompoennetComponent_mat_paginator_23_Template_mat_paginator_page_0_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r8);
 
             var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
@@ -1386,33 +1418,33 @@
         _createClass(_AssetListcompoennetComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this15 = this;
+            var _this17 = this;
 
             this.assetsServiceService.assetsAdded$.subscribe(function () {
-              _this15.getCurrentAssetsData();
+              _this17.getCurrentAssetsData();
             });
             this.getCurrentAssetsData();
           }
         }, {
           key: "getCurrentAssetsData",
           value: function getCurrentAssetsData() {
-            var _this16 = this;
+            var _this18 = this;
 
             this.assetsServiceService.getCurrentAssetsData({}, this.currentUser.id, this.partyPageSize, this.currentPageNo + 1).then(function (res) {
               console.log("res");
-              _this16.AseetData = res.data.pageData;
-              _this16.p = res.data.currentPage;
-              _this16.totalrow = res.data.totalrows;
-              _this16.toatlPages = res.data.totalPages;
+              _this18.AseetData = res.data.pageData;
+              _this18.p = res.data.currentPage;
+              _this18.totalrow = res.data.totalrows;
+              _this18.toatlPages = res.data.totalPages;
             }, function (err) {
               if (err.error.expose) {
-                _this16.toastService.toastMsg({
+                _this18.toastService.toastMsg({
                   title: "Error",
-                  content: _this16.titleCasePipe.transform(err.error.error_message)
+                  content: _this18.titleCasePipe.transform(err.error.error_message)
                 }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
               } else {
-                _this16.toastService.toastMsg({
+                _this18.toastService.toastMsg({
                   title: "Error",
                   content: "Something Went Wrong."
                 }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -1464,25 +1496,25 @@
         }, {
           key: "deleteAsset",
           value: function deleteAsset() {
-            var _this17 = this;
+            var _this19 = this;
 
             this.assetsServiceService.deleteAssets({}, this.assetId).then(function (res) {
               // this.toastService.openSnackBar("Current Assets Deleted Successfully!!!");
-              _this17.toastService.toastMsg({
+              _this19.toastService.toastMsg({
                 title: "Success",
                 content: "Current Assets Deleted Successfully!!!"
               });
 
-              _this17.getCurrentAssetsData();
+              _this19.getCurrentAssetsData();
             }, function (err) {
               if (err.error.expose) {
-                _this17.toastService.toastMsg({
+                _this19.toastService.toastMsg({
                   title: "Error",
-                  content: _this17.titleCasePipe.transform(err.error.error_message)
+                  content: _this19.titleCasePipe.transform(err.error.error_message)
                 }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
               } else {
-                _this17.toastService.toastMsg({
+                _this19.toastService.toastMsg({
                   title: "Error",
                   content: "Something Went Wrong."
                 }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -1516,7 +1548,7 @@
         }, {
           key: "exportToExcel",
           value: function exportToExcel() {
-            var _this18 = this;
+            var _this20 = this;
 
             console.log("EXPORT ___");
             var workbook = new exceljs_dist_exceljs_min_js__WEBPACK_IMPORTED_MODULE_2__.Workbook(); // const worksheet = workbook.addWorksheet('Sheet 1');
@@ -1600,7 +1632,7 @@
             this.AseetData.forEach(function (item, index) {
               var row = [];
 
-              var formattedInvoiceDate = _this18.datePipe.transform(item.date, 'dd MMM yyyy');
+              var formattedInvoiceDate = _this20.datePipe.transform(item.date, 'dd MMM yyyy');
 
               row.push(formattedInvoiceDate ? formattedInvoiceDate : "NA");
               row.push(item.assetName ? item.assetName : "NA");
@@ -1619,6 +1651,39 @@
               (0, file_saver__WEBPACK_IMPORTED_MODULE_3__.saveAs)(blob, 'Current Asset.xlsx');
             });
           }
+        }, {
+          key: "getAssetListSearch",
+          value: function getAssetListSearch(searchKey) {
+            var _this21 = this;
+
+            if (this.searchKey == "") {
+              this.assetsServiceService.getCurrentAssetsDataFilter({}, this.currentUser.id, searchKey, this.partyPageSize, this.currentPageNo + 1).then(function (res) {
+                _this21.AseetData = res.data.pageData;
+                _this21.p = res.data.currentPage;
+                _this21.totalrow = res.data.totalrows;
+                _this21.toatlPages = res.data.totalPages;
+              });
+            } else {
+              this.assetsServiceService.getCurrentAssetsDataFilter({}, this.currentUser.id, searchKey, this.partyPageSize, this.currentPageNo + 1).then(function (res) {
+                _this21.AseetData = res.data.pageData;
+                _this21.p = res.data.currentPage;
+                _this21.totalrow = res.data.totalrows;
+                _this21.toatlPages = res.data.totalPages;
+              }, function (err) {
+                if (err.error.expose) {
+                  _this21.toastService.toastMsg({
+                    title: "Error",
+                    content: _this21.titleCasePipe.transform(err.error.error_message)
+                  });
+                } else {
+                  _this21.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  });
+                }
+              });
+            }
+          }
         }]);
 
         return _AssetListcompoennetComponent;
@@ -1631,16 +1696,24 @@
       _AssetListcompoennetComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
         type: _AssetListcompoennetComponent,
         selectors: [["app-asset-listcompoennet"]],
-        decls: 43,
-        vars: 3,
-        consts: [[1, "row", "headerButtons"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Assets Name", 1, "form-control", "pe-5", "my-2", "mx-0"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["type", "button", 1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus", "me-2"], [1, "btn", "text-nowrap", "my-2"], [1, "fas", "fa-upload"], [1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-download"], [2, "width", "100%", "overflow-x", "auto", "margin-top", "8px"], [1, "table", "table-responsive", "table-striped", "fs--1", "mb-0"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right", "width", "150px"], ["class", "btn-reveal-trigger text-left ", "style", "color: #676398!important;", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["sticky", "", "class", "float-right mt-2", "showFirstLastButtons", "", "aria-label", "Select page", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page", 4, "ngIf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], [1, "btn-reveal-trigger", "text-left", 2, "color", "#676398!important"], [1, "text-nowrap", 2, "vertical-align", "middle", "white-space", "nowrap"], [2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right"], [1, "text-nowrap", 2, "text-align", "center!important", "vertical-align", "middle"], [1, "flex"], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", "ps-2", 2, "color", "red", "padding", "0px !important", 3, "click"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"], ["sticky", "", "showFirstLastButtons", "", "aria-label", "Select page", 1, "float-right", "mt-2", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page"]],
+        decls: 40,
+        vars: 4,
+        consts: [[1, "row", "headerButtons"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Assets Name", 1, "form-control", "pe-5", "my-2", "mx-0", 3, "ngModel", "ngModelChange", "change"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["type", "button", 1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus", "me-2"], [1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-download"], [2, "width", "100%", "overflow-x", "auto", "margin-top", "8px"], [1, "table", "table-responsive", "table-striped", "fs--1", "mb-0"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right", "width", "150px"], ["class", "btn-reveal-trigger text-left ", "style", "color: #676398!important;", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["sticky", "", "class", "float-right mt-2", "showFirstLastButtons", "", "aria-label", "Select page", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page", 4, "ngIf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], [1, "btn-reveal-trigger", "text-left", 2, "color", "#676398!important"], [1, "text-nowrap", 2, "vertical-align", "middle", "white-space", "nowrap"], [2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right"], [1, "text-nowrap", 2, "text-align", "center!important", "vertical-align", "middle"], [1, "flex"], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", "ps-2", 2, "color", "red", "padding", "0px !important", 3, "click"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"], ["sticky", "", "showFirstLastButtons", "", "aria-label", "Select page", 1, "float-right", "mt-2", 3, "pageSize", "pageSizeOptions", "length", "pageIndex", "page"]],
         template: function AssetListcompoennetComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "input", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "input", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function AssetListcompoennetComponent_Template_input_ngModelChange_2_listener($event) {
+              return ctx.searchKey = $event;
+            })("change", function AssetListcompoennetComponent_Template_input_change_2_listener() {
+              return ctx.getAssetListSearch(ctx.searchKey);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1660,19 +1733,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "button", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](8, "i", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9, " Import ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "button", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AssetListcompoennetComponent_Template_button_click_10_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AssetListcompoennetComponent_Template_button_click_7_listener() {
               return ctx.downlaodAllData();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](11, "i", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](8, "i", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1680,99 +1745,99 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "div", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "table", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](10, "table", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](14, "thead");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "thead");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "th", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "th", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](17, "Date");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](18, "th", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](19, "Assets Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](14, "Date");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](20, "th", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "th", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](21, "Amount");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](22, "th");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](16, "Assets Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "th", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](23, "tbody");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](24, AssetListcompoennetComponent_tr_24_Template, 16, 11, "tr", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](18, "Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](25, AssetListcompoennetComponent_tbody_25_Template, 4, 0, "tbody", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](26, AssetListcompoennetComponent_mat_paginator_26_Template, 1, 5, "mat-paginator", 16);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "div", 17);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](28, "div", 18);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "div", 19);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "div", 20);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](31, "a", 21);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](32, "div", 22);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "div", 23);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](34, "h2", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](35, " Delete Current Asset? ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](19, "th");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](36, "h4", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](20, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](37, "Are you sure to delete current Asset?");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](21, AssetListcompoennetComponent_tr_21_Template, 16, 11, "tr", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](22, AssetListcompoennetComponent_tbody_22_Template, 4, 0, "tbody", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](23, AssetListcompoennetComponent_mat_paginator_23_Template, 1, 5, "mat-paginator", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "div", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "div", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](26, "div", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "div", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](28, "a", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "div", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "div", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "h2", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](32, " Delete Current Asset? ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "div", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "h4", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](39, "a", 27);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](40, "Close");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](34, "Are you sure to delete current Asset?");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](41, "a", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AssetListcompoennetComponent_Template_a_click_41_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](35, "div", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](36, "a", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](37, "Close");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "a", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function AssetListcompoennetComponent_Template_a_click_38_listener() {
               return ctx.deleteAsset();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](42, "Delete ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](39, "Delete ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1786,7 +1851,11 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngModel", ctx.searchKey);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.AseetData);
 
@@ -1799,9 +1868,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.AseetData);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_9__.MatPaginator],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_10__.MatPaginator],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.UpperCasePipe, _angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe, _angular_common__WEBPACK_IMPORTED_MODULE_8__.DecimalPipe],
-        styles: ["th[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  padding: 9px;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n  padding-right: 0px !important;\n  width: 250px;\n}\n\n.tbody[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tfoot[_ngcontent-%COMP%], th[_ngcontent-%COMP%], thead[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-color: inherit;\n  border-style: solid;\n  border-width: 0;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 75%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n  custom-dialog-assets-class {\n  height: 100vh !important;\n  margin-left: 35% !important;\n}\n\n.headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n  padding: 0;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 360px;\n}\n\n@media screen and (max-width: 768px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0LWxpc3Rjb21wb2VubmV0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBQTtBQUNGOztBQUVBO0VBQ0ksYUFBQTtFQUNBLHNCQUFBO0VBQ0EsdUJBQUE7RUFDQSxvQkFBQTtFQUNBLDZCQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUNFO0VBQ0UscUJBQUE7RUFDRyxtQkFBQTtFQUNELGVBQUE7QUFFTjs7QUFBRTtFQUNFLFdBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtFQUNBLDhCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7QUFHSjs7QUFBRTtFQUVFLHVCQUFBO0VBQ0EsU0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSxXQUFBO0VBS0EsMEJBQUE7RUFDRiw0QkFBQTtFQUNBLHFYQUFBO0VBQ0EsOEJBQUE7RUFDQSx3Q0FBQTtFQUEwQywrQkFBQTtBQUQ1Qzs7QUFLRTtFQUNFLFdBQUE7QUFGSjs7QUFDRTtFQUNFLFdBQUE7QUFGSjs7QUFJRTtFQUNFLHdCQUFBO0VBQ0EsMkJBQUE7QUFESjs7QUFPQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FBSkY7O0FBT0E7RUFDRSxpQkFBQTtFQUNBLFVBQUE7QUFKRjs7QUFPQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDZCQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0FBSkY7O0FBUUE7RUFDRTtJQUNFLHVCQUFBO0VBTEY7QUFDRiIsImZpbGUiOiJhc3NldC1saXN0Y29tcG9lbm5ldC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInRoLCB0ZCB7XHJcbiAgcGFkZGluZzogOXB4O1xyXG59XHJcblxyXG4uY29udGFpbmVyU2VhcmNoQmFyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDBweCAhaW1wb3J0YW50O1xyXG4gICAgd2lkdGg6MjUwcHg7XHJcbiAgfVxyXG4gIC50Ym9keSwgdGQsIHRmb290LCB0aCwgdGhlYWQsIHRyIHtcclxuICAgIGJvcmRlci1jb2xvcjogaW5oZXJpdDtcclxuICAgICAgIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgICAgIGJvcmRlci13aWR0aDogMDtcclxuICB9XHJcbiAgLmZvcm0tY29udHJvbCB7XHJcbiAgICBjb2xvcjogIzU1NTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBwYWRkaW5nOiAycHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBjdXJyZW50Q29sb3I7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBtYXJnaW46IDAgMCAzMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG5cclxuICBpbnB1dFt0eXBlPVwic2VhcmNoXCJdIHtcclxuICAgIC8vIGJvcmRlcjogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBwYWRkaW5nOiA3cHggOHB4O1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIGhlaWdodDogNzUlO1xyXG4gICAgLy8gbWFyZ2luLXRvcDogLTdweDtcclxuICAgIC8vY29sb3I6IGluaGVyaXQ7XHJcbiAgICAvLyBib3JkZXI6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIC8vYm9yZGVyLXJhZGl1czogaW5oZXJpdDtcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IHJpZ2h0O1xyXG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNicgaGVpZ2h0PScxNicgY2xhc3M9J2JpIGJpLXNlYXJjaCcgdmlld0JveD0nMCAwIDE2IDE2JyUzRSUzQ3BhdGggZD0nTTExLjc0MiAxMC4zNDRhNi41IDYuNSAwIDEgMC0xLjM5NyAxLjM5OGgtLjAwMWMuMDMuMDQuMDYyLjA3OC4wOTguMTE1bDMuODUgMy44NWExIDEgMCAwIDAgMS40MTUtMS40MTRsLTMuODUtMy44NWExLjAwNyAxLjAwNyAwIDAgMC0uMTE1LS4xek0xMiA2LjVhNS41IDUuNSAwIDEgMS0xMSAwIDUuNSA1LjUgMCAwIDEgMTEgMHonJTNFJTNDL3BhdGglM0UlM0Mvc3ZnJTNFXCIpO1xyXG4gIGJhY2tncm91bmQtb3JpZ2luOiBjb250ZW50LWJveDtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uLXg6IGNhbGMoMTAwJSArIDIwcHgpOyAvKiBBZGp1c3QgdGhlIHZhbHVlIGFzIG5lZWRlZCAqL1xyXG5cclxuICB9XHJcblxyXG4gIGlucHV0W3R5cGU9XCJzZWFyY2hcIl06OnBsYWNlaG9sZGVyIHtcclxuICAgIGNvbG9yOiAjYmJiO1xyXG4gIH1cclxuICA6Om5nLWRlZXAgY3VzdG9tLWRpYWxvZy1hc3NldHMtY2xhc3N7XHJcbiAgICBoZWlnaHQ6IDEwMHZoICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tbGVmdDogMzUlICFpbXBvcnRhbnQ7XHJcblxyXG4gIH1cclxuXHJcbiAgLy8gUmVzcG9uc2l2ZSBCdXR0b25zXHJcblxyXG4uaGVhZGVyQnV0dG9ucyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbn1cclxuXHJcbi5mbGV4LWl0ZW0ge1xyXG4gIGZsZXgtYmFzaXM6IDI0MHB4O1xyXG4gIHBhZGRpbmc6IDA7XHJcbn1cclxuXHJcbi5mb3JtQnV0dG9ucyB7XHJcbiAgZGlzcGxheTpmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOnJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtZXZlbmx5O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxuICBmbGV4LWJhc2lzOiAzNjBweDtcclxufVxyXG5cclxuLy8gTWVkaWEgcXVlcnkgZm9yIGJ1dHRvbnMgYW5kIHNlYXJjaCBiYXIuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2OHB4KSB7XHJcbiAgLmhlYWRlckJ1dHRvbnMge1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgfVxyXG59XHJcblxyXG4iXX0= */"]
+        styles: ["td[_ngcontent-%COMP%] {\n  padding: 9px;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n  padding-right: 0px !important;\n  width: 250px;\n}\n\n.tbody[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tfoot[_ngcontent-%COMP%], th[_ngcontent-%COMP%], thead[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-color: inherit;\n  border-style: solid;\n  border-width: 0;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 75%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n  custom-dialog-assets-class {\n  height: 100vh !important;\n  margin-left: 35% !important;\n}\n\n.headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n  padding: 0;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 360px;\n}\n\n@media screen and (max-width: 768px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0LWxpc3Rjb21wb2VubmV0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBQTtBQUNGOztBQUVBO0VBQ0ksYUFBQTtFQUNBLHNCQUFBO0VBQ0EsdUJBQUE7RUFDQSxvQkFBQTtFQUNBLDZCQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUNFO0VBQ0UscUJBQUE7RUFDRyxtQkFBQTtFQUNELGVBQUE7QUFFTjs7QUFBRTtFQUNFLFdBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtFQUNBLDhCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7QUFHSjs7QUFBRTtFQUVFLHVCQUFBO0VBQ0EsU0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSxXQUFBO0VBS0EsMEJBQUE7RUFDRiw0QkFBQTtFQUNBLHFYQUFBO0VBQ0EsOEJBQUE7RUFDQSx3Q0FBQTtFQUEwQywrQkFBQTtBQUQ1Qzs7QUFLRTtFQUNFLFdBQUE7QUFGSjs7QUFDRTtFQUNFLFdBQUE7QUFGSjs7QUFJRTtFQUNFLHdCQUFBO0VBQ0EsMkJBQUE7QUFESjs7QUFPQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FBSkY7O0FBT0E7RUFDRSxpQkFBQTtFQUNBLFVBQUE7QUFKRjs7QUFPQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDZCQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0FBSkY7O0FBUUE7RUFDRTtJQUNFLHVCQUFBO0VBTEY7QUFDRiIsImZpbGUiOiJhc3NldC1saXN0Y29tcG9lbm5ldC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInRkIHtcclxuICBwYWRkaW5nOiA5cHg7XHJcbn1cclxuXHJcbi5jb250YWluZXJTZWFyY2hCYXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBzdHJldGNoO1xyXG4gICAgcGFkZGluZy1yaWdodDogMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICB3aWR0aDoyNTBweDtcclxuICB9XHJcbiAgLnRib2R5LCB0ZCwgdGZvb3QsIHRoLCB0aGVhZCwgdHIge1xyXG4gICAgYm9yZGVyLWNvbG9yOiBpbmhlcml0O1xyXG4gICAgICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgICAgYm9yZGVyLXdpZHRoOiAwO1xyXG4gIH1cclxuICAuZm9ybS1jb250cm9sIHtcclxuICAgIGNvbG9yOiAjNTU1O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIHBhZGRpbmc6IDJweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGN1cnJlbnRDb2xvcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIG1hcmdpbjogMCAwIDMwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcblxyXG4gIGlucHV0W3R5cGU9XCJzZWFyY2hcIl0ge1xyXG4gICAgLy8gYm9yZGVyOiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIHBhZGRpbmc6IDdweCA4cHg7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgaGVpZ2h0OiA3NSU7XHJcbiAgICAvLyBtYXJnaW4tdG9wOiAtN3B4O1xyXG4gICAgLy9jb2xvcjogaW5oZXJpdDtcclxuICAgIC8vIGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xyXG4gICAgLy9ib3JkZXItcmFkaXVzOiBpbmhlcml0O1xyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogcmlnaHQ7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2JyBoZWlnaHQ9JzE2JyBjbGFzcz0nYmkgYmktc2VhcmNoJyB2aWV3Qm94PScwIDAgMTYgMTYnJTNFJTNDcGF0aCBkPSdNMTEuNzQyIDEwLjM0NGE2LjUgNi41IDAgMSAwLTEuMzk3IDEuMzk4aC0uMDAxYy4wMy4wNC4wNjIuMDc4LjA5OC4xMTVsMy44NSAzLjg1YTEgMSAwIDAgMCAxLjQxNS0xLjQxNGwtMy44NS0zLjg1YTEuMDA3IDEuMDA3IDAgMCAwLS4xMTUtLjF6TTEyIDYuNWE1LjUgNS41IDAgMSAxLTExIDAgNS41IDUuNSAwIDAgMSAxMSAweiclM0UlM0MvcGF0aCUzRSUzQy9zdmclM0VcIik7XHJcbiAgYmFja2dyb3VuZC1vcmlnaW46IGNvbnRlbnQtYm94O1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb24teDogY2FsYygxMDAlICsgMjBweCk7IC8qIEFkanVzdCB0aGUgdmFsdWUgYXMgbmVlZGVkICovXHJcblxyXG4gIH1cclxuXHJcbiAgaW5wdXRbdHlwZT1cInNlYXJjaFwiXTo6cGxhY2Vob2xkZXIge1xyXG4gICAgY29sb3I6ICNiYmI7XHJcbiAgfVxyXG4gIDo6bmctZGVlcCBjdXN0b20tZGlhbG9nLWFzc2V0cy1jbGFzc3tcclxuICAgIGhlaWdodDogMTAwdmggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1sZWZ0OiAzNSUgIWltcG9ydGFudDtcclxuXHJcbiAgfVxyXG5cclxuICAvLyBSZXNwb25zaXZlIEJ1dHRvbnNcclxuXHJcbi5oZWFkZXJCdXR0b25zIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmZsZXgtaXRlbSB7XHJcbiAgZmxleC1iYXNpczogMjQwcHg7XHJcbiAgcGFkZGluZzogMDtcclxufVxyXG5cclxuLmZvcm1CdXR0b25zIHtcclxuICBkaXNwbGF5OmZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246cm93O1xyXG4gIGp1c3RpZnktY29udGVudDpzcGFjZS1ldmVubHk7XHJcbiAgZmxleC13cmFwOiB3cmFwO1xyXG4gIGZsZXgtYmFzaXM6IDM2MHB4O1xyXG59XHJcblxyXG4vLyBNZWRpYSBxdWVyeSBmb3IgYnV0dG9ucyBhbmQgc2VhcmNoIGJhci5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpIHtcclxuICAuaGVhZGVyQnV0dG9ucyB7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICB9XHJcbn1cclxuXHJcbiJdfQ== */"]
       });
       /***/
     },
@@ -2258,7 +2327,7 @@
         }, {
           key: "createnonAseetsForm",
           value: function createnonAseetsForm() {
-            var _this19 = this;
+            var _this22 = this;
 
             this.nonAssetsForm = this.formBuilder.group({
               assetName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
@@ -2275,15 +2344,15 @@
               addtionalDetails: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormArray([this.createaddtionalDetails()])
             });
             this.additionalDetailsControls.valueChanges.subscribe(function (data) {
-              _this19.toatalAmount = data.reduce(function (a, b) {
+              _this22.toatalAmount = data.reduce(function (a, b) {
                 return a + +b.amount;
               }, 0);
 
-              _this19.updateTotalCostOfAssets();
+              _this22.updateTotalCostOfAssets();
             }); // Subscribe to value changes of valueOfAssets control
 
             this.nonAssetsForm.get('valueOfAssets').valueChanges.subscribe(function () {
-              _this19.updateTotalCostOfAssets();
+              _this22.updateTotalCostOfAssets();
             });
           }
         }, {
@@ -2326,11 +2395,11 @@
         }, {
           key: "getASSETData",
           value: function getASSETData() {
-            var _this20 = this;
+            var _this23 = this;
 
             this.assetsServiceService.getAsseTListByledger({}, this.currentUser.id).then(function (res) {
               console.log("AssetsByLedegr", res);
-              _this20.GLData = res.data.map(function (item) {
+              _this23.GLData = res.data.map(function (item) {
                 return item.glNumber;
               });
             });
@@ -2388,7 +2457,7 @@
         }, {
           key: "postnonAsseTsForm",
           value: function postnonAsseTsForm() {
-            var _this21 = this;
+            var _this24 = this;
 
             this.submitted = true;
             this.formArrayData = this.additionalDetailsControls.value;
@@ -2420,22 +2489,22 @@
                 "additionalDetails": this.formArrayData
               };
               this.assetsServiceService.addAssets(Body).then(function (res) {
-                _this21.toastService.toastMsg({
+                _this24.toastService.toastMsg({
                   title: "Success",
                   content: 'Non Current Assets Added Successfully!!!'
                 });
 
-                _this21.assetsServiceService.notifyassetsAdded();
+                _this24.assetsServiceService.notifyassetsAdded();
 
-                _this21.dialogRef.close();
+                _this24.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this21.toastService.toastMsg({
+                  _this24.toastService.toastMsg({
                     title: "Error",
-                    content: _this21.titleCasePipe.transform(err.error.error_message)
+                    content: _this24.titleCasePipe.transform(err.error.error_message)
                   });
                 } else {
-                  _this21.toastService.toastMsg({
+                  _this24.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   });
@@ -2446,7 +2515,7 @@
         }, {
           key: "documentChange",
           value: function documentChange(e) {
-            var _this22 = this;
+            var _this25 = this;
 
             var formdata = new FormData();
             var reader = new FileReader();
@@ -2463,8 +2532,8 @@
               } else {
                 formdata.set("upload", file);
                 this.productService.PostImagePdf(formdata).then(function (res) {
-                  _this22.productPicUrl = res.data.location;
-                  console.log("this.productPicUrl", _this22.productPicUrl);
+                  _this25.productPicUrl = res.data.location;
+                  console.log("this.productPicUrl", _this25.productPicUrl);
                 });
               }
             }
@@ -3093,6 +3162,12 @@
       var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/common */
       54364);
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! @angular/forms */
+      1707);
 
       function AssetNonListcompoennetComponent_tr_26_Template(rf, ctx) {
         if (rf & 1) {
@@ -3241,15 +3316,19 @@
           this.datePipe = datePipe;
           this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
           this.NonAseetData = [];
+          this.currentPageNo = 0;
+          this.partyPageSize = 5;
+          this.p = 1;
+          this.pagesize = 1;
         }
 
         _createClass(_AssetNonListcompoennetComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this23 = this;
+            var _this26 = this;
 
             this.assetsServiceService.assetsAdded$.subscribe(function () {
-              _this23.getNonAssetData();
+              _this26.getNonAssetData();
             });
             this.getNonAssetData();
           }
@@ -3306,21 +3385,21 @@
         }, {
           key: "getNonAssetData",
           value: function getNonAssetData() {
-            var _this24 = this;
+            var _this27 = this;
 
             this.assetsServiceService.getNONCurrentAssetsData({}, this.currentUser.id).then(function (res) {
-              _this24.NonAseetData = res.data.totalDecriptionValue;
+              _this27.NonAseetData = res.data.totalDecriptionValue;
             }, function (err) {
               if (err.error.expose || err.status == 404) {
-                _this24.NonAseetData = [];
+                _this27.NonAseetData = [];
 
-                _this24.toastService.toastMsg({
+                _this27.toastService.toastMsg({
                   title: "Error",
-                  content: _this24.titleCasePipe.transform(err.error.error_message)
+                  content: _this27.titleCasePipe.transform(err.error.error_message)
                 }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
               } else {
-                _this24.toastService.toastMsg({
+                _this27.toastService.toastMsg({
                   title: "Error",
                   content: "Something Went Wrong."
                 }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -3336,25 +3415,25 @@
         }, {
           key: "deleteAsset",
           value: function deleteAsset() {
-            var _this25 = this;
+            var _this28 = this;
 
             this.assetsServiceService.deleteAssets({}, this.aseetId).then(function (res) {
-              _this25.toastService.toastMsg({
+              _this28.toastService.toastMsg({
                 title: "Success",
-                content: "Non Current Assets Added Successfully!!!"
+                content: "Non Current Assets Deleted Successfully!!!"
               }); // this.toastService.openSnackBar("Non Current Assets Deleted Successfully!!!");
 
 
-              _this25.getNonAssetData();
+              _this28.getNonAssetData();
             }, function (err) {
               if (err.error.expose) {
-                _this25.toastService.toastMsg({
+                _this28.toastService.toastMsg({
                   title: "Error",
-                  content: _this25.titleCasePipe.transform(err.error.error_message)
+                  content: _this28.titleCasePipe.transform(err.error.error_message)
                 }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
               } else {
-                _this25.toastService.toastMsg({
+                _this28.toastService.toastMsg({
                   title: "Error",
                   content: "Something Went Wrong."
                 }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -3382,7 +3461,7 @@
         }, {
           key: "exportToExcel",
           value: function exportToExcel() {
-            var _this26 = this;
+            var _this29 = this;
 
             console.log("EXPORT ___");
             var workbook = new exceljs_dist_exceljs_min_js__WEBPACK_IMPORTED_MODULE_3__.Workbook(); // const worksheet = workbook.addWorksheet('Sheet 1');
@@ -3534,7 +3613,7 @@
               var row = [];
               row.push(item.assetName ? item.assetName : 'NA');
 
-              var formattedInvoiceDate = _this26.datePipe.transform(item.date, 'dd MMM yyyy');
+              var formattedInvoiceDate = _this29.datePipe.transform(item.date, 'dd MMM yyyy');
 
               row.push(formattedInvoiceDate ? formattedInvoiceDate : "NA");
               row.push(item.valueOfAsset ? parseFloat(item.valueOfAsset).toFixed(2) : 0.00);
@@ -3572,6 +3651,39 @@
               (0, file_saver__WEBPACK_IMPORTED_MODULE_4__.saveAs)(blob, 'Non Assets.xlsx');
             });
           }
+        }, {
+          key: "getAssetListSearch",
+          value: function getAssetListSearch(searchKey) {
+            var _this30 = this;
+
+            if (this.searchKey == "") {
+              this.assetsServiceService.getNONCurrentAssetsDataFilter({}, this.currentUser.id, this.partyPageSize, this.currentPageNo + 1, searchKey).then(function (res) {
+                _this30.NonAseetData = res.data.totalDecriptionValue;
+                _this30.p = res.data.currentPage;
+                _this30.totalrow = res.data.totalrows;
+                _this30.toatlPages = res.data.totalPages;
+              });
+            } else {
+              this.assetsServiceService.getNONCurrentAssetsDataFilter({}, this.currentUser.id, this.partyPageSize, this.currentPageNo + 1, searchKey).then(function (res) {
+                _this30.NonAseetData = res.data.totalDecriptionValue;
+                _this30.p = res.data.currentPage;
+                _this30.totalrow = res.data.totalrows;
+                _this30.toatlPages = res.data.totalPages;
+              }, function (err) {
+                if (err.error.expose) {
+                  _this30.toastService.toastMsg({
+                    title: "Error",
+                    content: _this30.titleCasePipe.transform(err.error.error_message)
+                  });
+                } else {
+                  _this30.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  });
+                }
+              });
+            }
+          }
         }]);
 
         return _AssetNonListcompoennetComponent;
@@ -3585,15 +3697,23 @@
         type: _AssetNonListcompoennetComponent,
         selectors: [["app-asset-non-listcompoennet"]],
         decls: 44,
-        vars: 2,
-        consts: [[1, "row", "headerButtons"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Assets Name", 1, "form-control", "pe-5", "my-2", "mx-0"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["type", "button", 1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus", "me-2"], [1, "fas", "fa-download"], [2, "width", "100%", "overflow-x", "auto", "margin-top", "8px"], [1, "table", "table-responsive", "table-striped", "fs--1", "mb-0"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right"], ["class", "btn-reveal-trigger text-left ", "style", "color: #676398!important;", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], [1, "btn-reveal-trigger", "text-left", 2, "color", "#676398!important"], [2, "vertical-align", "middle"], [2, "vertical-align", "middle", "text-align", "right"], [1, "text-nowrap", 2, "text-align", "right !important", "vertical-align", "middle"], [1, "flex"], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", "ps-2", 2, "color", "red", 3, "click"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
+        vars: 3,
+        consts: [[1, "row", "headerButtons"], [1, "flex-item", "searchBar"], ["type", "search", "id", "searchInput", "placeholder", "Assets Name", 1, "form-control", "pe-5", "my-2", "mx-0", 3, "ngModel", "ngModelChange", "change"], [1, "navOption-btns", "flex-item", "formButtons", "mx-0"], ["type", "button", 1, "btn", "text-nowrap", "my-2", 3, "click"], [1, "fas", "fa-plus", "me-2"], [1, "fas", "fa-download"], [2, "width", "100%", "overflow-x", "auto", "margin-top", "8px"], [1, "table", "table-responsive", "table-striped", "fs--1", "mb-0"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle", "text-align", "right"], ["class", "btn-reveal-trigger text-left ", "style", "color: #676398!important;", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["id", "errorDelete-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", 2, "max-width", "350px"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], ["id", "modalExampleDemoLabel", 1, "mb-1", "text-center", "font-weight-bold", 2, "font-weight", "800"], [1, "text-center"], [1, "modal-footer", "justify-content-center"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-success"], ["data-bs-dismiss", "modal", 1, "btn", "btn-outline-danger", 3, "click"], [1, "btn-reveal-trigger", "text-left", 2, "color", "#676398!important"], [2, "vertical-align", "middle"], [2, "vertical-align", "middle", "text-align", "right"], [1, "text-nowrap", 2, "text-align", "right !important", "vertical-align", "middle"], [1, "flex"], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Edit", 1, "bi-pencil-square", "icon-color", "iconFontSize", "ps-2"], ["data-bs-toggle", "modal", "data-bs-target", "#errorDelete-modal", 1, "btn"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "iconFontSize", "ps-2", 2, "color", "red", 3, "click"], ["colspan", "10"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
         template: function AssetNonListcompoennetComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](2, "input", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "input", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function AssetNonListcompoennetComponent_Template_input_ngModelChange_2_listener($event) {
+              return ctx.searchKey = $event;
+            })("change", function AssetNonListcompoennetComponent_Template_input_change_2_listener() {
+              return ctx.getAssetListSearch(ctx.searchKey);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
@@ -3749,7 +3869,11 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", ctx.searchKey);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](24);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", ctx.NonAseetData);
 
@@ -3758,9 +3882,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.NonAseetData.length == 0);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.UpperCasePipe, _angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe, _angular_common__WEBPACK_IMPORTED_MODULE_9__.DecimalPipe],
-        styles: ["th[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  padding: 9px;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n  padding-right: 0px !important;\n  width: 250px;\n}\n\n.tbody[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tfoot[_ngcontent-%COMP%], th[_ngcontent-%COMP%], thead[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-color: inherit;\n  border-style: solid;\n  border-width: 0;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 75%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n  custom-dialog-assets-class {\n  height: 100vh !important;\n  margin-left: 35% !important;\n}\n\n.headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n  padding: 0;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 420px;\n}\n\n@media screen and (max-width: 800px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0LW5vbi1saXN0Y29tcG9lbm5ldC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7QUFDRjs7QUFFQTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0Esb0JBQUE7RUFDQSw2QkFBQTtFQUNBLFlBQUE7QUFDSjs7QUFDRTtFQUNFLHFCQUFBO0VBQ0csbUJBQUE7RUFDRCxlQUFBO0FBRU47O0FBQUU7RUFDRSxXQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSw4QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBR0o7O0FBQUU7RUFFRSx1QkFBQTtFQUNBLFNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUtBLDBCQUFBO0VBQ0YsNEJBQUE7RUFDQSxxWEFBQTtFQUNBLDhCQUFBO0VBQ0Esd0NBQUE7RUFBMEMsK0JBQUE7QUFENUM7O0FBS0U7RUFDRSxXQUFBO0FBRko7O0FBQ0U7RUFDRSxXQUFBO0FBRko7O0FBSUU7RUFDRSx3QkFBQTtFQUNBLDJCQUFBO0FBREo7O0FBUUE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtBQUxGOztBQVFBO0VBQ0UsaUJBQUE7RUFDQSxVQUFBO0FBTEY7O0FBUUE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUxGOztBQVNBO0VBQ0U7SUFDRSx1QkFBQTtFQU5GO0FBQ0YiLCJmaWxlIjoiYXNzZXQtbm9uLWxpc3Rjb21wb2VubmV0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGgsIHRkIHtcclxuICBwYWRkaW5nOiA5cHg7XHJcbn1cclxuXHJcbi5jb250YWluZXJTZWFyY2hCYXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBzdHJldGNoO1xyXG4gICAgcGFkZGluZy1yaWdodDogMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICB3aWR0aDoyNTBweDtcclxuICB9XHJcbiAgLnRib2R5LCB0ZCwgdGZvb3QsIHRoLCB0aGVhZCwgdHIge1xyXG4gICAgYm9yZGVyLWNvbG9yOiBpbmhlcml0O1xyXG4gICAgICAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICAgICAgYm9yZGVyLXdpZHRoOiAwO1xyXG4gIH1cclxuICAuZm9ybS1jb250cm9sIHtcclxuICAgIGNvbG9yOiAjNTU1O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIHBhZGRpbmc6IDJweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGN1cnJlbnRDb2xvcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIG1hcmdpbjogMCAwIDMwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcblxyXG4gIGlucHV0W3R5cGU9XCJzZWFyY2hcIl0ge1xyXG4gICAgLy8gYm9yZGVyOiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIHBhZGRpbmc6IDdweCA4cHg7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgaGVpZ2h0OiA3NSU7XHJcbiAgICAvLyBtYXJnaW4tdG9wOiAtN3B4O1xyXG4gICAgLy9jb2xvcjogaW5oZXJpdDtcclxuICAgIC8vIGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xyXG4gICAgLy9ib3JkZXItcmFkaXVzOiBpbmhlcml0O1xyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogcmlnaHQ7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2JyBoZWlnaHQ9JzE2JyBjbGFzcz0nYmkgYmktc2VhcmNoJyB2aWV3Qm94PScwIDAgMTYgMTYnJTNFJTNDcGF0aCBkPSdNMTEuNzQyIDEwLjM0NGE2LjUgNi41IDAgMSAwLTEuMzk3IDEuMzk4aC0uMDAxYy4wMy4wNC4wNjIuMDc4LjA5OC4xMTVsMy44NSAzLjg1YTEgMSAwIDAgMCAxLjQxNS0xLjQxNGwtMy44NS0zLjg1YTEuMDA3IDEuMDA3IDAgMCAwLS4xMTUtLjF6TTEyIDYuNWE1LjUgNS41IDAgMSAxLTExIDAgNS41IDUuNSAwIDAgMSAxMSAweiclM0UlM0MvcGF0aCUzRSUzQy9zdmclM0VcIik7XHJcbiAgYmFja2dyb3VuZC1vcmlnaW46IGNvbnRlbnQtYm94O1xyXG4gIGJhY2tncm91bmQtcG9zaXRpb24teDogY2FsYygxMDAlICsgMjBweCk7IC8qIEFkanVzdCB0aGUgdmFsdWUgYXMgbmVlZGVkICovXHJcblxyXG4gIH1cclxuXHJcbiAgaW5wdXRbdHlwZT1cInNlYXJjaFwiXTo6cGxhY2Vob2xkZXIge1xyXG4gICAgY29sb3I6ICNiYmI7XHJcbiAgfVxyXG4gIDo6bmctZGVlcCBjdXN0b20tZGlhbG9nLWFzc2V0cy1jbGFzc3tcclxuICAgIGhlaWdodDogMTAwdmggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1sZWZ0OiAzNSUgIWltcG9ydGFudDtcclxuXHJcbiAgfVxyXG5cclxuXHJcbiAgLy8gUmVzcG9uc2l2ZSBCdXR0b25zXHJcblxyXG4uaGVhZGVyQnV0dG9ucyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbn1cclxuXHJcbi5mbGV4LWl0ZW0ge1xyXG4gIGZsZXgtYmFzaXM6IDI0MHB4O1xyXG4gIHBhZGRpbmc6IDA7XHJcbn1cclxuXHJcbi5mb3JtQnV0dG9ucyB7XHJcbiAgZGlzcGxheTpmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOnJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtZXZlbmx5O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxuICBmbGV4LWJhc2lzOiA0MjBweDtcclxufVxyXG5cclxuLy8gTWVkaWEgcXVlcnkgZm9yIGJ1dHRvbnMgYW5kIHNlYXJjaCBiYXIuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDgwMHB4KSB7XHJcbiAgLmhlYWRlckJ1dHRvbnMge1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgfVxyXG59XHJcblxyXG4iXX0= */"]
+        styles: ["td[_ngcontent-%COMP%] {\n  padding: 9px;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n  padding-right: 0px !important;\n  width: 250px;\n}\n\n.tbody[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tfoot[_ngcontent-%COMP%], th[_ngcontent-%COMP%], thead[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-color: inherit;\n  border-style: solid;\n  border-width: 0;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 75%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n  custom-dialog-assets-class {\n  height: 100vh !important;\n  margin-left: 35% !important;\n}\n\n.headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n  padding: 0;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 420px;\n}\n\n@media screen and (max-width: 800px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0LW5vbi1saXN0Y29tcG9lbm5ldC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7QUFDRjs7QUFFQTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0Esb0JBQUE7RUFDQSw2QkFBQTtFQUNBLFlBQUE7QUFDSjs7QUFDRTtFQUNFLHFCQUFBO0VBQ0csbUJBQUE7RUFDRCxlQUFBO0FBRU47O0FBQUU7RUFDRSxXQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSw4QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBR0o7O0FBQUU7RUFFRSx1QkFBQTtFQUNBLFNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUtBLDBCQUFBO0VBQ0YsNEJBQUE7RUFDQSxxWEFBQTtFQUNBLDhCQUFBO0VBQ0Esd0NBQUE7RUFBMEMsK0JBQUE7QUFENUM7O0FBS0U7RUFDRSxXQUFBO0FBRko7O0FBQ0U7RUFDRSxXQUFBO0FBRko7O0FBSUU7RUFDRSx3QkFBQTtFQUNBLDJCQUFBO0FBREo7O0FBUUE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtBQUxGOztBQVFBO0VBQ0UsaUJBQUE7RUFDQSxVQUFBO0FBTEY7O0FBUUE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUxGOztBQVNBO0VBQ0U7SUFDRSx1QkFBQTtFQU5GO0FBQ0YiLCJmaWxlIjoiYXNzZXQtbm9uLWxpc3Rjb21wb2VubmV0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGQge1xyXG4gIHBhZGRpbmc6IDlweDtcclxufVxyXG5cclxuLmNvbnRhaW5lclNlYXJjaEJhciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IHN0cmV0Y2g7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiAwcHggIWltcG9ydGFudDtcclxuICAgIHdpZHRoOjI1MHB4O1xyXG4gIH1cclxuICAudGJvZHksIHRkLCB0Zm9vdCwgdGgsIHRoZWFkLCB0ciB7XHJcbiAgICBib3JkZXItY29sb3I6IGluaGVyaXQ7XHJcbiAgICAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gICAgICBib3JkZXItd2lkdGg6IDA7XHJcbiAgfVxyXG4gIC5mb3JtLWNvbnRyb2wge1xyXG4gICAgY29sb3I6ICM1NTU7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgcGFkZGluZzogMnB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgY3VycmVudENvbG9yO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgbWFyZ2luOiAwIDAgMzBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuXHJcbiAgaW5wdXRbdHlwZT1cInNlYXJjaFwiXSB7XHJcbiAgICAvLyBib3JkZXI6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgcGFkZGluZzogN3B4IDhweDtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBoZWlnaHQ6IDc1JTtcclxuICAgIC8vIG1hcmdpbi10b3A6IC03cHg7XHJcbiAgICAvL2NvbG9yOiBpbmhlcml0O1xyXG4gICAgLy8gYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICAvL2JvcmRlci1yYWRpdXM6IGluaGVyaXQ7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodDtcclxuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB3aWR0aD0nMTYnIGhlaWdodD0nMTYnIGNsYXNzPSdiaSBiaS1zZWFyY2gnIHZpZXdCb3g9JzAgMCAxNiAxNiclM0UlM0NwYXRoIGQ9J00xMS43NDIgMTAuMzQ0YTYuNSA2LjUgMCAxIDAtMS4zOTcgMS4zOThoLS4wMDFjLjAzLjA0LjA2Mi4wNzguMDk4LjExNWwzLjg1IDMuODVhMSAxIDAgMCAwIDEuNDE1LTEuNDE0bC0zLjg1LTMuODVhMS4wMDcgMS4wMDcgMCAwIDAtLjExNS0uMXpNMTIgNi41YTUuNSA1LjUgMCAxIDEtMTEgMCA1LjUgNS41IDAgMCAxIDExIDB6JyUzRSUzQy9wYXRoJTNFJTNDL3N2ZyUzRVwiKTtcclxuICBiYWNrZ3JvdW5kLW9yaWdpbjogY29udGVudC1ib3g7XHJcbiAgYmFja2dyb3VuZC1wb3NpdGlvbi14OiBjYWxjKDEwMCUgKyAyMHB4KTsgLyogQWRqdXN0IHRoZSB2YWx1ZSBhcyBuZWVkZWQgKi9cclxuXHJcbiAgfVxyXG5cclxuICBpbnB1dFt0eXBlPVwic2VhcmNoXCJdOjpwbGFjZWhvbGRlciB7XHJcbiAgICBjb2xvcjogI2JiYjtcclxuICB9XHJcbiAgOjpuZy1kZWVwIGN1c3RvbS1kaWFsb2ctYXNzZXRzLWNsYXNze1xyXG4gICAgaGVpZ2h0OiAxMDB2aCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDM1JSAhaW1wb3J0YW50O1xyXG5cclxuICB9XHJcblxyXG5cclxuICAvLyBSZXNwb25zaXZlIEJ1dHRvbnNcclxuXHJcbi5oZWFkZXJCdXR0b25zIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmZsZXgtaXRlbSB7XHJcbiAgZmxleC1iYXNpczogMjQwcHg7XHJcbiAgcGFkZGluZzogMDtcclxufVxyXG5cclxuLmZvcm1CdXR0b25zIHtcclxuICBkaXNwbGF5OmZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246cm93O1xyXG4gIGp1c3RpZnktY29udGVudDpzcGFjZS1ldmVubHk7XHJcbiAgZmxleC13cmFwOiB3cmFwO1xyXG4gIGZsZXgtYmFzaXM6IDQyMHB4O1xyXG59XHJcblxyXG4vLyBNZWRpYSBxdWVyeSBmb3IgYnV0dG9ucyBhbmQgc2VhcmNoIGJhci5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogODAwcHgpIHtcclxuICAuaGVhZGVyQnV0dG9ucyB7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICB9XHJcbn1cclxuXHJcbiJdfQ== */"]
       });
       /***/
     },
@@ -4613,7 +4737,7 @@
         }, {
           key: "createnonAseetsForm",
           value: function createnonAseetsForm() {
-            var _this27 = this;
+            var _this31 = this;
 
             this.nonAssetsForm = this.formBuilder.group({
               assetName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
@@ -4630,15 +4754,15 @@
               addtionalDetails: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArray([])
             });
             this.additionalDetailsControls.valueChanges.subscribe(function (data) {
-              _this27.toatalAmount = data.reduce(function (a, b) {
+              _this31.toatalAmount = data.reduce(function (a, b) {
                 return a + +b.amount;
               }, 0);
 
-              _this27.updateTotalCostOfAssets();
+              _this31.updateTotalCostOfAssets();
             }); // Subscribe to value changes of valueOfAssets control
 
             this.nonAssetsForm.get('valueOfAssets').valueChanges.subscribe(function () {
-              _this27.updateTotalCostOfAssets();
+              _this31.updateTotalCostOfAssets();
             });
           }
         }, {
@@ -4681,11 +4805,11 @@
         }, {
           key: "getASSETData",
           value: function getASSETData() {
-            var _this28 = this;
+            var _this32 = this;
 
             this.assetsServiceService.getAsseTListByledger({}, this.currentUser.id).then(function (res) {
               console.log("AssetsByLedegr", res);
-              _this28.GLData = res.data.map(function (item) {
+              _this32.GLData = res.data.map(function (item) {
                 return item.glNumber;
               });
             });
@@ -4744,7 +4868,7 @@
         }, {
           key: "postnonAsseTsForm",
           value: function postnonAsseTsForm() {
-            var _this29 = this;
+            var _this33 = this;
 
             this.formArrayData = this.additionalDetailsControls.value;
             this.submitted = true;
@@ -4786,23 +4910,23 @@
                 "additionalDetails": this.formArrayData
               };
               this.assetsServiceService.updateNonCurrentAssets(Body, this.nonassetId).then(function (res) {
-                _this29.toastService.toastMsg({
+                _this33.toastService.toastMsg({
                   title: "Success",
                   content: 'Non Current Assets updated Successfully!!!'
                 });
 
-                _this29.assetsServiceService.notifyassetsAdded();
+                _this33.assetsServiceService.notifyassetsAdded();
 
-                _this29.dialogRef.close();
+                _this33.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this29.toastService.toastMsg({
+                  _this33.toastService.toastMsg({
                     title: "Error",
-                    content: _this29.titleCasePipe.transform(err.error.error_message)
+                    content: _this33.titleCasePipe.transform(err.error.error_message)
                   }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
                 } else {
-                  _this29.toastService.toastMsg({
+                  _this33.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   });
@@ -4813,7 +4937,7 @@
         }, {
           key: "documentChange",
           value: function documentChange(e) {
-            var _this30 = this;
+            var _this34 = this;
 
             var formdata = new FormData();
             var reader = new FileReader();
@@ -4832,8 +4956,8 @@
               } else {
                 formdata.set("upload", file);
                 this.productService.PostImagePdf(formdata).then(function (res) {
-                  _this30.productPicUrl = res.data.location;
-                  console.log("this.productPicUrl", _this30.productPicUrl);
+                  _this34.productPicUrl = res.data.location;
+                  console.log("this.productPicUrl", _this34.productPicUrl);
                 });
               }
             }
@@ -4863,10 +4987,10 @@
         }, {
           key: "getASSETById",
           value: function getASSETById() {
-            var _this31 = this;
+            var _this35 = this;
 
             this.assetsServiceService.getNONCurrentAssetsDataBYId({}, this.nonassetId).then(function (res) {
-              _this31.nonAssetsForm.patchValue({
+              _this35.nonAssetsForm.patchValue({
                 assetName: res.data.assetName ? res.data.assetName : null,
                 assetDate: res.data.date ? moment__WEBPACK_IMPORTED_MODULE_0__(res.data.date).format("DD-MMM-YYYY") : moment__WEBPACK_IMPORTED_MODULE_0__(res.data.date).format("DD-MMM-YYYY"),
                 valueOfAssets: res.data.valueOfAsset ? res.data.valueOfAsset : 0,
@@ -4880,20 +5004,20 @@
                 paymentMode: res.data.paymentMode ? res.data.paymentMode : null
               });
 
-              _this31.additionalCost = res.data.equipmentAdditionals, _this31.additionalCostlength = _this31.additionalCost.length;
+              _this35.additionalCost = res.data.equipmentAdditionals, _this35.additionalCostlength = _this35.additionalCost.length;
 
-              if (_this31.additionalCostlength > 0) {
-                for (var i = 0; i < _this31.additionalCostlength; i++) {
-                  if (_this31.additionalCost[i].id) {
-                    _this31.additionalDetailsControls.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroup({
-                      id: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this31.additionalCost[i].id),
-                      name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this31.additionalCost[i].name),
-                      amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this31.additionalCost[i].amount)
+              if (_this35.additionalCostlength > 0) {
+                for (var i = 0; i < _this35.additionalCostlength; i++) {
+                  if (_this35.additionalCost[i].id) {
+                    _this35.additionalDetailsControls.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroup({
+                      id: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this35.additionalCost[i].id),
+                      name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this35.additionalCost[i].name),
+                      amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this35.additionalCost[i].amount)
                     }));
                   } else {
-                    _this31.additionalDetailsControls.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroup({
-                      name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this31.additionalCost[i].name),
-                      amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this31.additionalCost[i].amount)
+                    _this35.additionalDetailsControls.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroup({
+                      name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this35.additionalCost[i].name),
+                      amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this35.additionalCost[i].amount)
                     }));
                   }
                 }
@@ -5529,7 +5653,7 @@
         }, {
           key: "saveRunDepraciation",
           value: function saveRunDepraciation() {
-            var _this32 = this;
+            var _this36 = this;
 
             var requestBody = {
               userId: this.currentUser.id,
@@ -5548,24 +5672,24 @@
             }
 
             this.assetsServiceService.addRundeprec(requestBody, this.currentUser.id).then(function (res) {
-              _this32.toastService.toastMsg({
+              _this36.toastService.toastMsg({
                 title: "Success",
                 content: 'Run Depreciation Added Successfully!!!'
               });
 
-              _this32.isShow = true;
+              _this36.isShow = true;
 
-              _this32.assetsServiceService.notifyassetsAdded();
+              _this36.assetsServiceService.notifyassetsAdded();
 
-              _this32.dialogRef.close();
+              _this36.dialogRef.close();
             }, function (err) {
               if (err.error.expose) {
-                _this32.toastService.toastMsg({
+                _this36.toastService.toastMsg({
                   title: "Error",
-                  content: _this32.titleCasePipe.transform(err.error.error_message)
+                  content: _this36.titleCasePipe.transform(err.error.error_message)
                 });
               } else {
-                _this32.toastService.toastMsg({
+                _this36.toastService.toastMsg({
                   title: "Error",
                   content: "Something Went Wrong."
                 });
@@ -5575,7 +5699,7 @@
         }, {
           key: "updateRunDepraciation",
           value: function updateRunDepraciation() {
-            var _this33 = this;
+            var _this37 = this;
 
             var requestBody = {
               userId: this.currentUser.id,
@@ -5593,22 +5717,22 @@
               return false;
             } else {
               this.assetsServiceService.updateRundeprec(requestBody, this.currentUser.id).then(function (res) {
-                _this33.toastService.toastMsg({
+                _this37.toastService.toastMsg({
                   title: "Success",
                   content: 'Run Depreciation Updated Successfully!!!'
                 });
 
-                _this33.assetsServiceService.notifyassetsAdded();
+                _this37.assetsServiceService.notifyassetsAdded();
 
-                _this33.dialogRef.close();
+                _this37.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this33.toastService.toastMsg({
+                  _this37.toastService.toastMsg({
                     title: "Error",
-                    content: _this33.titleCasePipe.transform(err.error.error_message)
+                    content: _this37.titleCasePipe.transform(err.error.error_message)
                   });
                 } else {
-                  _this33.toastService.toastMsg({
+                  _this37.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   });

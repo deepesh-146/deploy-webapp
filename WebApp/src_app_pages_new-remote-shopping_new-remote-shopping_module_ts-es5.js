@@ -1192,10 +1192,9 @@
             console.log(this.searchKey);
 
             if (this.searchKey == "") {
-              // this.toastService.openErrorSnackBar("Please enter Party name!!!");
               this.toastService.toastMsg({
                 title: "Error",
-                content: "Please Enter Party Name!!!"
+                content: "Please Enter Customer's Name!!!"
               });
               this.remoteShopService.getRemoteOrdersearch({}, this.currentUser.id, 0, searchkey).then(function (res) {
                 console.log(res);
@@ -1207,29 +1206,24 @@
                 _this6.orderData1 = res.data;
 
                 if (_this6.orderData1.length > 0) {
-                  _this6.orderData = res.data; // this.toastService.openSnackBar("Record Found Successfully!!!");
+                  _this6.orderData = res.data;
                 } else {
                   _this6.toastService.toastMsg({
                     title: "Error",
                     content: "Record Not Found!!!"
-                  }); // this.toastService.openErrorSnackBar("Record Not Found!!!");
-
+                  });
                 }
               }, function (err) {
                 if (err.error.expose) {
                   _this6.toastService.toastMsg({
                     title: "Error",
                     content: err.error.error_message
-                  }); // this.toastService.openErrorSnackBar(
-                  //   this.titleCasePipe.transform(err.error.error_message)
-                  // );
-
+                  });
                 } else {
                   _this6.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
-                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
-
+                  });
                 }
               });
             }
@@ -1283,7 +1277,7 @@
         selectors: [["app-remote-order"]],
         decls: 38,
         vars: 9,
-        consts: [[1, "container-fluid"], ["id", "showoptionHide", 1, "row", "headerButtons"], [1, "flex-item", "searchBar", "mb-3"], ["appearance", "outline", 1, "example-full-width", 2, "height", "35px"], ["type", "text", "matInput", "", "placeholder", "Vendor Name", 3, "ngModel", "ngModelChange", "change"], [1, "iconcalender", "p-1"], [1, "flex-item", "dateRange", "mb-3"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "14px", "height", "35px"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "Receipt Date.", "id", "datePicker", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "maxDate", "ngModel", "bsConfig", "ngModelOptions", "ngModelChange", "click"], [1, "row", 2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "table-bordered", "fs--1", "mb-0"], [1, "text-900", "text-center"], [1, "btn-reveal-trigger"], [1, "text-nowrap"], [1, "text-center"], ["style", "color: #676398 !important", 3, "ngStyle", 4, "ngFor", "ngForOf"], [4, "ngIf"], [2, "color", "#676398 !important", 3, "ngStyle"], [2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-center", 2, "vertical-align", "middle"], [2, "cursor", "pointer", 3, "click"], [1, "fas", "fa-receipt"], ["colspan", "12"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
+        consts: [[1, "container-fluid"], ["id", "showoptionHide", 1, "row", "headerButtons"], [1, "flex-item", "searchBar", "mb-3"], ["appearance", "outline", 1, "example-full-width", 2, "height", "35px"], ["type", "text", "matInput", "", "placeholder", "Customer's Name", 3, "ngModel", "ngModelChange", "change"], [1, "iconcalender", "p-1"], [1, "flex-item", "dateRange", "mb-3"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "14px", "height", "35px"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "Receipt Date.", "id", "datePicker", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "maxDate", "ngModel", "bsConfig", "ngModelOptions", "ngModelChange", "click"], [1, "row", 2, "width", "100%", "overflow-x", "auto"], [1, "table", "table-responsive", "table-bordered", "fs--1", "mb-0"], [1, "text-900", "text-center"], [1, "btn-reveal-trigger"], [1, "text-nowrap"], [1, "text-center"], ["style", "color: #676398 !important", 3, "ngStyle", 4, "ngFor", "ngForOf"], [4, "ngIf"], [2, "color", "#676398 !important", 3, "ngStyle"], [2, "vertical-align", "middle"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-center", 2, "vertical-align", "middle"], [2, "cursor", "pointer", 3, "click"], [1, "fas", "fa-receipt"], ["colspan", "12"], ["src", "../../../assets/img/icons/spot-illustrations/notfound1.png", "alt", "notfound1", "width", "200", "height", "150", 1, "image-responsive"]],
         template: function RemoteOrderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
@@ -1372,7 +1366,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](22, "th", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](23, "Party Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](23, "Customer's Name ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 

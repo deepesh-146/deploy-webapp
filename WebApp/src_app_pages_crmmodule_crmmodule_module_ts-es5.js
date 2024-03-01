@@ -50172,8 +50172,8 @@
           value: function getUsersList() {
             var _this375 = this;
 
-            this.rolesPermissionsService.getUsers({}, this.currentUser.id).then(function (res) {
-              _this375.userData = res.data.map(function (item) {
+            this.rolesPermissionsService.getUsers({}, this.currentUser.id, 1000, 1).then(function (res) {
+              _this375.userData = res.data.pageData.map(function (item) {
                 return item.firstName;
               });
               console.log(_this375.userData);
@@ -51991,7 +51991,7 @@
               pincode: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               city: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               state: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-              country: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+              country: ['India', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               product: ["P1"],
               status: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               contact: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
@@ -52332,7 +52332,7 @@
         selectors: [["app-edit-lead"]],
         decls: 148,
         vars: 38,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [1, "row"], [1, "mb-3", "col-lg-6"], [1, "image-wrapper"], ["ondragover", "return false;", 1, "profile-pic", 3, "dragenter", "dragleave", "drop"], [1, "shadow-sm", 3, "src", "load"], ["type", "file", "name", "file", "accept", "image/*", 3, "change"], ["class", "delete-button", 3, "click", 4, "ngIf"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["type", "text", "matInput", "", "formControlName", "firstName", "autocomplete", "off", "placeholder", "Full Name", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], [1, "col-lg-6"], ["type", "text", "matInput", "", "formControlName", "email", "placeholder", "Email", "disabled", "", "autocomplete", "off", 3, "ngClass"], ["type", "text", "matInput", "", "formControlName", "mobile", "minlength", "10", "maxlength", "10", "placeholder", "Mobile Number", "autocomplete", "off", 3, "ngClass", "keypress"], [1, "col-sm-12", "col-md-12", "col-lg-12"], ["matInput", "", "rows", "1", "placeholder", "Enter Address", "formControlName", "address", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "pincode", "maxlength", "6", "minlength", "6", "placeholder", "Pincode", "autocomplete", "off", 3, "ngClass"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "city", "disabled", "", "placeholder", "City", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "state", "disabled", "", "placeholder", "State", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "country", "placeholder", "Country", "autocomplete", "off"], [1, "col-xs-12", "col-sm-12", "col-md-6", "col-lg-6"], ["formControlName", "product", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Support Type", "autocomplete", "off"], ["value", "P1"], ["formControlName", "status", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Status", "autocomplete", "off"], ["value", "FOLLOWUP"], ["value", "REJECT"], ["value", "CLOSE"], ["formControlName", "contact", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Contact Type", "autocomplete", "off"], ["value", "CLIENT"], ["value", "CUSTOMER"], ["value", "LEAD"], ["formControlName", "type", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Type", "autocomplete", "off", 3, "selectionChange"], ["value", "HOURS"], ["value", "COST"], ["type", "number", "min", "0", "matInput", "", "ngModel", "", "formControlName", "hours", "placeholder", "Enter Hours", "autocomplete", "off"], [1, "delete-button", 3, "click"], [1, "bi", "bi-x", "bi-sm"], [1, "text-danger"]],
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [1, "row"], [1, "mb-3", "col-lg-6"], [1, "image-wrapper"], ["ondragover", "return false;", 1, "profile-pic", 3, "dragenter", "dragleave", "drop"], [1, "shadow-sm", 3, "src", "load"], ["type", "file", "name", "file", "accept", "image/*", 3, "change"], ["class", "delete-button", "type", "button", 3, "click", 4, "ngIf"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["type", "text", "matInput", "", "formControlName", "firstName", "autocomplete", "off", "placeholder", "Full Name", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], [1, "col-lg-6"], ["type", "text", "matInput", "", "formControlName", "email", "placeholder", "Email", "disabled", "", "autocomplete", "off", 3, "ngClass"], ["type", "text", "matInput", "", "formControlName", "mobile", "minlength", "10", "maxlength", "10", "placeholder", "Mobile Number", "autocomplete", "off", 3, "ngClass", "keypress"], [1, "col-sm-12", "col-md-12", "col-lg-12"], ["matInput", "", "rows", "1", "placeholder", "Enter Address", "formControlName", "address", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "pincode", "maxlength", "6", "minlength", "6", "placeholder", "Pincode", "autocomplete", "off", 3, "ngClass"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "city", "disabled", "", "placeholder", "City", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "state", "disabled", "", "placeholder", "State", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "country", "placeholder", "Country", "autocomplete", "off"], [1, "col-xs-12", "col-sm-12", "col-md-6", "col-lg-6"], ["formControlName", "product", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Support Type", "autocomplete", "off"], ["value", "P1"], ["formControlName", "status", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Status", "autocomplete", "off"], ["value", "FOLLOWUP"], ["value", "REJECT"], ["value", "CLOSE"], ["formControlName", "contact", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Contact Type", "autocomplete", "off"], ["value", "CLIENT"], ["value", "CUSTOMER"], ["value", "LEAD"], ["formControlName", "type", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Type", "autocomplete", "off", 3, "selectionChange"], ["value", "HOURS"], ["value", "COST"], ["type", "number", "min", "0", "matInput", "", "ngModel", "", "formControlName", "hours", "placeholder", "Enter Hours", "autocomplete", "off"], ["type", "button", 1, "delete-button", 3, "click"], [1, "bi", "bi-x", "bi-sm"], [1, "text-danger"]],
         template: function EditLeadComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -53900,7 +53900,7 @@
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.CheckboxControlValueAccessor, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf],
-        styles: [".headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  padding: 0;\n}\n\n.searchBar[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 330px;\n}\n\n@media screen and (max-width: 600px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n\ntbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:nth-child(odd) {\n  background-color: #F8F8F8;\n}\n\n.table-responsive[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #000;\n}\n\n.table-responsive[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n  height: auto !important;\n}\n\n.table-responsive[_ngcontent-%COMP%]   th[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-style: none !important;\n}\n\n.thdata[_ngcontent-%COMP%] {\n  align-items: center;\n}\n\nth[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  padding: 20px !important;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n  padding-right: 0px !important;\n  width: 250px;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 75%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n  .custom-dialog-lead-class {\n  margin-left: 53%;\n}\n\n  .custom-dialog-update-Leadclass {\n  margin-left: 53%;\n}\n\n.inputhide[_ngcontent-%COMP%] {\n  display: none !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlYWQtbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFRTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FBREo7O0FBSUU7RUFFRSxVQUFBO0FBRko7O0FBSUU7RUFDRSxpQkFBQTtBQURKOztBQUtFO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7QUFGSjs7QUFNRTtFQUNFO0lBQ0UsdUJBQUE7RUFISjtBQUNGOztBQU9BO0VBQ0UseUJBQUE7QUFMRjs7QUFRQTtFQUNFLFdBQUE7QUFMRjs7QUFRQTtFQUNFLCtCQUFBO0VBQUEsNEJBQUE7RUFBQSx1QkFBQTtFQUNBLHVCQUFBO0FBTEY7O0FBUUE7RUFDRSw2QkFBQTtBQUxGOztBQVFBO0VBQ0UsbUJBQUE7QUFMRjs7QUFRQTtFQUNFLHdCQUFBO0FBTEY7O0FBU0E7RUFDSSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtFQUNBLG9CQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FBTko7O0FBU0U7RUFDRSxXQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSw4QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBTko7O0FBU0U7RUFFRSx1QkFBQTtFQUNBLFNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUtBLDBCQUFBO0VBQ0YsNEJBQUE7RUFDQSxxWEFBQTtFQUNBLDhCQUFBO0VBQ0Esd0NBQUE7RUFBMEMsK0JBQUE7QUFWNUM7O0FBY0U7RUFDRSxXQUFBO0FBWEo7O0FBVUU7RUFDRSxXQUFBO0FBWEo7O0FBY0U7RUFDRSxnQkFBQTtBQVhKOztBQWNFO0VBQ0UsZ0JBQUE7QUFYSjs7QUFjRTtFQUNFLHdCQUFBO0FBWEoiLCJmaWxlIjoibGVhZC1saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiICAvLyBSZXNwb25zaXZlIEJ1dHRvbnNcclxuXHJcbiAgLmhlYWRlckJ1dHRvbnMge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICB9XHJcbiAgXHJcbiAgLmZsZXgtaXRlbSB7XHJcbiAgICAvL2ZsZXgtYmFzaXM6IDI0MHB4O1xyXG4gICAgcGFkZGluZzogMDtcclxuICB9XHJcbiAgLnNlYXJjaEJhcntcclxuICAgIGZsZXgtYmFzaXM6IDI0MHB4O1xyXG4gIFxyXG4gIH1cclxuICBcclxuICAuZm9ybUJ1dHRvbnMge1xyXG4gICAgZGlzcGxheTpmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246cm93O1xyXG4gICAganVzdGlmeS1jb250ZW50OnNwYWNlLWV2ZW5seTtcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgIGZsZXgtYmFzaXM6IDMzMHB4O1xyXG4gIH1cclxuICBcclxuICAvLyBNZWRpYSBxdWVyeSBmb3IgYnV0dG9ucyBhbmQgc2VhcmNoIGJhci5cclxuICBAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xyXG4gICAgLmhlYWRlckJ1dHRvbnMge1xyXG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIH1cclxuICB9XHJcbiAgXHJcblxyXG50Ym9keSB0cjpudGgtY2hpbGQob2RkKSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI0Y4RjhGODtcclxufVxyXG5cclxuLnRhYmxlLXJlc3BvbnNpdmUgdGhlYWQgdGgge1xyXG4gIGNvbG9yOiAjMDAwO1xyXG59XHJcblxyXG4udGFibGUtcmVzcG9uc2l2ZSB0Ym9keSB0ciwgdGQge1xyXG4gIG1pbi1oZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gIGhlaWdodDogYXV0byAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4udGFibGUtcmVzcG9uc2l2ZSB0aCwgdGQsIHRyIHtcclxuICBib3JkZXItc3R5bGU6IG5vbmUhaW1wb3J0YW50O1xyXG59XHJcblxyXG4udGhkYXRhe1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuXHJcbnRoLCB0ZCB7XHJcbiAgcGFkZGluZzogMjBweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5cclxuLmNvbnRhaW5lclNlYXJjaEJhciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IHN0cmV0Y2g7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiAwcHggIWltcG9ydGFudDtcclxuICAgIHdpZHRoOjI1MHB4O1xyXG4gIH1cclxuICBcclxuICAuZm9ybS1jb250cm9sIHtcclxuICAgIGNvbG9yOiAjNTU1O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIHBhZGRpbmc6IDJweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGN1cnJlbnRDb2xvcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIG1hcmdpbjogMCAwIDMwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgaW5wdXRbdHlwZT1cInNlYXJjaFwiXSB7XHJcbiAgICAvLyBib3JkZXI6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgcGFkZGluZzogN3B4IDhweDtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBoZWlnaHQ6IDc1JTtcclxuICAgIC8vIG1hcmdpbi10b3A6IC03cHg7XHJcbiAgICAvL2NvbG9yOiBpbmhlcml0O1xyXG4gICAgLy8gYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICAvL2JvcmRlci1yYWRpdXM6IGluaGVyaXQ7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodDtcclxuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB3aWR0aD0nMTYnIGhlaWdodD0nMTYnIGNsYXNzPSdiaSBiaS1zZWFyY2gnIHZpZXdCb3g9JzAgMCAxNiAxNiclM0UlM0NwYXRoIGQ9J00xMS43NDIgMTAuMzQ0YTYuNSA2LjUgMCAxIDAtMS4zOTcgMS4zOThoLS4wMDFjLjAzLjA0LjA2Mi4wNzguMDk4LjExNWwzLjg1IDMuODVhMSAxIDAgMCAwIDEuNDE1LTEuNDE0bC0zLjg1LTMuODVhMS4wMDcgMS4wMDcgMCAwIDAtLjExNS0uMXpNMTIgNi41YTUuNSA1LjUgMCAxIDEtMTEgMCA1LjUgNS41IDAgMCAxIDExIDB6JyUzRSUzQy9wYXRoJTNFJTNDL3N2ZyUzRVwiKTtcclxuICBiYWNrZ3JvdW5kLW9yaWdpbjogY29udGVudC1ib3g7XHJcbiAgYmFja2dyb3VuZC1wb3NpdGlvbi14OiBjYWxjKDEwMCUgKyAyMHB4KTsgLyogQWRqdXN0IHRoZSB2YWx1ZSBhcyBuZWVkZWQgKi9cclxuICBcclxuICB9XHJcbiAgXHJcbiAgaW5wdXRbdHlwZT1cInNlYXJjaFwiXTo6cGxhY2Vob2xkZXIge1xyXG4gICAgY29sb3I6ICNiYmI7XHJcbiAgfVxyXG5cclxuICA6Om5nLWRlZXAgLmN1c3RvbS1kaWFsb2ctbGVhZC1jbGFzcyB7XHJcbiAgICBtYXJnaW4tbGVmdDogNTMlO1xyXG4gIH1cclxuXHJcbiAgOjpuZy1kZWVwIC5jdXN0b20tZGlhbG9nLXVwZGF0ZS1MZWFkY2xhc3Mge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDUzJTtcclxuICB9XHJcblxyXG4gIC5pbnB1dGhpZGUge1xyXG4gICAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50O1xyXG59Il19 */"]
+        styles: [".headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  padding: 0;\n}\n\n.searchBar[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 330px;\n}\n\n@media screen and (max-width: 600px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n}\n\ntbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:nth-child(odd) {\n  background-color: #F8F8F8;\n}\n\n.table-responsive[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #000;\n}\n\n.table-responsive[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n  height: auto !important;\n}\n\n.table-responsive[_ngcontent-%COMP%]   th[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-style: none !important;\n}\n\n.thdata[_ngcontent-%COMP%] {\n  align-items: center;\n}\n\ntd[_ngcontent-%COMP%] {\n  padding: 20px !important;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n  padding-right: 0px !important;\n  width: 250px;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 75%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n  .custom-dialog-lead-class {\n  margin-left: 53%;\n}\n\n  .custom-dialog-update-Leadclass {\n  margin-left: 53%;\n}\n\n.inputhide[_ngcontent-%COMP%] {\n  display: none !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlYWQtbGlzdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFRTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FBREo7O0FBSUU7RUFFRSxVQUFBO0FBRko7O0FBSUU7RUFDRSxpQkFBQTtBQURKOztBQUtFO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7QUFGSjs7QUFNRTtFQUNFO0lBQ0UsdUJBQUE7RUFISjtBQUNGOztBQU9BO0VBQ0UseUJBQUE7QUFMRjs7QUFRQTtFQUNFLFdBQUE7QUFMRjs7QUFRQTtFQUNFLCtCQUFBO0VBQUEsNEJBQUE7RUFBQSx1QkFBQTtFQUNBLHVCQUFBO0FBTEY7O0FBUUE7RUFDRSw2QkFBQTtBQUxGOztBQVFBO0VBQ0UsbUJBQUE7QUFMRjs7QUFRQTtFQUNFLHdCQUFBO0FBTEY7O0FBU0E7RUFDSSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtFQUNBLG9CQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FBTko7O0FBU0U7RUFDRSxXQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSw4QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBTko7O0FBU0U7RUFFRSx1QkFBQTtFQUNBLFNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUtBLDBCQUFBO0VBQ0YsNEJBQUE7RUFDQSxxWEFBQTtFQUNBLDhCQUFBO0VBQ0Esd0NBQUE7RUFBMEMsK0JBQUE7QUFWNUM7O0FBY0U7RUFDRSxXQUFBO0FBWEo7O0FBVUU7RUFDRSxXQUFBO0FBWEo7O0FBY0U7RUFDRSxnQkFBQTtBQVhKOztBQWNFO0VBQ0UsZ0JBQUE7QUFYSjs7QUFjRTtFQUNFLHdCQUFBO0FBWEoiLCJmaWxlIjoibGVhZC1saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiICAvLyBSZXNwb25zaXZlIEJ1dHRvbnNcclxuXHJcbiAgLmhlYWRlckJ1dHRvbnMge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICB9XHJcbiAgXHJcbiAgLmZsZXgtaXRlbSB7XHJcbiAgICAvL2ZsZXgtYmFzaXM6IDI0MHB4O1xyXG4gICAgcGFkZGluZzogMDtcclxuICB9XHJcbiAgLnNlYXJjaEJhcntcclxuICAgIGZsZXgtYmFzaXM6IDI0MHB4O1xyXG4gIFxyXG4gIH1cclxuICBcclxuICAuZm9ybUJ1dHRvbnMge1xyXG4gICAgZGlzcGxheTpmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246cm93O1xyXG4gICAganVzdGlmeS1jb250ZW50OnNwYWNlLWV2ZW5seTtcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgIGZsZXgtYmFzaXM6IDMzMHB4O1xyXG4gIH1cclxuICBcclxuICAvLyBNZWRpYSBxdWVyeSBmb3IgYnV0dG9ucyBhbmQgc2VhcmNoIGJhci5cclxuICBAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xyXG4gICAgLmhlYWRlckJ1dHRvbnMge1xyXG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIH1cclxuICB9XHJcbiAgXHJcblxyXG50Ym9keSB0cjpudGgtY2hpbGQob2RkKSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI0Y4RjhGODtcclxufVxyXG5cclxuLnRhYmxlLXJlc3BvbnNpdmUgdGhlYWQgdGgge1xyXG4gIGNvbG9yOiAjMDAwO1xyXG59XHJcblxyXG4udGFibGUtcmVzcG9uc2l2ZSB0Ym9keSB0ciwgdGQge1xyXG4gIG1pbi1oZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gIGhlaWdodDogYXV0byAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4udGFibGUtcmVzcG9uc2l2ZSB0aCwgdGQsIHRyIHtcclxuICBib3JkZXItc3R5bGU6IG5vbmUhaW1wb3J0YW50O1xyXG59XHJcblxyXG4udGhkYXRhe1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuXHJcbnRkIHtcclxuICBwYWRkaW5nOiAyMHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcblxyXG4uY29udGFpbmVyU2VhcmNoQmFyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDBweCAhaW1wb3J0YW50O1xyXG4gICAgd2lkdGg6MjUwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5mb3JtLWNvbnRyb2wge1xyXG4gICAgY29sb3I6ICM1NTU7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgcGFkZGluZzogMnB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgY3VycmVudENvbG9yO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgbWFyZ2luOiAwIDAgMzBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuICBpbnB1dFt0eXBlPVwic2VhcmNoXCJdIHtcclxuICAgIC8vIGJvcmRlcjogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBwYWRkaW5nOiA3cHggOHB4O1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIGhlaWdodDogNzUlO1xyXG4gICAgLy8gbWFyZ2luLXRvcDogLTdweDtcclxuICAgIC8vY29sb3I6IGluaGVyaXQ7XHJcbiAgICAvLyBib3JkZXI6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIC8vYm9yZGVyLXJhZGl1czogaW5oZXJpdDtcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IHJpZ2h0O1xyXG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNicgaGVpZ2h0PScxNicgY2xhc3M9J2JpIGJpLXNlYXJjaCcgdmlld0JveD0nMCAwIDE2IDE2JyUzRSUzQ3BhdGggZD0nTTExLjc0MiAxMC4zNDRhNi41IDYuNSAwIDEgMC0xLjM5NyAxLjM5OGgtLjAwMWMuMDMuMDQuMDYyLjA3OC4wOTguMTE1bDMuODUgMy44NWExIDEgMCAwIDAgMS40MTUtMS40MTRsLTMuODUtMy44NWExLjAwNyAxLjAwNyAwIDAgMC0uMTE1LS4xek0xMiA2LjVhNS41IDUuNSAwIDEgMS0xMSAwIDUuNSA1LjUgMCAwIDEgMTEgMHonJTNFJTNDL3BhdGglM0UlM0Mvc3ZnJTNFXCIpO1xyXG4gIGJhY2tncm91bmQtb3JpZ2luOiBjb250ZW50LWJveDtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uLXg6IGNhbGMoMTAwJSArIDIwcHgpOyAvKiBBZGp1c3QgdGhlIHZhbHVlIGFzIG5lZWRlZCAqL1xyXG4gIFxyXG4gIH1cclxuICBcclxuICBpbnB1dFt0eXBlPVwic2VhcmNoXCJdOjpwbGFjZWhvbGRlciB7XHJcbiAgICBjb2xvcjogI2JiYjtcclxuICB9XHJcblxyXG4gIDo6bmctZGVlcCAuY3VzdG9tLWRpYWxvZy1sZWFkLWNsYXNzIHtcclxuICAgIG1hcmdpbi1sZWZ0OiA1MyU7XHJcbiAgfVxyXG5cclxuICA6Om5nLWRlZXAgLmN1c3RvbS1kaWFsb2ctdXBkYXRlLUxlYWRjbGFzcyB7XHJcbiAgICBtYXJnaW4tbGVmdDogNTMlO1xyXG4gIH1cclxuXHJcbiAgLmlucHV0aGlkZSB7XHJcbiAgICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XHJcbn0iXX0= */"]
       });
       /***/
     },
@@ -53933,13 +53933,13 @@
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/forms */
       1707);
       /* harmony import */
 
 
-      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/material/dialog */
       22213);
       /* harmony import */
@@ -53973,13 +53973,13 @@
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/common */
       54364);
       /* harmony import */
 
 
-      var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/platform-browser */
       71570);
       /* harmony import */
@@ -53991,46 +53991,70 @@
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! src/app/core/services/roles-permissions.service */
+      30438);
+      /* harmony import */
+
+
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/form-field */
       65788);
       /* harmony import */
 
 
-      var _angular_material_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/material/select */
       37007);
       /* harmony import */
 
 
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/material/core */
       32220);
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/material/input */
       64742);
       /* harmony import */
 
 
-      var ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ngx-bootstrap/datepicker */
       84461);
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! @angular/material/icon */
       52529);
       /* harmony import */
 
 
-      var _ckeditor_ckeditor5_angular__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _ckeditor_ckeditor5_angular__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! @ckeditor/ckeditor5-angular */
       69570); // ckeditor
 
+
+      function LogEmailComponent_mat_option_21_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 26);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var item_r1 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r1);
+        }
+      }
 
       var _c0 = function _c0() {
         return {
@@ -54057,7 +54081,7 @@
       };
 
       var _LogEmailComponent = /*#__PURE__*/function () {
-        function _LogEmailComponent(dialogRef, formBuilder, taskData, toastService, crmService, titleCasePipe, domSanitizer, commonService) {
+        function _LogEmailComponent(dialogRef, formBuilder, taskData, toastService, crmService, titleCasePipe, domSanitizer, commonService, rolesPermissionsService) {
           _classCallCheck(this, _LogEmailComponent);
 
           this.dialogRef = dialogRef;
@@ -54068,10 +54092,12 @@
           this.titleCasePipe = titleCasePipe;
           this.domSanitizer = domSanitizer;
           this.commonService = commonService;
+          this.rolesPermissionsService = rolesPermissionsService;
           this.ckeditor = _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default();
           this.editorConfig = editorConfig;
           this.output = null;
           this.editorContent = editorContent;
+          this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
         }
 
         _createClass(_LogEmailComponent, [{
@@ -54080,16 +54106,29 @@
             this.today = new Date();
             this.leadId = this.taskData.editleadId;
             console.log("leadId", this.leadId);
+            this.getUsersList();
             this.AddEmailForm = this.formBuilder.group({
-              taskName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-              taskdate: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-              taskTime: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+              taskName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              taskdate: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              taskTime: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
               taskReminder: [false],
-              taskType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+              taskType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
               taskPrioirty: [''],
               // taskQue: ['', Validators.required],
-              taskAssignedTo: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-              taskNote: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]
+              taskAssignedTo: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              taskNote: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]
+            });
+          }
+        }, {
+          key: "getUsersList",
+          value: function getUsersList() {
+            var _this391 = this;
+
+            this.rolesPermissionsService.getUsers({}, this.currentUser.id, 1000, 1).then(function (res) {
+              _this391.userData = res.data.pageData.map(function (item) {
+                return item.firstName;
+              });
+              console.log(_this391.userData);
             });
           }
         }, {
@@ -54113,7 +54152,7 @@
         }, {
           key: "AddTask",
           value: function AddTask() {
-            var _this391 = this;
+            var _this392 = this;
 
             if (this.AddEmailForm.invalid) {
               console.log("eee", this.AddEmailForm);
@@ -54135,24 +54174,24 @@
                 "images": []
               };
               this.crmService.postEmail(Body, this.leadId).then(function (res) {
-                _this391.commonService.notifyDataAdded(); // this.toastService.openSnackBar("Log Mail Added Successfully!!!");
+                _this392.commonService.notifyDataAdded(); // this.toastService.openSnackBar("Log Mail Added Successfully!!!");
 
 
-                _this391.toastService.toastMsg({
+                _this392.toastService.toastMsg({
                   title: "Success",
                   content: "Log Mail Added Successfully!!!"
                 });
 
-                _this391.dialogRef.close();
+                _this392.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this391.toastService.toastMsg({
+                  _this392.toastService.toastMsg({
                     title: "Error",
-                    content: _this391.titleCasePipe.transform(err.error.error_message)
+                    content: _this392.titleCasePipe.transform(err.error.error_message)
                   }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
                 } else {
-                  _this391.toastService.toastMsg({
+                  _this392.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -54178,15 +54217,15 @@
       }();
 
       _LogEmailComponent.ɵfac = function LogEmailComponent_Factory(t) {
-        return new (t || _LogEmailComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_1__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_crm_service__WEBPACK_IMPORTED_MODULE_2__.CrmService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_7__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.DomSanitizer), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_3__.CommonService));
+        return new (t || _LogEmailComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_1__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_crm_service__WEBPACK_IMPORTED_MODULE_2__.CrmService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_8__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.DomSanitizer), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_3__.CommonService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_4__.RolesPermissionsService));
       };
 
       _LogEmailComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _LogEmailComponent,
         selectors: [["app-log-email"]],
-        decls: 70,
-        vars: 7,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "16px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid"], [3, "formGroup"], [1, "row"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Task Assigned To", "formControlName", "taskAssignedTo"], ["value", "Myself"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskdate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], [1, "iconcalender", "p-1"], ["type", "time", "matInput", "", "required", "", "formControlName", "taskTime", "placeholder", "Task Time", "autocomplete", "off"], ["matInput", "", "required", "", "formControlName", "taskName", "placeholder", "Task Reminder", "autocomplete", "off"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Type", "formControlName", "taskType"], ["value", "TODO"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Priority", "formControlName", "taskPrioirty"], ["value", "High"], [1, "col-sm-12", "col-md-12", "col-xl-12", "col-lg-12", 2, "margin", "0px 4px"], ["formControlName", "taskNote", 3, "editor", "data", "config", "change"]],
+        decls: 71,
+        vars: 8,
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "16px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid"], [3, "formGroup"], [1, "row"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Task Assigned To", "formControlName", "taskAssignedTo"], ["value", "Myself"], ["value", "item", 4, "ngFor", "ngForOf"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskdate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], [1, "iconcalender", "p-1"], ["type", "time", "matInput", "", "required", "", "formControlName", "taskTime", "placeholder", "Task Time", "autocomplete", "off"], ["matInput", "", "required", "", "formControlName", "taskName", "placeholder", "Task Reminder", "autocomplete", "off"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Type", "formControlName", "taskType"], ["value", "TODO"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Priority", "formControlName", "taskPrioirty"], ["value", "High"], [1, "col-sm-12", "col-md-12", "col-xl-12", "col-lg-12", 2, "margin", "0px 4px"], ["formControlName", "taskNote", 3, "editor", "data", "config", "change"], ["value", "item"]],
         template: function LogEmailComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -54255,7 +54294,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, LogEmailComponent_mat_option_21_Template, 2, 1, "mat-option", 15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -54263,119 +54302,39 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "div", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "div", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "div", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "label", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "div", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](24, "Financial Year Start From ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](24, "label", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "span", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](25, "Financial Year Start From ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](26, "*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](26, "span", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](27, "*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "mat-form-field", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "mat-form-field", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "input", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "input", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LogEmailComponent_Template_input_click_28_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LogEmailComponent_Template_input_click_29_listener() {
               return ctx.openDatepicker();
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "span");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "mat-icon", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](31, "mat-icon", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](31, "date_range");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "div", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "label", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](34, " Task Time");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](35, "span", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](36, "*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](37, "br");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](38, "mat-form-field", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](39, "input", 17);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "div", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "label", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](42, "Task Reminder ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "span", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](44, "*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "mat-form-field", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](46, "input", 18);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](47, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](48, "div", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](49, "div", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](50, "label", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](51, "TYPE ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](52, "span", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](53, "*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "mat-form-field", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "mat-select", 19);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](56, "mat-option", 20);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](57, "To Do");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](32, "date_range");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -54385,45 +54344,127 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "div", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "div", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "label", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "label", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](60, "Priority ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](35, " Task Time");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](61, "span", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "span", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](62, "*");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](63, "mat-form-field", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](64, "mat-select", 21);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "mat-option", 22);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](66, "High");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](37, "*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](38, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "mat-form-field", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](40, "input", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "div", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "label", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](43, "Task Reminder ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](44, "span", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](45, "*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](46, "mat-form-field", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](47, "input", 19);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](67, "div", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](48, "hr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](68, "div", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](49, "div", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](69, "ckeditor", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](50, "div", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function LogEmailComponent_Template_ckeditor_change_69_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](51, "label", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](52, "TYPE ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "span", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](54, "*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "mat-form-field", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](56, "mat-select", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](57, "mat-option", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](58, "To Do");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "div", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](60, "label", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](61, "Priority ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](62, "span", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](63, "*");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](64, "mat-form-field", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "mat-select", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](66, "mat-option", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](67, "High");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](68, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](69, "div", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](70, "ckeditor", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function LogEmailComponent_Template_ckeditor_change_70_listener($event) {
               return ctx.onChange($event);
             });
 
@@ -54445,16 +54486,20 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx.AddEmailForm);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("minDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](6, _c0));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.userData);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("minDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c0));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](41);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("editor", ctx.ckeditor)("data", ctx.editorContent)("config", ctx.editorConfig);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_10__.MatSelect, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _angular_material_core__WEBPACK_IMPORTED_MODULE_11__.MatOption, _angular_material_input__WEBPACK_IMPORTED_MODULE_12__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_13__.BsDatepickerInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.RequiredValidator, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_13__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_14__.MatIcon, _ckeditor_ckeditor5_angular__WEBPACK_IMPORTED_MODULE_15__.CKEditorComponent],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_11__.MatSelect, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_material_core__WEBPACK_IMPORTED_MODULE_12__.MatOption, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_material_input__WEBPACK_IMPORTED_MODULE_13__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__.MatIcon, _ckeditor_ckeditor5_angular__WEBPACK_IMPORTED_MODULE_16__.CKEditorComponent],
         styles: [".form-label[_ngcontent-%COMP%] {\n  margin-left: 5px;\n}\n\n.iconcalender[_ngcontent-%COMP%] {\n  float: right !important;\n  margin-top: -24px;\n}\n\n.modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.addProductButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  margin-left: auto;\n}\n\n@media screen and (max-width: 768px) {\n  .modal-header[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .addProductButtons[_ngcontent-%COMP%] {\n    margin: 10px 0px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZy1lbWFpbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDSSx1QkFBQTtFQUNBLGlCQUFBO0FBQ0o7O0FBR0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0FBQUY7O0FBR0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtBQUFGOztBQUdBO0VBQ0U7SUFDRSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSx1QkFBQTtJQUNBLG1CQUFBO0VBQUY7O0VBR0E7SUFDRSxnQkFBQTtFQUFGO0FBQ0YiLCJmaWxlIjoibG9nLWVtYWlsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvcm0tbGFiZWwge1xyXG4gIG1hcmdpbi1sZWZ0OiA1cHg7XHJcbn1cclxuXHJcbi5pY29uY2FsZW5kZXIge1xyXG4gICAgZmxvYXQ6IHJpZ2h0ICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tdG9wOiAtMjRweDtcclxuICB9XHJcblxyXG5cclxuLm1vZGFsLWhlYWRlciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5hZGRQcm9kdWN0QnV0dG9ucyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA3NjhweCkge1xyXG4gIC5tb2RhbC1oZWFkZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOmNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICB9XHJcblxyXG4gIC5hZGRQcm9kdWN0QnV0dG9ucyB7XHJcbiAgICBtYXJnaW46MTBweCAwcHg7XHJcbiAgfVxyXG5cclxufVxyXG4iXX0= */"]
       });
       /***/
@@ -54674,13 +54719,13 @@
         }, {
           key: "getUsersList",
           value: function getUsersList() {
-            var _this392 = this;
+            var _this393 = this;
 
-            this.rolesPermissionsService.getUsers({}, this.currentUser.id).then(function (res) {
-              _this392.userData = res.data.map(function (item) {
+            this.rolesPermissionsService.getUsers({}, this.currentUser.id, 1000, 1).then(function (res) {
+              _this393.userData = res.data.pageData.map(function (item) {
                 return item.firstName;
               });
-              console.log(_this392.userData);
+              console.log(_this393.userData);
             });
           }
         }, {
@@ -54691,7 +54736,7 @@
         }, {
           key: "AddMeetLog",
           value: function AddMeetLog() {
-            var _this393 = this;
+            var _this394 = this;
 
             if (this.AddlogMeetingForm.invalid) {
               this.toastService.toastMsg({
@@ -54711,25 +54756,25 @@
                 "images": []
               };
               this.crmService.PostMeetingLogAdd(Body, this.leadId).then(function (res) {
-                _this393.commonService.notifyDataAdded();
+                _this394.commonService.notifyDataAdded();
 
-                _this393.toastService.toastMsg({
+                _this394.toastService.toastMsg({
                   title: "Success",
                   content: "Meeting Log Added Successfully!!!"
                 }); // 
                 // this.toastService.openSnackBar("Meeting Log Added Successfully!!!");
 
 
-                _this393.dialogRef.close();
+                _this394.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this393.toastService.toastMsg({
+                  _this394.toastService.toastMsg({
                     title: "Error",
-                    content: _this393.titleCasePipe.transform(err.error.error_message)
+                    content: _this394.titleCasePipe.transform(err.error.error_message)
                   }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
                 } else {
-                  _this393.toastService.toastMsg({
+                  _this394.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -55297,36 +55342,36 @@
         _createClass(_MailComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this394 = this;
+            var _this395 = this;
 
             this.route.paramMap.subscribe(function (p) {
-              _this394.editleadId = p.get("id");
+              _this395.editleadId = p.get("id");
             });
             console.log("this.leadId", this.editleadId);
             this.geteditLeadById();
             this.getmailList();
             this.commonService.rowAdded$.subscribe(function () {
-              _this394.getmailList();
+              _this395.getmailList();
             });
           }
         }, {
           key: "geteditLeadById",
           value: function geteditLeadById() {
-            var _this395 = this;
+            var _this396 = this;
 
             this.crmservice.getleadById({}, this.editleadId).then(function (res) {
               console.log("res activity", res);
-              _this395.name = res.data.name;
+              _this396.name = res.data.name;
             });
           }
         }, {
           key: "getmailList",
           value: function getmailList() {
-            var _this396 = this;
+            var _this397 = this;
 
             this.crmservice.getMailList({}, this.editleadId, this.search).then(function (res) {
               console.log("res mail view list", res);
-              _this396.emailist = res.data.pageData;
+              _this397.emailist = res.data.pageData;
             });
           }
         }, {
@@ -55666,36 +55711,36 @@
         _createClass(_MeetingComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this397 = this;
+            var _this398 = this;
 
             this.route.paramMap.subscribe(function (p) {
-              _this397.editleadId = p.get("id");
+              _this398.editleadId = p.get("id");
             });
             console.log("this.leadId", this.editleadId);
             this.geteditLeadById();
             this.getmeetingList();
             this.commonService.rowAdded$.subscribe(function () {
-              _this397.getmeetingList();
+              _this398.getmeetingList();
             });
           }
         }, {
           key: "geteditLeadById",
           value: function geteditLeadById() {
-            var _this398 = this;
+            var _this399 = this;
 
             this.crmservice.getleadById({}, this.editleadId).then(function (res) {
               console.log("res activity", res);
-              _this398.name = res.data.name;
+              _this399.name = res.data.name;
             });
           }
         }, {
           key: "getmeetingList",
           value: function getmeetingList() {
-            var _this399 = this;
+            var _this400 = this;
 
             this.crmservice.getMeetingList({}, this.editleadId, this.search).then(function (res) {
               console.log("meeting list data", res);
-              _this399.meetinglistData = res.data.pageData;
+              _this400.meetinglistData = res.data.pageData;
             });
           }
         }, {
@@ -56042,46 +56087,46 @@
         _createClass(_NotesComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this400 = this;
+            var _this401 = this;
 
             this.route.paramMap.subscribe(function (p) {
-              _this400.editleadId = p.get("id");
+              _this401.editleadId = p.get("id");
             });
             console.log("this.leadId", this.editleadId);
             this.geteditLeadById();
             this.getnotesList();
             this.commonService.rowAdded$.subscribe(function () {
-              _this400.getnotesList();
+              _this401.getnotesList();
             });
           }
         }, {
           key: "geteditLeadById",
           value: function geteditLeadById() {
-            var _this401 = this;
+            var _this402 = this;
 
             this.crmservice.getleadById({}, this.editleadId).then(function (res) {
               console.log("res", res);
-              _this401.name = res.data.name;
+              _this402.name = res.data.name;
             });
           }
         }, {
           key: "getnotesList",
           value: function getnotesList() {
-            var _this402 = this;
+            var _this403 = this;
 
             this.crmservice.getNoteList({}, this.editleadId, this.search).then(function (res) {
               console.log("res notes view", res);
-              _this402.notesList = res.data.pageData;
+              _this403.notesList = res.data.pageData;
             });
           }
         }, {
           key: "getsearchnoteList",
           value: function getsearchnoteList(searchKey) {
-            var _this403 = this;
+            var _this404 = this;
 
             this.crmservice.getNotesListsearch({}, this.editleadId, this.search, this.partyPageSize, this.currentPageNo + 1, this.searchKey).then(function (res) {
               console.log("search note", res);
-              _this403.notesList = res.data.pageData;
+              _this404.notesList = res.data.pageData;
             });
           }
         }, {
@@ -56457,46 +56502,46 @@
         _createClass(_TaskComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this404 = this;
+            var _this405 = this;
 
             this.route.paramMap.subscribe(function (p) {
-              _this404.editleadId = p.get("id");
+              _this405.editleadId = p.get("id");
             });
             console.log("this.leadId", this.editleadId);
             this.geteditLeadById();
             this.gettaskList();
             this.commonService.rowAdded$.subscribe(function () {
-              _this404.gettaskList();
+              _this405.gettaskList();
             });
           }
         }, {
           key: "geteditLeadById",
           value: function geteditLeadById() {
-            var _this405 = this;
+            var _this406 = this;
 
             this.crmservice.getleadById({}, this.editleadId).then(function (res) {
               console.log("res taskwala", res);
-              _this405.name = res.data.name;
+              _this406.name = res.data.name;
             });
           }
         }, {
           key: "gettaskList",
           value: function gettaskList() {
-            var _this406 = this;
+            var _this407 = this;
 
             this.crmservice.getTaskList({}, this.editleadId, this.search).then(function (res) {
               console.log("res task view", res);
-              _this406.tasklist = res.data.pageData;
+              _this407.tasklist = res.data.pageData;
             });
           }
         }, {
           key: "getsearchtaskList",
           value: function getsearchtaskList(searchKey) {
-            var _this407 = this;
+            var _this408 = this;
 
             this.crmservice.getTaskListsearch({}, this.editleadId, this.search, this.partyPageSize, this.currentPageNo + 1, this.searchKey).then(function (res) {
               console.log("search note", res);
-              _this407.tasklist = res.data.pageData;
+              _this408.tasklist = res.data.pageData;
             });
           }
         }, {
@@ -56840,10 +56885,10 @@
         }, {
           key: "getUsersList",
           value: function getUsersList() {
-            var _this408 = this;
+            var _this409 = this;
 
-            this.rolesPermissionsService.getUsers({}, this.currentUser.id).then(function (res) {
-              _this408.userData = res.data.map(function (item) {
+            this.rolesPermissionsService.getUsers({}, this.currentUser.id, 1000, 1).then(function (res) {
+              _this409.userData = res.data.pageData.map(function (item) {
                 return item.firstName;
               });
             });
@@ -56851,10 +56896,10 @@
         }, {
           key: "getTaskDataByleadId",
           value: function getTaskDataByleadId() {
-            var _this409 = this;
+            var _this410 = this;
 
             this.crmService.getCrmDATABYLEADID({}, this.leadId, this.taskId).then(function (res) {
-              _this409.AddTaskForm.patchValue({
+              _this410.AddTaskForm.patchValue({
                 //task: res.data.taskName,
                 taskdate: moment__WEBPACK_IMPORTED_MODULE_1__(res.data.createdAt).format("DD-MMM-YYYY"),
                 taskTime: res.data.updatedAt ? res.data.updatedAt : "",
@@ -56882,7 +56927,7 @@
         }, {
           key: "AddTask",
           value: function AddTask() {
-            var _this410 = this;
+            var _this411 = this;
 
             if (this.AddTaskForm.invalid) {
               this.toastService.toastMsg({
@@ -56905,24 +56950,24 @@
 
               };
               this.crmService.updateEmail(Body, this.taskId).then(function (res) {
-                _this410.commonService.notifyDataAdded();
+                _this411.commonService.notifyDataAdded();
 
-                _this410.toastService.toastMsg({
+                _this411.toastService.toastMsg({
                   title: "Success",
                   content: "Email Updated Successfully!!!"
                 }); // this.toastService.openSnackBar("Email Updated Successfully!!!");
 
 
-                _this410.dialogRef.close();
+                _this411.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this410.toastService.toastMsg({
+                  _this411.toastService.toastMsg({
                     title: "Error",
-                    content: _this410.titleCasePipe.transform(err.error.error_message)
+                    content: _this411.titleCasePipe.transform(err.error.error_message)
                   }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
                 } else {
-                  _this410.toastService.toastMsg({
+                  _this411.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -57356,10 +57401,10 @@
         }, {
           key: "getNoteDataByleadId",
           value: function getNoteDataByleadId() {
-            var _this411 = this;
+            var _this412 = this;
 
             this.crmService.getCrmDATABYLEADID({}, this.leadId, this.noteId).then(function (res) {
-              _this411.noteForm.patchValue({
+              _this412.noteForm.patchValue({
                 "note": res.data.note
               });
             });
@@ -57385,7 +57430,7 @@
         }, {
           key: "updateNote",
           value: function updateNote() {
-            var _this412 = this;
+            var _this413 = this;
 
             if (this.noteForm.invalid) {
               this.toastService.toastMsg({
@@ -57400,24 +57445,24 @@
 
               };
               this.crmService.updateNote(Body, this.noteId).then(function (res) {
-                _this412.commonService.notifyDataAdded();
+                _this413.commonService.notifyDataAdded();
 
-                _this412.toastService.toastMsg({
+                _this413.toastService.toastMsg({
                   title: "Success",
                   content: "Note Updated Successfully!!!"
                 }); // this.toastService.openSnackBar("Note updated Successfully!!!");
 
 
-                _this412.dialogRef.close();
+                _this413.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this412.toastService.toastMsg({
+                  _this413.toastService.toastMsg({
                     title: "Error",
-                    content: _this412.titleCasePipe.transform(err.error.error_message)
+                    content: _this413.titleCasePipe.transform(err.error.error_message)
                   }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
                 } else {
-                  _this412.toastService.toastMsg({
+                  _this413.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -57732,6 +57777,7 @@
             this.taskId = this.taskData.taskId;
             this.getTaskDataByleadId();
             console.log("leadId", this.leadId);
+            this.getUsersList();
             this.AddTaskForm = this.formBuilder.group({
               task: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
               taskdate: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
@@ -57747,10 +57793,10 @@
         }, {
           key: "getUsersList",
           value: function getUsersList() {
-            var _this413 = this;
+            var _this414 = this;
 
-            this.rolesPermissionsService.getUsers({}, this.currentUser.id).then(function (res) {
-              _this413.userData = res.data.map(function (item) {
+            this.rolesPermissionsService.getUsers({}, this.currentUser.id, 1000, 1).then(function (res) {
+              _this414.userData = res.data.pageData.map(function (item) {
                 return item.firstName;
               });
             });
@@ -57758,10 +57804,10 @@
         }, {
           key: "getTaskDataByleadId",
           value: function getTaskDataByleadId() {
-            var _this414 = this;
+            var _this415 = this;
 
             this.crmService.getCrmDATABYLEADID({}, this.leadId, this.taskId).then(function (res) {
-              _this414.AddTaskForm.patchValue({
+              _this415.AddTaskForm.patchValue({
                 task: res.data.taskName,
                 taskdate: moment__WEBPACK_IMPORTED_MODULE_1__(res.data.dueDate).format("DD-MMM-YYYY"),
                 taskTime: res.data.updatedAt ? res.data.updatedAt : "",
@@ -57789,7 +57835,7 @@
         }, {
           key: "AddTask",
           value: function AddTask() {
-            var _this415 = this;
+            var _this416 = this;
 
             if (this.AddTaskForm.invalid) {
               // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
@@ -57812,24 +57858,24 @@
 
               };
               this.crmService.updateTask(Body, this.taskId).then(function (res) {
-                _this415.commonService.notifyDataAdded();
+                _this416.commonService.notifyDataAdded();
 
-                _this415.toastService.toastMsg({
+                _this416.toastService.toastMsg({
                   title: "Success",
                   content: "Task Updated Successfully!!!"
                 }); // this.toastService.openSnackBar("Task Updated Successfully!!!");
 
 
-                _this415.dialogRef.close();
+                _this416.dialogRef.close();
               }, function (err) {
                 if (err.error.expose) {
-                  _this415.toastService.toastMsg({
+                  _this416.toastService.toastMsg({
                     title: "Error",
-                    content: _this415.titleCasePipe.transform(err.error.error_message)
+                    content: _this416.titleCasePipe.transform(err.error.error_message)
                   }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
 
                 } else {
-                  _this415.toastService.toastMsg({
+                  _this416.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
                   }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
@@ -58269,10 +58315,10 @@
         _createClass(_ViewLeadComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this416 = this;
+            var _this417 = this;
 
             this.route.paramMap.subscribe(function (p) {
-              _this416.id = p.get("id");
+              _this417.id = p.get("id");
             });
             console.log("this.leadId", this.id); //this.setInitialActivePath();
           }

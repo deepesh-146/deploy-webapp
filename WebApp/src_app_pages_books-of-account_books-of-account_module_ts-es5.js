@@ -860,7 +860,7 @@
 
       var _journal_journal_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./journal/journal.component */
-      28528);
+      52004);
       /* harmony import */
 
 
@@ -1162,7 +1162,7 @@
 
       var _journal_journal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./journal/journal.component */
-      28528);
+      52004);
       /* harmony import */
 
 
@@ -1214,7 +1214,7 @@
     },
 
     /***/
-    28528:
+    52004:
     /*!*********************************************************************!*\
       !*** ./src/app/pages/books-of-account/journal/journal.component.ts ***!
       \*********************************************************************/

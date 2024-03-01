@@ -2020,8 +2020,8 @@
           value: function getUsersList() {
             var _this12 = this;
 
-            this.rolesPermissionsService.getUsers({}, this.currentUser.id).then(function (res) {
-              _this12.employeeList = res.data.map(function (item) {
+            this.rolesPermissionsService.getUsers({}, this.currentUser.id, 1000, 1).then(function (res) {
+              _this12.employeeList = res.data.pageData.map(function (item) {
                 return item.firstName;
               });
               console.log("employee", _this12.employeeList);

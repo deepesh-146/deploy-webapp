@@ -443,7 +443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 71258);
 /* harmony import */ var _books_of_account_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./books-of-account.component */ 77050);
-/* harmony import */ var _journal_journal_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./journal/journal.component */ 28528);
+/* harmony import */ var _journal_journal_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./journal/journal.component */ 52004);
 /* harmony import */ var _profit_profit_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profit/profit.component */ 64857);
 /* harmony import */ var _trial_balance_trial_balance_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./trial-balance/trial-balance.component */ 94561);
 /* harmony import */ var _balance_sheet_balance_sheet_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./balance-sheet/balance-sheet.component */ 50123);
@@ -578,7 +578,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/form-field */ 65788);
 /* harmony import */ var src_app_material_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/material.module */ 63806);
 /* harmony import */ var _angular_material_tree__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/tree */ 75473);
-/* harmony import */ var _journal_journal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./journal/journal.component */ 28528);
+/* harmony import */ var _journal_journal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./journal/journal.component */ 52004);
 /* harmony import */ var _trial_balance_trial_balance_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./trial-balance/trial-balance.component */ 94561);
 /* harmony import */ var _balance_sheet_balance_sheet_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./balance-sheet/balance-sheet.component */ 50123);
 /* harmony import */ var _profit_profit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./profit/profit.component */ 64857);
@@ -632,7 +632,7 @@ BooksOfAccountModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 28528:
+/***/ 52004:
 /*!*********************************************************************!*\
   !*** ./src/app/pages/books-of-account/journal/journal.component.ts ***!
   \*********************************************************************/
