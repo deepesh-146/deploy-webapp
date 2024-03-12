@@ -728,7 +728,7 @@
                 if (isActive) {
                   _this6.toastService.toastMsg({
                     title: "Success",
-                    content: "Campaign Status Changed To Active"
+                    content: "Campaign Status Changed To Inactive"
                   }); //  this.toastService.openSnackBar("Campaign status changed to active")
 
 
@@ -736,7 +736,7 @@
                 } else {
                   _this6.toastService.toastMsg({
                     title: "Success",
-                    content: "Campaign Status Changed To InActive"
+                    content: "Campaign Status Changed To Active"
                   }); //  this.toastService.openSnackBar("Campaign status changed to inactive")
 
 

@@ -51818,7 +51818,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Mobile Number is required! ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Mobile # is required! ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         }
@@ -51828,7 +51828,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Mobile Number must be 10-digits only ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Mobile # must be 10-digits only ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         }
@@ -51838,7 +51838,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Mobile Number must be 10-digits only ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Mobile # must be 10-digits only ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         }
@@ -52332,7 +52332,7 @@
         selectors: [["app-edit-lead"]],
         decls: 148,
         vars: 38,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [1, "row"], [1, "mb-3", "col-lg-6"], [1, "image-wrapper"], ["ondragover", "return false;", 1, "profile-pic", 3, "dragenter", "dragleave", "drop"], [1, "shadow-sm", 3, "src", "load"], ["type", "file", "name", "file", "accept", "image/*", 3, "change"], ["class", "delete-button", "type", "button", 3, "click", 4, "ngIf"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["type", "text", "matInput", "", "formControlName", "firstName", "autocomplete", "off", "placeholder", "Full Name", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], [1, "col-lg-6"], ["type", "text", "matInput", "", "formControlName", "email", "placeholder", "Email", "disabled", "", "autocomplete", "off", 3, "ngClass"], ["type", "text", "matInput", "", "formControlName", "mobile", "minlength", "10", "maxlength", "10", "placeholder", "Mobile Number", "autocomplete", "off", 3, "ngClass", "keypress"], [1, "col-sm-12", "col-md-12", "col-lg-12"], ["matInput", "", "rows", "1", "placeholder", "Enter Address", "formControlName", "address", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "pincode", "maxlength", "6", "minlength", "6", "placeholder", "Pincode", "autocomplete", "off", 3, "ngClass"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "city", "disabled", "", "placeholder", "City", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "state", "disabled", "", "placeholder", "State", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "country", "placeholder", "Country", "autocomplete", "off"], [1, "col-xs-12", "col-sm-12", "col-md-6", "col-lg-6"], ["formControlName", "product", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Support Type", "autocomplete", "off"], ["value", "P1"], ["formControlName", "status", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Status", "autocomplete", "off"], ["value", "FOLLOWUP"], ["value", "REJECT"], ["value", "CLOSE"], ["formControlName", "contact", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Contact Type", "autocomplete", "off"], ["value", "CLIENT"], ["value", "CUSTOMER"], ["value", "LEAD"], ["formControlName", "type", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Type", "autocomplete", "off", 3, "selectionChange"], ["value", "HOURS"], ["value", "COST"], ["type", "number", "min", "0", "matInput", "", "ngModel", "", "formControlName", "hours", "placeholder", "Enter Hours", "autocomplete", "off"], ["type", "button", 1, "delete-button", 3, "click"], [1, "bi", "bi-x", "bi-sm"], [1, "text-danger"]],
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [1, "row"], [1, "mb-3", "col-lg-6"], [1, "image-wrapper"], ["ondragover", "return false;", 1, "profile-pic", 3, "dragenter", "dragleave", "drop"], [1, "shadow-sm", 3, "src", "load"], ["type", "file", "name", "file", "accept", "image/*", 3, "change"], ["class", "delete-button", "type", "button", 3, "click", 4, "ngIf"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["type", "text", "matInput", "", "formControlName", "firstName", "autocomplete", "off", "placeholder", "Full Name", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], [1, "col-lg-6"], ["type", "text", "matInput", "", "formControlName", "email", "placeholder", "Email", "disabled", "", "autocomplete", "off", 3, "ngClass"], ["type", "text", "matInput", "", "formControlName", "mobile", "minlength", "10", "maxlength", "10", "placeholder", "Mobile #", "autocomplete", "off", 3, "ngClass", "keypress"], [1, "col-sm-12", "col-md-12", "col-lg-12"], ["matInput", "", "rows", "1", "placeholder", "Enter Address", "formControlName", "address", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "pincode", "maxlength", "6", "minlength", "6", "placeholder", "Pincode", "autocomplete", "off", 3, "ngClass"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "city", "disabled", "", "placeholder", "City", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "state", "disabled", "", "placeholder", "State", "autocomplete", "off"], ["type", "text", "matInput", "", "ngModel", "", "formControlName", "country", "placeholder", "Country", "autocomplete", "off"], [1, "col-xs-12", "col-sm-12", "col-md-6", "col-lg-6"], ["formControlName", "product", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Support Type", "autocomplete", "off"], ["value", "P1"], ["formControlName", "status", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Status", "autocomplete", "off"], ["value", "FOLLOWUP"], ["value", "REJECT"], ["value", "CLOSE"], ["formControlName", "contact", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Contact Type", "autocomplete", "off"], ["value", "CLIENT"], ["value", "CUSTOMER"], ["value", "LEAD"], ["formControlName", "type", "matNativeControl", "", "disableOptionCentering", "", "placeholder", "Select Type", "autocomplete", "off", 3, "selectionChange"], ["value", "HOURS"], ["value", "COST"], ["type", "number", "min", "0", "matInput", "", "ngModel", "", "formControlName", "hours", "placeholder", "Enter Hours", "autocomplete", "off"], ["type", "button", 1, "delete-button", 3, "click"], [1, "bi", "bi-x", "bi-sm"], [1, "text-danger"]],
         template: function EditLeadComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -52473,7 +52473,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](37, "label", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](38, "Mobile Number ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](38, "Mobile # ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](39, "span", 15);
 
@@ -53716,7 +53716,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "th", 18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](25, "Mobile No");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](25, "Mobile #");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 

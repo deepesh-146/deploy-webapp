@@ -4560,7 +4560,7 @@ mat-paginator {
   .navbar-vertical.navbar-expand-lg {
     max-width: 12.625rem;
     top: 0;
-    height: 100vh;
+    height: 100vh !important;
     margin: 0;
   }
 

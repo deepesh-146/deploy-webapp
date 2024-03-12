@@ -640,7 +640,7 @@ BanKDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](29, "Bank Name : Bank Of Maharashtra");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "p", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](31, "Account Number : 23145678945");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](31, "Account # : 23145678945");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](32, "p", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](33, "IFSC Code : MAHB0000048");

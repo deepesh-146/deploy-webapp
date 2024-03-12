@@ -771,6 +771,17 @@
               return goods.itemName.toLowerCase().indexOf(name.toLowerCase()) === 0;
             });
           }
+        }, {
+          key: "openDatepicker",
+          value: function openDatepicker() {
+            // Check if the current value of taskdate is an "Invalid Date"
+            var selectedDate = this.quotePriceForm.get('deliveryDate').value;
+
+            if (isNaN(selectedDate.getTime())) {
+              // Set a default date or any valid date here
+              this.quotePriceForm.get('deliveryDate').setValue(new Date());
+            }
+          }
         }]);
 
         return _NewAddBidClientComponent;
@@ -785,7 +796,7 @@
         selectors: [["app-new-add-bid-client"]],
         decls: 64,
         vars: 26,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "5px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid", "ps-0"], [3, "formGroup"], [1, "py-4", "pb-0", "mb-2"], [1, "row"], [1, "col-12"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["type", "text", "placeholder", "Product Name", "aria-label", "Select Product Name", "matInput", "", 3, "formControl", "matAutocomplete", "input"], ["matSuffix", "", 1, "m-2"], ["auto", "matAutocomplete"], [3, "value", "onSelectionChange", 4, "ngFor", "ngForOf"], ["class", "invalid-feedback", 4, "ngIf"], ["class", "row", 4, "ngIf"], ["matNativeControl", "", "type", "text", "required", "", "matInput", "", "ngxOnlyNumbers", "", "placeholder", "Seller Range", "formControlName", "sellerRange", "value", "", 3, "ngClass"], [1, "d-flex", "ps-2", 2, "font-size", "12px"], [1, "text-nowrap"], [1, "form-check", "form-switch"], ["id", "inlineCheckbox1", "type", "checkbox", "formControlName", "homeDelivery", 1, "form-check-input", "toggleB", "text-warning", 2, "margin-left", "3px!important", 3, "checked", "change"], ["class", "col-12", 4, "ngIf"], [1, "col-sm-12"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "formControlName", "deliveryDate", "id", "datePicker", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "minDate", "ngModel", "bsConfig", "ngClass", "ngModelChange"], ["matInput", "", "rows", "5", "required", "", "placeholder", "Description", "formControlName", "description", 3, "ngClass"], [3, "value", "onSelectionChange"], ["width", "50", "height", "50", "alt", "", 1, "img-circle", "m-1", "imageRound", 3, "src"], [1, "invalid-feedback"], [1, "text-capitalize", "fw-bold"], ["width", "50", "height", "50", "src", "../../../assets/img/products/2.jpg", "alt", "", 1, "img-circle", "m-1", "imageRound"], ["class", "error-font", 4, "ngIf"], [1, "error-font"], ["matNativeControl", "", "type", "number", "required", "", "matInput", "", "formControlName", "deleveryCharge", "placeholder", "Delivery Charge", "min", "0", "oninput", "this.value = Math.abs(this.value)", "value", "deleveryCharge", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], [1, "text-danger"]],
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "5px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid", "ps-0"], [3, "formGroup"], [1, "py-4", "pb-0", "mb-2"], [1, "row"], [1, "col-12"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["type", "text", "placeholder", "Product Name", "aria-label", "Select Product Name", "matInput", "", 3, "formControl", "matAutocomplete", "input"], ["matSuffix", "", 1, "m-2"], ["auto", "matAutocomplete"], [3, "value", "onSelectionChange", 4, "ngFor", "ngForOf"], ["class", "invalid-feedback", 4, "ngIf"], ["class", "row", 4, "ngIf"], ["matNativeControl", "", "type", "text", "required", "", "matInput", "", "ngxOnlyNumbers", "", "placeholder", "Seller Range", "formControlName", "sellerRange", "value", "", 3, "ngClass"], [1, "d-flex", "ps-2", 2, "font-size", "12px"], [1, "text-nowrap"], [1, "form-check", "form-switch"], ["id", "inlineCheckbox1", "type", "checkbox", "formControlName", "homeDelivery", 1, "form-check-input", "toggleB", "text-warning", 2, "margin-left", "3px!important", 3, "checked", "change"], ["class", "col-12", 4, "ngIf"], [1, "col-sm-12"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "formControlName", "deliveryDate", "id", "datePicker", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "minDate", "ngModel", "bsConfig", "ngClass", "click", "ngModelChange"], ["matInput", "", "rows", "5", "required", "", "placeholder", "Description", "formControlName", "description", 3, "ngClass"], [3, "value", "onSelectionChange"], ["width", "50", "height", "50", "alt", "", 1, "img-circle", "m-1", "imageRound", 3, "src"], [1, "invalid-feedback"], [1, "text-capitalize", "fw-bold"], ["width", "50", "height", "50", "src", "../../../assets/img/products/2.jpg", "alt", "", 1, "img-circle", "m-1", "imageRound"], ["class", "error-font", 4, "ngIf"], [1, "error-font"], ["matNativeControl", "", "type", "number", "required", "", "matInput", "", "formControlName", "deleveryCharge", "placeholder", "Delivery Charge", "min", "0", "oninput", "this.value = Math.abs(this.value)", "value", "deleveryCharge", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], [1, "text-danger"]],
         template: function NewAddBidClientComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -964,7 +975,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "input", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function NewAddBidClientComponent_Template_input_ngModelChange_53_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function NewAddBidClientComponent_Template_input_click_53_listener() {
+              return ctx.openDatepicker();
+            })("ngModelChange", function NewAddBidClientComponent_Template_input_ngModelChange_53_listener($event) {
               return ctx.todaysDate = $event;
             });
 

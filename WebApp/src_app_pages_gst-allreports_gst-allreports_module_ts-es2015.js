@@ -247,12 +247,12 @@ class GstreportallComponent {
         // ];
     }
     ngOnInit() {
-        var queryParams = this.route.snapshot.queryParams;
-        console.log("queryParams", queryParams);
-        localStorage.setItem("ACCESS_TOKEN", queryParams.auth);
-        localStorage.setItem("currentUser", JSON.stringify({
-            id: queryParams.userId
-        }));
+        // var queryParams = this.route.snapshot.queryParams;
+        // console.log("queryParams", queryParams);
+        // localStorage.setItem("ACCESS_TOKEN", queryParams.auth);
+        // localStorage.setItem("currentUser", JSON.stringify({
+        //   id: queryParams.userId
+        // }));
     }
 }
 GstreportallComponent.ɵfac = function GstreportallComponent_Factory(t) { return new (t || GstreportallComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_core_services_auth_service__WEBPACK_IMPORTED_MODULE_0__.AuthService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"]("LOCALSTORAGE")); };

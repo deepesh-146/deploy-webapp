@@ -1062,7 +1062,7 @@ InvoiceReceiptUIComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](56, "div", 21);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](57, "div", 22);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "label", 23);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](59, "Phone Number");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](59, "Phone #");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](60, "div", 22);
@@ -1339,7 +1339,7 @@ InvoiceReceiptUIComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](215, "hr");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](216, "h5", 81);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](217, "Serial Number");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](217, "Serial #");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](218, "div", 95);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](219, "label", 83);
@@ -1501,7 +1501,7 @@ InvoiceReceiptUIComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](314, "div", 129);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](315, "div", 22, 133);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](317, " Invoice No.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](317, " Invoice #");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](318, "span", 134);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](319, ":");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();

@@ -1158,7 +1158,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "p", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](31, "Account Number : 23145678945");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](31, "Account # : 23145678945");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 

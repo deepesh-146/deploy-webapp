@@ -421,13 +421,12 @@
 
         _createClass(_GstreportallComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {
-            var queryParams = this.route.snapshot.queryParams;
-            console.log("queryParams", queryParams);
-            localStorage.setItem("ACCESS_TOKEN", queryParams.auth);
-            localStorage.setItem("currentUser", JSON.stringify({
-              id: queryParams.userId
-            }));
+          value: function ngOnInit() {// var queryParams = this.route.snapshot.queryParams;
+            // console.log("queryParams", queryParams);
+            // localStorage.setItem("ACCESS_TOKEN", queryParams.auth);
+            // localStorage.setItem("currentUser", JSON.stringify({
+            //   id: queryParams.userId
+            // }));
           }
         }]);
 

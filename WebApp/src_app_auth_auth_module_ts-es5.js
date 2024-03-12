@@ -3998,8 +3998,8 @@
                   });
                 } else {
                   _this14.toastService.toastMsg({
-                    title: "Error",
-                    content: "Fill All Required Fields."
+                    title: "Warning",
+                    content: "profile data is not filled"
                   });
 
                   _this14.router.navigate(["/pages/profile-settings"]);

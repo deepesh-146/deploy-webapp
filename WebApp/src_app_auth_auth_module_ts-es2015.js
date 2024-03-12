@@ -2367,8 +2367,8 @@ class LoginComponent {
                 }
                 else {
                     this.toastService.toastMsg({
-                        title: "Error",
-                        content: "Fill All Required Fields.",
+                        title: "Warning",
+                        content: "profile data is not filled",
                     });
                     this.router.navigate(["/pages/profile-settings"]);
                 }

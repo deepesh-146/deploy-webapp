@@ -1,6 +1,18 @@
 (function () {
   "use strict";
 
+  function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+  function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+  function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -3772,7 +3784,13 @@
       /* harmony import */
 
 
-      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/forms */
+      1707);
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/material/dialog */
       22213);
       /* harmony import */
@@ -3806,7 +3824,7 @@
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/common */
       54364);
       /* harmony import */
@@ -3815,74 +3833,116 @@
       var src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! src/app/core/services/roles-permissions.service */
       30438);
+      /* harmony import */
 
-      function SaalryReleaseViewComponent_tr_45_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr");
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/material/input */
+      64742);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Adjust Amount");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "td", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "input", 25);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("keydown.enter", function SaalryReleaseViewComponent_tr_45_Template_input_keydown_enter_4_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
-
-            var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-
-            return ctx_r3.AdjustAmount($event);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        }
-      }
-
-      function SaalryReleaseViewComponent_tr_77_Template(rf, ctx) {
+      function SaalryReleaseViewComponent_ng_container_46_Template(rf, ctx) {
         if (rf & 1) {
           var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0, 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "tr", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Adjust Amount");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "td", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "input", 34);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "td", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "td", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "input", 25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("keydown.enter", function SaalryReleaseViewComponent_tr_77_Template_input_keydown_enter_4_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "a", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_ng_container_46_Template_a_click_6_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6);
+
+            var i_r4 = restoredCtx.index;
 
             var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
 
-            return ctx_r5.deductAmount($event);
+            return ctx_r5.deleteaddAddtionalDetails(i_r4);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "span", 37);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
+        }
+
+        if (rf & 2) {
+          var i_r4 = ctx.index;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroupName", i_r4);
         }
       }
 
-      function SaalryReleaseViewComponent_p_96_Template(rf, ctx) {
+      function SaalryReleaseViewComponent_ng_container_83_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "p", 8);
+          var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0, 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "tr", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "td", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "input", 39);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "td", 33);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 40);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "a", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_ng_container_83_Template_a_click_6_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r10);
+
+            var i_r8 = restoredCtx.index;
+
+            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r9.deleteaddDeductDetails(i_r8);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "span", 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
+        }
+
+        if (rf & 2) {
+          var i_r8 = ctx.index;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroupName", i_r8);
+        }
+      }
+
+      function SaalryReleaseViewComponent_p_101_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "p", 9);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
 
@@ -3903,7 +3963,7 @@
       }
 
       var _SaalryReleaseViewComponent = /*#__PURE__*/function () {
-        function _SaalryReleaseViewComponent(dialogRef, employeeData, saalryReleaseServiceService, toastService, titleCasePipe, roleService) {
+        function _SaalryReleaseViewComponent(dialogRef, employeeData, saalryReleaseServiceService, toastService, titleCasePipe, roleService, formBuilder) {
           _classCallCheck(this, _SaalryReleaseViewComponent);
 
           this.dialogRef = dialogRef;
@@ -3912,6 +3972,7 @@
           this.toastService = toastService;
           this.titleCasePipe = titleCasePipe;
           this.roleService = roleService;
+          this.formBuilder = formBuilder;
           this.employeeId = [];
           this.salaryData = [];
           this.totaltotalNetPayable = 0;
@@ -3938,6 +3999,10 @@
             this.employeeId = this.employeeData.employeeId;
             this.GetsalryDataByEmployeeId();
             this.getProfileData();
+            this.PartyForm = this.formBuilder.group({
+              addtionalDetails: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArray([this.createaddtionalDetails()]),
+              deductDetails: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArray([this.createDeductDetails()])
+            });
           }
         }, {
           key: "GetsalryDataByEmployeeId",
@@ -3945,6 +4010,8 @@
             var _this22 = this;
 
             this.saalryReleaseServiceService.getAllSalaryDataByEmployeeId({}, this.employeeId).then(function (res) {
+              var _a;
+
               _this22.salaryData = res.data.employee;
               _this22.totaltotalNetPayable = res.data.totalNetPayable;
               _this22.finalAmount = res.data.totalNetPayable;
@@ -3952,8 +4019,35 @@
               _this22.convertToWord(_this22.finalAmount);
 
               console.log("res", _this22.salaryData);
-              _this22.totalDeduct = res.data.deduction;
-              _this22.totalEarning = res.data.grossEarning;
+              _this22.totalDeduct = (_a = _this22.salaryData) === null || _a === void 0 ? void 0 : _a.earnAndDeducts;
+              console.log("total Earn and Deduct", _this22.totalDeduct); // Check if totalDeduct is not null or undefined
+
+              if (_this22.totalDeduct) {
+                var totalDeductLength = _this22.totalDeduct.length; // Assuming totalDeductLength is properly initialized
+                // Loop through each element in totalDeduct
+
+                for (var i = 0; i < totalDeductLength; i++) {
+                  var type = _this22.totalDeduct[i].grossType;
+                  var earning = _this22.totalDeduct[i].earning;
+                  var deduction = _this22.totalDeduct[i].deduction;
+                  console.log("TYPe", type, earning, deduction); // Patch earning values
+
+                  if (earning) {
+                    _this22.additionalDetailsControls.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroup({
+                      earnName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this22.totalDeduct[i].name),
+                      earnTotal: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this22.totalDeduct[i].total)
+                    }));
+                  } // Patch deduction values
+
+
+                  if (deduction) {
+                    _this22.additionalDeductControls.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroup({
+                      deductName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this22.totalDeduct[i].name),
+                      deductTotal: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(_this22.totalDeduct[i].total)
+                    }));
+                  }
+                }
+              }
             }, function (err) {
               if (err.error.expose) {
                 // this.toastService.openErrorSnackBar(
@@ -4006,104 +4100,131 @@
             this.dialogRef.close();
           }
         }, {
-          key: "getAllOffersType",
-          value: function getAllOffersType() {}
-        }, {
-          key: "AddEarning",
-          value: function AddEarning() {
-            this.addErningFlag = !this.addErningFlag;
-          }
-        }, {
-          key: "AddDeduct",
-          value: function AddDeduct() {
-            this.adddeductFlag = !this.adddeductFlag;
-          }
-        }, {
-          key: "AdjustAmount",
-          value: function AdjustAmount(e) {
+          key: "SaveEarnADeduct",
+          value: function SaveEarnADeduct() {
             var _this24 = this;
 
-            this.adjustEarnAmount = parseInt(e.target.value);
-            console.log('Entered value:', this.adjustEarnAmount);
-            var body = {
-              "grossType": "EARNING",
-              "name": "Adjust Amount",
-              "total": this.adjustEarnAmount,
-              "employeeId": this.employeeId
-            };
-            this.saalryReleaseServiceService.PostEarningDeduct(body, this.currentUser.id).then(function (res) {
-              // this.toastService.openSnackBar("Earning Details Added Successfully!!!");
-              _this24.toastService.toastMsg({
-                title: "Success",
-                content: "Earning Details Added Successfully!!!"
+            this.formArrayData = this.additionalDetailsControls.value; // Initialize finalObject as an empty array
+
+            this.finalObject = [];
+            this.formArrayData.forEach(function (element) {
+              if (element.earnName !== "" && element.earnTotal !== "") {
+                // Push valid elements to finalObject
+                _this24.finalObject.push(element);
+              }
+            });
+            console.log("this.finalObject.addtionalDetails", this.finalObject);
+            this.formArrayDeductData = this.additionalDeductControls.value; // Initialize finalObject as an empty array
+
+            this.finalDeductObject = [];
+            this.formArrayDeductData.forEach(function (element) {
+              if (element.deductName !== "" && element.deductTotal !== "") {
+                // Push valid elements to finalObject
+                _this24.finalDeductObject.push(element);
+              }
+            });
+            console.log("this.finalObject.addtionalDetails", this.finalDeductObject); // Combine data from both finalObject and finalDeductObject
+
+            var combinedData = [].concat(_toConsumableArray(this.finalObject), _toConsumableArray(this.finalDeductObject)); // Check if combinedData has valid data
+
+            if (combinedData.length > 0) {
+              var body = {
+                "data": combinedData.map(function (item) {
+                  return {
+                    "grossType": item.hasOwnProperty('earnName') ? "EARNING" : "DEDUCTION",
+                    "name": item.hasOwnProperty('earnName') ? item.earnName : item.deductName,
+                    "total": item.hasOwnProperty('earnTotal') ? item.earnTotal : item.deductTotal,
+                    "employeeId": _this24.employeeId
+                  };
+                })
+              };
+              console.log("BODY FOR ADJUSTMENT ___________", body);
+              this.saalryReleaseServiceService.PostEarningDeduct(body, this.currentUser.id).then(function (res) {
+                _this24.toastService.toastMsg({
+                  title: "Success",
+                  content: "Details Added Successfully!!!"
+                });
+
+                _this24.saalryReleaseServiceService.notifyPartyAdded();
+
+                _this24.addErningFlag = false;
+              }, function (err) {
+                if (err.error.expose) {
+                  _this24.toastService.toastMsg({
+                    title: "Error",
+                    content: _this24.titleCasePipe.transform(err.error.error_message)
+                  });
+                } else {
+                  _this24.toastService.toastMsg({
+                    title: "Error",
+                    content: "Something Went Wrong."
+                  });
+                }
               });
-
-              _this24.saalryReleaseServiceService.notifyPartyAdded();
-
-              _this24.addErningFlag = false;
-
-              _this24.dialogRef.close();
-            }, function (err) {
-              if (err.error.expose) {
-                _this24.toastService.toastMsg({
-                  title: "Error",
-                  content: _this24.titleCasePipe.transform(err.error.error_message)
-                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
-
-              } else {
-                _this24.toastService.toastMsg({
-                  title: "Error",
-                  content: "Something Went Wrong."
-                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
-
-              }
-            });
-          }
-        }, {
-          key: "deductAmount",
-          value: function deductAmount(e) {
-            var _this25 = this;
-
-            this.adjustDeductAmount = parseInt(e.target.value);
-            console.log('Entered value:', this.adjustDeductAmount);
-            var body = {
-              "grossType": "DEDUCTION",
-              "name": "Adjust Amount",
-              "total": this.adjustDeductAmount,
-              "employeeId": this.employeeId
-            };
-            this.saalryReleaseServiceService.PostEarningDeduct(body, this.currentUser.id).then(function (res) {
-              _this25.toastService.toastMsg({
-                title: "Success",
-                content: "Deduction Details Added Successfully!!!"
-              }); // this.toastService.openSnackBar("Deduction  Details Added Successfully!!!");
-
-
-              _this25.saalryReleaseServiceService.notifyPartyAdded();
-
-              _this25.adddeductFlag = false;
-
-              _this25.dialogRef.close();
-            }, function (err) {
-              if (err.error.expose) {
-                _this25.toastService.toastMsg({
-                  title: "Error",
-                  content: _this25.titleCasePipe.transform(err.error.error_message)
-                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
-
-              } else {
-                _this25.toastService.toastMsg({
-                  title: "Error",
-                  content: "Something Went Wrong."
-                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
-
-              }
-            });
+            } else {
+              // Handle case where no valid data is found
+              this.toastService.toastMsg({
+                title: "Error",
+                content: "No valid details found."
+              });
+            }
           }
         }, {
           key: "isNumeric",
           value: function isNumeric(value) {
             return !isNaN(parseFloat(value)) && isFinite(value);
+          }
+        }, {
+          key: "additionalDetailsControls",
+          get: function get() {
+            return this.PartyForm.get('addtionalDetails');
+          }
+        }, {
+          key: "createaddtionalDetails",
+          value: function createaddtionalDetails() {
+            return new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroup({
+              earnName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(""),
+              earnTotal: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl("")
+            });
+          }
+        }, {
+          key: "deleteaddAddtionalDetails",
+          value: function deleteaddAddtionalDetails(index) {
+            // console.log('delete addtional index', index);
+            var data = this.PartyForm.get('addtionalDetails');
+            data.removeAt(index);
+          }
+        }, {
+          key: "addAddtionalDetails",
+          value: function addAddtionalDetails() {
+            var data = this.PartyForm.get('addtionalDetails');
+            data.push(this.createaddtionalDetails());
+          }
+        }, {
+          key: "additionalDeductControls",
+          get: function get() {
+            return this.PartyForm.get('deductDetails');
+          }
+        }, {
+          key: "createDeductDetails",
+          value: function createDeductDetails() {
+            return new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroup({
+              deductName: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(""),
+              deductTotal: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl("")
+            });
+          }
+        }, {
+          key: "deleteaddDeductDetails",
+          value: function deleteaddDeductDetails(index) {
+            // console.log('delete addtional index', index);
+            var data = this.PartyForm.get('deductDetails');
+            data.removeAt(index);
+          }
+        }, {
+          key: "addDeductDetails",
+          value: function addDeductDetails() {
+            var data = this.PartyForm.get('deductDetails');
+            data.push(this.createDeductDetails());
           }
         }]);
 
@@ -4111,15 +4232,15 @@
       }();
 
       _SaalryReleaseViewComponent.ɵfac = function SaalryReleaseViewComponent_Factory(t) {
-        return new (t || _SaalryReleaseViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_core_services_saalry_release_service_service__WEBPACK_IMPORTED_MODULE_1__.SaalryReleaseServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_2__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_6__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_3__.RolesPermissionsService));
+        return new (t || _SaalryReleaseViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_core_services_saalry_release_service_service__WEBPACK_IMPORTED_MODULE_1__.SaalryReleaseServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_2__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_7__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_3__.RolesPermissionsService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder));
       };
 
       _SaalryReleaseViewComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
         type: _SaalryReleaseViewComponent,
         selectors: [["app-saalry-release-view"]],
-        decls: 99,
-        vars: 33,
-        consts: [[1, "modal-header", "flex", "d-flex", "flex-row", "pt-0", 2, "justify-content", "center", "align-items", "center"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "flex", "d-flex", 2, "margin-left", "auto"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "row", "mb-3"], [1, "col-lg-6", "col-xl-6", "col-md-6", "col-sm-12", 2, "margin-left", "20px !important"], [1, "text-black", "fw-bold"], [1, "col-lg-6", "col-xl-6", "col-md-6", "col-sm-12"], [1, "container"], [1, "table", "table-responsive", "table-bordered", "fs--1", "mb-2"], [1, "text-success", "fw-bold", 2, "vertical-align", "middle"], [1, "text-black", "fw-bold", 2, "text-align", "right !important"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "text-align", "right !important"], [4, "ngIf"], [1, "text-nowrap", "fw-bold", 2, "vertical-align", "middle", "color", "#6090EE !important", 3, "click"], [1, "text-black", "fw-bold", 2, "vertical-align", "middle"], [1, "text-danger", "fw-bold", 2, "vertical-align", "middle"], [1, "bg-light"], [1, "row"], [1, "col-lg-12", "col-xl-12", "col-md-12", "col-sm-12"], ["class", "text-black fw-bold", 4, "ngIf"], [1, "text-black", "fw-bold", "text-center"], [3, "keydown.enter"]],
+        decls: 104,
+        vars: 30,
+        consts: [[1, "modal-header", "flex", "d-flex", "flex-row", "pt-0", 2, "justify-content", "center", "align-items", "center"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "flex", "d-flex", 2, "margin-left", "auto"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-lg-6", "col-xl-6", "col-md-6", "col-sm-12", 2, "margin-left", "20px !important"], [1, "text-black", "fw-bold"], [1, "col-lg-6", "col-xl-6", "col-md-6", "col-sm-12"], [1, "container"], [1, "table", "table-responsive", "table-bordered", "fs--1", "mb-2"], [1, "text-success", "fw-bold", 2, "vertical-align", "middle"], [1, "text-black", "fw-bold", 2, "text-align", "right !important"], [1, "text-nowrap", 2, "vertical-align", "middle"], [1, "text-nowrap", 2, "text-align", "right !important"], ["formArrayName", "addtionalDetails", 4, "ngFor", "ngForOf"], [1, "row", "d-flex", "justify-content-between"], [1, "col-sm-12", "col-md-3", "col-lg-3", "text-nowrap", "mb-3"], [1, "btn", "btn-outline-warn", "dash", "fs--2", 3, "click"], ["id", "boot-icon", 1, "bi", "bi-plus-lg", "newrow", 2, "color", "#FC7643"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Add Row", 1, "me-2", "newrow", 2, "color", "#FC7643"], [1, "text-black", "fw-bold", 2, "vertical-align", "middle"], [1, "text-danger", "fw-bold", 2, "vertical-align", "middle"], ["formArrayName", "deductDetails", 4, "ngFor", "ngForOf"], [1, "bg-light"], [1, "row"], [1, "col-lg-12", "col-xl-12", "col-md-12", "col-sm-12"], ["class", "text-black fw-bold", 4, "ngIf"], [1, "text-black", "fw-bold", "text-center"], ["formArrayName", "addtionalDetails"], [3, "formGroupName"], [2, "vertical-align", "middle"], ["matInput", "", "type", "text", "formControlName", "earnName", 1, ""], ["matInput", "", "type", "number", "minlength", "10", "maxLength", "10", "ngxOnlyNumbers", "", "formControlName", "earnTotal", 1, ""], [1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "fs-1", 2, "color", "red"], ["formArrayName", "deductDetails"], ["matInput", "", "type", "text", "formControlName", "deductName", 1, ""], ["matInput", "", "type", "number", "minlength", "10", "maxLength", "10", "ngxOnlyNumbers", "", "formControlName", "deductTotal", 1, ""]],
         template: function SaalryReleaseViewComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
@@ -4145,7 +4266,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "button", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_button_click_6_listener() {
-              return ctx.getAllOffersType();
+              return ctx.SaveEarnADeduct();
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7, "Save");
@@ -4158,145 +4279,147 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "form", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "p", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "div", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "p", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "p", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](14, "Date of Joining : 21-09-2019");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](13);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](15, "p", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "p", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](16, "Paid Days: 28");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "p", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](18, "LOP:3");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Date of Joining : 21-09-2019");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "p", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](19, "div", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "div", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "table", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "th", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](24, "(+) Earning ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](17, "Paid Days: 28");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "th", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "p", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](26, "Amount");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](19, "LOP:3");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "tbody");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](28, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](29, "td", 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](30, "Basic");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](20, "div", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](31, "td", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "div", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](22, "table", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](33, "number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "th", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](34, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](35, "td", 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](36, "HRA");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](25, "(+) Earning ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](37, "td", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](26, "th", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](38);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](39, "number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](27, "Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](40, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](28, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](41, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](29, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](42, "Special Allowance");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](30, "td", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](43, "td", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](44, "\u20B9\xA00.00");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](31, "Basic");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](32, "td", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](33);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](34, "number");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](45, SaalryReleaseViewComponent_tr_45_Template, 5, 0, "tr", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](46, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](35, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](47, "td", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](36, "td", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_td_click_47_listener() {
-              return ctx.AddEarning();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](37, "HRA");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](38, "td", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](39);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](40, "number");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](41, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](42, "td", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](43, "Special Allowance");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](44, "td", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](45, "\u20B9\xA00.00");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](46, SaalryReleaseViewComponent_ng_container_46_Template, 8, 1, "ng-container", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](47, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](48, "td");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](49, "td");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](50, "div", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](51, "div", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](52, "a", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_a_click_52_listener() {
+              return ctx.addAddtionalDetails();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](48, "+ Add Earning");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](53, "span", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](54, "span", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](55, " Add New Row");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](49, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](50, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](51, "td", 18);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](52, "Gross Earning");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](53, "td", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](54);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](55, "number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -4304,33 +4427,33 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](56, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](57, "td", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](57, "td", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](58, "(-) Deduction");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](59, "td", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](60, "Amount");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](58, "Gross Earning");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](59, "td", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](61, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](60);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](62, "td", 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](63, "PF");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](61, "number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](64, "td", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](65);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](62, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](66, "number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](63, "td", 24);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](64, "(-) Deduction");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](65, "td", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](66, "Amount");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -4338,13 +4461,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](67, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](68, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](68, "td", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](69, "Profession Tax");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](69, "PF");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](70, "td", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](70, "td", 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](71);
 
@@ -4356,65 +4479,57 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](73, "tr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](74, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](74, "td", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](75, "Paid leave Taken(2)");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](76, "td", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](75, "Profession Tax");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](77, SaalryReleaseViewComponent_tr_77_Template, 5, 0, "tr", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](76, "td", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](78, "tr");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](77);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](79, "td", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](78, "number");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_td_click_79_listener() {
-              return ctx.AddDeduct();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](79, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](80, "td", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](81, "Paid leave Taken(2)");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](82, "td", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](83, SaalryReleaseViewComponent_ng_container_83_Template, 8, 1, "ng-container", 25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](84, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](85, "td");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](86, "td");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](87, "div", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](88, "div", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](89, "a", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaalryReleaseViewComponent_Template_a_click_89_listener() {
+              return ctx.addDeductDetails();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](80, " + Add Deduction ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](90, "span", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](91, "span", 22);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](81, "td", 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](82, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](83, "td", 18);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](84, " Total Deduction");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](85, "td", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](86);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](87, "number");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](88, "tr", 20);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](89, "td", 18);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](90, " Total Net Payable");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](91, "td", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](92);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](93, "number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](92, " Add New Row");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -4426,15 +4541,43 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](94, "div", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](95, "div", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](93, "tr", 26);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](96, SaalryReleaseViewComponent_p_96_Template, 4, 8, "p", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](94, "td", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](97, "p", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](95, " Total Net Payable");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](98, "Total Net Payable =(Gross Earning - Total Deductions)");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](96, "td", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](97);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](98, "number");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](99, "div", 27);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](100, "div", 28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](101, SaalryReleaseViewComponent_p_101_Template, 4, 8, "p", 29);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](102, "p", 30);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](103, "Total Net Payable =(Gross Earning - Total Deductions)");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -4450,53 +4593,53 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx.salaryData.employee ? ctx.salaryData.employee.firstName : "-");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", ctx.PartyForm);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("Designation : ", ctx.salaryData.employee ? ctx.salaryData.employee.department : "-", "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](33, 12, ctx.salaryData.employee && ctx.salaryData.employee.employeeStructure.basic ? ctx.salaryData.employee.employeeStructure.basic : 0, "1.2-2"), "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](34, 12, ctx.salaryData.employee && ctx.salaryData.employee.employeeStructure.basic ? ctx.salaryData.employee.employeeStructure.basic : 0, "1.2-2"), "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](39, 15, ctx.salaryData.employee && ctx.salaryData.employee.employeeStructure.hra ? ctx.salaryData.employee.employeeStructure.hra : 0, "1.2-2"), "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](40, 15, ctx.salaryData.employee && ctx.salaryData.employee.employeeStructure.hra ? ctx.salaryData.employee.employeeStructure.hra : 0, "1.2-2"), "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.addErningFlag);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.additionalDetailsControls.controls);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](55, 18, ctx.totalEarning, "1.2-2"), "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](61, 18, ctx.totalEarning, "1.2-2"), "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](66, 21, ctx.salaryData.employee && ctx.salaryData.employee.employeeStructure.employeeContribution ? ctx.salaryData.employee.employeeStructure.employeeContribution : 0, "1.2-2"), "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](72, 21, ctx.salaryData.employee && ctx.salaryData.employee.employeeStructure.employeeContribution ? ctx.salaryData.employee.employeeStructure.employeeContribution : 0, "1.2-2"), "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](72, 24, ctx.salaryData.employee && ctx.salaryData.employee.employeeStructure.professionalTax ? ctx.salaryData.employee.employeeStructure.professionalTax : 0, "1.2-2"), " ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](78, 24, ctx.salaryData.employee && ctx.salaryData.employee.employeeStructure.professionalTax ? ctx.salaryData.employee.employeeStructure.professionalTax : 0, "1.2-2"), " ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.adddeductFlag);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.additionalDeductControls.controls);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](87, 27, ctx.totalDeduct, "1.2-2"), "");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" \u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](93, 30, ctx.totaltotalNetPayable, "1.2-2"), "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" \u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](98, 27, ctx.totaltotalNetPayable, "1.2-2"), "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.isNumeric(ctx.totaltotalNetPayable) && ctx.isNumeric(ctx.finalAmount));
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.DecimalPipe],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormArrayName, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupName, _angular_material_input__WEBPACK_IMPORTED_MODULE_8__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.MinLengthValidator],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.DecimalPipe],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzYWFscnktcmVsZWFzZS12aWV3LmNvbXBvbmVudC5zY3NzIn0= */"]
       });
       /***/

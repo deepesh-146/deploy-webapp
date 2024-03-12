@@ -1372,7 +1372,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "th", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](25, "Mobile Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](25, "Mobile #");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 
@@ -1744,7 +1744,7 @@
             return ctx_r22.onCancelModal();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](1, "cancel");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](1, "Cancel");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         }
@@ -2507,7 +2507,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](2, "mat-label", 20);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](3, "GST Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](3, "GST");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -2643,7 +2643,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "mat-error", 96);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](1, " Mobile Number is required. ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](1, " Mobile # is required. ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         }
@@ -2653,7 +2653,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "mat-error");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](1, " Mobile Number must be of 10-digits ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](1, " Mobile # must be of 10-digits ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         }
@@ -2663,7 +2663,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "mat-error");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](1, " Mobile Number must be of 10-digits ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](1, " Mobile # must be of 10-digits ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         }
@@ -2823,7 +2823,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](22, "mat-label", 20);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](23, "Mobile Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](23, "Mobile #");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -4146,8 +4146,8 @@
           }
         },
         decls: 270,
-        vars: 89,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "500"], [1, "addProductButtons"], ["style", "margin-right: 10px !important;", "type", "button", "class", "btn btn-cancel", 3, "click", 4, "ngIf"], ["type", "submit", "class", "btn btn-save text-nowrap", 3, "click", 4, "ngIf"], ["type", "button", "class", "btn btn-save", "data-bs-toggle", "modal", "data-bs-target", "#invoice-modal", 3, "click", 4, "ngIf"], [1, "modal-body"], [3, "formGroup"], [1, "card"], [1, "card-body", "fs--1"], [1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "d-flex", "mb-2", 2, "justify-content", "flex-end", "align-items", "center"], [1, ""], [2, "font-size", "14px"], [1, "form-check", "form-switch"], ["formControlName", "reverseCharge", "id", "inlineCheckbox1", "type", "checkbox", 1, "form-check-input", 2, "font-size", "14px", "margin", "0px 4px 2px 0px", "padding-left", "0px", 3, "disabled"], [1, "row", "d-flex", "justify-content-start"], ["class", "col-md-4 ", 4, "ngIf"], [1, "col-md-4", "justify-content-between"], [1, "form-label"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "11px"], ["type", "text", "matInput", "", "placeholder", "GST number", "formControlName", "gstNo", "required", "", "maxlength", "15", "minlength", "15", "pattern", "^[0-9]{2}[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}[1-9A-Za-z]{1}[Zz][0-9A-Za-z]{1}$", 2, "text-transform", "uppercase", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], [4, "ngIf"], [1, "col-md-4", "justify-content-end"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "12px"], ["type", "text", "placeholder", "Enter Tax Invoice No.", "matInput", "", "formControlName", "invoiceNo", "required", "", 3, "disabled", "ngClass"], [1, "col-md-4"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "Receipt Date.", "id", "datePicker", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "maxDate", "ngModel", "bsConfig", "ngModelOptions", "ngClass", "ngModelChange", "click"], [1, "iconcalender"], ["type", "text", "matInput", "", "placeholder", "Enter e-way Bill No.", "maxlength", "12", "formControlName", "ewayBillNo", 3, "disabled"], ["formControlName", "shippedFrom", "disableOptionCentering", "", "aria-label", "Default select example", "placeholder", "Select State", 3, "disabled"], [3, "value", 4, "ngFor", "ngForOf"], [1, "row", "mb-3", "d-flex", "justify-content-start"], [1, "col-sm-12", "col-md-4", "col-lg-4"], ["matInput", "", "rows", "5", "placeholder", "Enter Billing Address", "formControlName", "billingAddress", "required", "", "disabled", "", "readonly", "", 3, "ngClass"], ["class", "col-sm-12 col-md-4 col-lg-4", 4, "ngIf"], ["class", "table-responsive my-custom-scrollbar d-flex justify-content-start row", "style", "margin-right: 0.1rem;", 4, "ngIf"], ["class", "table-responsive my-custom-scrollbar d-flex justify-content-end", 4, "ngIf"], [1, "col-12", "d-flex", "justify-content-end"], ["class", "", 4, "ngIf"], ["addParty", ""], ["id", "invoice-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["closebutton", ""], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", "modal-lg"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["type", "button", "aria-label", "Close", "data-bs-dismiss", "modal", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base", 3, "click"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], [1, "row", "justify-content-between", "align-items-center"], [1, "col-md"], [1, "mb-2", "mb-md-0"], ["data-bs-dismiss", "modal", 1, "col-auto"], ["type", "button", 1, "btn", "btn-falcon-default", "btn-sm", "me-1", "mb-2", "mb-sm-0", 3, "click"], [1, "fas", "fa-print", "me-1", 3, "click"], [1, "container"], ["id", "panel", 1, "card", "mb-3"], [1, "card-body"], [1, "mb-3", "text-center"], [1, "row", "justify-content-betweenxt-center", "mb-3"], [1, "col-sm-6", "text-sm-start"], [1, "fs--1", "mb-0"], [1, "col", "text-sm-end", "mt-3", "mt-sm-0"], [1, "col-12"], [1, "table-responsive", "scrollbar", "mt-4", "fs--1"], [1, "table", "table-striped", "table-bordered"], [1, "light"], [1, "bg-primary", "text-white", "dark__bg-1000"], [1, "border-0", "text-white"], [1, "border-0", "text-center", "text-white"], [1, "border-0", "text-end", "text-white"], [4, "ngFor", "ngForOf"], [1, "col-sm-6", "col-md-6", "col-lg-6"], [1, "table-responsive", "scrollbar", "fs--1"], [1, "table", "table-striped"], [1, "border-0", "text-center"], [1, "align-middle"], [1, "align-middle", "text-center"], [1, "card-footer", "bg-light"], ["id", "invoice-modal2", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2"], ["type", "button", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], ["close", ""], [1, "modal-footer"], ["type", "button", "data-bs-target", "#invoice-modal", 1, "btn", "btn-outline-primary"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-cancel"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", "text-nowrap", 3, "click"], ["type", "button", "data-bs-toggle", "modal", "data-bs-target", "#invoice-modal", 1, "btn", "btn-save", 3, "click"], ["type", "text", "placeholder", "Party Name", "aria-label", "Select Party Name", "matInput", "", "required", "", 3, "formControl", "matAutocomplete", "ngClass", "keyup"], ["auto", "matAutocomplete"], ["aria-hidden", "true", "title", "Party", 1, "mobVerify", 2, "display", "inline-block", "width", "100%", 3, "click"], [3, "value", "onSelectionChange", 4, "ngFor", "ngForOf"], [3, "value", "onSelectionChange"], [1, "text-danger"], [3, "value"], ["matInput", "", "rows", "5", "placeholder", "Enter Shipping Address", "formControlName", "shippingAddress", 3, "disabled"], [1, "table-responsive", "my-custom-scrollbar", "d-flex", "justify-content-start", "row", 2, "margin-right", "0.1rem"], [1, "table", "bg-white", "table-bordered", "table-stripped"], [1, "table-secondary"], [1, "font_size", "font-weight-bold"], ["scope", "col", 2, "width", "7% !important"], ["scope", "col", 2, "width", "8%"], ["scope", "col", 1, "text-nowrap"], ["scope", "col", "colspan", "1", 1, "text-nowrap"], ["scope", "col", "colspan", "2", 1, "text-center"], ["scope", "col", "colspan", "2", 1, "text-nowrap"], ["class", "mod", 4, "ngIf"], [1, "mod"], ["colspan", "1"], ["type", "text", "value", "1", "placeholder", "Unit", "readonly", "", 1, "unitInput", 2, "width", "5rem", 3, "value"], ["colspan", "1", 1, "text-center", "m-auto"], [1, "", 2, "width", "5rem"], [1, "table-responsive", "my-custom-scrollbar", "d-flex", "justify-content-end"], [1, "col-lg-8", "col-sm-6"], [1, "col-lg-4", "col-sm-4", "table-bordered", "my-custom-scrollbar", 2, "width", "30%"], [1, "table", "table-bordered", "my-custom-scrollbar"], [2, "text-align", "left!important"], [2, "text-align", "right!important"], ["type", "button", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base", 3, "click"], ["id", "modalExampleDemoLabel", 1, "mb-1"], [1, "p-4", "pb-0"], [1, "form-check", "form-switch", "mb-0", "lh-1", "mb-3"], ["type", "checkbox", "id", "flexSwitchCheckDefault", 1, "form-check-input", 3, "checked", "click"], [1, "lab", "text-nowrap", "p-1"], ["class", "row d-flex justify-content-start", 4, "ngIf"], [1, "col-xs-12", "col-sm-12", "col-md-4", "col-lg-4", 2, "font-size", "12px"], ["appearance", "outline", 1, "example-full-width"], ["matNativeControl", "", "required", "", "matInput", "", "placeholder", "Party Name", "formControlName", "partyName", 3, "ngClass"], ["type", "text", "placeholder", "Mobile Number", "matInput", "", "formControlName", "mobile", "minlength", "10", "maxLength", "10", "ngxOnlyNumbers", "", 3, "ngClass"], ["type", "email", "placeholder", "e-mail", "matInput", "", "formControlName", "email", 3, "ngClass"], [1, "col-lg-4", "col-sm-12", "col-md-6"], ["matInput", "", "required", "", "formControlName", "billingAddress", "placeholder", "Enter your address", 3, "ngClass"], ["class", "col-lg-4 col-sm-12 col-md-6", 4, "ngIf"], [1, "form-check", "form-check-inline", "mb-2"], ["for", "inlineCheckbox1", 1, "form-label", "form-check-label", "fs--1"], ["id", "inlineCheckbox1", "type", "checkbox", 1, "form-check-input", "fs--1", 3, "change"], ["type", "button", 1, "btn", "btn-outline-primary", 3, "click"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-outline-primary", 3, "click"], ["matInput", "", "required", "", "formControlName", "gstIn", "maxlength", "15", "minlength", "15", "placeholder", "GST Number", "pattern", "^[0-9]{2}[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}[1-9A-Za-z]{1}[Zz][0-9A-Za-z]{1}$", "placeholder", "GST Number", 2, "text-transform", "uppercase", 3, "change"], ["matNativeControl", "", "required", "", "formControlName", "gstType", "disableOptionCentering", "", "placeholder", "GST Type", 3, "disabled"], ["value", "REGULAR"], ["value", "COMPOSITE"], ["value", "EXEMPTED"], ["matInput", "", "formControlName", "shippingAddress", "placeholder", "Enter your address"], [1, "align-middle", "text-end"]],
+        vars: 88,
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "500"], [1, "addProductButtons"], ["style", "margin-right: 10px !important;", "type", "button", "class", "btn btn-cancel", 3, "click", 4, "ngIf"], ["type", "submit", "class", "btn btn-save text-nowrap", 3, "click", 4, "ngIf"], ["type", "button", "class", "btn btn-save", "data-bs-toggle", "modal", "data-bs-target", "#invoice-modal", 3, "click", 4, "ngIf"], [1, "modal-body"], [3, "formGroup"], [1, "card"], [1, "card-body", "fs--1"], [1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "d-flex", "mb-2", 2, "justify-content", "flex-end", "align-items", "center"], [1, ""], [2, "font-size", "14px"], [1, "form-check", "form-switch"], ["formControlName", "reverseCharge", "id", "inlineCheckbox1", "type", "checkbox", 1, "form-check-input", 2, "font-size", "14px", "margin", "0px 4px 2px 0px", "padding-left", "0px", 3, "disabled"], [1, "row", "d-flex", "justify-content-start"], ["class", "col-md-4 ", 4, "ngIf"], [1, "col-md-4", "justify-content-between"], [1, "form-label"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "11px"], ["type", "text", "matInput", "", "placeholder", "GST", "formControlName", "gstNo", "required", "", "maxlength", "15", "minlength", "15", "pattern", "^[0-9]{2}[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}[1-9A-Za-z]{1}[Zz][0-9A-Za-z]{1}$", 2, "text-transform", "uppercase", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], [4, "ngIf"], [1, "col-md-4", "justify-content-end"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "12px"], ["type", "text", "placeholder", "Enter Tax Invoice #.", "matInput", "", "formControlName", "invoiceNo", "required", "", 3, "disabled", "ngClass"], [1, "col-md-4"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "Receipt Date.", "id", "datePicker", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "maxDate", "ngModel", "bsConfig", "ngModelOptions", "ngClass", "ngModelChange", "click"], [1, "iconcalender"], ["type", "text", "matInput", "", "placeholder", "Enter e-way Bill #.", "maxlength", "12", "formControlName", "ewayBillNo", 3, "disabled"], ["formControlName", "shippedFrom", "disableOptionCentering", "", "aria-label", "Default select example", "placeholder", "Select State"], [3, "value", 4, "ngFor", "ngForOf"], [1, "row", "mb-3", "d-flex", "justify-content-start"], [1, "col-sm-12", "col-md-4", "col-lg-4"], ["matInput", "", "rows", "5", "placeholder", "Enter Billing Address", "formControlName", "billingAddress", "required", "", "disabled", "", "readonly", "", 3, "ngClass"], ["class", "col-sm-12 col-md-4 col-lg-4", 4, "ngIf"], ["class", "table-responsive my-custom-scrollbar d-flex justify-content-start row", "style", "margin-right: 0.1rem;", 4, "ngIf"], ["class", "table-responsive my-custom-scrollbar d-flex justify-content-end", 4, "ngIf"], [1, "col-12", "d-flex", "justify-content-end"], ["class", "", 4, "ngIf"], ["addParty", ""], ["id", "invoice-modal", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], ["closebutton", ""], ["role", "document", 1, "modal-dialog", "modal-dialog-centered", "modal-lg"], [1, "modal-content", "position-relative"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2", "z-index-1"], ["type", "button", "aria-label", "Close", "data-bs-dismiss", "modal", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base", 3, "click"], [1, "modal-body", "p-0"], [1, "rounded-top-lg", "py-3", "ps-4", "pe-6", "bg-light"], [1, "row", "justify-content-between", "align-items-center"], [1, "col-md"], [1, "mb-2", "mb-md-0"], ["data-bs-dismiss", "modal", 1, "col-auto"], ["type", "button", 1, "btn", "btn-falcon-default", "btn-sm", "me-1", "mb-2", "mb-sm-0", 3, "click"], [1, "fas", "fa-print", "me-1", 3, "click"], [1, "container"], ["id", "panel", 1, "card", "mb-3"], [1, "card-body"], [1, "mb-3", "text-center"], [1, "row", "justify-content-betweenxt-center", "mb-3"], [1, "col-sm-6", "text-sm-start"], [1, "fs--1", "mb-0"], [1, "col", "text-sm-end", "mt-3", "mt-sm-0"], [1, "col-12"], [1, "table-responsive", "scrollbar", "mt-4", "fs--1"], [1, "table", "table-striped", "table-bordered"], [1, "light"], [1, "bg-primary", "text-white", "dark__bg-1000"], [1, "border-0", "text-white"], [1, "border-0", "text-center", "text-white"], [1, "border-0", "text-end", "text-white"], [4, "ngFor", "ngForOf"], [1, "col-sm-6", "col-md-6", "col-lg-6"], [1, "table-responsive", "scrollbar", "fs--1"], [1, "table", "table-striped"], [1, "border-0", "text-center"], [1, "align-middle"], [1, "align-middle", "text-center"], [1, "card-footer", "bg-light"], ["id", "invoice-modal2", "tabindex", "-1", "role", "dialog", "aria-hidden", "true", 1, "modal", "fade"], [1, "position-absolute", "top-0", "end-0", "mt-2", "me-2"], ["type", "button", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base"], ["close", ""], [1, "modal-footer"], ["type", "button", "data-bs-target", "#invoice-modal", 1, "btn", "btn-outline-primary"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-cancel"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", "text-nowrap", 3, "click"], ["type", "button", "data-bs-toggle", "modal", "data-bs-target", "#invoice-modal", 1, "btn", "btn-save", 3, "click"], ["type", "text", "placeholder", "Party Name", "aria-label", "Select Party Name", "matInput", "", "required", "", 3, "formControl", "matAutocomplete", "ngClass", "keyup"], ["auto", "matAutocomplete"], ["aria-hidden", "true", "title", "Party", 1, "mobVerify", 2, "display", "inline-block", "width", "100%", 3, "click"], [3, "value", "onSelectionChange", 4, "ngFor", "ngForOf"], [3, "value", "onSelectionChange"], [1, "text-danger"], [3, "value"], ["matInput", "", "rows", "5", "placeholder", "Enter Shipping Address", "formControlName", "shippingAddress", 3, "disabled"], [1, "table-responsive", "my-custom-scrollbar", "d-flex", "justify-content-start", "row", 2, "margin-right", "0.1rem"], [1, "table", "bg-white", "table-bordered", "table-stripped"], [1, "table-secondary"], [1, "font_size", "font-weight-bold"], ["scope", "col", 2, "width", "7% !important"], ["scope", "col", 2, "width", "8%"], ["scope", "col", 1, "text-nowrap"], ["scope", "col", "colspan", "1", 1, "text-nowrap"], ["scope", "col", "colspan", "2", 1, "text-center"], ["scope", "col", "colspan", "2", 1, "text-nowrap"], ["class", "mod", 4, "ngIf"], [1, "mod"], ["colspan", "1"], ["type", "text", "value", "1", "placeholder", "Unit", "readonly", "", 1, "unitInput", 2, "width", "5rem", 3, "value"], ["colspan", "1", 1, "text-center", "m-auto"], [1, "", 2, "width", "5rem"], [1, "table-responsive", "my-custom-scrollbar", "d-flex", "justify-content-end"], [1, "col-lg-8", "col-sm-6"], [1, "col-lg-4", "col-sm-4", "table-bordered", "my-custom-scrollbar", 2, "width", "30%"], [1, "table", "table-bordered", "my-custom-scrollbar"], [2, "text-align", "left!important"], [2, "text-align", "right!important"], ["type", "button", "aria-label", "Close", 1, "btn-close", "btn", "btn-sm", "btn-circle", "d-flex", "flex-center", "transition-base", 3, "click"], ["id", "modalExampleDemoLabel", 1, "mb-1"], [1, "p-4", "pb-0"], [1, "form-check", "form-switch", "mb-0", "lh-1", "mb-3"], ["type", "checkbox", "id", "flexSwitchCheckDefault", 1, "form-check-input", 3, "checked", "click"], [1, "lab", "text-nowrap", "p-1"], ["class", "row d-flex justify-content-start", 4, "ngIf"], [1, "col-xs-12", "col-sm-12", "col-md-4", "col-lg-4", 2, "font-size", "12px"], ["appearance", "outline", 1, "example-full-width"], ["matNativeControl", "", "required", "", "matInput", "", "placeholder", "Party Name", "formControlName", "partyName", 3, "ngClass"], ["type", "text", "placeholder", "Mobile #", "matInput", "", "formControlName", "mobile", "minlength", "10", "maxLength", "10", "ngxOnlyNumbers", "", 3, "ngClass"], ["type", "email", "placeholder", "e-mail", "matInput", "", "formControlName", "email", 3, "ngClass"], [1, "col-lg-4", "col-sm-12", "col-md-6"], ["matInput", "", "required", "", "formControlName", "billingAddress", "placeholder", "Enter your address", 3, "ngClass"], ["class", "col-lg-4 col-sm-12 col-md-6", 4, "ngIf"], [1, "form-check", "form-check-inline", "mb-2"], ["for", "inlineCheckbox1", 1, "form-label", "form-check-label", "fs--1"], ["id", "inlineCheckbox1", "type", "checkbox", 1, "form-check-input", "fs--1", 3, "change"], ["type", "button", 1, "btn", "btn-outline-primary", 3, "click"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-outline-primary", 3, "click"], ["matInput", "", "required", "", "formControlName", "gstIn", "maxlength", "15", "minlength", "15", "placeholder", "GST", "pattern", "^[0-9]{2}[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}[1-9A-Za-z]{1}[Zz][0-9A-Za-z]{1}$", "placeholder", "GST", 2, "text-transform", "uppercase", 3, "change"], ["matNativeControl", "", "required", "", "formControlName", "gstType", "disableOptionCentering", "", "placeholder", "GST Type", 3, "disabled"], ["value", "REGULAR"], ["value", "COMPOSITE"], ["value", "EXEMPTED"], ["matInput", "", "formControlName", "shippingAddress", "placeholder", "Enter your address"], [1, "align-middle", "text-end"]],
         template: function SalesNewInvoiceComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 0);
@@ -4216,7 +4216,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](23, "mat-label", 20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](24, "GST Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](24, "GST");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -4238,7 +4238,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](31, "mat-label", 20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](32, "Tax Invoice No.");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](32, "Tax Invoice #.");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -4296,7 +4296,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](47, "mat-label", 20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](48, "e-Way Bill No.");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](48, "e-Way Bill #.");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
@@ -5052,7 +5052,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](79, _c1, ctx.f.gstNo.invalid && ctx.f.gstNo.touched));
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](78, _c1, ctx.f.gstNo.invalid && ctx.f.gstNo.touched));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
 
@@ -5068,7 +5068,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx.showInvoiceGenerateData)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](81, _c1, ctx.f.invoiceNo.invalid && ctx.f.invoiceNo.touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx.showInvoiceGenerateData)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](80, _c1, ctx.f.invoiceNo.invalid && ctx.f.invoiceNo.touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
 
@@ -5076,7 +5076,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("maxDate", ctx.today)("ngModel", ctx.todaysDate)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](83, _c2))("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](84, _c3))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](85, _c1, ctx.todaysDate.invalid && ctx.todaysDate.touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("maxDate", ctx.today)("ngModel", ctx.todaysDate)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](82, _c2))("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](83, _c3))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](84, _c1, ctx.todaysDate.invalid && ctx.todaysDate.touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](4);
 
@@ -5086,17 +5086,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx.showInvoiceGenerateData);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](5);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx.showInvoiceGenerateData);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngForOf", ctx.allStates);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](87, _c1, ctx.f.billingAddress.invalid && ctx.f.billingAddress.touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](86, _c1, ctx.f.billingAddress.invalid && ctx.f.billingAddress.touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
 
@@ -5140,7 +5136,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate3"]("", ctx.city, ",", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind1"](110, 57, ctx.state), ", ", ctx.country, "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate3"]("", ctx.city, ",", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind1"](110, 56, ctx.state), ", ", ctx.country, "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](18);
 
@@ -5148,15 +5144,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](147, 59, ctx.remoteGSTAmount / 2, "1.2-2"), " ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](147, 58, ctx.remoteGSTAmount / 2, "1.2-2"), " ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](155, 62, ctx.remoteGSTAmount / 2, "1.2-2"), " ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](155, 61, ctx.remoteGSTAmount / 2, "1.2-2"), " ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"](" \u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](162, 65, ctx.remoteTotalBillAmount, "1.2-2"), " ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"](" \u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](162, 64, ctx.remoteTotalBillAmount, "1.2-2"), " ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](18);
 
@@ -5180,7 +5176,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate3"]("", ctx.city, ",", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind1"](207, 68, ctx.state), ", ", ctx.country, "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate3"]("", ctx.city, ",", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind1"](207, 67, ctx.state), ", ", ctx.country, "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](18);
 
@@ -5188,15 +5184,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](244, 70, ctx.remoteGSTAmount / 2, "1.2-2"), " ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](244, 69, ctx.remoteGSTAmount / 2, "1.2-2"), " ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](252, 73, ctx.remoteGSTAmount / 2, "1.2-2"), " ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"]("\u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](252, 72, ctx.remoteGSTAmount / 2, "1.2-2"), " ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"](" \u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](259, 76, ctx.remoteTotalBillAmount, "1.2-2"), " ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"](" \u20B9\xA0", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind2"](259, 75, ctx.remoteTotalBillAmount, "1.2-2"), " ");
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_15__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.CheckboxControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormControlName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_18__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.MaxLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.MinLengthValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.PatternValidator, _angular_common__WEBPACK_IMPORTED_MODULE_15__.NgClass, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_19__.BsDatepickerInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgModel, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_19__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_20__.MatIcon, _angular_material_select__WEBPACK_IMPORTED_MODULE_21__.MatSelect, _angular_common__WEBPACK_IMPORTED_MODULE_15__.NgForOf, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_22__.MatAutocompleteTrigger, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormControlDirective, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_22__.MatAutocomplete, _angular_material_core__WEBPACK_IMPORTED_MODULE_23__.MatOption, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.MatError],

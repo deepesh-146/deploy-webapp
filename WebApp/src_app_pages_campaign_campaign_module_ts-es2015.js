@@ -404,7 +404,7 @@ class ActivePageComponent {
                 if (isActive) {
                     this.toastService.toastMsg({
                         title: "Success",
-                        content: "Campaign Status Changed To Active"
+                        content: "Campaign Status Changed To Inactive"
                     });
                     //  this.toastService.openSnackBar("Campaign status changed to active")
                     this.getAllCampaigns();
@@ -412,7 +412,7 @@ class ActivePageComponent {
                 else {
                     this.toastService.toastMsg({
                         title: "Success",
-                        content: "Campaign Status Changed To InActive"
+                        content: "Campaign Status Changed To Active"
                     });
                     //  this.toastService.openSnackBar("Campaign status changed to inactive")
                     this.getAllCampaigns();

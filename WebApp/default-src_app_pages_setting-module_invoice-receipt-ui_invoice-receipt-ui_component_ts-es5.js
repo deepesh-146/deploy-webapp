@@ -1818,7 +1818,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "label", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](59, "Phone Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](59, "Phone #");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -2406,7 +2406,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](216, "h5", 81);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](217, "Serial Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](217, "Serial #");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -2738,7 +2738,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](315, "div", 22, 133);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](317, " Invoice No.");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](317, " Invoice #");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](318, "span", 134);
 
