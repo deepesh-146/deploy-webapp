@@ -33589,8 +33589,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function AddTaskComponent_mat_option_91_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 37);
+function AddTaskComponent_mat_option_103_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -33674,6 +33674,7 @@ class AddTaskComponent {
             taskQue: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
             taskAssignedTo: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
             taskNote: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+            remindTime: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]
         });
     }
     getUsersList() {
@@ -33699,11 +33700,22 @@ class AddTaskComponent {
             return false;
         }
         else {
+            const taskReminderValue = this.AddTaskForm.controls['taskReminder'].value;
+            const remindTimeValue = this.AddTaskForm.controls['remindTime'].value;
+            // Parse the date string from taskReminderValue
+            const taskReminderDate = new Date(taskReminderValue);
+            // Extract time values from remindTimeValue
+            const [hours, minutes] = remindTimeValue.split(':');
+            // Set time components of taskReminderDate
+            taskReminderDate.setHours(parseInt(hours), parseInt(minutes));
+            // Convert the combined Date object to UTC string
+            const combinedDateTimeUtc = taskReminderDate.toISOString();
+            console.log(combinedDateTimeUtc);
             let Body = {
                 "taskName": this.AddTaskForm.controls.task.value,
                 "dueDate": this.AddTaskForm.controls.taskdate.value,
                 "actualDate": this.AddTaskForm.controls.taskdate.value,
-                "remainder": this.AddTaskForm.controls.taskReminder.value,
+                "remainder": combinedDateTimeUtc,
                 "type": this.AddTaskForm.controls.taskType.value,
                 "priority": this.AddTaskForm.controls.taskPrioirty.value,
                 "queue": this.AddTaskForm.controls.taskQue.value,
@@ -33738,16 +33750,20 @@ class AddTaskComponent {
         }
     }
     openDatepicker() {
-        // Check if the current value of taskdate is an "Invalid Date"
+        // Check if the current value of taskdate is an instance of Date
         const selectedDate = this.AddTaskForm.get('taskdate').value;
-        if (isNaN(selectedDate.getTime())) {
+        if (selectedDate instanceof Date && !isNaN(selectedDate.getTime())) {
+            // If selectedDate is a valid Date object, do nothing
+            return;
+        }
+        else {
             // Set a default date or any valid date here
             this.AddTaskForm.get('taskdate').setValue(new Date());
         }
     }
 }
 AddTaskComponent.ɵfac = function AddTaskComponent_Factory(t) { return new (t || AddTaskComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_1__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_crm_service__WEBPACK_IMPORTED_MODULE_2__.CrmService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_3__.CommonService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_8__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_4__.RolesPermissionsService)); };
-AddTaskComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: AddTaskComponent, selectors: [["app-add-task"]], decls: 95, vars: 8, consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "15px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "required", "", "formControlName", "task", "rows", "3", "placeholder", "Task", "autocomplete", "off"], [1, "row"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskdate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], [1, "iconcalender", "p-1"], ["type", "time", "matInput", "", "required", "", "formControlName", "taskTime", "placeholder", "Task Time", "autocomplete", "off", 2, "font-size", "17px !important"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3", "mb-3"], ["matInput", "", "required", "", "formControlName", "taskReminder", "placeholder", "Set Reminder", "autocomplete", "off"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Type", "formControlName", "taskType"], ["value", "TODO"], ["value", "CALL"], ["value", "EMAIL"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Priority", "formControlName", "taskPrioirty"], ["value", "HIGH"], ["value", "LOW"], ["value", "MEDIUM"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Queue", "formControlName", "taskQue"], ["value", "Personal"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Task Assigned To", "formControlName", "taskAssignedTo"], ["value", "Myself"], ["value", "item", 4, "ngFor", "ngForOf"], [1, "row", "mt-2"], [1, "col-sm-12", "col-md-12", "col-xl-12", "col-lg-12", 2, "padding", "0px 15px"], ["formControlName", "taskNote", 3, "editor", "data", "config", "change"], ["value", "item"]], template: function AddTaskComponent_Template(rf, ctx) { if (rf & 1) {
+AddTaskComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: AddTaskComponent, selectors: [["app-add-task"]], decls: 107, vars: 11, consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "15px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "required", "", "formControlName", "task", "rows", "3", "placeholder", "Task", "autocomplete", "off"], [1, "row"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskdate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], [1, "iconcalender", "p-1"], ["type", "time", "matInput", "", "required", "", "formControlName", "taskTime", "placeholder", "Task Time", "autocomplete", "off", 2, "font-size", "17px !important"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3", "mb-3"], ["matInput", "", "required", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskReminder", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], ["type", "time", "matInput", "", "required", "", "formControlName", "remindTime", "placeholder", "Task Time", "autocomplete", "off", 2, "font-size", "17px !important"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Type", "formControlName", "taskType"], ["value", "TODO"], ["value", "CALL"], ["value", "EMAIL"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Priority", "formControlName", "taskPrioirty"], ["value", "HIGH"], ["value", "LOW"], ["value", "MEDIUM"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Queue", "formControlName", "taskQue"], ["value", "Personal"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Task Assigned To", "formControlName", "taskAssignedTo"], ["value", "Myself"], ["value", "item", 4, "ngFor", "ngForOf"], [1, "row", "mt-2"], [1, "col-sm-12", "col-md-12", "col-xl-12", "col-lg-12", 2, "padding", "0px 15px"], ["formControlName", "taskNote", 3, "editor", "data", "config", "change"], ["value", "item"]], template: function AddTaskComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "h1", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Create Task");
@@ -33810,98 +33826,119 @@ AddTaskComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](37, "input", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](38, "div", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](40, "Set Reminder ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](42, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](38, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "div", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](41, "Set Reminder ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](43, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](44, "input", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](44, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "input", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AddTaskComponent_Template_input_click_45_listener() { return ctx.openDatepicker(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](45, "hr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](46, "div", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](48, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](49, "Type ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](50, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](51, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](52, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "mat-select", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "mat-option", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](55, "To Do");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](56, "mat-option", 23);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](57, "Call");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "mat-option", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](59, "Email");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](46, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "mat-icon", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](48, "date_range");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](60, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](61, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](62, "Priority ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](63, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](64, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](49, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](50, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](51, "Reminder Time");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](52, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](53, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](66, "mat-select", 25);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](67, "mat-option", 26);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](68, "High");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](69, "mat-option", 27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](70, "Low");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](71, "mat-option", 28);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](72, "Medium");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](54, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](56, "input", 21);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](73, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](74, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](75, "Queue ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](76, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](77, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](78, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](79, "mat-select", 29);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](80, "mat-option", 30);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](81, "Personal");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](57, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](60, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](61, "Type ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](62, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](63, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](64, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "mat-select", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](66, "mat-option", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](67, "To Do");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](68, "mat-option", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](69, "Call");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](82, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](83, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](84, "Assigned To ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](85, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](86, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](87, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](88, "mat-select", 31);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](89, "mat-option", 32);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](90, "Myself");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](91, AddTaskComponent_mat_option_91_Template, 2, 1, "mat-option", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](70, "mat-option", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](71, "Email");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](92, "div", 34);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](93, "div", 35);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](94, "ckeditor", 36);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function AddTaskComponent_Template_ckeditor_change_94_listener($event) { return ctx.onChange($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](72, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](73, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](74, "Priority ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](75, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](76, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](77, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](78, "mat-select", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](79, "mat-option", 27);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](80, "High");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](81, "mat-option", 28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](82, "Low");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](83, "mat-option", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](84, "Medium");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](85, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](86, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](87, "Queue ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](88, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](89, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](90, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](91, "mat-select", 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](92, "mat-option", 31);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](93, "Personal");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](94, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](95, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](96, "Assigned To ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](97, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](98, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](99, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](100, "mat-select", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](101, "mat-option", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](102, "Myself");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](103, AddTaskComponent_mat_option_103_Template, 2, 1, "mat-option", 34);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](104, "div", 35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](105, "div", 36);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](106, "ckeditor", 37);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function AddTaskComponent_Template_ckeditor_change_106_listener($event) { return ctx.onChange($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -33912,8 +33949,10 @@ AddTaskComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](10);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx.AddTaskForm);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("minDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c0));
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](65);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("minDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](9, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("minDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](10, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](58);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.userData);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("editor", ctx.ckeditor)("data", ctx.editorContent)("config", ctx.editorConfig);
@@ -34720,7 +34759,7 @@ class EditLeadComponent {
             let data = {
                 "userId": this.currentUser.id,
                 "name": this.editLeadForm.value.firstName,
-                "email": this.editLeadForm.value.email,
+                "email": this.editLeadForm.value.email.toLowerCase(),
                 "mobile": this.editLeadForm.value.mobile,
                 //"website": "examplewebsite.com",
                 //"fiscalInformation": "ABC123XYZ",
@@ -34739,7 +34778,7 @@ class EditLeadComponent {
             let nodata = {
                 "userId": this.currentUser.id,
                 "name": this.editLeadForm.value.firstName,
-                "email": this.editLeadForm.value.email,
+                "email": this.editLeadForm.value.email.toLowerCase(),
                 "mobile": this.editLeadForm.value.mobile,
                 //"website": "examplewebsite.com",
                 //"fiscalInformation": "ABC123XYZ",
@@ -37063,7 +37102,7 @@ NotesComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__[
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx.name);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.notesList);
-    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe], styles: [".headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  padding: 0;\n}\n\n.searchBar[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 170px;\n}\n\n@media screen and (max-width: 600px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n\n  .searchBar[_ngcontent-%COMP%] {\n    margin: 8px 0px;\n  }\n}\n\ntbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:nth-child(odd) {\n  background-color: #F8F8F8;\n}\n\n.table-responsive[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #000;\n}\n\n.table-responsive[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n  height: auto !important;\n}\n\n.table-responsive[_ngcontent-%COMP%]   th[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-style: none !important;\n}\n\n.thdata[_ngcontent-%COMP%] {\n  align-items: center;\n}\n\nth[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  padding: 20px !important;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n  padding-right: 0px !important;\n  width: 250px;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 75%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n  .custom-dialog-notes-class {\n  margin-left: 53%;\n}\n\n.cardRounded[_ngcontent-%COMP%] {\n  border-radius: 5px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vdGVzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7QUFERjs7QUFJQTtFQUVFLFVBQUE7QUFGRjs7QUFJQTtFQUNFLGlCQUFBO0FBREY7O0FBS0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUZGOztBQU1BO0VBQ0U7SUFDRSx1QkFBQTtFQUhGOztFQUtBO0lBQ0UsZUFBQTtFQUZGO0FBQ0Y7O0FBTUE7RUFDSSx5QkFBQTtBQUpKOztBQU9FO0VBQ0UsV0FBQTtBQUpKOztBQU9FO0VBQ0UsK0JBQUE7RUFBQSw0QkFBQTtFQUFBLHVCQUFBO0VBQ0EsdUJBQUE7QUFKSjs7QUFPRTtFQUNFLDZCQUFBO0FBSko7O0FBT0U7RUFDRSxtQkFBQTtBQUpKOztBQU9FO0VBQ0Usd0JBQUE7QUFKSjs7QUFRRTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0Esb0JBQUE7RUFDQSw2QkFBQTtFQUNBLFlBQUE7QUFMTjs7QUFRSTtFQUNFLFdBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtFQUNBLDhCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7QUFMTjs7QUFRSTtFQUVFLHVCQUFBO0VBQ0EsU0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSxXQUFBO0VBS0EsMEJBQUE7RUFDRiw0QkFBQTtFQUNBLHFYQUFBO0VBQ0EsOEJBQUE7RUFDQSx3Q0FBQTtFQUEwQywrQkFBQTtBQVQ5Qzs7QUFhSTtFQUNFLFdBQUE7QUFWTjs7QUFTSTtFQUNFLFdBQUE7QUFWTjs7QUFhSTtFQUNFLGdCQUFBO0FBVk47O0FBWUU7RUFDRSw2QkFBQTtBQVRKIiwiZmlsZSI6Im5vdGVzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gUmVzcG9uc2l2ZSBCdXR0b25zXHJcblxyXG4uaGVhZGVyQnV0dG9ucyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbn1cclxuXHJcbi5mbGV4LWl0ZW0ge1xyXG4gIC8vZmxleC1iYXNpczogMjQwcHg7XHJcbiAgcGFkZGluZzogMDtcclxufVxyXG4uc2VhcmNoQmFye1xyXG4gIGZsZXgtYmFzaXM6IDI0MHB4O1xyXG5cclxufVxyXG5cclxuLmZvcm1CdXR0b25zIHtcclxuICBkaXNwbGF5OmZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246cm93O1xyXG4gIGp1c3RpZnktY29udGVudDpzcGFjZS1ldmVubHk7XHJcbiAgZmxleC13cmFwOiB3cmFwO1xyXG4gIGZsZXgtYmFzaXM6IDE3MHB4O1xyXG59XHJcblxyXG4vLyBNZWRpYSBxdWVyeSBmb3IgYnV0dG9ucyBhbmQgc2VhcmNoIGJhci5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjAwcHgpIHtcclxuICAuaGVhZGVyQnV0dG9ucyB7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICB9XHJcbiAgLnNlYXJjaEJhcntcclxuICAgIG1hcmdpbjogOHB4IDBweDtcclxuICB9XHJcbn1cclxuXHJcblxyXG50Ym9keSB0cjpudGgtY2hpbGQob2RkKSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjhGOEY4O1xyXG4gIH1cclxuXHJcbiAgLnRhYmxlLXJlc3BvbnNpdmUgdGhlYWQgdGgge1xyXG4gICAgY29sb3I6ICMwMDA7XHJcbiAgfVxyXG5cclxuICAudGFibGUtcmVzcG9uc2l2ZSB0Ym9keSB0ciwgdGQge1xyXG4gICAgbWluLWhlaWdodDogZml0LWNvbnRlbnQ7XHJcbiAgICBoZWlnaHQ6IGF1dG8gIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4gIC50YWJsZS1yZXNwb25zaXZlIHRoLCB0ZCwgdHIge1xyXG4gICAgYm9yZGVyLXN0eWxlOiBub25lIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4gIC50aGRhdGF7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIH1cclxuXHJcbiAgdGgsIHRkIHtcclxuICAgIHBhZGRpbmc6IDIwcHggIWltcG9ydGFudDtcclxuICB9XHJcblxyXG5cclxuICAuY29udGFpbmVyU2VhcmNoQmFyIHtcclxuICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgIGFsaWduLWl0ZW1zOiBzdHJldGNoO1xyXG4gICAgICBwYWRkaW5nLXJpZ2h0OiAwcHggIWltcG9ydGFudDtcclxuICAgICAgd2lkdGg6MjUwcHg7XHJcbiAgICB9XHJcblxyXG4gICAgLmZvcm0tY29udHJvbCB7XHJcbiAgICAgIGNvbG9yOiAjNTU1O1xyXG4gICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICBwYWRkaW5nOiAycHg7XHJcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIGN1cnJlbnRDb2xvcjtcclxuICAgICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgICBtYXJnaW46IDAgMCAzMHB4O1xyXG4gICAgICB3aWR0aDogMTAwJTtcclxuICAgIH1cclxuXHJcbiAgICBpbnB1dFt0eXBlPVwic2VhcmNoXCJdIHtcclxuICAgICAgLy8gYm9yZGVyOiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gICAgICBtYXJnaW46IDA7XHJcbiAgICAgIHBhZGRpbmc6IDdweCA4cHg7XHJcbiAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgICAgb3V0bGluZTogbm9uZTtcclxuICAgICAgaGVpZ2h0OiA3NSU7XHJcbiAgICAgIC8vIG1hcmdpbi10b3A6IC03cHg7XHJcbiAgICAgIC8vY29sb3I6IGluaGVyaXQ7XHJcbiAgICAgIC8vIGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xyXG4gICAgICAvL2JvcmRlci1yYWRpdXM6IGluaGVyaXQ7XHJcbiAgICAgIGJhY2tncm91bmQtcG9zaXRpb246IHJpZ2h0O1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB3aWR0aD0nMTYnIGhlaWdodD0nMTYnIGNsYXNzPSdiaSBiaS1zZWFyY2gnIHZpZXdCb3g9JzAgMCAxNiAxNiclM0UlM0NwYXRoIGQ9J00xMS43NDIgMTAuMzQ0YTYuNSA2LjUgMCAxIDAtMS4zOTcgMS4zOThoLS4wMDFjLjAzLjA0LjA2Mi4wNzguMDk4LjExNWwzLjg1IDMuODVhMSAxIDAgMCAwIDEuNDE1LTEuNDE0bC0zLjg1LTMuODVhMS4wMDcgMS4wMDcgMCAwIDAtLjExNS0uMXpNMTIgNi41YTUuNSA1LjUgMCAxIDEtMTEgMCA1LjUgNS41IDAgMCAxIDExIDB6JyUzRSUzQy9wYXRoJTNFJTNDL3N2ZyUzRVwiKTtcclxuICAgIGJhY2tncm91bmQtb3JpZ2luOiBjb250ZW50LWJveDtcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb24teDogY2FsYygxMDAlICsgMjBweCk7IC8qIEFkanVzdCB0aGUgdmFsdWUgYXMgbmVlZGVkICovXHJcblxyXG4gICAgfVxyXG5cclxuICAgIGlucHV0W3R5cGU9XCJzZWFyY2hcIl06OnBsYWNlaG9sZGVyIHtcclxuICAgICAgY29sb3I6ICNiYmI7XHJcbiAgICB9XHJcblxyXG4gICAgOjpuZy1kZWVwIC5jdXN0b20tZGlhbG9nLW5vdGVzLWNsYXNzIHtcclxuICAgICAgbWFyZ2luLWxlZnQ6IDUzJTtcclxuICAgIH1cclxuICAuY2FyZFJvdW5kZWR7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHghaW1wb3J0YW50O1xyXG4gIH1cclxuIl19 */"] });
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe], styles: [".headerButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  flex-wrap: wrap;\n}\n\n.flex-item[_ngcontent-%COMP%] {\n  padding: 0;\n}\n\n.searchBar[_ngcontent-%COMP%] {\n  flex-basis: 240px;\n}\n\n.formButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-evenly;\n  flex-wrap: wrap;\n  flex-basis: 170px;\n}\n\n@media screen and (max-width: 600px) {\n  .headerButtons[_ngcontent-%COMP%] {\n    justify-content: center;\n  }\n\n  .searchBar[_ngcontent-%COMP%] {\n    margin: 8px 0px;\n  }\n}\n\ntbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:nth-child(odd) {\n  background-color: #F8F8F8;\n}\n\n.table-responsive[_ngcontent-%COMP%]   thead[_ngcontent-%COMP%]   th[_ngcontent-%COMP%] {\n  color: #000;\n}\n\n.table-responsive[_ngcontent-%COMP%]   tbody[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n  height: auto !important;\n}\n\n.table-responsive[_ngcontent-%COMP%]   th[_ngcontent-%COMP%], td[_ngcontent-%COMP%], tr[_ngcontent-%COMP%] {\n  border-style: none !important;\n}\n\n.thdata[_ngcontent-%COMP%] {\n  align-items: center;\n}\n\nth[_ngcontent-%COMP%], td[_ngcontent-%COMP%] {\n  padding: 20px !important;\n}\n\n.containerSearchBar[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n  padding-right: 0px !important;\n  width: 250px;\n}\n\n.form-control[_ngcontent-%COMP%] {\n  color: #555;\n  display: flex;\n  padding: 2px;\n  border: 1px solid currentColor;\n  border-radius: 5px;\n  margin: 0 0 30px;\n  width: 100%;\n}\n\ninput[type=search][_ngcontent-%COMP%] {\n  background: transparent;\n  margin: 0;\n  padding: 7px 8px;\n  font-size: 14px;\n  outline: none;\n  height: 75%;\n  background-position: right;\n  background-repeat: no-repeat;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E\");\n  background-origin: content-box;\n  background-position-x: calc(100% + 20px);\n  \n}\n\ninput[type=search][_ngcontent-%COMP%]::-moz-placeholder {\n  color: #bbb;\n}\n\ninput[type=search][_ngcontent-%COMP%]::placeholder {\n  color: #bbb;\n}\n\n  .custom-dialog-notes-class {\n  margin-left: 55%;\n  margin-top: -10%;\n}\n\n.cardRounded[_ngcontent-%COMP%] {\n  border-radius: 5px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vdGVzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7QUFERjs7QUFJQTtFQUVFLFVBQUE7QUFGRjs7QUFJQTtFQUNFLGlCQUFBO0FBREY7O0FBS0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUZGOztBQU1BO0VBQ0U7SUFDRSx1QkFBQTtFQUhGOztFQUtBO0lBQ0UsZUFBQTtFQUZGO0FBQ0Y7O0FBTUE7RUFDSSx5QkFBQTtBQUpKOztBQU9FO0VBQ0UsV0FBQTtBQUpKOztBQU9FO0VBQ0UsK0JBQUE7RUFBQSw0QkFBQTtFQUFBLHVCQUFBO0VBQ0EsdUJBQUE7QUFKSjs7QUFPRTtFQUNFLDZCQUFBO0FBSko7O0FBT0U7RUFDRSxtQkFBQTtBQUpKOztBQU9FO0VBQ0Usd0JBQUE7QUFKSjs7QUFRRTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0Esb0JBQUE7RUFDQSw2QkFBQTtFQUNBLFlBQUE7QUFMTjs7QUFRSTtFQUNFLFdBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtFQUNBLDhCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7QUFMTjs7QUFRSTtFQUVFLHVCQUFBO0VBQ0EsU0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSxXQUFBO0VBS0EsMEJBQUE7RUFDRiw0QkFBQTtFQUNBLHFYQUFBO0VBQ0EsOEJBQUE7RUFDQSx3Q0FBQTtFQUEwQywrQkFBQTtBQVQ5Qzs7QUFhSTtFQUNFLFdBQUE7QUFWTjs7QUFTSTtFQUNFLFdBQUE7QUFWTjs7QUFhSTtFQUNFLGdCQUFBO0VBQ0EsZ0JBQUE7QUFWTjs7QUFZRTtFQUNFLDZCQUFBO0FBVEoiLCJmaWxlIjoibm90ZXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBSZXNwb25zaXZlIEJ1dHRvbnNcclxuXHJcbi5oZWFkZXJCdXR0b25zIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmZsZXgtaXRlbSB7XHJcbiAgLy9mbGV4LWJhc2lzOiAyNDBweDtcclxuICBwYWRkaW5nOiAwO1xyXG59XHJcbi5zZWFyY2hCYXJ7XHJcbiAgZmxleC1iYXNpczogMjQwcHg7XHJcblxyXG59XHJcblxyXG4uZm9ybUJ1dHRvbnMge1xyXG4gIGRpc3BsYXk6ZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjpyb3c7XHJcbiAganVzdGlmeS1jb250ZW50OnNwYWNlLWV2ZW5seTtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgZmxleC1iYXNpczogMTcwcHg7XHJcbn1cclxuXHJcbi8vIE1lZGlhIHF1ZXJ5IGZvciBidXR0b25zIGFuZCBzZWFyY2ggYmFyLlxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xyXG4gIC5oZWFkZXJCdXR0b25zIHtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIH1cclxuICAuc2VhcmNoQmFye1xyXG4gICAgbWFyZ2luOiA4cHggMHB4O1xyXG4gIH1cclxufVxyXG5cclxuXHJcbnRib2R5IHRyOm50aC1jaGlsZChvZGQpIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNGOEY4Rjg7XHJcbiAgfVxyXG5cclxuICAudGFibGUtcmVzcG9uc2l2ZSB0aGVhZCB0aCB7XHJcbiAgICBjb2xvcjogIzAwMDtcclxuICB9XHJcblxyXG4gIC50YWJsZS1yZXNwb25zaXZlIHRib2R5IHRyLCB0ZCB7XHJcbiAgICBtaW4taGVpZ2h0OiBmaXQtY29udGVudDtcclxuICAgIGhlaWdodDogYXV0byAhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcbiAgLnRhYmxlLXJlc3BvbnNpdmUgdGgsIHRkLCB0ciB7XHJcbiAgICBib3JkZXItc3R5bGU6IG5vbmUhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcbiAgLnRoZGF0YXtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICB0aCwgdGQge1xyXG4gICAgcGFkZGluZzogMjBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcblxyXG4gIC5jb250YWluZXJTZWFyY2hCYXIge1xyXG4gICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgYWxpZ24taXRlbXM6IHN0cmV0Y2g7XHJcbiAgICAgIHBhZGRpbmctcmlnaHQ6IDBweCAhaW1wb3J0YW50O1xyXG4gICAgICB3aWR0aDoyNTBweDtcclxuICAgIH1cclxuXHJcbiAgICAuZm9ybS1jb250cm9sIHtcclxuICAgICAgY29sb3I6ICM1NTU7XHJcbiAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgIHBhZGRpbmc6IDJweDtcclxuICAgICAgYm9yZGVyOiAxcHggc29saWQgY3VycmVudENvbG9yO1xyXG4gICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAgIG1hcmdpbjogMCAwIDMwcHg7XHJcbiAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG5cclxuICAgIGlucHV0W3R5cGU9XCJzZWFyY2hcIl0ge1xyXG4gICAgICAvLyBib3JkZXI6IG5vbmUgIWltcG9ydGFudDtcclxuICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICAgIG1hcmdpbjogMDtcclxuICAgICAgcGFkZGluZzogN3B4IDhweDtcclxuICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgICBoZWlnaHQ6IDc1JTtcclxuICAgICAgLy8gbWFyZ2luLXRvcDogLTdweDtcclxuICAgICAgLy9jb2xvcjogaW5oZXJpdDtcclxuICAgICAgLy8gYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICAgIC8vYm9yZGVyLXJhZGl1czogaW5oZXJpdDtcclxuICAgICAgYmFja2dyb3VuZC1wb3NpdGlvbjogcmlnaHQ7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNicgaGVpZ2h0PScxNicgY2xhc3M9J2JpIGJpLXNlYXJjaCcgdmlld0JveD0nMCAwIDE2IDE2JyUzRSUzQ3BhdGggZD0nTTExLjc0MiAxMC4zNDRhNi41IDYuNSAwIDEgMC0xLjM5NyAxLjM5OGgtLjAwMWMuMDMuMDQuMDYyLjA3OC4wOTguMTE1bDMuODUgMy44NWExIDEgMCAwIDAgMS40MTUtMS40MTRsLTMuODUtMy44NWExLjAwNyAxLjAwNyAwIDAgMC0uMTE1LS4xek0xMiA2LjVhNS41IDUuNSAwIDEgMS0xMSAwIDUuNSA1LjUgMCAwIDEgMTEgMHonJTNFJTNDL3BhdGglM0UlM0Mvc3ZnJTNFXCIpO1xyXG4gICAgYmFja2dyb3VuZC1vcmlnaW46IGNvbnRlbnQtYm94O1xyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbi14OiBjYWxjKDEwMCUgKyAyMHB4KTsgLyogQWRqdXN0IHRoZSB2YWx1ZSBhcyBuZWVkZWQgKi9cclxuXHJcbiAgICB9XHJcblxyXG4gICAgaW5wdXRbdHlwZT1cInNlYXJjaFwiXTo6cGxhY2Vob2xkZXIge1xyXG4gICAgICBjb2xvcjogI2JiYjtcclxuICAgIH1cclxuXHJcbiAgICA6Om5nLWRlZXAgLmN1c3RvbS1kaWFsb2ctbm90ZXMtY2xhc3Mge1xyXG4gICAgICBtYXJnaW4tbGVmdDogNTUlO1xyXG4gICAgICBtYXJnaW4tdG9wOiAtMTAlO1xyXG4gICAgfVxyXG4gIC5jYXJkUm91bmRlZHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweCFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4iXX0= */"] });
 
 
 /***/ }),
@@ -37885,8 +37924,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function UpdateTaskComponent_mat_option_91_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 36);
+function UpdateTaskComponent_mat_option_103_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -37940,7 +37979,7 @@ let editorConfig = {
     }
 };
 class UpdateTaskComponent {
-    constructor(dialogRef, formBuilder, taskData, toastService, crmService, commonService, titleCasePipe, rolesPermissionsService) {
+    constructor(dialogRef, formBuilder, taskData, toastService, crmService, commonService, titleCasePipe, rolesPermissionsService, changeDetectorRef) {
         this.dialogRef = dialogRef;
         this.formBuilder = formBuilder;
         this.taskData = taskData;
@@ -37949,6 +37988,7 @@ class UpdateTaskComponent {
         this.commonService = commonService;
         this.titleCasePipe = titleCasePipe;
         this.rolesPermissionsService = rolesPermissionsService;
+        this.changeDetectorRef = changeDetectorRef;
         this.ckeditor = (_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default());
         this.editorConfig = editorConfig;
         this.output = null;
@@ -37972,6 +38012,7 @@ class UpdateTaskComponent {
             taskQue: ['',],
             taskAssignedTo: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
             taskNote: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required],
+            remindTime: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]
         });
     }
     getUsersList() {
@@ -37981,17 +38022,34 @@ class UpdateTaskComponent {
     }
     getTaskDataByleadId() {
         this.crmService.getCrmDATABYLEADID({}, this.leadId, this.taskId).then((res) => {
-            this.AddTaskForm.patchValue({
-                task: res.data.taskName,
-                taskdate: moment__WEBPACK_IMPORTED_MODULE_1__(res.data.dueDate).format("DD-MMM-YYYY"),
-                taskTime: res.data.updatedAt ? res.data.updatedAt : "",
-                taskReminder: "",
-                taskType: res.data.type,
-                taskPrioirty: res.data.priority,
-                taskQue: "",
-                taskAssignedTo: res.data.assignedTo,
-                taskNote: res.data.taskDescription,
-            });
+            const actualDate = res.data.actualDate;
+            const remideTime = res.data.remainder;
+            if (actualDate && remideTime) {
+                //time for set time
+                const actualTime = new Date(actualDate);
+                const hours = ('0' + actualTime.getHours()).slice(-2); // Ensure double digits
+                const minutes = ('0' + actualTime.getMinutes()).slice(-2); // Ensure double digits
+                const formattedTime = hours + ':' + minutes;
+                //time for remainder time
+                const rTime = new Date(remideTime);
+                const rhours = ('0' + rTime.getHours()).slice(-2); // Ensure double digits
+                const rminutes = ('0' + actualTime.getMinutes()).slice(-2); // Ensure double digits
+                const rformattedTime = hours + ':' + minutes;
+                this.AddTaskForm.patchValue({
+                    task: res.data.taskName,
+                    taskdate: moment__WEBPACK_IMPORTED_MODULE_1__(res.data.dueDate).format("DD MMM YYYY"),
+                    taskTime: formattedTime,
+                    taskReminder: moment__WEBPACK_IMPORTED_MODULE_1__(res.data.remainder).format("DD MMM YYYY"),
+                    taskType: res.data.type,
+                    taskPrioirty: res.data.priority,
+                    taskQue: res.data.queue,
+                    taskAssignedTo: res.data.assignedTo,
+                    taskNote: res.data.taskDescription,
+                    remindTime: rformattedTime
+                });
+                // Manually trigger change detection
+                this.changeDetectorRef.detectChanges();
+            }
         });
     }
     clearInput() {
@@ -38058,8 +38116,8 @@ class UpdateTaskComponent {
         }
     }
 }
-UpdateTaskComponent.ɵfac = function UpdateTaskComponent_Factory(t) { return new (t || UpdateTaskComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_2__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_crm_service__WEBPACK_IMPORTED_MODULE_3__.CrmService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_4__.CommonService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_9__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_5__.RolesPermissionsService)); };
-UpdateTaskComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: UpdateTaskComponent, selectors: [["app-update-task"]], decls: 95, vars: 8, consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "15px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "required", "", "formControlName", "task", "rows", "3", "placeholder", "Task", "autocomplete", "off"], [1, "row"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskdate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "bsConfig", "minDate", "click"], [1, "iconcalender", "p-1"], ["type", "time", "matInput", "", "formControlName", "taskTime", "placeholder", "Task Time", "autocomplete", "off", 2, "font-size", "17px !important"], ["matInput", "", "formControlName", "taskReminder", "placeholder", "Set Reminder", "autocomplete", "off"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Type", "formControlName", "taskType"], ["value", "TODO"], ["value", "CALL"], ["value", "EMAIL"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Priority", "formControlName", "taskPrioirty"], ["value", "HIGH"], ["value", "LOW"], ["value", "MEDIUM"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Queue", "formControlName", "taskQue"], ["value", "Personal"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Task Assigned To", "formControlName", "taskAssignedTo"], ["value", "Myself"], ["value", "item", 4, "ngFor", "ngForOf"], [1, "row", "mt-2"], [1, "col-sm-12", "col-md-12", "col-xl-12", "col-lg-12"], ["formControlName", "taskNote", 3, "editor", "data", "config", "change"], ["value", "item"]], template: function UpdateTaskComponent_Template(rf, ctx) { if (rf & 1) {
+UpdateTaskComponent.ɵfac = function UpdateTaskComponent_Factory(t) { return new (t || UpdateTaskComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_2__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_crm_service__WEBPACK_IMPORTED_MODULE_3__.CrmService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_4__.CommonService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_9__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_core_services_roles_permissions_service__WEBPACK_IMPORTED_MODULE_5__.RolesPermissionsService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef)); };
+UpdateTaskComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: UpdateTaskComponent, selectors: [["app-update-task"]], decls: 107, vars: 11, consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "15px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "required", "", "formControlName", "task", "rows", "3", "placeholder", "Task", "autocomplete", "off"], [1, "row"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskdate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], [1, "iconcalender", "p-1"], ["type", "time", "matInput", "", "required", "", "formControlName", "taskTime", "placeholder", "Task Time", "autocomplete", "off", 2, "font-size", "17px !important"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3", "mb-3"], ["matInput", "", "required", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskReminder", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], ["type", "time", "matInput", "", "required", "", "formControlName", "remindTime", "placeholder", "Task Time", "autocomplete", "off", 2, "font-size", "17px !important"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Type", "formControlName", "taskType"], ["value", "TODO"], ["value", "CALL"], ["value", "EMAIL"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Priority", "formControlName", "taskPrioirty"], ["value", "HIGH"], ["value", "LOW"], ["value", "MEDIUM"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Queue", "formControlName", "taskQue"], ["value", "Personal"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Task Assigned To", "formControlName", "taskAssignedTo"], ["value", "Myself"], ["value", "item", 4, "ngFor", "ngForOf"], [1, "row", "mt-2"], [1, "col-sm-12", "col-md-12", "col-xl-12", "col-lg-12"], ["formControlName", "taskNote", 3, "editor", "data", "config", "change"], ["value", "item"]], template: function UpdateTaskComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "h1", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Update Task");
@@ -38122,98 +38180,119 @@ UpdateTaskComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](37, "input", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](39, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](40, "Set Reminder ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](41, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](42, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](39, "div", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](40, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](41, "Set Reminder ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](43, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](43, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](44, "input", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](44, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](45, "input", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function UpdateTaskComponent_Template_input_click_45_listener() { return ctx.openDatepicker(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](45, "hr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "div", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](48, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](49, "Type ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](50, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](51, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](52, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](53, "mat-select", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](54, "mat-option", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](55, "To Do");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](56, "mat-option", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](57, "Call");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](58, "mat-option", 23);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](59, "Email");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](46, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "mat-icon", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](48, "date_range");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](60, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](61, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](62, "Priority ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](63, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](64, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](49, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](50, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](51, "Reminder Time");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](52, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](53, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](65, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](66, "mat-select", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](67, "mat-option", 25);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](68, "High");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](69, "mat-option", 26);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](70, "Low");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](71, "mat-option", 27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](72, "Medium");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](54, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](55, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](56, "input", 21);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](73, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](74, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](75, "Queue ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](76, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](77, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](78, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](79, "mat-select", 28);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](80, "mat-option", 29);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](81, "Personal");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](57, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](58, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](59, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](60, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](61, "Type ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](62, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](63, "*");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](64, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](65, "mat-select", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](66, "mat-option", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](67, "To Do");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](68, "mat-option", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](69, "Call");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](82, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](83, "label", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](84, "Assigned To ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](85, "span", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](86, "*");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](87, "mat-form-field", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](88, "mat-select", 30);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](89, "mat-option", 31);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](90, "Myself");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](91, UpdateTaskComponent_mat_option_91_Template, 2, 1, "mat-option", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](70, "mat-option", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](71, "Email");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](92, "div", 33);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](93, "div", 34);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](94, "ckeditor", 35);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("change", function UpdateTaskComponent_Template_ckeditor_change_94_listener($event) { return ctx.onChange($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](72, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](73, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](74, "Priority ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](75, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](76, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](77, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](78, "mat-select", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](79, "mat-option", 27);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](80, "High");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](81, "mat-option", 28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](82, "Low");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](83, "mat-option", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](84, "Medium");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](85, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](86, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](87, "Queue ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](88, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](89, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](90, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](91, "mat-select", 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](92, "mat-option", 31);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](93, "Personal");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](94, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](95, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](96, "Assigned To ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](97, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](98, "*");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](99, "mat-form-field", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](100, "mat-select", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](101, "mat-option", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](102, "Myself");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](103, UpdateTaskComponent_mat_option_103_Template, 2, 1, "mat-option", 34);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](104, "div", 35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](105, "div", 36);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](106, "ckeditor", 37);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("change", function UpdateTaskComponent_Template_ckeditor_change_106_listener($event) { return ctx.onChange($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -38224,8 +38303,10 @@ UpdateTaskComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](10);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroup", ctx.AddTaskForm);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](7, _c0))("minDate", ctx.today);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](65);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("minDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](9, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("minDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](10, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](58);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.userData);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("editor", ctx.ckeditor)("data", ctx.editorContent)("config", ctx.editorConfig);

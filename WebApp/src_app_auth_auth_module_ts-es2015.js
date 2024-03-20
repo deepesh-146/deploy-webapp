@@ -806,7 +806,7 @@ class ChangeForgotPasswordComponent {
         }
         else {
             let body = {
-                "email": this.ChangeOTPPasswordForm.controls.forgetpass.value,
+                "email": this.ChangeOTPPasswordForm.controls.forgetpass.value.toLowerCase(),
                 "otp": this.ChangeOTPPasswordForm.controls.otp.value,
                 "newPassword": this.ChangeOTPPasswordForm.controls.newPassword.value
             };
@@ -1134,7 +1134,7 @@ class ForgotPasswordComponent {
         }
         else {
             let body = {
-                email: this.forgetPassForm.controls.forgetpass.value,
+                email: this.forgetPassForm.controls.forgetpass.value.toLowerCase(),
             };
             this.verifyPasswordFrom.get("email").patchValue(body.email);
             this.loginService.forgotpassword(body).then((res) => {

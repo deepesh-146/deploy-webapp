@@ -386,7 +386,7 @@ EmployeeApprovalsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "thead", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "tr");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "th", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Sr No");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "#");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "th", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11, "Employee");

@@ -1454,10 +1454,6 @@ class ShopDetailsPageComponent {
         }, (err) => {
             if (err.error.expose) {
                 this.ShopListResponse = [];
-                this.toastService.toastMsg({
-                    title: "Error",
-                    content: this.titleCasePipe.transform(err.error.error_message),
-                });
                 // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
             }
             else {
@@ -2995,7 +2991,7 @@ class UpdateShopComponent {
                 firstName: this.ProfileForm.controls.firstName.value,
                 mobile: this.ProfileForm.controls.mobile.value,
                 lastName: "SHOP",
-                email: this.ProfileForm.controls.email.value,
+                email: this.ProfileForm.controls.email.value.toLowerCase(),
                 parentId: this.currentUser.id,
                 // addSignature : this.signImg,
                 // profileImage : this.profileImage,
@@ -3253,7 +3249,7 @@ class UpdateShopComponent {
      */
     updateMobileNumber() {
         let data = {
-            email: this.ProfileForm.controls.email.value,
+            email: this.ProfileForm.controls.email.value.toLowerCase(),
             mobile: this.ProfileForm.controls.mobile.value,
             mobileotp: this.mobileOtp,
         };

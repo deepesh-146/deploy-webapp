@@ -2624,13 +2624,7 @@
               }
             }, function (err) {
               if (err.error.expose) {
-                _this12.ShopListResponse = [];
-
-                _this12.toastService.toastMsg({
-                  title: "Error",
-                  content: _this12.titleCasePipe.transform(err.error.error_message)
-                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
-
+                _this12.ShopListResponse = []; // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
               } else {
                 _this12.toastService.toastMsg({
                   title: "Error",
@@ -5564,7 +5558,7 @@
                 firstName: this.ProfileForm.controls.firstName.value,
                 mobile: this.ProfileForm.controls.mobile.value,
                 lastName: "SHOP",
-                email: this.ProfileForm.controls.email.value,
+                email: this.ProfileForm.controls.email.value.toLowerCase(),
                 parentId: this.currentUser.id // addSignature : this.signImg,
                 // profileImage : this.profileImage,
 
@@ -5839,7 +5833,7 @@
             var _this28 = this;
 
             var data = {
-              email: this.ProfileForm.controls.email.value,
+              email: this.ProfileForm.controls.email.value.toLowerCase(),
               mobile: this.ProfileForm.controls.mobile.value,
               mobileotp: this.mobileOtp
             };

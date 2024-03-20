@@ -2094,7 +2094,7 @@ class SalesNewInvoiceComponent {
                 "gstIn": this.PartyForm.controls.gstIn.value ? this.PartyForm.controls.gstIn.value : null,
                 "partyName": this.PartyForm.controls.partyName.value,
                 "mobile": this.PartyForm.controls.mobile.value ? (this.PartyForm.controls.mobile.value).toString() : null,
-                "email": this.PartyForm.controls.email.value,
+                "email": this.PartyForm.controls.email.value.toLowerCase(),
                 "billingAddress": this.PartyForm.controls.billingAddress.value,
                 "shippingAddress": this.PartyForm.controls.shippingAddress.value,
                 "openingBalance": null,

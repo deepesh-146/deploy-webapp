@@ -126,11 +126,31 @@
       /*! @angular/material/icon */
       52529);
 
-      function AddCashComponent_mat_error_46_Template(rf, ctx) {
+      function AddCashComponent_mat_error_31_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-error", 27);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Sale Invoice # is required! ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+      }
+
+      function AddCashComponent_mat_error_47_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-error", 27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Enter Amount Is Required! ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+      }
+
+      function AddCashComponent_mat_error_60_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-error", 27);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Description is required! ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -413,9 +433,9 @@
       _AddCashComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _AddCashComponent,
         selectors: [["app-add-cash"]],
-        decls: 59,
-        vars: 16,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid", "px-2"], [3, "formGroup"], [1, "cashInHandButtons", "mb-5"], [1, "btn", 3, "ngClass", "click"], [1, "fas", "fa-plus", "me-2"], [1, "fas", "fa-minus", "me-2"], [1, "row"], [1, "col-sm-12", "col-md-12", "col-lg-6", "mb-3"], [1, "form-label"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "placeholder", "Current Balance", "formControlName", "currentBal", 3, "change"], [1, "error-asterisk"], ["type", "text", "matInput", "", "placeholder", "Sale Invoice No", "formControlName", "saleInvoiceNo", 3, "change"], ["for", "Date", 1, "form-label"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "formControlName", "date", "placeholder", "Date", "id", "datePicker", "bsDatepicker", "", "autocomplete", "off", 2, "text-transform", "uppercase !important", 3, "ngModel", "bsConfig", "ngModelChange", "click"], [1, "iconcalender"], ["type", "number", "matInput", "", "placeholder", "Enter Amount", "formControlName", "enterAmount", "min", "0", "oninput", "this.value = Math.abs(this.value)", 3, "ngClass", "change"], ["class", "text-danger", 4, "ngIf"], [1, "col-sm-12", "col-md-12", "col-lg-12", "mb-3"], ["type", "number", "matInput", "", "placeholder", "New Balance", "formControlName", "NewBalance", "readonly", ""], ["matInput", "", "required", "", "rows", "3", "placeholder", "Enter Item Description", "formControlName", "formRemark"], [1, "text-danger"]],
+        decls: 61,
+        vars: 18,
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid", "px-2"], [3, "formGroup"], [1, "cashInHandButtons", "mb-5"], [1, "btn", 3, "ngClass", "click"], [1, "fas", "fa-plus", "me-2"], [1, "fas", "fa-minus", "me-2"], [1, "row"], [1, "col-sm-12", "col-md-12", "col-lg-6", "mb-3"], [1, "form-label"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "placeholder", "Current Balance", "formControlName", "currentBal", 3, "change"], [1, "error-asterisk"], ["type", "text", "matInput", "", "placeholder", "Sale Invoice #", "formControlName", "saleInvoiceNo", 3, "change"], ["class", "text-danger", 4, "ngIf"], ["for", "Date", 1, "form-label"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "formControlName", "date", "placeholder", "Date", "id", "datePicker", "bsDatepicker", "", "autocomplete", "off", 2, "text-transform", "uppercase !important", 3, "ngModel", "bsConfig", "ngModelChange", "click"], [1, "iconcalender"], ["type", "number", "matInput", "", "placeholder", "Enter Amount", "formControlName", "enterAmount", "min", "0", "oninput", "this.value = Math.abs(this.value)", 3, "ngClass", "change"], [1, "col-sm-12", "col-md-12", "col-lg-12", "mb-3"], ["type", "number", "matInput", "", "placeholder", "New Balance", "formControlName", "NewBalance", "readonly", ""], ["matInput", "", "required", "", "rows", "3", "placeholder", "Enter Item Description", "formControlName", "formRemark"], [1, "text-danger"]],
         template: function AddCashComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -514,7 +534,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "label", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](26, "Sale Invoice No");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](26, "Sale Invoice #");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "span", 17);
 
@@ -536,35 +556,35 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](31, "div", 13);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "label", 19);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, " Date");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](31, AddCashComponent_mat_error_31_Template, 2, 0, "mat-error", 19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "mat-form-field", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "div", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](35, "input", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "label", 20);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AddCashComponent_Template_input_ngModelChange_35_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](34, " Date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](35, "mat-form-field", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "input", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AddCashComponent_Template_input_ngModelChange_36_listener($event) {
               return ctx.todaysDate = $event;
-            })("click", function AddCashComponent_Template_input_click_35_listener() {
+            })("click", function AddCashComponent_Template_input_click_36_listener() {
               return ctx.openDatepicker();
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "span");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](37, "span");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](37, "mat-icon", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](38, "mat-icon", 22);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](38, "date_range");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](39, "date_range");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -572,25 +592,27 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "div", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "label", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "div", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](41, "New Amount");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "label", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "span", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](42, "New Amount");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](43, "*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "span", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](44, "*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](44, "mat-form-field", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "mat-form-field", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "input", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](46, "input", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function AddCashComponent_Template_input_change_45_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function AddCashComponent_Template_input_change_46_listener() {
               return ctx.calculateValues();
             });
 
@@ -598,45 +620,47 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](46, AddCashComponent_mat_error_46_Template, 2, 0, "mat-error", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](47, AddCashComponent_mat_error_47_Template, 2, 0, "mat-error", 19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "div", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](48, "div", 24);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](48, "label", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](49, "label", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](49, "New Balance");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](50, "mat-form-field", 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](51, "input", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](50, "New Balance");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](51, "mat-form-field", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](52, "div", 24);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "label", 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](54, "Item Description");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "span", 17);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](56, "*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](52, "input", 25);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](57, "mat-form-field", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "div", 24);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](58, "textarea", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "label", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](55, "Item Description");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](56, "span", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](57, "*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "mat-form-field", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](59, "textarea", 26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](60, AddCashComponent_mat_error_60_Template, 2, 0, "mat-error", 19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -656,26 +680,34 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction2"](7, _c0, ctx.isAddMoneyClicked, !ctx.isAddMoneyClicked));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction2"](9, _c0, ctx.isAddMoneyClicked, !ctx.isAddMoneyClicked));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction2"](10, _c1, ctx.isReduceMoneyClicked, !ctx.isReduceMoneyClicked));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction2"](12, _c1, ctx.isReduceMoneyClicked, !ctx.isReduceMoneyClicked));
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.todaysDate)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](13, _c2));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.CashInHandForm.get("saleInvoiceNo").touched) && (ctx.CashInHandForm.get("saleInvoiceNo").errors == null ? null : ctx.CashInHandForm.get("saleInvoiceNo").errors.required));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.todaysDate)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](15, _c2));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](14, _c3, ctx.f1.enterAmount.invalid && ctx.f1.enterAmount.touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](16, _c3, ctx.f1.enterAmount.invalid && ctx.f1.enterAmount.touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.f1.enterAmount.touched) && (ctx.f1.enterAmount.errors == null ? null : ctx.f1.enterAmount.errors.required));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.CashInHandForm.get("formRemark").touched) && (ctx.CashInHandForm.get("formRemark").errors == null ? null : ctx.CashInHandForm.get("formRemark").errors.required));
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgClass, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_12__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_13__.BsDatepickerInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_13__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_14__.MatIcon, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MinValidator, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatError],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgClass, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_12__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_13__.BsDatepickerInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_13__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_14__.MatIcon, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MinValidator, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatError],
         styles: [".form-label[_ngcontent-%COMP%] {\n  margin-left: 5px;\n}\n\n.cashInHandButtons[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  margin: 0 4px;\n}\n\n.btn-reduce-cash[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  border: 1px solid #979797;\n  color: #000;\n  border-radius: 10px;\n  margin-left: 10px;\n  height: 35px !important;\n  white-space: nowrap;\n}\n\n.btn-reduce-cash1[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  border: 1px solid #979797;\n  color: white;\n  border-radius: 10px;\n  margin-left: 10px;\n  height: 35px !important;\n  white-space: nowrap;\n  background-color: #979797;\n}\n\n.btn-add-cash[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  border: 1px solid #fc7643;\n  color: #fc7643;\n  border-radius: 10px;\n  height: 35px !important;\n  white-space: nowrap;\n}\n\n.btn-add-cash1[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  border: 1px solid #fc7643;\n  color: white;\n  border-radius: 10px;\n  height: 35px !important;\n  white-space: nowrap;\n  background-color: #fc7643;\n}\n\n.iconcalender[_ngcontent-%COMP%] {\n  float: right !important;\n  margin-top: -22px !important;\n}\n\n.modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  margin: 0 10px;\n}\n\n.addProductButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  margin-left: auto;\n}\n\n@media screen and (max-width: 992px) {\n  .modal-header[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .addProductButtons[_ngcontent-%COMP%] {\n    margin: 10px 0px;\n  }\n}\n\n@media screen and (max-width: 768px) {\n  .cashInHandButtons[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkZC1jYXNoLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQUE7QUFDRjs7QUFFQTtFQUNFLGFBQUE7RUFDQSwyQkFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtBQUNGOztBQUVBO0VBQ0ksYUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUFDSjs7QUFHRTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7QUFBSjs7QUFRRTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQUxKOztBQU9FO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7QUFKSjs7QUFhRTtFQUNFLHVCQUFBO0VBQ0EsNEJBQUE7QUFWSjs7QUFhQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0FBVkY7O0FBYUE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtBQVZGOztBQWFBO0VBQ0U7SUFDRSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSx1QkFBQTtJQUNBLG1CQUFBO0VBVkY7O0VBYUE7SUFDRSxnQkFBQTtFQVZGO0FBQ0Y7O0FBY0E7RUFDRTtJQUNFLHNCQUFBO0lBQ0EsbUJBQUE7SUFDQSx1QkFBQTtFQVpGO0FBQ0YiLCJmaWxlIjoiYWRkLWNhc2guY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9ybS1sYWJlbCB7XHJcbiAgbWFyZ2luLWxlZnQ6IDVweDtcclxufVxyXG5cclxuLmNhc2hJbkhhbmRCdXR0b25zIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIG1hcmdpbjogMCA0cHg7XHJcbn1cclxuXHJcbi5idG4tcmVkdWNlLWNhc2gge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjOTc5Nzk3O1xyXG4gICAgY29sb3I6IzAwMDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMTBweDtcclxuICAgIGhlaWdodDogMzVweCAhaW1wb3J0YW50O1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuXHJcbiAgfVxyXG5cclxuICAuYnRuLXJlZHVjZS1jYXNoMSB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICM5Nzk3OTc7XHJcbiAgICBjb2xvcjp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMTBweDtcclxuICAgIGhlaWdodDogMzVweCAhaW1wb3J0YW50O1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM5Nzk3OTc7XHJcbiAgfVxyXG5cclxuICAvLyAuYnRuLXJlZHVjZS1jYXNoOmhvdmVyIHtcclxuICAvLyAgIGNvbG9yOndoaXRlO1xyXG4gIC8vICAgYmFja2dyb3VuZC1jb2xvcjogIzk3OTc5NztcclxuICAvLyB9XHJcblxyXG4gIC5idG4tYWRkLWNhc2gge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjZmM3NjQzO1xyXG4gICAgY29sb3I6I2ZjNzY0MztcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IDM1cHggIWltcG9ydGFudDtcclxuICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbiAgfVxyXG4gIC5idG4tYWRkLWNhc2gxIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2ZjNzY0MztcclxuICAgIGNvbG9yOndoaXRlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIGhlaWdodDogMzVweCAhaW1wb3J0YW50O1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYzc2NDM7XHJcbiAgfVxyXG5cclxuICAvLyAuYnRuLWFkZC1jYXNoOmhvdmVyIHtcclxuICAvLyAgIGNvbG9yOndoaXRlO1xyXG4gIC8vICAgYmFja2dyb3VuZC1jb2xvcjogI2ZjNzY0MztcclxuICAvLyB9XHJcblxyXG4gXHJcbiAgLmljb25jYWxlbmRlcntcclxuICAgIGZsb2F0OiByaWdodCFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW4tdG9wOiAtMjJweCFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5tb2RhbC1oZWFkZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIG1hcmdpbjogMCAxMHB4O1xyXG59XHJcblxyXG4uYWRkUHJvZHVjdEJ1dHRvbnMge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBtYXJnaW4tbGVmdDogYXV0bztcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogOTkycHgpIHtcclxuICAubW9kYWwtaGVhZGVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjpjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICAuYWRkUHJvZHVjdEJ1dHRvbnMge1xyXG4gICAgbWFyZ2luOjEwcHggMHB4O1xyXG4gIH1cclxuXHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2OHB4KSB7XHJcbiAgLmNhc2hJbkhhbmRCdXR0b25zIHtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgfVxyXG5cclxufVxyXG4iXX0= */"]
       });
       /***/
