@@ -271,7 +271,7 @@ AddCashComponent.ɵfac = function AddCashComponent_Factory(t) { return new (t ||
 AddCashComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: AddCashComponent, selectors: [["app-add-cash"]], decls: 61, vars: 18, consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid", "px-2"], [3, "formGroup"], [1, "cashInHandButtons", "mb-5"], [1, "btn", 3, "ngClass", "click"], [1, "fas", "fa-plus", "me-2"], [1, "fas", "fa-minus", "me-2"], [1, "row"], [1, "col-sm-12", "col-md-12", "col-lg-6", "mb-3"], [1, "form-label"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "placeholder", "Current Balance", "formControlName", "currentBal", 3, "change"], [1, "error-asterisk"], ["type", "text", "matInput", "", "placeholder", "Sale Invoice #", "formControlName", "saleInvoiceNo", 3, "change"], ["class", "text-danger", 4, "ngIf"], ["for", "Date", 1, "form-label"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "formControlName", "date", "placeholder", "Date", "id", "datePicker", "bsDatepicker", "", "autocomplete", "off", 2, "text-transform", "uppercase !important", 3, "ngModel", "bsConfig", "ngModelChange", "click"], [1, "iconcalender"], ["type", "number", "matInput", "", "placeholder", "Enter Amount", "formControlName", "enterAmount", "min", "0", "oninput", "this.value = Math.abs(this.value)", 3, "ngClass", "change"], [1, "col-sm-12", "col-md-12", "col-lg-12", "mb-3"], ["type", "number", "matInput", "", "placeholder", "New Balance", "formControlName", "NewBalance", "readonly", ""], ["matInput", "", "required", "", "rows", "3", "placeholder", "Enter Item Description", "formControlName", "formRemark"], [1, "text-danger"]], template: function AddCashComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "h1", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Add Cash in hand");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Add Cash In Hand");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "button", 3);
@@ -291,7 +291,7 @@ AddCashComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "button", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AddCashComponent_Template_button_click_12_listener() { return ctx.addMoney(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](13, "i", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Add Money ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Add Cash ");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "button", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AddCashComponent_Template_button_click_15_listener() { return ctx.reduceMoney(); });
@@ -614,7 +614,7 @@ BanKDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "button", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function BanKDetailsComponent_Template_button_click_3_listener() { return ctx.openDialogCash(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "i", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5, "Add Cash in hand ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5, "Add Cash In Hand ");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](6, "button", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function BanKDetailsComponent_Template_button_click_6_listener() { return ctx.openDialogBank(); });

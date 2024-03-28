@@ -231,7 +231,7 @@
             return ctx_r64.updateData();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "update");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Update");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }

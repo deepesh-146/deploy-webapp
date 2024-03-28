@@ -58,6 +58,58 @@ EmpexpenseserviceService.ɵfac = function EmpexpenseserviceService_Factory(t) { 
 EmpexpenseserviceService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: EmpexpenseserviceService, factory: EmpexpenseserviceService.ɵfac, providedIn: 'root' });
 
 
+/***/ }),
+
+/***/ 27083:
+/*!*************************************************!*\
+  !*** ./src/app/core/services/signup.service.ts ***!
+  \*************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SignupService": function() { return /* binding */ SignupService; }
+/* harmony export */ });
+/* harmony import */ var src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/_helpers/url-constants */ 16393);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./http.service */ 72229);
+
+
+
+class SignupService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+    }
+    registerClientUsers(data) {
+        return new Promise((resolve, reject) => {
+            this.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.postClientUser, 'POST').subscribe((res) => resolve(res), (err) => reject(err));
+        });
+    }
+    registerCustomerUsers(data) {
+        return new Promise((resolve, reject) => {
+            this.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.postCustomerUser, 'POST').subscribe((res) => resolve(res), (err) => reject(err));
+        });
+    }
+    getAllCountryClient(data) {
+        return new Promise((resolve, reject) => {
+            this.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.getAllCountryClient, 'GET').subscribe((res) => resolve(res), (err) => reject(err));
+        });
+    }
+    SearchCountryByNameId(data, name) {
+        return new Promise((resolve, reject) => {
+            this.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.searchCountryByNameId + "?search=" + name + "&exact=true", 'GET').subscribe((res) => resolve(res), (err) => reject(err));
+        });
+    }
+    warehouseRegister(data) {
+        return new Promise((resolve, reject) => {
+            this.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.warehouseRegister, 'POST').subscribe((res) => resolve(res), (err) => reject(err));
+        });
+    }
+}
+SignupService.ɵfac = function SignupService_Factory(t) { return new (t || SignupService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_http_service__WEBPACK_IMPORTED_MODULE_1__.HttpService)); };
+SignupService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: SignupService, factory: SignupService.ɵfac, providedIn: 'root' });
+
+
 /***/ })
 
 }]);

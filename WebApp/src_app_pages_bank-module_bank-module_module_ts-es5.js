@@ -442,7 +442,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "h1", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Add Cash in hand");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Add Cash In Hand");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -488,7 +488,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](13, "i", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Add Money ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Add Cash ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -1104,7 +1104,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "i", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5, "Add Cash in hand ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5, "Add Cash In Hand ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 

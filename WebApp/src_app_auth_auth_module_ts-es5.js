@@ -3987,22 +3987,39 @@
               else {
                 _this14.spinner.hide();
 
-                console.log("After Logged In redirection", _this14.UserDatacomplte);
+                if (res.data.user.userType.toLowerCase() === 'client') {
+                  if (_this14.UserDatacomplte) {
+                    _this14.router.navigate(["/pages/dashboard"]);
 
-                if (_this14.UserDatacomplte) {
-                  _this14.router.navigate(["/pages/dashboard"]);
+                    _this14.toastService.toastMsg({
+                      title: "Success",
+                      content: "Login Successfully!!!"
+                    });
+                  } else {
+                    _this14.router.navigate(["/pages/profile-settings"]);
+                  }
+                } else if (res.data.user.userType.toLowerCase() === 'warehouse') {
+                  if (_this14.UserDatacomplte) {
+                    _this14.router.navigate(["/pages/warehouse-landing/dashboard"]);
 
-                  _this14.toastService.toastMsg({
-                    title: "Success",
-                    content: "Login Successfully!!!"
-                  });
-                } else {
-                  _this14.toastService.toastMsg({
-                    title: "Warning",
-                    content: "profile data is not filled"
-                  });
+                    _this14.toastService.toastMsg({
+                      title: "Success",
+                      content: "Login Successfully!!!"
+                    });
+                  } else {
+                    _this14.router.navigate(["/pages/warehouse-landing/warehouse-profile-setting/warehouse-profile-setting"]);
+                  }
+                } else if (res.data.user.userType.toLowerCase() === 'shop') {
+                  if (_this14.UserDatacomplte) {
+                    _this14.router.navigate(["/pages/shop-landing"]);
 
-                  _this14.router.navigate(["/pages/profile-settings"]);
+                    _this14.toastService.toastMsg({
+                      title: "Success",
+                      content: "Login Successfully!!!"
+                    });
+                  } else {
+                    _this14.router.navigate(["/pages/shop-landing"]);
+                  }
                 }
               }
             }, function (err) {
@@ -13837,124 +13854,6 @@
       _RoleSignupService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
         token: _RoleSignupService,
         factory: _RoleSignupService.ɵfac,
-        providedIn: 'root'
-      });
-      /***/
-    },
-
-    /***/
-    27083:
-    /*!*************************************************!*\
-      !*** ./src/app/core/services/signup.service.ts ***!
-      \*************************************************/
-
-    /***/
-    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export */
-
-
-      __webpack_require__.d(__webpack_exports__, {
-        /* harmony export */
-        "SignupService": function SignupService() {
-          return (
-            /* binding */
-            _SignupService
-          );
-        }
-        /* harmony export */
-
-      });
-      /* harmony import */
-
-
-      var src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! src/app/_helpers/url-constants */
-      16393);
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/core */
-      2316);
-      /* harmony import */
-
-
-      var _http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./http.service */
-      72229);
-
-      var _SignupService = /*#__PURE__*/function () {
-        function _SignupService(httpClient) {
-          _classCallCheck(this, _SignupService);
-
-          this.httpClient = httpClient;
-        }
-
-        _createClass(_SignupService, [{
-          key: "registerClientUsers",
-          value: function registerClientUsers(data) {
-            var _this65 = this;
-
-            return new Promise(function (resolve, reject) {
-              _this65.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.postClientUser, 'POST').subscribe(function (res) {
-                return resolve(res);
-              }, function (err) {
-                return reject(err);
-              });
-            });
-          }
-        }, {
-          key: "registerCustomerUsers",
-          value: function registerCustomerUsers(data) {
-            var _this66 = this;
-
-            return new Promise(function (resolve, reject) {
-              _this66.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.postCustomerUser, 'POST').subscribe(function (res) {
-                return resolve(res);
-              }, function (err) {
-                return reject(err);
-              });
-            });
-          }
-        }, {
-          key: "getAllCountryClient",
-          value: function getAllCountryClient(data) {
-            var _this67 = this;
-
-            return new Promise(function (resolve, reject) {
-              _this67.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.getAllCountryClient, 'GET').subscribe(function (res) {
-                return resolve(res);
-              }, function (err) {
-                return reject(err);
-              });
-            });
-          }
-        }, {
-          key: "SearchCountryByNameId",
-          value: function SearchCountryByNameId(data, name) {
-            var _this68 = this;
-
-            return new Promise(function (resolve, reject) {
-              _this68.httpClient.call(data, src_app_helpers_url_constants__WEBPACK_IMPORTED_MODULE_0__.UrlConstants.searchCountryByNameId + "?search=" + name + "&exact=true", 'GET').subscribe(function (res) {
-                return resolve(res);
-              }, function (err) {
-                return reject(err);
-              });
-            });
-          }
-        }]);
-
-        return _SignupService;
-      }();
-
-      _SignupService.ɵfac = function SignupService_Factory(t) {
-        return new (t || _SignupService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_http_service__WEBPACK_IMPORTED_MODULE_1__.HttpService));
-      };
-
-      _SignupService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
-        token: _SignupService,
-        factory: _SignupService.ɵfac,
         providedIn: 'root'
       });
       /***/
