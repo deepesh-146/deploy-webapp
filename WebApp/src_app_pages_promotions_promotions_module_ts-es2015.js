@@ -3847,7 +3847,7 @@ class PromotionListComponent {
     getAllPromotion() {
         this.promotionService.getAllPromotion({}, this.currentUser.id).then((res) => {
             if (res.success) {
-                this.promotionList = res.data;
+                this.promotionList = res.data.pageData;
                 // this.currentPageNo = res.data.currentPage;
                 // this.totalrow = res.data.totalrows;
                 // this.toatlPages = res.data.totalPages
@@ -4587,7 +4587,7 @@ PromotionListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MOD
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](25);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", ctx.promotionList);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.promotionList.length === 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.promotionList && ctx.promotionList.length === 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](11);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.isChecked);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);

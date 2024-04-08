@@ -7047,7 +7047,7 @@
 
             this.promotionService.getAllPromotion({}, this.currentUser.id).then(function (res) {
               if (res.success) {
-                _this27.promotionList = res.data; // this.currentPageNo = res.data.currentPage;
+                _this27.promotionList = res.data.pageData; // this.currentPageNo = res.data.currentPage;
                 // this.totalrow = res.data.totalrows;
                 // this.toatlPages = res.data.totalPages
               }
@@ -8150,7 +8150,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.promotionList.length === 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.promotionList && ctx.promotionList.length === 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](11);
 
