@@ -2095,7 +2095,7 @@
                   isActive: this.isActive,
                   description: this.campForm.value.campaignDescription,
                   sendDate: this.selectedDateTime,
-                  email: this.campForm.value.sendEmail,
+                  email: this.campForm.value.sendEmail.toLowerCase(),
                   sms: this.campForm.value.sendSMS,
                   notification: this.campForm.value.sendNotification,
                   whatsapp: this.campForm.value.sendWhatsappMsg,
@@ -2173,7 +2173,7 @@
         selectors: [["app-clone-cammpaigncomponnet"]],
         decls: 84,
         vars: 34,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", "ms-2", 2, "color", "#EB8B3F", "font-weight", "500"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [2, "display", "flex", "justify-content", "end"], [1, "form-label", "me-3"], [2, "font-weight", "500"], [1, "toggle-button", 3, "ngClass", "click"], [1, "toggle-slider"], [1, "row"], [1, "col-sm-12", "col-lg-12", "col-md-12", "mb-3"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "formControlName", "campaignName", "required", "", "placeholder", "Campaign Name", "maxlength", "100", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], ["matInput", "", "formControlName", "campaignDescription", "row", "3", "placeholder", "Description", "maxlength", "150", 3, "ngClass"], ["formControlName", "partySelection", "multiple", "", "placeholder", "To", 3, "ngClass"], [1, "select-all", 3, "value", "click"], [3, "value", "click", 4, "ngFor", "ngForOf"], [1, "col-sm-12", "col-lg-6", "col-md-6", "mb-3"], ["matInput", "", "formControlName", "selectedDate", "placeholder", "DD MMM YYYY", "autocomplete", "off", "id", "As On Date", "bsDatepicker", "", 2, "text-transform", "uppercase", 3, "ngModel", "outsideClick", "bsConfig", "minDate", "ngClass", "ngModelChange", "click"], [1, "iconcalender"], [1, "col-sm-12", "col-lg-6", "col-md-6"], ["type", "time", "matInput", "", "placeholder", "Select Time", "formControlName", "selectedTime", 3, "ngModel", "ngClass", "ngModelChange", "change"], [1, "col-sm-12", "col-md-6", "my-3", 2, "padding-left", "15px"], ["formControlName", "sendSMS"], [2, "font-size", "14px", "font-weight", "500"], ["formControlName", "sendNotification"], ["formControlName", "sendEmail"], ["formControlName", "sendWhatsappMsg"], [1, "text-danger"], [3, "value", "click"]],
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", "ms-2", 2, "color", "#EB8B3F", "font-weight", "500"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [2, "display", "flex", "justify-content", "end"], [1, "form-label", "me-3"], [2, "font-weight", "500"], [1, "toggle-button", 3, "ngClass", "click"], [1, "toggle-slider"], [1, "row"], [1, "col-sm-12", "col-lg-12", "col-md-12", "mb-3"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "formControlName", "campaignName", "required", "", "placeholder", "Campaign Name", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], ["matInput", "", "formControlName", "campaignDescription", "row", "3", "placeholder", "Description", 3, "ngClass"], ["formControlName", "partySelection", "multiple", "", "placeholder", "To", 3, "ngClass"], [1, "select-all", 3, "value", "click"], [3, "value", "click", 4, "ngFor", "ngForOf"], [1, "col-sm-12", "col-lg-6", "col-md-6", "mb-3"], ["matInput", "", "formControlName", "selectedDate", "placeholder", "DD MMM YYYY", "autocomplete", "off", "id", "As On Date", "bsDatepicker", "", 2, "text-transform", "uppercase !important", 3, "ngModel", "outsideClick", "bsConfig", "minDate", "ngClass", "ngModelChange", "click"], [1, "iconcalender"], [1, "col-sm-12", "col-lg-6", "col-md-6"], ["type", "time", "matInput", "", "placeholder", "Select Time", "formControlName", "selectedTime", 3, "ngModel", "ngClass", "ngModelChange", "change"], [1, "col-sm-12", "col-md-6", "my-3", 2, "padding-left", "15px"], ["formControlName", "sendSMS"], [2, "font-size", "14px !important", "font-weight", "500"], ["formControlName", "sendNotification"], ["formControlName", "sendEmail"], ["formControlName", "sendWhatsappMsg"], [1, "text-danger"], [3, "value", "click"]],
         template: function CloneCammpaigncomponnetComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -2286,7 +2286,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "textarea", 19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "                      ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "                    ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -2545,7 +2545,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.campForm.get("selectedTime").touched) && (ctx.campForm.get("selectedTime").errors == null ? null : ctx.campForm.get("selectedTime").errors.required));
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgClass, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_12__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MaxLengthValidator, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_select__WEBPACK_IMPORTED_MODULE_13__.MatSelect, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerInputDirective, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__.MatIcon, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__.MatCheckbox, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_17__.MatOption],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgClass, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_12__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_select__WEBPACK_IMPORTED_MODULE_13__.MatSelect, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerInputDirective, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__.MatIcon, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__.MatCheckbox, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_17__.MatOption],
         styles: [".form-label[_ngcontent-%COMP%] {\n  margin-left: 5px;\n}\n\n.select-all[_ngcontent-%COMP%] {\n  font-size: inherit;\n  line-height: 3em;\n  height: 3em;\n  cursor: pointer;\n  color: rgba(0, 0, 0, 0.87);\n  padding-left: 4%;\n}\n\n.select-all[_ngcontent-%COMP%]:hover {\n  background-color: #e0e0e0;\n}\n\n.iconcalender[_ngcontent-%COMP%] {\n  float: right !important;\n  margin-top: -24px;\n}\n\n.toggle-button[_ngcontent-%COMP%] {\n  position: relative;\n  width: 35px;\n  height: 20px;\n  border-radius: 15px;\n  border: 2px solid #ccc;\n  background-color: #ddd;\n  outline: none;\n  cursor: pointer;\n  transition: background-color 0.3s;\n}\n\n.toggle-slider[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 1px;\n  left: 0px;\n  width: 16px;\n  height: 15px;\n  border-radius: 50%;\n  background-color: white;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n  transition: transform 0.3s;\n}\n\n.active[_ngcontent-%COMP%]   .toggle-slider[_ngcontent-%COMP%] {\n  transform: translateX(15px);\n}\n\n.inactive[_ngcontent-%COMP%]   .toggle-slider[_ngcontent-%COMP%] {\n  transform: translateX(-3);\n}\n\n.active[_ngcontent-%COMP%] {\n  background-color: #2c7be5;\n  border-color: #2c7be5;\n}\n\n.inactive[_ngcontent-%COMP%] {\n  background-color: #ccc;\n  border-color: #ccc;\n}\n\n.toggle-button[_ngcontent-%COMP%]:focus {\n  box-shadow: 0 0 3px #01080e;\n}\n\n\n\n.toggle-button[_ngcontent-%COMP%]:before {\n  content: \"\";\n  display: block;\n  height: 100%;\n}\n\n.table-body-tr[_ngcontent-%COMP%] {\n  height: 50px !important;\n}\n\n.modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.addProductButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  margin-left: auto;\n}\n\n@media screen and (max-width: 768px) {\n  .modal-header[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    white-space: nowrap;\n  }\n\n  .addProductButtons[_ngcontent-%COMP%] {\n    margin: 10px 0px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNsb25lLWNhbW1wYWlnbmNvbXBvbm5ldC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDSSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSwwQkFBQTtFQUNBLGdCQUFBO0FBQ0o7O0FBRUE7RUFDSSx5QkFBQTtBQUNKOztBQUVBO0VBQ0ksdUJBQUE7RUFDQSxpQkFBQTtBQUNKOztBQUdBO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7RUFDQSxzQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsaUNBQUE7QUFBRjs7QUFHQTtFQUNFLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7RUFDQSx3Q0FBQTtFQUNBLDBCQUFBO0FBQUY7O0FBR0E7RUFDRSwyQkFBQTtBQUFGOztBQUdBO0VBQ0UseUJBQUE7QUFBRjs7QUFHQTtFQUNFLHlCQUFBO0VBQ0EscUJBQUE7QUFBRjs7QUFHQTtFQUNFLHNCQUFBO0VBQ0Esa0JBQUE7QUFBRjs7QUFHQTtFQUNFLDJCQUFBO0FBQUY7O0FBR0Esa0RBQUE7O0FBQ0E7RUFDRSxXQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7QUFBRjs7QUFHQTtFQUNFLHVCQUFBO0FBQUY7O0FBS0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0FBRkY7O0FBS0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtBQUZGOztBQUtBO0VBQ0U7SUFDRSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSx1QkFBQTtJQUNBLG1CQUFBO0lBQ0EsbUJBQUE7RUFGRjs7RUFLQTtJQUNFLGdCQUFBO0VBRkY7QUFDRiIsImZpbGUiOiJjbG9uZS1jYW1tcGFpZ25jb21wb25uZXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9ybS1sYWJlbCB7XHJcbiAgbWFyZ2luLWxlZnQ6IDVweDtcclxufVxyXG5cclxuLnNlbGVjdC1hbGwge1xyXG4gICAgZm9udC1zaXplOiBpbmhlcml0O1xyXG4gICAgbGluZS1oZWlnaHQ6IDNlbTtcclxuICAgIGhlaWdodDogM2VtO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC44Nyk7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDQlO1xyXG59XHJcblxyXG4uc2VsZWN0LWFsbDpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTBlMGUwO1xyXG59XHJcblxyXG4uaWNvbmNhbGVuZGVyIHtcclxuICAgIGZsb2F0OiByaWdodCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXRvcDogLTI0cHg7XHJcbiAgfVxyXG5cclxuLy8gIFRvZ2dsZSBidXR0b24gQ3NzXHJcbi50b2dnbGUtYnV0dG9uIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgd2lkdGg6IDM1cHg7XHJcbiAgaGVpZ2h0OiAyMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbiAgYm9yZGVyOiAycHggc29saWQgI2NjYztcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMC4zcztcclxufVxyXG5cclxuLnRvZ2dsZS1zbGlkZXIge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDFweDtcclxuICBsZWZ0OiAwcHg7XHJcbiAgd2lkdGg6IDE2cHg7XHJcbiAgaGVpZ2h0OiAxNXB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjIpO1xyXG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzO1xyXG59XHJcblxyXG4uYWN0aXZlIC50b2dnbGUtc2xpZGVyIHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTVweCk7XHJcbn1cclxuXHJcbi5pbmFjdGl2ZSAudG9nZ2xlLXNsaWRlciB7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0zKTtcclxufVxyXG5cclxuLmFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJjN2JlNTtcclxuICBib3JkZXItY29sb3I6ICMyYzdiZTU7XHJcbn1cclxuXHJcbi5pbmFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2NjYztcclxuICBib3JkZXItY29sb3I6ICNjY2M7XHJcbn1cclxuXHJcbi50b2dnbGUtYnV0dG9uOmZvY3VzIHtcclxuICBib3gtc2hhZG93OiAwIDAgM3B4ICMwMTA4MGU7XHJcbn1cclxuXHJcbi8qIE9wdGlvbmFsOiBDZW50ZXIgdGhlIHRvZ2dsZSBzbGlkZXIgdmVydGljYWxseSAqL1xyXG4udG9nZ2xlLWJ1dHRvbjpiZWZvcmUge1xyXG4gIGNvbnRlbnQ6ICcnO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxuLnRhYmxlLWJvZHktdHJ7XHJcbiAgaGVpZ2h0OiA1MHB4IWltcG9ydGFudDtcclxufVxyXG5cclxuXHJcblxyXG4ubW9kYWwtaGVhZGVyIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG5cclxuLmFkZFByb2R1Y3RCdXR0b25zIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2OHB4KSB7XHJcbiAgLm1vZGFsLWhlYWRlciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246Y29sdW1uO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICB9XHJcblxyXG4gIC5hZGRQcm9kdWN0QnV0dG9ucyB7XHJcbiAgICBtYXJnaW46MTBweCAwcHg7XHJcbiAgfVxyXG5cclxufVxyXG5cclxuIl19 */"]
       });
       /***/
@@ -4592,7 +4592,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-error", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Select Time is required! ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Select Date is required! ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -4621,7 +4621,7 @@
       };
 
       var _UpdateCampaignComponent = /*#__PURE__*/function () {
-        function _UpdateCampaignComponent(formBuilder, crmservice, router, commonService, partyService, campService, toastService, titleCasePipe, campaignData, dialogRef, dialog, cdref) {
+        function _UpdateCampaignComponent(formBuilder, crmservice, router, commonService, partyService, campService, toastService, titleCasePipe, campaignData, dialogRef, dialog) {
           _classCallCheck(this, _UpdateCampaignComponent);
 
           this.formBuilder = formBuilder;
@@ -4635,14 +4635,11 @@
           this.campaignData = campaignData;
           this.dialogRef = dialogRef;
           this.dialog = dialog;
-          this.cdref = cdref;
           this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
           this.partyList = [];
-          this.campaignUsersData = [];
+          this.partyList1 = [];
           this.selectAllParties = false;
           this.selectedParties = []; // Array to store selected parties
-
-          this.deletedParties = []; // Array to store deleted parties
 
           this.minDate = new Date(); // Define minDate as today's date
 
@@ -4654,8 +4651,7 @@
           };
           this.isActive = true;
           this.toList = [];
-          this.SelectedId = [];
-          this.partslelectedDBV = []; // this.today = new Date();
+          this.SelectedId = []; // this.today = new Date();
           // this.minDate = new Date(this.today.getFullYear(), this.today.getMonth(), 25);
           // const hours = this.today.getHours().toString().padStart(2, '0');
           // const minutes = this.today.getMinutes().toString().padStart(2, '0');
@@ -4665,6 +4661,13 @@
         _createClass(_UpdateCampaignComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this24 = this;
+
+            this.getAllParties();
+            this.campaignId = this.campaignData.campaignId;
+            this.getCampaignDataByCampaignId();
+            this.todaysDate = new Date();
+            this.minDate = new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), 25);
             this.campForm = this.formBuilder.group({
               campaignName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
               campaignDescription: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
@@ -4673,22 +4676,24 @@
               sendSMS: [false],
               sendNotification: [false],
               sendWhatsappMsg: [false],
-              selectedTime: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
-              selectedDate: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]
+              selectedTime: [, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              selectedDate: [, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]
             });
-            this.campaignId = this.campaignData.campaignId;
-            this.getAllParties();
-            this.todaysDate = new Date();
-            this.minDate = new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), 25); // this.intervalId = setInterval(() => {
-            //   this.today = new Date();
-            //   //this.minDate = new Date(this.today.getFullYear(), this.today.getMonth(), 25);
-            //   this.today.setSeconds(this.today.getSeconds() + 40);
-            //   const hours = this.today.getHours().toString().padStart(2, '0');
-            //   const minutes = this.today.getMinutes().toString().padStart(2, '0');
-            //   const seconds = this.today.getSeconds().toString().padStart(2, '0');
-            //   this.currentTime = `${hours}:${minutes}`;
-            //   this.onTimeChange() ;
-            // }, 1000);
+            this.intervalId = setInterval(function () {
+              _this24.today = new Date(); //this.minDate = new Date(this.today.getFullYear(), this.today.getMonth(), 25);
+
+              _this24.today.setSeconds(_this24.today.getSeconds() + 40);
+
+              var hours = _this24.today.getHours().toString().padStart(2, '0');
+
+              var minutes = _this24.today.getMinutes().toString().padStart(2, '0');
+
+              var seconds = _this24.today.getSeconds().toString().padStart(2, '0');
+
+              _this24.currentTime = "".concat(hours, ":").concat(minutes);
+
+              _this24.onTimeChange();
+            }, 1000);
           }
         }, {
           key: "onTimeChange",
@@ -4715,70 +4720,36 @@
                 this.currentTime = selectedTime;
               }
             }
-          } // Function to format time from a date object
-
-        }, {
-          key: "formatTimeFromDate",
-          value: function formatTimeFromDate(date) {
-            var hours = date.getHours().toString().padStart(2, '0');
-            var minutes = date.getMinutes().toString().padStart(2, '0');
-            return "".concat(hours, ":").concat(minutes);
           }
         }, {
           key: "getCampaignDataByCampaignId",
           value: function getCampaignDataByCampaignId() {
-            var _this24 = this;
+            var _this25 = this;
 
             this.campService.getCampaignBycampId({}, this.campaignId).then(function (res) {
-              return (0, tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(_this24, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-                var utcDateTime, localDateTime, hours, minutes;
-                return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                  while (1) {
-                    switch (_context2.prev = _context2.next) {
-                      case 0:
-                        this.isActive = res.data[0].isActive;
-                        this.campaignUsersData = res.data[0].campaignUsers.map(function (pdata) {
-                          return {
-                            _id: pdata._id,
-                            id: pdata.userId,
-                            // userId: pdata.userId, //party or lead Id
-                            email: pdata.email,
-                            mobile: pdata.mobile,
-                            name: pdata.name
-                          };
-                        });
-                        utcDateTime = new Date(res.data[0].sendDate);
-                        localDateTime = new Date(utcDateTime.getTime() + utcDateTime.getTimezoneOffset() * 60000);
-                        hours = localDateTime.getHours().toString().padStart(2, '0');
-                        minutes = localDateTime.getMinutes().toString().padStart(2, '0');
-                        this.currentTime = "".concat(hours, ":").concat(minutes);
-                        this.campForm.patchValue({
-                          campaignName: res.data[0].name,
-                          campaignDescription: res.data[0].description,
-                          sendEmail: res.data[0].email,
-                          sendSMS: res.data[0].sms,
-                          sendNotification: res.data[0].notification,
-                          sendWhatsappMsg: res.data[0].whatsapp,
-                          selectedTime: this.currentTime,
-                          // selectedDate: selectedDate ? (moment(selectedDate).format("DD-MMM-YYYY")) : (moment(this.maxDate).format("DD-MMM-YYYY")),
-                          // selectedTime: localDateTime.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit' }),
-                          selectedDate: localDateTime.toLocaleString('en-US', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: '2-digit'
-                          })
-                        });
-                        this.selectedParties = _toConsumableArray(this.campaignUsersData);
-                        this.updatePartySelection();
-                        this.onTimeChange(); //  this.toggleSelect();
+              _this25.isActive = res.data[0].isActive;
+              _this25.partyList1 = res.data[0].campaignUsers.map(function (pdata) {
+                return {
+                  id: pdata._id,
+                  userId: pdata.userId,
+                  email: pdata.email,
+                  mobile: pdata.mobile,
+                  name: pdata.name
+                };
+              });
+              console.log("partyList1 ___", _this25.partyList1);
 
-                      case 11:
-                      case "end":
-                        return _context2.stop();
-                    }
-                  }
-                }, _callee2, this);
-              }));
+              _this25.campForm.patchValue({
+                campaignName: res.data[0].name,
+                campaignDescription: res.data[0].description,
+                partySelection: _this25.partyList1 // partySelection :res.data[0].campaignUsers.map((item)=>{ return item._id})
+
+              });
+
+              console.log("abc", _this25.campForm.value.campaignName);
+              console.log("abc", _this25.campForm.value.partySelection);
+
+              _this25.toggleSelect();
             });
           }
         }, {
@@ -4789,18 +4760,18 @@
         }, {
           key: "getAllParties",
           value: function getAllParties() {
-            return (0, tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            return (0, tslib__WEBPACK_IMPORTED_MODULE_7__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
               var partyResponse, leadResponse, leadList;
-              return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
                 while (1) {
-                  switch (_context3.prev = _context3.next) {
+                  switch (_context2.prev = _context2.next) {
                     case 0:
-                      _context3.prev = 0;
-                      _context3.next = 3;
+                      _context2.prev = 0;
+                      _context2.next = 3;
                       return this.partyService.getAllPartiesDetails({}, this.currentUser.id, 1000, 1);
 
                     case 3:
-                      partyResponse = _context3.sent;
+                      partyResponse = _context2.sent;
 
                       if (partyResponse.success) {
                         this.partyList = partyResponse.data.pageData.map(function (party) {
@@ -4813,24 +4784,24 @@
                         });
                       }
 
-                      _context3.next = 10;
+                      _context2.next = 10;
                       break;
 
                     case 7:
-                      _context3.prev = 7;
-                      _context3.t0 = _context3["catch"](0);
+                      _context2.prev = 7;
+                      _context2.t0 = _context2["catch"](0);
 
-                      if (_context3.t0.error.status == 404) {
+                      if (_context2.t0.error.status == 404) {
                         this.partyList = [];
                       }
 
                     case 10:
-                      _context3.prev = 10;
-                      _context3.next = 13;
+                      _context2.prev = 10;
+                      _context2.next = 13;
                       return this.crmservice.getAllLeadList({}, this.currentUser.id, 1000, 1);
 
                     case 13:
-                      leadResponse = _context3.sent;
+                      leadResponse = _context2.sent;
 
                       if (leadResponse.success) {
                         leadList = leadResponse.data.pageData.map(function (lead) {
@@ -4843,33 +4814,35 @@
                         }); // Assuming this.partyList was populated with party data previously.
 
                         this.toList = [].concat(_toConsumableArray(this.partyList), _toConsumableArray(leadList));
-                        this.getCampaignDataByCampaignId();
                       }
 
-                      _context3.next = 19;
+                      _context2.next = 19;
                       break;
 
                     case 17:
-                      _context3.prev = 17;
-                      _context3.t1 = _context3["catch"](10);
+                      _context2.prev = 17;
+                      _context2.t1 = _context2["catch"](10);
 
                     case 19:
                     case "end":
-                      return _context3.stop();
+                      return _context2.stop();
                   }
                 }
-              }, _callee3, this, [[0, 7], [10, 17]]);
+              }, _callee2, this, [[0, 7], [10, 17]]);
             }));
           }
         }, {
           key: "toggleSelect",
           value: function toggleSelect() {
+            console.log("1");
             this.selectAllParties = !this.selectAllParties;
 
             if (this.selectAllParties) {
-              this.selectedParties = [].concat(_toConsumableArray(this.campaignUsersData), _toConsumableArray(this.toList));
+              this.selectedParties = _toConsumableArray(this.partyList1);
+              console.log("2", this.selectedParties);
             } else {
               this.selectedParties = [];
+              console.log("3", this.selectedParties);
             }
 
             this.updatePartySelection();
@@ -4892,42 +4865,44 @@
           value: function togglePartySelection(party) {
             var index = this.selectedParties.findIndex(function (selectedParty) {
               return selectedParty.id === party.id;
-            }); // const index = this.selectedParties.findIndex(selectedParty => selectedParty.userId === party.id);
+            });
 
             if (index === -1) {
               this.selectedParties.push(party);
             } else {
               this.selectedParties.splice(index, 1);
-              this.deletedParties.push(party.id);
-            } // Create a new array to trigger change detection
+            }
 
-
-            this.selectedParties = _toConsumableArray(this.selectedParties); // Manually trigger change detection
-
-            this.cdref.detectChanges();
             this.updatePartySelection();
           }
         }, {
           key: "updatePartySelection",
           value: function updatePartySelection() {
+            console.log("4", this.selectedParties);
             this.campForm.get("partySelection").setValue(this.selectedParties.map(function (party) {
               return party.id;
-            })); // this.campForm.get("partySelection").setValue(this.selectedParties.map(party => party.userId || party.id));
+            }));
+            console.log("5");
           }
         }, {
           key: "updateSelectedDateTime",
           value: function updateSelectedDateTime() {
-            if (this.campForm.get('selectedDate').value && this.campForm.get('selectedTime').value) {
+            if (this.todaysDate && this.campForm.get('selectedTime').value) {
               var timeParts = this.campForm.get('selectedTime').value.split(':');
-              var selectedDate = new Date(this.campForm.get('selectedDate').value ? this.campForm.get('selectedDate').value : this.todaysDate);
+              var selectedDate = new Date(this.todaysDate);
               selectedDate.setHours(parseInt(timeParts[0], 10));
               selectedDate.setMinutes(parseInt(timeParts[1], 10)); // Convert to UTC
 
-              this.selectedDateTime = new Date(selectedDate).toISOString(); // const utcTimestamp = selectedDate.getTime() - selectedDate.getTimezoneOffset() * 60000;
+              console.log(selectedDate); // const utcTimestamp = selectedDate.getTime() - selectedDate.getTimezoneOffset() * 60000;
               // this.selectedDateTime = new Date(utcTimestamp).toISOString();
+              // const utcTimestamp = selectedDate.getTime() - selectedDate.getTimezoneOffset() * 60000;
+
+              this.selectedDateTime = new Date(selectedDate).toISOString();
             } else {
               this.selectedDateTime = null;
             }
+
+            console.log(this.selectedDateTime);
           }
         }, {
           key: "toggleActiveState",
@@ -4937,22 +4912,25 @@
         }, {
           key: "submitForm",
           value: function submitForm() {
-            var _this25 = this;
+            var _this26 = this;
 
             this.updateSelectedDateTime();
             this.submitted = true;
+            console.log(this.campForm);
 
             if (this.campForm.invalid) {
               this.toastService.toastMsg({
                 title: "Error",
                 content: "Fill All Required Fields."
-              });
+              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
+
               return false;
             } else {
               if ((this.campForm.value.sendEmail || this.campForm.value.sendSMS || this.campForm.value.sendNotification || this.campForm.value.sendWhatsappMsg) === false) {
+                // this.toastService.openErrorSnackBar("Please Select at List One!!!");
                 this.toastService.toastMsg({
                   title: "Error",
-                  content: "Please Select At List One!!!"
+                  content: "Please select atleast option."
                 });
                 return false;
               }
@@ -4964,7 +4942,7 @@
                   isActive: this.isActive,
                   description: this.campForm.value.campaignDescription,
                   sendDate: this.selectedDateTime,
-                  email: this.campForm.value.sendEmail,
+                  email: this.campForm.value.sendEmail.toLowerCase(),
                   sms: this.campForm.value.sendSMS,
                   notification: this.campForm.value.sendNotification,
                   whatsapp: this.campForm.value.sendWhatsappMsg,
@@ -4972,38 +4950,42 @@
                 },
                 campaignsUsers: this.selectedParties.map(function (item) {
                   return {
-                    campaignsUserId: item === null || item === void 0 ? void 0 : item._id,
-                    userId: item.id,
-                    // userId: item.userId || item.id,
+                    campaignsUserId: item.id,
+                    userId: item.userId,
                     email: item.email,
                     mobile: item.mobile,
                     name: item.name
                   };
-                }),
-                campaignDelete: this.deletedParties
+                })
               };
+              console.log(formData);
               this.campService.updateCampaign(formData, this.campaignId).then(function (res) {
                 if (res.success) {
-                  _this25.dialogRef.close();
+                  _this26.dialogRef.close();
 
-                  _this25.commonService.notifyDataAdded();
+                  _this26.commonService.notifyDataAdded(); // this.toastService.openSnackBar(
+                  //   "You have successfully update the campaign"
+                  // );
 
-                  _this25.toastService.toastMsg({
+
+                  _this26.toastService.toastMsg({
                     title: "Success",
                     content: "You Have Successfully Update The Campaign"
                   });
                 }
               }, function (err) {
                 if (err.error.expose) {
-                  _this25.toastService.toastMsg({
+                  _this26.toastService.toastMsg({
                     title: "Error",
-                    content: _this25.titleCasePipe.transform(err.error.error_message)
-                  });
+                    content: _this26.titleCasePipe.transform(err.error.error_message)
+                  }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
+
                 } else {
-                  _this25.toastService.toastMsg({
+                  _this26.toastService.toastMsg({
                     title: "Error",
                     content: "Something Went Wrong."
-                  });
+                  }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
+
                 }
               });
             }
@@ -5016,16 +4998,14 @@
           }
         }, {
           key: "openDatepicker",
-          value: function openDatepicker() {// // Check if the current value of taskdate is an "Invalid Date"
-            // const selectedDateString = this.campForm.get('selectedDate').value; // Get string value
-            // const selectedDate = new Date(selectedDateString);
-            // if (!(selectedDate instanceof Date)) {
-            //   // If not a Date object, set a default date
-            //   this.campForm.get('selectedDate').setValue(new Date());
-            // } else if (isNaN(selectedDate.getTime())) {
-            //   // Handle potentially invalid Date object (rare cases)
-            //   this.campForm.get('selectedDate').setValue(new Date());
-            // }
+          value: function openDatepicker() {
+            // Check if the current value of taskdate is an "Invalid Date"
+            var selectedDate = this.campForm.get('selectedDate').value;
+
+            if (isNaN(selectedDate.getTime())) {
+              // Set a default date or any valid date here
+              this.campForm.get('selectedDate').setValue(new Date());
+            }
           }
         }]);
 
@@ -5033,15 +5013,15 @@
       }();
 
       _UpdateCampaignComponent.ɵfac = function UpdateCampaignComponent_Factory(t) {
-        return new (t || _UpdateCampaignComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_crm_service__WEBPACK_IMPORTED_MODULE_0__.CrmService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_1__.CommonService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_party_service__WEBPACK_IMPORTED_MODULE_2__.PartyService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_campaign_service_service__WEBPACK_IMPORTED_MODULE_3__.CampaignServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_4__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_9__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_5__.ChangeDetectorRef));
+        return new (t || _UpdateCampaignComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_crm_service__WEBPACK_IMPORTED_MODULE_0__.CrmService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_common_service__WEBPACK_IMPORTED_MODULE_1__.CommonService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_party_service__WEBPACK_IMPORTED_MODULE_2__.PartyService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_campaign_service_service__WEBPACK_IMPORTED_MODULE_3__.CampaignServiceService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_core_services_toast_notification_service__WEBPACK_IMPORTED_MODULE_4__.ToastNotificationService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_9__.TitleCasePipe), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__.MatDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__.MatDialog));
       };
 
       _UpdateCampaignComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _UpdateCampaignComponent,
         selectors: [["app-update-campaign"]],
         decls: 84,
-        vars: 32,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", "ms-2", 2, "color", "#EB8B3F", "font-weight", "500"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [2, "display", "flex", "justify-content", "end"], [1, "form-label", "me-3"], [2, "font-weight", "500"], [1, "toggle-button", 3, "ngClass", "click"], [1, "toggle-slider"], [1, "row"], [1, "col-sm-12", "col-lg-12", "col-md-12", "mb-3"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "formControlName", "campaignName", "required", "", "placeholder", "Campaign Name", "maxlength", "100", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], ["matInput", "", "formControlName", "campaignDescription", "row", "3", "placeholder", "Description", "maxlength", "150", 3, "ngClass"], ["formControlName", "partySelection", "multiple", "", "placeholder", "To", 3, "ngClass"], [1, "select-all", 3, "value", "click"], [3, "value", "click", 4, "ngFor", "ngForOf"], [1, "col-sm-12", "col-lg-6", "col-md-6", "mb-3"], ["matInput", "", "formControlName", "selectedDate", "placeholder", "DD MMM YYYY", "autocomplete", "off", "id", "As On Date", "bsDatepicker", "", 2, "text-transform", "uppercase", 3, "outsideClick", "bsConfig", "minDate", "ngClass", "click"], [1, "iconcalender"], [1, "col-sm-12", "col-lg-6", "col-md-6"], ["type", "time", "matInput", "", "placeholder", "Select Time", "formControlName", "selectedTime", 1, "small-height-input", 3, "ngClass", "change"], [1, "col-sm-12", "col-md-6", "my-3", 2, "padding-left", "15px"], ["formControlName", "sendSMS"], [2, "font-size", "14px", "font-weight", "500"], ["formControlName", "sendNotification"], ["formControlName", "sendEmail"], ["formControlName", "sendWhatsappMsg"], [1, "text-danger"], [3, "value", "click"]],
+        vars: 34,
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", "ms-2", 2, "color", "#EB8B3F", "font-weight", "500"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [2, "display", "flex", "justify-content", "end"], [1, "form-label", "me-3"], [2, "font-weight", "500"], [1, "toggle-button", 3, "ngClass", "click"], [1, "toggle-slider"], [1, "row"], [1, "col-sm-12", "col-lg-12", "col-md-12", "mb-3"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "formControlName", "campaignName", "required", "", "placeholder", "Campaign Name", 3, "ngClass"], ["class", "text-danger", 4, "ngIf"], ["matInput", "", "formControlName", "campaignDescription", "row", "3", "placeholder", "Description", 3, "ngClass"], ["formControlName", "partySelection", "multiple", "", "placeholder", "To", 3, "ngClass"], [1, "select-all", 3, "value", "click"], [3, "value", "click", 4, "ngFor", "ngForOf"], [1, "col-sm-12", "col-lg-6", "col-md-6", "mb-3"], ["matInput", "", "formControlName", "selectedDate", "placeholder", "DD MMM YYYY", "autocomplete", "off", "id", "As On Date", "bsDatepicker", "", 2, "text-transform", "uppercase !important", 3, "ngModel", "outsideClick", "bsConfig", "minDate", "ngClass", "ngModelChange", "click"], [1, "iconcalender"], [1, "col-sm-12", "col-lg-6", "col-md-6"], ["type", "time", "matInput", "", "placeholder", "Select Time", "formControlName", "selectedTime", 3, "ngModel", "ngClass", "ngModelChange", "change"], [1, "col-sm-12", "col-md-6", "my-3", 2, "padding-left", "15px"], ["formControlName", "sendSMS"], [2, "font-size", "14px !important", "font-weight", "500"], ["formControlName", "sendNotification"], ["formControlName", "sendEmail"], ["formControlName", "sendWhatsappMsg"], [1, "text-danger"], [3, "value", "click"]],
         template: function UpdateCampaignComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -5154,7 +5134,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "textarea", 19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "                      ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](33, "                    ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -5189,7 +5169,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "option", 21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function UpdateCampaignComponent_Template_option_click_43_listener() {
-              return ctx.toggleSelect();
+              return ctx.toggleSelectAllParties();
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](44, "Select All");
@@ -5228,9 +5208,10 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "input", 24);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function UpdateCampaignComponent_Template_input_click_54_listener() {
-              ctx.openDatepicker();
-              return ctx.onTimeChange();
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function UpdateCampaignComponent_Template_input_ngModelChange_54_listener($event) {
+              return ctx.todaysDate = $event;
+            })("click", function UpdateCampaignComponent_Template_input_click_54_listener() {
+              return ctx.openDatepicker();
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -5269,7 +5250,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "input", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function UpdateCampaignComponent_Template_input_change_65_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function UpdateCampaignComponent_Template_input_ngModelChange_65_listener($event) {
+              return ctx.currentTime = $event;
+            })("change", function UpdateCampaignComponent_Template_input_change_65_listener() {
               return ctx.onTimeChange();
             });
 
@@ -5359,11 +5342,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction2"](18, _c0, ctx.isActive, !ctx.isActive));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction2"](20, _c0, ctx.isActive, !ctx.isActive));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](21, _c1, ctx.campForm.get("campaignName").invalid && ctx.campForm.get("campaignName").touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](23, _c1, ctx.campForm.get("campaignName").invalid && ctx.campForm.get("campaignName").touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
@@ -5371,7 +5354,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](23, _c1, ctx.campForm.get("campaignDescription").invalid && ctx.campForm.get("campaignDescription").touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](25, _c1, ctx.campForm.get("campaignDescription").invalid && ctx.campForm.get("campaignDescription").touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
@@ -5379,7 +5362,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](25, _c1, ctx.campForm.get("partySelection").invalid && ctx.campForm.get("partySelection").touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](27, _c1, ctx.campForm.get("partySelection").invalid && ctx.campForm.get("partySelection").touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
@@ -5395,7 +5378,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("outsideClick", true)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](27, _c2))("minDate", ctx.todaysDate)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](28, _c1, ctx.campForm.get("selectedDate").invalid && ctx.campForm.get("selectedDate").touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.todaysDate)("outsideClick", true)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](29, _c2))("minDate", ctx.todaysDate)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](30, _c1, ctx.campForm.get("selectedDate").invalid && ctx.campForm.get("selectedDate").touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
 
@@ -5403,14 +5386,14 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](30, _c1, ctx.campForm.get("selectedTime").invalid && ctx.campForm.get("selectedTime").touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.currentTime)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](32, _c1, ctx.campForm.get("selectedTime").invalid && ctx.campForm.get("selectedTime").touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.campForm.get("selectedTime").touched) && (ctx.campForm.get("selectedTime").errors == null ? null : ctx.campForm.get("selectedTime").errors.required));
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgClass, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_12__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.MaxLengthValidator, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_select__WEBPACK_IMPORTED_MODULE_13__.MatSelect, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerInputDirective, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__.MatIcon, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__.MatCheckbox, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_17__.MatOption],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgClass, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_12__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_select__WEBPACK_IMPORTED_MODULE_13__.MatSelect, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgSelectMultipleOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerInputDirective, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_14__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__.MatIcon, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__.MatCheckbox, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_17__.MatOption],
         styles: [".form-label[_ngcontent-%COMP%] {\n  margin-left: 5px;\n}\n\n.select-all[_ngcontent-%COMP%] {\n  font-size: inherit;\n  line-height: 3em;\n  height: 3em;\n  cursor: pointer;\n  color: rgba(0, 0, 0, 0.87);\n  padding-left: 4%;\n}\n\n.select-all[_ngcontent-%COMP%]:hover {\n  background-color: #e0e0e0;\n}\n\n.iconcalender[_ngcontent-%COMP%] {\n  float: right !important;\n  margin-top: -24px;\n}\n\n.toggle-button[_ngcontent-%COMP%] {\n  position: relative;\n  width: 35px;\n  height: 20px;\n  border-radius: 15px;\n  border: 2px solid #ccc;\n  background-color: #ddd;\n  outline: none;\n  cursor: pointer;\n  transition: background-color 0.3s;\n}\n\n.toggle-slider[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 1px;\n  left: 0px;\n  width: 16px;\n  height: 15px;\n  border-radius: 50%;\n  background-color: white;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n  transition: transform 0.3s;\n}\n\n.active[_ngcontent-%COMP%]   .toggle-slider[_ngcontent-%COMP%] {\n  transform: translateX(15px);\n}\n\n.inactive[_ngcontent-%COMP%]   .toggle-slider[_ngcontent-%COMP%] {\n  transform: translateX(-3);\n}\n\n.active[_ngcontent-%COMP%] {\n  background-color: #2c7be5;\n  border-color: #2c7be5;\n}\n\n.inactive[_ngcontent-%COMP%] {\n  background-color: #ccc;\n  border-color: #ccc;\n}\n\n.toggle-button[_ngcontent-%COMP%]:focus {\n  box-shadow: 0 0 3px #01080e;\n}\n\n\n\n.toggle-button[_ngcontent-%COMP%]:before {\n  content: \"\";\n  display: block;\n  height: 100%;\n}\n\n.table-body-tr[_ngcontent-%COMP%] {\n  height: 50px !important;\n}\n\n.modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.addProductButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  margin-left: auto;\n}\n\n@media screen and (max-width: 768px) {\n  .modal-header[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    white-space: nowrap;\n  }\n\n  .addProductButtons[_ngcontent-%COMP%] {\n    margin: 10px 0px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVwZGF0ZS1jYW1wYWlnbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDSSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSwwQkFBQTtFQUNBLGdCQUFBO0FBQ0o7O0FBRUE7RUFDSSx5QkFBQTtBQUNKOztBQUVBO0VBQ0ksdUJBQUE7RUFDQSxpQkFBQTtBQUNKOztBQUdBO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7RUFDQSxzQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsaUNBQUE7QUFBRjs7QUFHQTtFQUNFLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7RUFDQSx3Q0FBQTtFQUNBLDBCQUFBO0FBQUY7O0FBR0E7RUFDRSwyQkFBQTtBQUFGOztBQUdBO0VBQ0UseUJBQUE7QUFBRjs7QUFHQTtFQUNFLHlCQUFBO0VBQ0EscUJBQUE7QUFBRjs7QUFHQTtFQUNFLHNCQUFBO0VBQ0Esa0JBQUE7QUFBRjs7QUFHQTtFQUNFLDJCQUFBO0FBQUY7O0FBR0Esa0RBQUE7O0FBQ0E7RUFDRSxXQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7QUFBRjs7QUFHQTtFQUNFLHVCQUFBO0FBQUY7O0FBS0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0FBRkY7O0FBS0E7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtBQUZGOztBQUtBO0VBQ0U7SUFDRSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSx1QkFBQTtJQUNBLG1CQUFBO0lBQ0EsbUJBQUE7RUFGRjs7RUFLQTtJQUNFLGdCQUFBO0VBRkY7QUFDRiIsImZpbGUiOiJ1cGRhdGUtY2FtcGFpZ24uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9ybS1sYWJlbCB7XHJcbiAgbWFyZ2luLWxlZnQ6IDVweDtcclxufVxyXG5cclxuLnNlbGVjdC1hbGwge1xyXG4gICAgZm9udC1zaXplOiBpbmhlcml0O1xyXG4gICAgbGluZS1oZWlnaHQ6IDNlbTtcclxuICAgIGhlaWdodDogM2VtO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC44Nyk7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDQlO1xyXG59XHJcblxyXG4uc2VsZWN0LWFsbDpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTBlMGUwO1xyXG59XHJcblxyXG4uaWNvbmNhbGVuZGVyIHtcclxuICAgIGZsb2F0OiByaWdodCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXRvcDogLTI0cHg7XHJcbiAgfVxyXG5cclxuLy8gIFRvZ2dsZSBidXR0b24gQ3NzXHJcbi50b2dnbGUtYnV0dG9uIHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgd2lkdGg6IDM1cHg7XHJcbiAgaGVpZ2h0OiAyMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbiAgYm9yZGVyOiAycHggc29saWQgI2NjYztcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMC4zcztcclxufVxyXG5cclxuLnRvZ2dsZS1zbGlkZXIge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDFweDtcclxuICBsZWZ0OiAwcHg7XHJcbiAgd2lkdGg6IDE2cHg7XHJcbiAgaGVpZ2h0OiAxNXB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjIpO1xyXG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzO1xyXG59XHJcblxyXG4uYWN0aXZlIC50b2dnbGUtc2xpZGVyIHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTVweCk7XHJcbn1cclxuXHJcbi5pbmFjdGl2ZSAudG9nZ2xlLXNsaWRlciB7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0zKTtcclxufVxyXG5cclxuLmFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJjN2JlNTtcclxuICBib3JkZXItY29sb3I6ICMyYzdiZTU7XHJcbn1cclxuXHJcbi5pbmFjdGl2ZSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2NjYztcclxuICBib3JkZXItY29sb3I6ICNjY2M7XHJcbn1cclxuXHJcbi50b2dnbGUtYnV0dG9uOmZvY3VzIHtcclxuICBib3gtc2hhZG93OiAwIDAgM3B4ICMwMTA4MGU7XHJcbn1cclxuXHJcbi8qIE9wdGlvbmFsOiBDZW50ZXIgdGhlIHRvZ2dsZSBzbGlkZXIgdmVydGljYWxseSAqL1xyXG4udG9nZ2xlLWJ1dHRvbjpiZWZvcmUge1xyXG4gIGNvbnRlbnQ6ICcnO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxuLnRhYmxlLWJvZHktdHJ7XHJcbiAgaGVpZ2h0OiA1MHB4IWltcG9ydGFudDtcclxufVxyXG5cclxuXHJcblxyXG4ubW9kYWwtaGVhZGVyIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG5cclxuLmFkZFByb2R1Y3RCdXR0b25zIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2OHB4KSB7XHJcbiAgLm1vZGFsLWhlYWRlciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246Y29sdW1uO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICB9XHJcblxyXG4gIC5hZGRQcm9kdWN0QnV0dG9ucyB7XHJcbiAgICBtYXJnaW46MTBweCAwcHg7XHJcbiAgfVxyXG5cclxufVxyXG5cclxuIl19 */"]
       });
       /***/
@@ -5657,21 +5640,21 @@
         }, {
           key: "getCampaignDataByCampaignId",
           value: function getCampaignDataByCampaignId() {
-            var _this26 = this;
+            var _this27 = this;
 
             this.campService.getCampaignBycampId({}, this.campaignId).then(function (res) {
               console.log("camapaign View Data", res);
-              _this26.campaignName = res.data[0].name;
-              _this26.campaignDescription = res.data[0].description;
-              _this26.sms = res.data[0].sms;
-              _this26.email = res.data[0].email;
-              _this26.notification = res.data[0].notification;
-              _this26.whatsApp = res.data[0].whatsapp;
-              _this26.campaignDate = res.data[0].createdAt;
+              _this27.campaignName = res.data[0].name;
+              _this27.campaignDescription = res.data[0].description;
+              _this27.sms = res.data[0].sms;
+              _this27.email = res.data[0].email;
+              _this27.notification = res.data[0].notification;
+              _this27.whatsApp = res.data[0].whatsapp;
+              _this27.campaignDate = res.data[0].createdAt;
               res.data[0].campaignUsers.map(function (item) {
-                _this26.campaignUsers.push(item.name);
+                _this27.campaignUsers.push(item.name);
               });
-              console.log(_this26.campaignUsers);
+              console.log(_this27.campaignUsers);
             });
           }
         }, {
