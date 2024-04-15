@@ -5401,3 +5401,13 @@ input[type=search]::-moz-placeholder {
 input[type=search]::placeholder {
   color: #bbb;
 }
+.long-name {
+  word-wrap: break-word;
+  max-width: 150px;
+  white-space: wrap;
+}
+.long-address {
+  word-wrap: break-word;
+  max-width: 350px;
+  white-space: wrap;
+}

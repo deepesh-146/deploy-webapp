@@ -50089,7 +50089,7 @@
 
       function AddTaskComponent_mat_option_103_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
 
@@ -50287,7 +50287,7 @@
         selectors: [["app-add-task"]],
         decls: 107,
         vars: 11,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "15px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "required", "", "formControlName", "task", "rows", "3", "placeholder", "Task", "autocomplete", "off"], [1, "row"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskdate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], [1, "iconcalender", "p-1"], ["type", "time", "matInput", "", "required", "", "formControlName", "taskTime", "placeholder", "Task Time", "autocomplete", "off", 2, "font-size", "17px !important"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3", "mb-3"], ["matInput", "", "required", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskReminder", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], ["type", "time", "matInput", "", "required", "", "formControlName", "remindTime", "placeholder", "Task Time", "autocomplete", "off", 2, "font-size", "17px !important"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Type", "formControlName", "taskType"], ["value", "TODO"], ["value", "CALL"], ["value", "EMAIL"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Priority", "formControlName", "taskPrioirty"], ["value", "HIGH"], ["value", "LOW"], ["value", "MEDIUM"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Queue", "formControlName", "taskQue"], ["value", "Personal"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Task Assigned To", "formControlName", "taskAssignedTo"], ["value", "Myself"], ["value", "item", 4, "ngFor", "ngForOf"], [1, "row", "mt-2"], [1, "col-sm-12", "col-md-12", "col-xl-12", "col-lg-12", 2, "padding", "0px 15px"], ["formControlName", "taskNote", 3, "editor", "data", "config", "change"], ["value", "item"]],
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder", "margin-left", "15px"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matInput", "", "required", "", "formControlName", "task", "rows", "3", "placeholder", "Task", "autocomplete", "off"], [1, "row"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskdate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], [1, "iconcalender", "p-1"], ["appearance", "outline", 1, "example-full-width", "custom-mat-form-field"], ["type", "time", "matInput", "", "required", "", "formControlName", "taskTime", "placeholder", "Task Time", "autocomplete", "off"], [1, "col-md-6", "col-sm-12", "col-xl-6", "col-lg-6", "mb-3", "mb-3"], ["matInput", "", "required", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "taskReminder", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "minDate", "bsConfig", "click"], ["type", "time", "matInput", "", "required", "", "formControlName", "remindTime", "placeholder", "Task Time", "autocomplete", "off"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Type", "formControlName", "taskType"], ["value", "TODO"], ["value", "CALL"], ["value", "EMAIL"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Priority", "formControlName", "taskPrioirty"], ["value", "HIGH"], ["value", "LOW"], ["value", "MEDIUM"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Queue", "formControlName", "taskQue"], ["value", "Personal"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Task Assigned To", "formControlName", "taskAssignedTo"], ["value", "Myself"], ["value", "item", 4, "ngFor", "ngForOf"], [1, "row", "mt-2"], [1, "col-sm-12", "col-md-12", "col-xl-12", "col-lg-12", 2, "padding", "0px 15px"], ["formControlName", "taskNote", 3, "editor", "data", "config", "change"], ["value", "item"]],
         template: function AddTaskComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -50412,9 +50412,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](35, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "mat-form-field", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "mat-form-field", 18);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](37, "input", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](37, "input", 19);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -50424,7 +50424,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](38, "div", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "div", 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "div", 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "label", 10);
 
@@ -50440,7 +50440,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](44, "mat-form-field", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "input", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](45, "input", 21);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AddTaskComponent_Template_input_click_45_listener() {
               return ctx.openDatepicker();
@@ -50480,7 +50480,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "mat-form-field", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](56, "input", 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](56, "input", 22);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -50508,21 +50508,21 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](64, "mat-form-field", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "mat-select", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](65, "mat-select", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](66, "mat-option", 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](66, "mat-option", 24);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](67, "To Do");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](68, "mat-option", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](68, "mat-option", 25);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](69, "Call");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](70, "mat-option", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](70, "mat-option", 26);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](71, "Email");
 
@@ -50550,21 +50550,21 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](77, "mat-form-field", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](78, "mat-select", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](78, "mat-select", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](79, "mat-option", 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](79, "mat-option", 28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](80, "High");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](81, "mat-option", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](81, "mat-option", 29);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](82, "Low");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](83, "mat-option", 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](83, "mat-option", 30);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](84, "Medium");
 
@@ -50592,9 +50592,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](90, "mat-form-field", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](91, "mat-select", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](91, "mat-select", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](92, "mat-option", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](92, "mat-option", 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](93, "Personal");
 
@@ -50622,15 +50622,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](99, "mat-form-field", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](100, "mat-select", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](100, "mat-select", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](101, "mat-option", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](101, "mat-option", 34);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](102, "Myself");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](103, AddTaskComponent_mat_option_103_Template, 2, 1, "mat-option", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](103, AddTaskComponent_mat_option_103_Template, 2, 1, "mat-option", 35);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -50640,11 +50640,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](104, "div", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](104, "div", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](105, "div", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](105, "div", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](106, "ckeditor", 37);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](106, "ckeditor", 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("change", function AddTaskComponent_Template_ckeditor_change_106_listener($event) {
               return ctx.onChange($event);
@@ -50686,7 +50686,7 @@
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_10__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_11__.BsDatepickerInputDirective, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_11__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIcon, _angular_material_select__WEBPACK_IMPORTED_MODULE_13__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_14__.MatOption, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _ckeditor_ckeditor5_angular__WEBPACK_IMPORTED_MODULE_15__.CKEditorComponent],
-        styles: [".form-label[_ngcontent-%COMP%] {\n  margin-left: 5px;\n}\n\n.iconcalender[_ngcontent-%COMP%] {\n  float: right !important;\n  margin-top: -24px;\n}\n\n.modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.addProductButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  margin-left: auto;\n}\n\n@media screen and (max-width: 768px) {\n  .modal-header[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .addProductButtons[_ngcontent-%COMP%] {\n    margin: 10px 0px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkZC10YXNrLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQUE7QUFDRjs7QUFFQTtFQUNJLHVCQUFBO0VBQ0EsaUJBQUE7QUFDSjs7QUFHQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUFBRjs7QUFHQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0FBQUY7O0FBR0E7RUFDRTtJQUNFLGFBQUE7SUFDQSxzQkFBQTtJQUNBLHVCQUFBO0lBQ0EsbUJBQUE7RUFBRjs7RUFHQTtJQUNFLGdCQUFBO0VBQUY7QUFDRiIsImZpbGUiOiJhZGQtdGFzay5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb3JtLWxhYmVsIHtcclxuICBtYXJnaW4tbGVmdDogNXB4O1xyXG59XHJcblxyXG4uaWNvbmNhbGVuZGVyIHtcclxuICAgIGZsb2F0OiByaWdodCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXRvcDogLTI0cHg7XHJcbiAgfVxyXG5cclxuXHJcbi5tb2RhbC1oZWFkZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG59XHJcblxyXG4uYWRkUHJvZHVjdEJ1dHRvbnMge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBtYXJnaW4tbGVmdDogYXV0bztcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpIHtcclxuICAubW9kYWwtaGVhZGVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjpjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICAuYWRkUHJvZHVjdEJ1dHRvbnMge1xyXG4gICAgbWFyZ2luOjEwcHggMHB4O1xyXG4gIH1cclxuXHJcbn1cclxuIl19 */"]
+        styles: [".custom-mat-form-field[_ngcontent-%COMP%] {\n  height: 35px;\n  \n}\n\n.form-label[_ngcontent-%COMP%] {\n  margin-left: 5px;\n}\n\n.iconcalender[_ngcontent-%COMP%] {\n  float: right !important;\n  margin-top: -24px;\n}\n\n.modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.addProductButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  margin-left: auto;\n}\n\n@media screen and (max-width: 768px) {\n  .modal-header[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .addProductButtons[_ngcontent-%COMP%] {\n    margin: 10px 0px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkZC10YXNrLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBQTtFQUFjLGdDQUFBO0FBRWhCOztBQUNBO0VBQ0UsZ0JBQUE7QUFFRjs7QUFDQTtFQUNJLHVCQUFBO0VBQ0EsaUJBQUE7QUFFSjs7QUFFQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUFDRjs7QUFFQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0FBQ0Y7O0FBRUE7RUFDRTtJQUNFLGFBQUE7SUFDQSxzQkFBQTtJQUNBLHVCQUFBO0lBQ0EsbUJBQUE7RUFDRjs7RUFFQTtJQUNFLGdCQUFBO0VBQ0Y7QUFDRiIsImZpbGUiOiJhZGQtdGFzay5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jdXN0b20tbWF0LWZvcm0tZmllbGQge1xyXG4gIGhlaWdodDogMzVweDsgLyogQWRqdXN0IHRoZSBoZWlnaHQgYXMgbmVlZGVkICovXHJcbn1cclxuXHJcbi5mb3JtLWxhYmVsIHtcclxuICBtYXJnaW4tbGVmdDogNXB4O1xyXG59XHJcblxyXG4uaWNvbmNhbGVuZGVyIHtcclxuICAgIGZsb2F0OiByaWdodCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXRvcDogLTI0cHg7XHJcbiAgfVxyXG5cclxuXHJcbi5tb2RhbC1oZWFkZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG59XHJcblxyXG4uYWRkUHJvZHVjdEJ1dHRvbnMge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBtYXJnaW4tbGVmdDogYXV0bztcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpIHtcclxuICAubW9kYWwtaGVhZGVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjpjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICAuYWRkUHJvZHVjdEJ1dHRvbnMge1xyXG4gICAgbWFyZ2luOjEwcHggMHB4O1xyXG4gIH1cclxuXHJcbn1cclxuIl19 */"]
       });
       /***/
     },

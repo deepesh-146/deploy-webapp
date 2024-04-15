@@ -5155,9 +5155,9 @@ class SignupComponent {
         this.isArabic = false;
     }
     ngOnInit() {
-        this.commonService.isArabic$.subscribe((isArabic) => {
-            this.isArabic = isArabic;
-        });
+        // this.commonService.isArabic$.subscribe((isArabic) => {
+        //   this.isArabic = isArabic;
+        // });
         this.route.queryParams.subscribe(params => {
             this.Custtoggle = params['Custtoggle'] === 'true';
         });
@@ -5177,72 +5177,36 @@ class SignupComponent {
         // }
         this.getAllCountry();
         //form for client registartion
-        if (this.isArabic) {
-            this.registerForm = this.fb.group({
-                firstName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^[a-zA-Z ]*$')]],
-                // lastName: ["", [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
-                email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
-                mobile: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{9}")]],
-                password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-                // ConfirmPassword: ["", [Validators.required]],
-                acceptTerms: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-                countryId: [this.isArabic ? "+971" : "+971", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]]
-            }, {
-                validator: (0,_helpers_confirmed_validators__WEBPACK_IMPORTED_MODULE_1__.ConfirmedValidators)('password', 'password')
-            });
-        }
-        else {
-            this.registerForm = this.fb.group({
-                firstName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^[a-zA-Z ]*$')]],
-                // lastName: ["", [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
-                email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
-                mobile: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{10}")]],
-                password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-                // ConfirmPassword: ["", [Validators.required]],
-                acceptTerms: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-                countryId: [this.isArabic ? "+971" : "+91", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]]
-            }, {
-                validator: (0,_helpers_confirmed_validators__WEBPACK_IMPORTED_MODULE_1__.ConfirmedValidators)('password', 'password')
-            });
-        }
+        this.registerForm = this.fb.group({
+            firstName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^[a-zA-Z ]*$')]],
+            // lastName: ["", [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
+            email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
+            mobile: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{10}")]],
+            password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            // ConfirmPassword: ["", [Validators.required]],
+            acceptTerms: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            countryId: ["+91", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]]
+        }, {
+            validator: (0,_helpers_confirmed_validators__WEBPACK_IMPORTED_MODULE_1__.ConfirmedValidators)('password', 'password')
+        });
         //form for customer registration
-        if (this.isArabic) {
-            this.customerRegisterForm = this.fb.group({
-                firstName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^[a-zA-Z ]*$')]],
-                // lastName: ["", [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
-                // email:["",[Validators.required,Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
-                mobile: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{9}")]],
-                countryId: [this.isArabic ? "+971" : "+971", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-                acceptTerms: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            });
-        }
-        else {
-            this.customerRegisterForm = this.fb.group({
-                firstName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^[a-zA-Z ]*$')]],
-                // lastName: ["", [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
-                // email:["",[Validators.required,Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
-                mobile: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{10}")]],
-                countryId: [this.isArabic ? "+971" : "+91", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-                acceptTerms: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            });
-        }
-        //form for client and customer otp 
+        this.customerRegisterForm = this.fb.group({
+            firstName: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern('^[a-zA-Z ]*$')]],
+            // lastName: ["", [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
+            // email:["",[Validators.required,Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
+            mobile: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{10}")]],
+            countryId: ["+91", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            acceptTerms: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+        });
+        //form for client and customer otp
         this.otpClientData = this.fb.group({
             emailotp: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.email, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")]],
             // mobileotp:["",[Validators.required,Validators.pattern("[0-9]{10}")]],
         });
-        if (this.isArabic) {
-            this.otpCustomerData = this.fb.group({
-                //emailotp:  [ "",[Validators.required,Validators.pattern("[0-9]{10}")]],
-                mobileotp: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{9}")]],
-            });
-        }
-        else {
-            this.otpCustomerData = this.fb.group({
-                //emailotp:  [ "",[Validators.required,Validators.pattern("[0-9]{10}")]],
-                mobileotp: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{10}")]],
-            });
-        }
+        this.otpCustomerData = this.fb.group({
+            //emailotp:  [ "",[Validators.required,Validators.pattern("[0-9]{10}")]],
+            mobileotp: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.pattern("[0-9]{10}")]],
+        });
         this.filteredOptions = this.registerForm.get('countryId').valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.startWith)(''), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.map)(value => {
             if (this.CountryList) {
                 const name = typeof value === 'string' ? value : value;
@@ -5307,7 +5271,7 @@ class SignupComponent {
             this.customerRegisterForm.clearValidators();
         }
     }
-    //client register 
+    //client register
     clientRegister() {
         console.log(" in Client register", this.registerForm.value);
         this.submitted = true;
@@ -5323,9 +5287,6 @@ class SignupComponent {
             countryId: '102'
             // "lastName" :this.registerForm.controls.lastName.value,
         };
-        if (this.registerForm.value.countryId == '+971') {
-            req.countryId = '228';
-        }
         this.signupService.registerClientUsers(req).then((data) => {
             if (data.success) {
                 // Create a copy of the defaultLedgerData object
