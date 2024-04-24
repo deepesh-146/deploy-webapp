@@ -452,12 +452,26 @@ class PartyGroupListComponent {
         document.getElementById('uploadFile').click();
     }
     // for pagination
+    // public handlePage(e: any) {
+    //   this.currentPageNo = e.pageIndex;
+    //   this.pagesize = e.pageSize;
+    //   if (this.partyGroupData.length > 0) {
+    //     this.partyGrpPageSize = e.pageSize;
+    //     this.getGroupDetails();
+    //   }
+    // }
     handlePage(e) {
         this.currentPageNo = e.pageIndex;
         this.pagesize = e.pageSize;
         if (this.partyGroupData.length > 0) {
             this.partyGrpPageSize = e.pageSize;
-            this.getGroupDetails();
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput.value !== '') {
+                this.searchByGroupName(searchInput.value);
+            }
+            else {
+                this.getGroupDetails();
+            }
         }
     }
     viewModal(itemId) {
@@ -1486,19 +1500,33 @@ class PartyListComponent {
         this.isdeletedParty = isdeleted;
     }
     // for pagination
+    // public handlePage(e: any) {
+    //   const startIndex = e.pageIndex * e.pageSize + 1;
+    //   const endIndex = Math.min(startIndex + e.pageSize - 1, e.length);
+    //   this.pageNumberDisplay = [];
+    //   for (let i = startIndex; i <= endIndex; i++) {
+    //     this.pageNumberDisplay.push(i);
+    //   }
+    //   this.currentPageNo = e.pageIndex;
+    //   this.pagesize = e.pageSize;
+    //   // if (this.partyList.length > 0) {
+    //   this.partyPageSize = e.pageSize;
+    //   this.getAllParties();
+    //   // }
+    // }
     handlePage(e) {
-        const startIndex = e.pageIndex * e.pageSize + 1;
-        const endIndex = Math.min(startIndex + e.pageSize - 1, e.length);
-        this.pageNumberDisplay = [];
-        for (let i = startIndex; i <= endIndex; i++) {
-            this.pageNumberDisplay.push(i);
-        }
         this.currentPageNo = e.pageIndex;
         this.pagesize = e.pageSize;
-        // if (this.partyList.length > 0) {
-        this.partyPageSize = e.pageSize;
-        this.getAllParties();
-        // }
+        if (this.partyList.length > 0) {
+            this.partyPageSize = e.pageSize;
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput.value !== '') {
+                this.getPartyBySearch(searchInput.value);
+            }
+            else {
+                this.getAllParties();
+            }
+        }
     }
     // getPages(): number[] {
     //   return Array.from({ length: this.toatlPages }, (_, i) => i + 1);
