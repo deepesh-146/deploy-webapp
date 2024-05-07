@@ -1729,6 +1729,62 @@
         }
       }
 
+      function EditPayrollComponent_mat_error_38_mat_error_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Basic is required! ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+      }
+
+      function EditPayrollComponent_mat_error_38_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, EditPayrollComponent_mat_error_38_mat_error_1_Template, 2, 0, "mat-error", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r2.f.basic.errors == null ? null : ctx_r2.f.basic.errors.required);
+        }
+      }
+
+      function EditPayrollComponent_mat_error_46_mat_error_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-error");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " HRA is required! ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+      }
+
+      function EditPayrollComponent_mat_error_46_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-error", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, EditPayrollComponent_mat_error_46_mat_error_1_Template, 2, 0, "mat-error", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r3.f.hra.errors == null ? null : ctx_r3.f.hra.errors.required);
+        }
+      }
+
       var _c0 = function _c0() {
         return {
           containerClass: "theme-dark-blue",
@@ -1740,6 +1796,12 @@
       var _c1 = function _c1() {
         return {
           standalone: true
+        };
+      };
+
+      var _c2 = function _c2(a0) {
+        return {
+          "is-invalid": a0
         };
       };
 
@@ -1768,8 +1830,8 @@
             this.EditPayrollForm = this.formBuilder.group({
               date: ["", new Date()],
               ctc: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
-              basic: [""],
-              hra: [""]
+              basic: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required],
+              hra: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]
             });
           } // Short-cut used in mat errors.
 
@@ -1826,12 +1888,13 @@
           value: function UpdatePayroll() {
             var _this14 = this;
 
+            this.submitted = true;
+
             if (this.EditPayrollForm.invalid) {
               this.toastService.toastMsg({
                 title: "Error",
                 content: "Fill All Required Fields."
-              }); // this.toastService.openErrorSnackBar("Please Fill Mandatory Fields!!!");
-
+              });
               return false;
             } else {
               var body = {
@@ -1890,9 +1953,9 @@
       _EditPayrollComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _EditPayrollComponent,
         selectors: [["app-edit-payroll"]],
-        decls: 45,
-        vars: 8,
-        consts: [[1, "modal-header", "pt-0"], [1, "modal-title"], [1, "payrollButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-xs-12", "col-sm-12", "col-md-6", "col-lg-6"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "12px"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "Date", "id", "datePicker", "bsDatepicker", "", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "ngModel", "bsConfig", "ngModelOptions", "ngModelChange", "click"], [1, "iconcalender"], ["class", "text-danger", 4, "ngIf"], ["appearance", "outline", 1, "example-full-width"], ["matNativeControl", "", "required", "", "matInput", "", "placeholder", "CTC", "autocomplete", "off", "formControlName", "ctc"], ["matNativeControl", "", "matInput", "", "placeholder", "Basic", "autocomplete", "off", "formControlName", "basic", "readonly", ""], ["matNativeControl", "", "matInput", "", "placeholder", "HRA", "autocomplete", "off", "formControlName", "hra", "readonly", ""], [1, "text-danger"], [4, "ngIf"]],
+        decls: 47,
+        vars: 13,
+        consts: [[1, "modal-header", "pt-0"], [1, "modal-title"], [1, "payrollButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "button", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [3, "formGroup"], [1, "row", "mb-3"], [1, "col-xs-12", "col-sm-12", "col-md-6", "col-lg-6"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width", 2, "font-size", "12px"], ["matInput", "", "required", "", "ngModel", "", "bsDatepicker", "", "placeholder", "Date", "id", "datePicker", "bsDatepicker", "", "bsDatepicker", "", 2, "text-transform", "uppercase!important", 3, "ngModel", "bsConfig", "ngModelOptions", "ngModelChange", "click"], [1, "iconcalender"], ["class", "text-danger", 4, "ngIf"], ["appearance", "outline", 1, "example-full-width"], ["matNativeControl", "", "required", "", "matInput", "", "placeholder", "CTC", "autocomplete", "off", "formControlName", "ctc"], ["matNativeControl", "", "matInput", "", "placeholder", "Basic", "required", "", "autocomplete", "off", "formControlName", "basic", "readonly", ""], ["matNativeControl", "", "matInput", "", "placeholder", "HRA", "required", "", "autocomplete", "off", "formControlName", "hra", 3, "ngClass"], [1, "text-danger"], [4, "ngIf"]],
         template: function EditPayrollComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
@@ -2025,27 +2088,31 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](38, "div", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "label", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](40, "HRA");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](41, "span", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](42, "*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](38, EditPayrollComponent_mat_error_38_Template, 2, 1, "mat-error", 14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](39, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](40, "label", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](41, "HRA");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](42, "span", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](43, "*");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](43, "mat-form-field", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](44, "input", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](44, "mat-form-field", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](45, "input", 18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](46, EditPayrollComponent_mat_error_46_Template, 2, 1, "mat-error", 14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -2063,7 +2130,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.todaysDate)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](6, _c0))("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c1));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.todaysDate)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](9, _c0))("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](10, _c1));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
 
@@ -2072,9 +2139,21 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.submitted || ctx.f.ctc.touched);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.submitted || ctx.f.basic.touched);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](11, _c2, ctx.f.hra.invalid && ctx.f.hra.touched && ctx.submitted));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.submitted || ctx.f.hra.touched);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_10__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_11__.BsDatepickerInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgModel, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_11__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatError],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormGroupDirective, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_10__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.DefaultValueAccessor, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_11__.BsDatepickerInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgModel, ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_11__.BsDatepickerDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgClass, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatError],
         styles: [".modal-header[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.payrollButtons[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  margin-left: auto;\n}\n\n.modal-body[_ngcontent-%COMP%] {\n  height: calc(100% - 125px);\n  overflow-y: auto;\n}\n\n.modal-title[_ngcontent-%COMP%] {\n  color: #EB8B3F;\n  font-weight: bolder;\n  margin-bottom: 0;\n  margin-left: 5px;\n  white-space: nowrap;\n}\n\n.form-label[_ngcontent-%COMP%] {\n  padding-left: 5px;\n}\n\n.iconcalender[_ngcontent-%COMP%] {\n  float: right !important;\n  margin-top: -20px !important;\n}\n\n  .mat-form-field :hover .mat-form-field-outline-thick {\n  color: #2c7be5;\n}\n\n  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {\n  color: #2c7be5 !important;\n}\n\n@media screen and (max-width: 768px) {\n  .modal-header[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .payrollButtons[_ngcontent-%COMP%] {\n    margin: 10px 0px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVkaXQtcGF5cm9sbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUFBRjs7QUFJQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0FBREY7O0FBS0E7RUFDRSwwQkFBQTtFQUNBLGdCQUFBO0FBRkY7O0FBTUE7RUFDRSxjQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUFIRjs7QUFPQTtFQUNFLGlCQUFBO0FBSkY7O0FBUUE7RUFDRSx1QkFBQTtFQUNBLDRCQUFBO0FBTEY7O0FBU0E7RUFDRSxjQUFBO0FBTkY7O0FBVUE7RUFDRSx5QkFBQTtBQVBGOztBQVlBO0VBR0U7SUFDRSxhQUFBO0lBQ0Esc0JBQUE7SUFDQSx1QkFBQTtJQUNBLG1CQUFBO0VBWEY7O0VBZUE7SUFDRSxnQkFBQTtFQVpGO0FBQ0YiLCJmaWxlIjoiZWRpdC1wYXlyb2xsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQWxpZ2luZyBldmVyeXRoaW5nIGF0IGNlbnRlci5cclxuLm1vZGFsLWhlYWRlciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuXHJcbi8vIFRvIGFsaWduIGJ1dHRvbnMgYXQgZW5kLlxyXG4ucGF5cm9sbEJ1dHRvbnMge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBtYXJnaW4tbGVmdDogYXV0bztcclxufVxyXG5cclxuLy8gVG8gZ2l2ZSBlbm91Z2ggc3BhY2UgZm9yIG1vZGFsIGJvZHkgYXQgYW55IHNjcmVlbiBzaXplLlxyXG4ubW9kYWwtYm9keSB7XHJcbiAgaGVpZ2h0OiBjYWxjKDEwMCUgLSAxMjVweCk7XHJcbiAgb3ZlcmZsb3cteTogYXV0bztcclxufVxyXG5cclxuLy8gSGVhZGluZyBvZiB0aGUgbW9kYWxcclxuLm1vZGFsLXRpdGxlIHtcclxuICBjb2xvcjogI0VCOEIzRjtcclxuICBmb250LXdlaWdodDogYm9sZGVyO1xyXG4gIG1hcmdpbi1ib3R0b206IDA7XHJcbiAgbWFyZ2luLWxlZnQ6NXB4O1xyXG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbn1cclxuXHJcbi8vIFRvIGFycmFuZ2UgbGFiZWwgYW5kIGlucHV0IGZvcm1cclxuLmZvcm0tbGFiZWwge1xyXG4gIHBhZGRpbmctbGVmdDogNXB4O1xyXG59XHJcblxyXG4vLyBEYXRlIEljb25cclxuLmljb25jYWxlbmRlciB7XHJcbiAgZmxvYXQ6IHJpZ2h0ICFpbXBvcnRhbnQ7XHJcbiAgbWFyZ2luLXRvcDogLTIwcHggIWltcG9ydGFudDtcclxufVxyXG5cclxuLy8gVG8gZ2l2ZSBob3ZlcmluZyBjb2xvciB0byBmb3JtIGlucHV0cy5cclxuOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZCA6aG92ZXIgLm1hdC1mb3JtLWZpZWxkLW91dGxpbmUtdGhpY2sge1xyXG4gIGNvbG9yOiAjMmM3YmU1O1xyXG59XHJcblxyXG4vLyBUbyBnaXZlIGNvbG9yIHRvIGJvcmRlcnMgb24gY2xpY2tpbmcgdGhlIGZvcm0gaW5wdXRzLlxyXG46Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLWFwcGVhcmFuY2Utb3V0bGluZS5tYXQtZm9jdXNlZCAubWF0LWZvcm0tZmllbGQtb3V0bGluZS10aGljayB7XHJcbiAgY29sb3I6ICMyYzdiZTUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLy8gTWVkaWEgcXVlcmllc1xyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpIHtcclxuXHJcbiAgLy8gQWxpZ2luZyBldmVyeXRoaW5nIGF0IGNlbnRlciBjb2x1bW4td2lzZSBmb3Igc21hbGxlciBzY3JlZW4gc2l6ZS5cclxuICAubW9kYWwtaGVhZGVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjpjb2x1bW47XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICAvLyBHYXAgYmV0d2VlbiB0aGUgaGVhZGVyIGFuZCBidXR0b25zLlxyXG4gIC5wYXlyb2xsQnV0dG9ucyB7XHJcbiAgICBtYXJnaW46MTBweCAwcHg7XHJcbiAgfVxyXG5cclxufVxyXG4iXX0= */"]
       });
       /***/

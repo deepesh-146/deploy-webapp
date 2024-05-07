@@ -1645,18 +1645,36 @@
             var _this21 = this;
 
             if (this.searchKey == "") {
-              this.assetsServiceService.getCurrentAssetsDataFilter({}, this.currentUser.id, searchKey, this.partyPageSize, this.currentPageNo + 1).then(function (res) {
+              this.currentPageNo = 0;
+              this.assetsServiceService.getCurrentAssetsDataFilter({}, this.currentUser.id, searchKey.trim(), this.partyPageSize, this.currentPageNo + 1).then(function (res) {
                 _this21.AseetData = res.data.pageData;
                 _this21.p = res.data.currentPage;
                 _this21.totalrow = res.data.totalrows;
                 _this21.toatlPages = res.data.totalPages;
+
+                if (_this21.currentPageNo > 0) {
+                  if (_this21.AseetData.length === 0) {
+                    _this21.currentPageNo = 0;
+
+                    _this21.getAssetListSearch(_this21.searchKey);
+                  }
+                }
               });
             } else {
-              this.assetsServiceService.getCurrentAssetsDataFilter({}, this.currentUser.id, searchKey, this.partyPageSize, this.currentPageNo + 1).then(function (res) {
+              this.currentPageNo = 0;
+              this.assetsServiceService.getCurrentAssetsDataFilter({}, this.currentUser.id, searchKey.trim(), this.partyPageSize, this.currentPageNo + 1).then(function (res) {
                 _this21.AseetData = res.data.pageData;
                 _this21.p = res.data.currentPage;
                 _this21.totalrow = res.data.totalrows;
                 _this21.toatlPages = res.data.totalPages;
+
+                if (_this21.currentPageNo > 0) {
+                  if (_this21.AseetData.length === 0) {
+                    _this21.currentPageNo = 0;
+
+                    _this21.getAssetListSearch(_this21.searchKey);
+                  }
+                }
               }, function (err) {
                 if (err.error.expose) {
                   _this21.toastService.toastMsg({
@@ -1853,7 +1871,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.AseetData);
+            _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.AseetData.length > 0);
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_10__.MatPaginator],
@@ -3517,18 +3535,11 @@
             }, function (err) {
               if (err.error.expose || err.status == 404) {
                 _this27.NonAseetData = [];
-
-                _this27.toastService.toastMsg({
-                  title: "Error",
-                  content: _this27.titleCasePipe.transform(err.error.error_message)
-                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
-
               } else {
                 _this27.toastService.toastMsg({
                   title: "Error",
                   content: "Something Went Wrong."
-                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
-
+                });
               }
             });
           }
@@ -3546,8 +3557,7 @@
               _this28.toastService.toastMsg({
                 title: "Success",
                 content: "Non Current Assets Deleted Successfully!!!"
-              }); // this.toastService.openSnackBar("Non Current Assets Deleted Successfully!!!");
-
+              });
 
               _this28.getNonAssetData();
             }, function (err) {
@@ -3555,14 +3565,12 @@
                 _this28.toastService.toastMsg({
                   title: "Error",
                   content: _this28.titleCasePipe.transform(err.error.error_message)
-                }); // this.toastService.openErrorSnackBar(this.titleCasePipe.transform(err.error.error_message));
-
+                });
               } else {
                 _this28.toastService.toastMsg({
                   title: "Error",
                   content: "Something Went Wrong."
-                }); // this.toastService.openErrorSnackBar("Something Went Wrong.");
-
+                });
               }
             });
           }
@@ -3782,18 +3790,36 @@
             var _this30 = this;
 
             if (this.searchKey == "") {
-              this.assetsServiceService.getNONCurrentAssetsDataFilter({}, this.currentUser.id, this.partyPageSize, this.currentPageNo + 1, searchKey).then(function (res) {
+              this.currentPageNo = 0;
+              this.assetsServiceService.getNONCurrentAssetsDataFilter({}, this.currentUser.id, this.partyPageSize, this.currentPageNo + 1, searchKey.trim()).then(function (res) {
                 _this30.NonAseetData = res.data.totalDecriptionValue;
                 _this30.p = res.data.currentPage;
                 _this30.totalrow = res.data.totalrows;
                 _this30.toatlPages = res.data.totalPages;
+
+                if (_this30.currentPageNo > 0) {
+                  if (_this30.NonAseetData.length === 0) {
+                    _this30.currentPageNo = 0;
+
+                    _this30.getAssetListSearch(_this30.searchKey);
+                  }
+                }
               });
             } else {
-              this.assetsServiceService.getNONCurrentAssetsDataFilter({}, this.currentUser.id, this.partyPageSize, this.currentPageNo + 1, searchKey).then(function (res) {
+              this.currentPageNo = 0;
+              this.assetsServiceService.getNONCurrentAssetsDataFilter({}, this.currentUser.id, this.partyPageSize, this.currentPageNo + 1, searchKey.trim()).then(function (res) {
                 _this30.NonAseetData = res.data.totalDecriptionValue;
                 _this30.p = res.data.currentPage;
                 _this30.totalrow = res.data.totalrows;
                 _this30.toatlPages = res.data.totalPages;
+
+                if (_this30.currentPageNo > 0) {
+                  if (_this30.NonAseetData.length === 0) {
+                    _this30.currentPageNo = 0;
+
+                    _this30.getAssetListSearch(_this30.searchKey);
+                  }
+                }
               }, function (err) {
                 if (err.error.expose) {
                   _this30.toastService.toastMsg({
@@ -4027,7 +4053,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.NonAseetData);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.NonAseetData.length > 0);
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_11__.MatPaginator],

@@ -148,13 +148,13 @@
         }
 
         if (rf & 2) {
-          var item_r8 = ctx.$implicit;
+          var item_r9 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", item_r8.id);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("value", item_r9.id);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](2, 2, item_r8.name), " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](2, 2, item_r9.name), " ");
         }
       }
 
@@ -178,9 +178,9 @@
         }
       }
 
-      function ExpenseEditComponent_div_51_ng_container_18_Template(rf, ctx) {
+      function ExpenseEditComponent_div_51_ng_container_17_Template(rf, ctx) {
         if (rf & 1) {
-          var _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0, 45);
 
@@ -202,14 +202,14 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "input", 49);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("keyup", function ExpenseEditComponent_div_51_ng_container_18_Template_input_keyup_7_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("keyup", function ExpenseEditComponent_div_51_ng_container_17_Template_input_keyup_7_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r15);
 
-            var i_r12 = restoredCtx.index;
+            var i_r13 = restoredCtx.index;
 
-            var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
+            var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
 
-            return ctx_r13.setTotalValue(i_r12);
+            return ctx_r14.setTotalValue(i_r13);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -220,20 +220,20 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "input", 50);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("keyup", function ExpenseEditComponent_div_51_ng_container_18_Template_input_keyup_9_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("keyup", function ExpenseEditComponent_div_51_ng_container_17_Template_input_keyup_9_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r15);
 
-            var i_r12 = restoredCtx.index;
-
-            var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
-
-            return ctx_r15.setTotalValue(i_r12);
-          })("keyup.enter", function ExpenseEditComponent_div_51_ng_container_18_Template_input_keyup_enter_9_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r14);
+            var i_r13 = restoredCtx.index;
 
             var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
 
-            return ctx_r16.addAddtionalDetails();
+            return ctx_r16.setTotalValue(i_r13);
+          })("keyup.enter", function ExpenseEditComponent_div_51_ng_container_17_Template_input_keyup_enter_9_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r15);
+
+            var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
+
+            return ctx_r17.addAddtionalDetails();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -250,15 +250,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](13, "button", 53);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ExpenseEditComponent_div_51_ng_container_18_Template_button_click_13_listener() {
-            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ExpenseEditComponent_div_51_ng_container_17_Template_button_click_13_listener() {
+            var restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r15);
 
-            var group_r11 = restoredCtx.$implicit;
-            var i_r12 = restoredCtx.index;
+            var group_r12 = restoredCtx.$implicit;
+            var i_r13 = restoredCtx.index;
 
-            var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
+            var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
 
-            return ctx_r17.deleteaddAddtionalDetails(group_r11, i_r12);
+            return ctx_r18.deleteaddAddtionalDetails(group_r12, i_r13);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](14, "span", 54);
@@ -273,21 +273,21 @@
         }
 
         if (rf & 2) {
-          var i_r12 = ctx.index;
+          var i_r13 = ctx.index;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("formGroupName", i_r12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("formGroupName", i_r13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](i_r12 + 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](i_r13 + 1);
         }
       }
 
-      function ExpenseEditComponent_div_51_div_19_Template(rf, ctx) {
+      function ExpenseEditComponent_div_51_div_18_Template(rf, ctx) {
         if (rf & 1) {
-          var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 55);
 
@@ -295,12 +295,12 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "a", 57);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ExpenseEditComponent_div_51_div_19_Template_a_click_2_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ExpenseEditComponent_div_51_div_18_Template_a_click_2_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r20);
 
-            var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
+            var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
 
-            return ctx_r18.addAddtionalDetails();
+            return ctx_r19.addAddtionalDetails();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](3, "span", 58);
@@ -361,9 +361,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "th", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](15, "th", 42);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](16, "X");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](16, "tbody");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](17, ExpenseEditComponent_div_51_ng_container_17_Template, 15, 2, "ng-container", 43);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -371,17 +377,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](17, "tbody");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](18, ExpenseEditComponent_div_51_ng_container_18_Template, 15, 2, "ng-container", 43);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](19, ExpenseEditComponent_div_51_div_19_Template, 6, 0, "div", 44);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](18, ExpenseEditComponent_div_51_div_18_Template, 6, 0, "div", 44);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         }
@@ -389,7 +385,7 @@
         if (rf & 2) {
           var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx_r4.additionalDetailsControls.controls);
 
@@ -399,7 +395,17 @@
         }
       }
 
-      function ExpenseEditComponent_mat_form_field_67_Template(rf, ctx) {
+      function ExpenseEditComponent_mat_error_62_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error", 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Payment Mode is Required ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+        }
+      }
+
+      function ExpenseEditComponent_mat_form_field_68_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-form-field", 13);
 
@@ -409,7 +415,7 @@
         }
       }
 
-      function ExpenseEditComponent_mat_error_68_Template(rf, ctx) {
+      function ExpenseEditComponent_mat_error_69_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-error", 34);
 
@@ -419,7 +425,7 @@
         }
       }
 
-      function ExpenseEditComponent_mat_form_field_69_Template(rf, ctx) {
+      function ExpenseEditComponent_mat_form_field_70_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-form-field", 13);
 
@@ -844,8 +850,8 @@
       _ExpenseEditComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
         type: _ExpenseEditComponent,
         selectors: [["app-expense-edit"]],
-        decls: 77,
-        vars: 15,
+        decls: 78,
+        vars: 16,
         consts: [[1, "modal-header", "pt-0"], [1, "modal-title", "mb-0", 2, "color", "#EB8B3F", "font-weight", "bolder"], [1, "addProductButtons"], ["type", "button", 1, "btn", "btn-cancel", 2, "margin-right", "10px !important", 3, "click"], ["type", "submit", 1, "btn", "btn-save", 3, "click"], [1, "modal-body"], [1, "container-fluid", "px-2"], [3, "formGroup"], [1, "row", "mt-2"], [1, "col-sm-12", "col-lg-6", "col-md-12", "col-xl-6"], [1, "mb-2"], [1, "form-label"], [1, "error-asterisk"], ["appearance", "outline", 1, "example-full-width"], ["matNativeControl", "", "disableOptionCentering", "", "placeholder", "Expense Type", "formControlName", "expenseType", 3, "ngClass"], ["value", "Operating Expenses", 3, "click"], ["value", "COGS", 3, "click"], ["class", "text-danger", 4, "ngIf"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "required", "", "placeholder", "Expense Category", "formControlName", "expenseCategory", 3, "selectionChange"], ["class", "text-capitalize", 3, "value", 4, "ngFor", "ngForOf"], [1, "col-sm-12", "col-lg-6", "col-md-12", "col-xl-6", "mt-2"], ["matInput", "", "required", "", "bsDatepicker", "", "placeholder", "DD MMM YYYY", "id", "datePicker", "bsDatepicker", "", "formControlName", "expenseDate", "autocomplete", "off", 2, "text-transform", "uppercase!important", 3, "maxDate", "bsConfig", "click"], [1, "iconcalender", "p-1"], [1, "row"], [1, "col-lg-12", "col-md-12", "col-xl-12", "col-sm-12"], ["class", "row mb-2", 4, "ngIf"], [1, "col-lg-6", "col-md-6", "col-xl-6", "mt-2"], ["matNativeControl", "", "matInput", "", "disableOptionCentering", "", "placeholder", "Payment Mode", "formControlName", "paymentMode"], ["value", "UPI"], ["value", "CASH"], [1, "col-lg-6", "col-md-12", "col-xl-6", "mt-2"], ["class", "example-full-width", "appearance", "outline", 4, "ngIf"], [1, "col-sm-12", "col-lg-12", "col-md-12", "col-xl-12"], ["matNativeControl", "", "matInput", "", "placeholder", "Note", "formControlName", "expenseNote", "autocomplete", "off"], [1, "text-danger"], [1, "text-capitalize", 3, "value"], [1, "row", "mb-2"], [1, "table-responsive"], [1, "table", "table-bordered", "fs--1", "mb-0"], [1, "bg-200", "text-900", "text-center", 2, "background-color", "#F7F7F7!important"], [1, "p-2", 2, "width", "10% !important"], [1, "p-2", 2, "width", "50% !important"], [1, "p-2"], ["formArrayName", "addtionalDetails", 4, "ngFor", "ngForOf"], ["class", "row d-flex justify-content-end mt-2", 4, "ngIf"], ["formArrayName", "addtionalDetails"], [3, "formGroupName"], [2, "vertical-align", "middle"], ["matInput", "", "type", "text", "formControlName", "item"], ["matInput", "", "type", "text", "formControlName", "quantity", 3, "keyup"], ["matInput", "", "type", "text", "formControlName", "pricePerUnit", 3, "keyup", "keyup.enter"], ["readonly", "", "matInput", "", "type", "text", "formControlName", "totalAmount"], [1, "Icons"], ["type", "button", 1, "btn", 3, "click"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Delete", 1, "bi-trash", "icon-color", "fs-1", 2, "color", "red"], [1, "row", "d-flex", "justify-content-end", "mt-2"], [1, "col-sm-12", "col-md-6", "col-lg-6", "text-nowrap", "mb-1", "d-grid"], [1, "btn", "btn-outline-warning", "dash", "fs--1", 3, "click"], ["id", "boot-icon", 1, "bi", "bi-plus-lg", "newrow"], ["data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "Add Row", 1, "me-2", "fs--1", "text-black", "newrow"], ["matNativeControl", "", "required", "", "type", "text", "placeholder", "Total Amount", "formControlName", "toatalAmount"], ["matNativeControl", "", "type", "text", "readonly", "", "placeholder", "Total Amount", "formControlName", "toatalAmount"]],
         template: function ExpenseEditComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -1035,7 +1041,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](51, ExpenseEditComponent_div_51_Template, 20, 2, "div", 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](51, ExpenseEditComponent_div_51_Template, 19, 2, "div", 25);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](52, "div", 23);
 
@@ -1067,47 +1073,49 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](62, "div", 30);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](63, "label", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](64, "Total Amount ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](65, "span", 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](66, "*");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](62, ExpenseEditComponent_mat_error_62_Template, 2, 0, "mat-error", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](63, "div", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](67, ExpenseEditComponent_mat_form_field_67_Template, 2, 0, "mat-form-field", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](64, "label", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](68, ExpenseEditComponent_mat_error_68_Template, 2, 0, "mat-error", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](65, "Total Amount ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](69, ExpenseEditComponent_mat_form_field_69_Template, 2, 0, "mat-form-field", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](66, "span", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](67, "*");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](70, "div", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](68, ExpenseEditComponent_mat_form_field_68_Template, 2, 0, "mat-form-field", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](71, "div", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](69, ExpenseEditComponent_mat_error_69_Template, 2, 0, "mat-error", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](72, "div", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](73, "label", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](74, "Note");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](70, ExpenseEditComponent_mat_form_field_70_Template, 2, 0, "mat-form-field", 31);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](75, "mat-form-field", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](76, "input", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](71, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](72, "div", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](73, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](74, "label", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](75, "Note");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](76, "mat-form-field", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](77, "input", 33);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -1131,7 +1139,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](12, _c0, ctx.f.expenseType.invalid && ctx.f.expenseType.touched && ctx.submitted));
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](13, _c0, ctx.f.expenseType.invalid && ctx.f.expenseType.touched && ctx.submitted));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
 
@@ -1147,7 +1155,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("maxDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](14, _c1));
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("maxDate", ctx.today)("bsConfig", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](15, _c1));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
 
@@ -1157,7 +1165,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.expenseForm.get("expenseType").value === "COGS");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", (ctx.submitted || ctx.f.paymentMode.touched) && (ctx.f.paymentMode.errors == null ? null : ctx.f.paymentMode.errors.required));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.expenseForm.get("expenseType").value !== "COGS");
 
@@ -2944,7 +2956,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.paymentMode);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.paymentMode ? ctx.paymentMode : "NA");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
@@ -2964,7 +2976,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.note);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.note ? ctx.note : "NA");
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf],
